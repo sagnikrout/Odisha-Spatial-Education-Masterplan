@@ -1,0 +1,2647 @@
+{
+  "metadata": {
+    "state": "Odisha",
+    "total_districts": 30,
+    "methodology": "GIS Spatial Catchment Buffer Optimization & Micro-Demographic Allocation",
+    "tier_standards": {
+      "Primary": {
+        "norm_distance_km": 1.0,
+        "upgrade_cost_lakhs": 25.0,
+        "new_school_cost_lakhs": 65.0,
+        "migration_cost_lakhs": 10.0,
+        "desc": "Foundational Elementary (Grades 1-5)"
+      },
+      "Upper Primary": {
+        "norm_distance_km": 3.0,
+        "upgrade_cost_lakhs": 45.0,
+        "new_school_cost_lakhs": 120.0,
+        "migration_cost_lakhs": 18.0,
+        "desc": "Middle School (Grades 6-8)"
+      },
+      "Secondary": {
+        "norm_distance_km": 5.0,
+        "upgrade_cost_lakhs": 85.0,
+        "new_school_cost_lakhs": 244.0,
+        "migration_cost_lakhs": 30.0,
+        "desc": "High School (Grades 9-10)"
+      },
+      "Higher Secondary": {
+        "norm_distance_km": 7.0,
+        "upgrade_cost_lakhs": 140.0,
+        "new_school_cost_lakhs": 480.0,
+        "migration_cost_lakhs": 45.0,
+        "desc": "Senior Secondary / Junior College (Grades 11-12)"
+      }
+    }
+  },
+  "statewide_totals": {
+    "Primary": {
+      "existing_schools": 37639,
+      "habitations_total": 57703,
+      "habitations_unserved_initial": 14496,
+      "initial_coverage_pct": 74.9,
+      "proposed_upgrades": 1333,
+      "proposed_new_schools": 730,
+      "proposed_transport_hubs": 719,
+      "final_coverage_pct": 99.2,
+      "budget_upgrades_cr": 333.25,
+      "budget_new_schools_cr": 474.5,
+      "budget_transport_cr": 71.9,
+      "total_budget_cr": 879.65
+    },
+    "Upper Primary": {
+      "existing_schools": 13923,
+      "habitations_total": 57703,
+      "habitations_unserved_initial": 18512,
+      "initial_coverage_pct": 67.9,
+      "proposed_upgrades": 1726,
+      "proposed_new_schools": 934,
+      "proposed_transport_hubs": 899,
+      "final_coverage_pct": 99.2,
+      "budget_upgrades_cr": 776.7,
+      "budget_new_schools_cr": 1120.8,
+      "budget_transport_cr": 161.82,
+      "total_budget_cr": 2059.32
+    },
+    "Secondary": {
+      "existing_schools": 6539,
+      "habitations_total": 57703,
+      "habitations_unserved_initial": 23599,
+      "initial_coverage_pct": 59.1,
+      "proposed_upgrades": 2182,
+      "proposed_new_schools": 1195,
+      "proposed_transport_hubs": 1172,
+      "final_coverage_pct": 91.6,
+      "budget_upgrades_cr": 1854.7,
+      "budget_new_schools_cr": 2915.8,
+      "budget_transport_cr": 351.6,
+      "total_budget_cr": 5122.1
+    },
+    "Higher Secondary": {
+      "existing_schools": 1943,
+      "habitations_total": 57703,
+      "habitations_unserved_initial": 29620,
+      "initial_coverage_pct": 48.7,
+      "proposed_upgrades": 2819,
+      "proposed_new_schools": 1495,
+      "proposed_transport_hubs": 1407,
+      "final_coverage_pct": 81.2,
+      "budget_upgrades_cr": 3946.6,
+      "budget_new_schools_cr": 7176.0,
+      "budget_transport_cr": 633.15,
+      "total_budget_cr": 11755.75
+    }
+  },
+  "districts": [
+    {
+      "district_name": "Angul",
+      "dt_code": "384",
+      "profile": {
+        "terrain": "Central Plateau & Coal Basin",
+        "category": "Central Industrial",
+        "vulnerability": 60,
+        "population": 1273821,
+        "area_sqkm": 6375,
+        "tribal_pct": 14.1
+      },
+      "centroid": {
+        "lon": 84.90521462594033,
+        "lat": 20.986611826924793
+      },
+      "bounds": {
+        "min_lon": 84.26652054516846,
+        "min_lat": 20.528133077218488,
+        "max_lon": 85.39369714076702,
+        "max_lat": 21.67539175229735
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1606,
+          "habitations_total": 2231,
+          "habitations_unserved_initial": 334,
+          "initial_coverage_pct": 85.0,
+          "proposed_upgrades": 40,
+          "proposed_new_schools": 15,
+          "proposed_transport_hubs": 8,
+          "final_coverage_pct": 99.2,
+          "budget_upgrades_cr": 10.0,
+          "budget_new_schools_cr": 9.75,
+          "budget_transport_cr": 0.8,
+          "total_budget_cr": 20.55
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 624,
+          "habitations_total": 2231,
+          "habitations_unserved_initial": 468,
+          "initial_coverage_pct": 79.0,
+          "proposed_upgrades": 56,
+          "proposed_new_schools": 21,
+          "proposed_transport_hubs": 11,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 25.2,
+          "budget_new_schools_cr": 25.2,
+          "budget_transport_cr": 1.98,
+          "total_budget_cr": 52.38
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 312,
+          "habitations_total": 2231,
+          "habitations_unserved_initial": 557,
+          "initial_coverage_pct": 75.0,
+          "proposed_upgrades": 66,
+          "proposed_new_schools": 25,
+          "proposed_transport_hubs": 13,
+          "final_coverage_pct": 98.7,
+          "budget_upgrades_cr": 56.1,
+          "budget_new_schools_cr": 61.0,
+          "budget_transport_cr": 3.9,
+          "total_budget_cr": 121.0
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 100,
+          "habitations_total": 2231,
+          "habitations_unserved_initial": 847,
+          "initial_coverage_pct": 62.0,
+          "proposed_upgrades": 101,
+          "proposed_new_schools": 39,
+          "proposed_transport_hubs": 21,
+          "final_coverage_pct": 98.1,
+          "budget_upgrades_cr": 141.4,
+          "budget_new_schools_cr": 187.2,
+          "budget_transport_cr": 9.45,
+          "total_budget_cr": 338.05
+        }
+      },
+      "strategy": "Angul (Central Industrial, Vulnerability Score: 60/100) currently features a Secondary education spatial coverage of 75.0%. Given its central plateau & coal basin landscape and 14.1% tribal population, the masterplan deploys 66 Upper Primary school upgrades to High Schools, 25 state-of-the-art greenfield Secondary campuses in unserved clusters, and 13 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.7% with an estimated capital and operational outlay of \u20b9121.0 Crores."
+    },
+    {
+      "district_name": "Balangir",
+      "dt_code": "393",
+      "profile": {
+        "terrain": "Semi-arid Plain & Residual Hills",
+        "category": "Western Plain",
+        "vulnerability": 78,
+        "population": 1648997,
+        "area_sqkm": 6575,
+        "tribal_pct": 21.1
+      },
+      "centroid": {
+        "lon": 83.17128317653334,
+        "lat": 20.58854226873164
+      },
+      "bounds": {
+        "min_lon": 82.6844929124375,
+        "min_lat": 20.147343610752984,
+        "max_lon": 83.67850707234417,
+        "max_lat": 21.070953677959128
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1656,
+          "habitations_total": 2301,
+          "habitations_unserved_initial": 469,
+          "initial_coverage_pct": 79.6,
+          "proposed_upgrades": 56,
+          "proposed_new_schools": 21,
+          "proposed_transport_hubs": 11,
+          "final_coverage_pct": 99.0,
+          "budget_upgrades_cr": 14.0,
+          "budget_new_schools_cr": 13.65,
+          "budget_transport_cr": 1.1,
+          "total_budget_cr": 28.75
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 644,
+          "habitations_total": 2301,
+          "habitations_unserved_initial": 607,
+          "initial_coverage_pct": 73.6,
+          "proposed_upgrades": 72,
+          "proposed_new_schools": 28,
+          "proposed_transport_hubs": 15,
+          "final_coverage_pct": 98.7,
+          "budget_upgrades_cr": 32.4,
+          "budget_new_schools_cr": 33.6,
+          "budget_transport_cr": 2.7,
+          "total_budget_cr": 68.7
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 322,
+          "habitations_total": 2301,
+          "habitations_unserved_initial": 699,
+          "initial_coverage_pct": 69.6,
+          "proposed_upgrades": 83,
+          "proposed_new_schools": 32,
+          "proposed_transport_hubs": 17,
+          "final_coverage_pct": 98.5,
+          "budget_upgrades_cr": 70.55,
+          "budget_new_schools_cr": 78.08,
+          "budget_transport_cr": 5.1,
+          "total_budget_cr": 153.73
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 103,
+          "habitations_total": 2301,
+          "habitations_unserved_initial": 998,
+          "initial_coverage_pct": 56.6,
+          "proposed_upgrades": 119,
+          "proposed_new_schools": 46,
+          "proposed_transport_hubs": 24,
+          "final_coverage_pct": 97.8,
+          "budget_upgrades_cr": 166.6,
+          "budget_new_schools_cr": 220.8,
+          "budget_transport_cr": 10.8,
+          "total_budget_cr": 398.2
+        }
+      },
+      "strategy": "Balangir (Western Plain, Vulnerability Score: 78/100) currently features a Secondary education spatial coverage of 69.6%. Given its semi-arid plain & residual hills landscape and 21.1% tribal population, the masterplan deploys 83 Upper Primary school upgrades to High Schools, 32 state-of-the-art greenfield Secondary campuses in unserved clusters, and 17 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.5% with an estimated capital and operational outlay of \u20b9153.73 Crores."
+    },
+    {
+      "district_name": "Balasore",
+      "dt_code": "377",
+      "profile": {
+        "terrain": "Subarnarekha Coastal Basin",
+        "category": "Coastal Plain",
+        "vulnerability": 51,
+        "population": 2320529,
+        "area_sqkm": 3806,
+        "tribal_pct": 11.9
+      },
+      "centroid": {
+        "lon": 86.91333122334204,
+        "lat": 21.491475027184073
+      },
+      "bounds": {
+        "min_lon": 86.35297327397144,
+        "min_lat": 21.060521089836783,
+        "max_lon": 87.4848539773526,
+        "max_lat": 21.97924088136058
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 959,
+          "habitations_total": 1332,
+          "habitations_unserved_initial": 163,
+          "initial_coverage_pct": 87.7,
+          "proposed_upgrades": 19,
+          "proposed_new_schools": 7,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 99.3,
+          "budget_upgrades_cr": 4.75,
+          "budget_new_schools_cr": 4.55,
+          "budget_transport_cr": 0.4,
+          "total_budget_cr": 9.7
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 372,
+          "habitations_total": 1332,
+          "habitations_unserved_initial": 243,
+          "initial_coverage_pct": 81.7,
+          "proposed_upgrades": 29,
+          "proposed_new_schools": 11,
+          "proposed_transport_hubs": 6,
+          "final_coverage_pct": 99.0,
+          "budget_upgrades_cr": 13.05,
+          "budget_new_schools_cr": 13.2,
+          "budget_transport_cr": 1.08,
+          "total_budget_cr": 27.33
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 186,
+          "habitations_total": 1332,
+          "habitations_unserved_initial": 297,
+          "initial_coverage_pct": 77.7,
+          "proposed_upgrades": 35,
+          "proposed_new_schools": 13,
+          "proposed_transport_hubs": 7,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 29.75,
+          "budget_new_schools_cr": 31.72,
+          "budget_transport_cr": 2.1,
+          "total_budget_cr": 63.57
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 59,
+          "habitations_total": 1332,
+          "habitations_unserved_initial": 470,
+          "initial_coverage_pct": 64.7,
+          "proposed_upgrades": 56,
+          "proposed_new_schools": 21,
+          "proposed_transport_hubs": 11,
+          "final_coverage_pct": 98.2,
+          "budget_upgrades_cr": 78.4,
+          "budget_new_schools_cr": 100.8,
+          "budget_transport_cr": 4.95,
+          "total_budget_cr": 184.15
+        }
+      },
+      "strategy": "Balasore (Coastal Plain, Vulnerability Score: 51/100) currently features a Secondary education spatial coverage of 77.7%. Given its subarnarekha coastal basin landscape and 11.9% tribal population, the masterplan deploys 35 Upper Primary school upgrades to High Schools, 13 state-of-the-art greenfield Secondary campuses in unserved clusters, and 7 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.9% with an estimated capital and operational outlay of \u20b963.57 Crores."
+    },
+    {
+      "district_name": "Bargarh",
+      "dt_code": "370",
+      "profile": {
+        "terrain": "Agrarian Irrigated Plains",
+        "category": "Western Plain",
+        "vulnerability": 58,
+        "population": 1481255,
+        "area_sqkm": 5837,
+        "tribal_pct": 19.8
+      },
+      "centroid": {
+        "lon": 83.34918625564409,
+        "lat": 21.219291426353323
+      },
+      "bounds": {
+        "min_lon": 82.63564256238749,
+        "min_lat": 20.722114012618295,
+        "max_lon": 83.91045577147055,
+        "max_lat": 21.7435295934714
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1470,
+          "habitations_total": 2042,
+          "habitations_unserved_initial": 294,
+          "initial_coverage_pct": 85.6,
+          "proposed_upgrades": 35,
+          "proposed_new_schools": 13,
+          "proposed_transport_hubs": 7,
+          "final_coverage_pct": 99.3,
+          "budget_upgrades_cr": 8.75,
+          "budget_new_schools_cr": 8.45,
+          "budget_transport_cr": 0.7,
+          "total_budget_cr": 17.9
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 571,
+          "habitations_total": 2042,
+          "habitations_unserved_initial": 416,
+          "initial_coverage_pct": 79.6,
+          "proposed_upgrades": 49,
+          "proposed_new_schools": 19,
+          "proposed_transport_hubs": 10,
+          "final_coverage_pct": 99.0,
+          "budget_upgrades_cr": 22.05,
+          "budget_new_schools_cr": 22.8,
+          "budget_transport_cr": 1.8,
+          "total_budget_cr": 46.65
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 285,
+          "habitations_total": 2042,
+          "habitations_unserved_initial": 498,
+          "initial_coverage_pct": 75.6,
+          "proposed_upgrades": 59,
+          "proposed_new_schools": 22,
+          "proposed_transport_hubs": 12,
+          "final_coverage_pct": 98.8,
+          "budget_upgrades_cr": 50.15,
+          "budget_new_schools_cr": 53.68,
+          "budget_transport_cr": 3.6,
+          "total_budget_cr": 107.43
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 91,
+          "habitations_total": 2042,
+          "habitations_unserved_initial": 763,
+          "initial_coverage_pct": 62.6,
+          "proposed_upgrades": 91,
+          "proposed_new_schools": 35,
+          "proposed_transport_hubs": 19,
+          "final_coverage_pct": 98.1,
+          "budget_upgrades_cr": 127.4,
+          "budget_new_schools_cr": 168.0,
+          "budget_transport_cr": 8.55,
+          "total_budget_cr": 303.95
+        }
+      },
+      "strategy": "Bargarh (Western Plain, Vulnerability Score: 58/100) currently features a Secondary education spatial coverage of 75.6%. Given its agrarian irrigated plains landscape and 19.8% tribal population, the masterplan deploys 59 Upper Primary school upgrades to High Schools, 22 state-of-the-art greenfield Secondary campuses in unserved clusters, and 12 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.8% with an estimated capital and operational outlay of \u20b9107.43 Crores."
+    },
+    {
+      "district_name": "Bhadrak",
+      "dt_code": "378",
+      "profile": {
+        "terrain": "Salandi Coastal Plain",
+        "category": "Coastal Plain",
+        "vulnerability": 48,
+        "population": 1506522,
+        "area_sqkm": 2505,
+        "tribal_pct": 1.9
+      },
+      "centroid": {
+        "lon": 86.6268364156397,
+        "lat": 20.983123938061897
+      },
+      "bounds": {
+        "min_lon": 86.27553642278104,
+        "min_lat": 20.735154747771226,
+        "max_lon": 86.97753404572204,
+        "max_lat": 21.236571014401317
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 630,
+          "habitations_total": 876,
+          "habitations_unserved_initial": 99,
+          "initial_coverage_pct": 88.6,
+          "proposed_upgrades": 11,
+          "proposed_new_schools": 4,
+          "proposed_transport_hubs": 2,
+          "final_coverage_pct": 99.3,
+          "budget_upgrades_cr": 2.75,
+          "budget_new_schools_cr": 2.6,
+          "budget_transport_cr": 0.2,
+          "total_budget_cr": 5.55
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 245,
+          "habitations_total": 876,
+          "habitations_unserved_initial": 152,
+          "initial_coverage_pct": 82.6,
+          "proposed_upgrades": 18,
+          "proposed_new_schools": 7,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.1,
+          "budget_upgrades_cr": 8.1,
+          "budget_new_schools_cr": 8.4,
+          "budget_transport_cr": 0.54,
+          "total_budget_cr": 17.04
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 122,
+          "habitations_total": 876,
+          "habitations_unserved_initial": 187,
+          "initial_coverage_pct": 78.6,
+          "proposed_upgrades": 22,
+          "proposed_new_schools": 8,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 18.7,
+          "budget_new_schools_cr": 19.52,
+          "budget_transport_cr": 1.2,
+          "total_budget_cr": 39.42
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 39,
+          "habitations_total": 876,
+          "habitations_unserved_initial": 301,
+          "initial_coverage_pct": 65.6,
+          "proposed_upgrades": 36,
+          "proposed_new_schools": 13,
+          "proposed_transport_hubs": 7,
+          "final_coverage_pct": 98.2,
+          "budget_upgrades_cr": 50.4,
+          "budget_new_schools_cr": 62.4,
+          "budget_transport_cr": 3.15,
+          "total_budget_cr": 115.95
+        }
+      },
+      "strategy": "Bhadrak (Coastal Plain, Vulnerability Score: 48/100) currently features a Secondary education spatial coverage of 78.6%. Given its salandi coastal plain landscape and 1.9% tribal population, the masterplan deploys 22 Upper Primary school upgrades to High Schools, 8 state-of-the-art greenfield Secondary campuses in unserved clusters, and 4 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.9% with an estimated capital and operational outlay of \u20b939.42 Crores."
+    },
+    {
+      "district_name": "Boudh",
+      "dt_code": "391",
+      "profile": {
+        "terrain": "Mahanadi River Basin & Hills",
+        "category": "Central Riverine",
+        "vulnerability": 76,
+        "population": 441162,
+        "area_sqkm": 3098,
+        "tribal_pct": 12.5
+      },
+      "centroid": {
+        "lon": 84.1727191083045,
+        "lat": 20.644163560925804
+      },
+      "bounds": {
+        "min_lon": 83.5703125933445,
+        "min_lat": 20.384032953778632,
+        "max_lon": 84.79012392681568,
+        "max_lat": 20.895881808531065
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 780,
+          "habitations_total": 1084,
+          "habitations_unserved_initial": 214,
+          "initial_coverage_pct": 80.2,
+          "proposed_upgrades": 25,
+          "proposed_new_schools": 9,
+          "proposed_transport_hubs": 5,
+          "final_coverage_pct": 99.0,
+          "budget_upgrades_cr": 6.25,
+          "budget_new_schools_cr": 5.85,
+          "budget_transport_cr": 0.5,
+          "total_budget_cr": 12.6
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 303,
+          "habitations_total": 1084,
+          "habitations_unserved_initial": 279,
+          "initial_coverage_pct": 74.2,
+          "proposed_upgrades": 33,
+          "proposed_new_schools": 12,
+          "proposed_transport_hubs": 6,
+          "final_coverage_pct": 98.7,
+          "budget_upgrades_cr": 14.85,
+          "budget_new_schools_cr": 14.4,
+          "budget_transport_cr": 1.08,
+          "total_budget_cr": 30.33
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 151,
+          "habitations_total": 1084,
+          "habitations_unserved_initial": 323,
+          "initial_coverage_pct": 70.2,
+          "proposed_upgrades": 38,
+          "proposed_new_schools": 14,
+          "proposed_transport_hubs": 8,
+          "final_coverage_pct": 98.5,
+          "budget_upgrades_cr": 32.3,
+          "budget_new_schools_cr": 34.16,
+          "budget_transport_cr": 2.4,
+          "total_budget_cr": 68.86
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 48,
+          "habitations_total": 1084,
+          "habitations_unserved_initial": 463,
+          "initial_coverage_pct": 57.2,
+          "proposed_upgrades": 55,
+          "proposed_new_schools": 21,
+          "proposed_transport_hubs": 11,
+          "final_coverage_pct": 97.8,
+          "budget_upgrades_cr": 77.0,
+          "budget_new_schools_cr": 100.8,
+          "budget_transport_cr": 4.95,
+          "total_budget_cr": 182.75
+        }
+      },
+      "strategy": "Boudh (Central Riverine, Vulnerability Score: 76/100) currently features a Secondary education spatial coverage of 70.2%. Given its mahanadi river basin & hills landscape and 12.5% tribal population, the masterplan deploys 38 Upper Primary school upgrades to High Schools, 14 state-of-the-art greenfield Secondary campuses in unserved clusters, and 8 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.5% with an estimated capital and operational outlay of \u20b968.86 Crores."
+    },
+    {
+      "district_name": "Cuttack",
+      "dt_code": "381",
+      "profile": {
+        "terrain": "Mahanadi Deltaic Alluvium",
+        "category": "Delta / Urban",
+        "vulnerability": 42,
+        "population": 2624470,
+        "area_sqkm": 3932,
+        "tribal_pct": 3.6
+      },
+      "centroid": {
+        "lon": 85.69715123577181,
+        "lat": 20.453015634048533
+      },
+      "bounds": {
+        "min_lon": 84.8483824924309,
+        "min_lat": 20.037475417089563,
+        "max_lon": 86.28024053056365,
+        "max_lat": 20.702552909888905
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 990,
+          "habitations_total": 1376,
+          "habitations_unserved_initial": 132,
+          "initial_coverage_pct": 90.4,
+          "proposed_upgrades": 15,
+          "proposed_new_schools": 6,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.4,
+          "budget_upgrades_cr": 3.75,
+          "budget_new_schools_cr": 3.9,
+          "budget_transport_cr": 0.3,
+          "total_budget_cr": 7.95
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 385,
+          "habitations_total": 1376,
+          "habitations_unserved_initial": 214,
+          "initial_coverage_pct": 84.4,
+          "proposed_upgrades": 25,
+          "proposed_new_schools": 9,
+          "proposed_transport_hubs": 5,
+          "final_coverage_pct": 99.2,
+          "budget_upgrades_cr": 11.25,
+          "budget_new_schools_cr": 10.8,
+          "budget_transport_cr": 0.9,
+          "total_budget_cr": 22.95
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 192,
+          "habitations_total": 1376,
+          "habitations_unserved_initial": 269,
+          "initial_coverage_pct": 80.4,
+          "proposed_upgrades": 32,
+          "proposed_new_schools": 12,
+          "proposed_transport_hubs": 6,
+          "final_coverage_pct": 99.0,
+          "budget_upgrades_cr": 27.2,
+          "budget_new_schools_cr": 29.28,
+          "budget_transport_cr": 1.8,
+          "total_budget_cr": 58.28
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 61,
+          "habitations_total": 1376,
+          "habitations_unserved_initial": 448,
+          "initial_coverage_pct": 67.4,
+          "proposed_upgrades": 53,
+          "proposed_new_schools": 20,
+          "proposed_transport_hubs": 11,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 74.2,
+          "budget_new_schools_cr": 96.0,
+          "budget_transport_cr": 4.95,
+          "total_budget_cr": 175.15
+        }
+      },
+      "strategy": "Cuttack (Delta / Urban, Vulnerability Score: 42/100) currently features a Secondary education spatial coverage of 80.4%. Given its mahanadi deltaic alluvium landscape and 3.6% tribal population, the masterplan deploys 32 Upper Primary school upgrades to High Schools, 12 state-of-the-art greenfield Secondary campuses in unserved clusters, and 6 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 99.0% with an estimated capital and operational outlay of \u20b958.28 Crores."
+    },
+    {
+      "district_name": "Deogarh",
+      "dt_code": "373",
+      "profile": {
+        "terrain": "Hilly Forest Basin",
+        "category": "Northern Hilly",
+        "vulnerability": 80,
+        "population": 312520,
+        "area_sqkm": 2940,
+        "tribal_pct": 35.3
+      },
+      "centroid": {
+        "lon": 84.78631600202,
+        "lat": 21.467497456683287
+      },
+      "bounds": {
+        "min_lon": 84.39461701863296,
+        "min_lat": 21.13322318831436,
+        "max_lon": 85.2116843550251,
+        "max_lat": 21.761134585927856
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 818,
+          "habitations_total": 1411,
+          "habitations_unserved_initial": 465,
+          "initial_coverage_pct": 67.0,
+          "proposed_upgrades": 37,
+          "proposed_new_schools": 25,
+          "proposed_transport_hubs": 29,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 9.25,
+          "budget_new_schools_cr": 16.25,
+          "budget_transport_cr": 2.9,
+          "total_budget_cr": 28.4
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 282,
+          "habitations_total": 1411,
+          "habitations_unserved_initial": 578,
+          "initial_coverage_pct": 59.0,
+          "proposed_upgrades": 46,
+          "proposed_new_schools": 31,
+          "proposed_transport_hubs": 36,
+          "final_coverage_pct": 97.9,
+          "budget_upgrades_cr": 20.7,
+          "budget_new_schools_cr": 37.2,
+          "budget_transport_cr": 6.48,
+          "total_budget_cr": 64.38
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 119,
+          "habitations_total": 1411,
+          "habitations_unserved_initial": 776,
+          "initial_coverage_pct": 45.0,
+          "proposed_upgrades": 62,
+          "proposed_new_schools": 41,
+          "proposed_transport_hubs": 48,
+          "final_coverage_pct": 97.2,
+          "budget_upgrades_cr": 52.7,
+          "budget_new_schools_cr": 100.04,
+          "budget_transport_cr": 14.4,
+          "total_budget_cr": 167.14
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 31,
+          "habitations_total": 1411,
+          "habitations_unserved_initial": 917,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 73,
+          "proposed_new_schools": 49,
+          "proposed_transport_hubs": 57,
+          "final_coverage_pct": 96.7,
+          "budget_upgrades_cr": 102.2,
+          "budget_new_schools_cr": 235.2,
+          "budget_transport_cr": 25.65,
+          "total_budget_cr": 363.05
+        }
+      },
+      "strategy": "Deogarh (Northern Hilly, Vulnerability Score: 80/100) currently features a Secondary education spatial coverage of 45.0%. Given its hilly forest basin landscape and 35.3% tribal population, the masterplan deploys 62 Upper Primary school upgrades to High Schools, 41 state-of-the-art greenfield Secondary campuses in unserved clusters, and 48 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.2% with an estimated capital and operational outlay of \u20b9167.14 Crores."
+    },
+    {
+      "district_name": "Dhenkanal",
+      "dt_code": "383",
+      "profile": {
+        "terrain": "Brahmani Valley & Low Hills",
+        "category": "Central Plain",
+        "vulnerability": 62,
+        "population": 1192811,
+        "area_sqkm": 4452,
+        "tribal_pct": 13.6
+      },
+      "centroid": {
+        "lon": 85.52417644159968,
+        "lat": 20.82703682098742
+      },
+      "bounds": {
+        "min_lon": 85.11362180048025,
+        "min_lat": 20.48444661445618,
+        "max_lon": 86.03056096364132,
+        "max_lat": 21.185712147304898
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1121,
+          "habitations_total": 1558,
+          "habitations_unserved_initial": 243,
+          "initial_coverage_pct": 84.4,
+          "proposed_upgrades": 29,
+          "proposed_new_schools": 11,
+          "proposed_transport_hubs": 6,
+          "final_coverage_pct": 99.2,
+          "budget_upgrades_cr": 7.25,
+          "budget_new_schools_cr": 7.15,
+          "budget_transport_cr": 0.6,
+          "total_budget_cr": 15.0
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 436,
+          "habitations_total": 1558,
+          "habitations_unserved_initial": 336,
+          "initial_coverage_pct": 78.4,
+          "proposed_upgrades": 40,
+          "proposed_new_schools": 15,
+          "proposed_transport_hubs": 8,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 18.0,
+          "budget_new_schools_cr": 18.0,
+          "budget_transport_cr": 1.44,
+          "total_budget_cr": 37.44
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 218,
+          "habitations_total": 1558,
+          "habitations_unserved_initial": 398,
+          "initial_coverage_pct": 74.4,
+          "proposed_upgrades": 47,
+          "proposed_new_schools": 18,
+          "proposed_transport_hubs": 9,
+          "final_coverage_pct": 98.7,
+          "budget_upgrades_cr": 39.95,
+          "budget_new_schools_cr": 43.92,
+          "budget_transport_cr": 2.7,
+          "total_budget_cr": 86.57
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 70,
+          "habitations_total": 1558,
+          "habitations_unserved_initial": 601,
+          "initial_coverage_pct": 61.4,
+          "proposed_upgrades": 72,
+          "proposed_new_schools": 27,
+          "proposed_transport_hubs": 15,
+          "final_coverage_pct": 98.0,
+          "budget_upgrades_cr": 100.8,
+          "budget_new_schools_cr": 129.6,
+          "budget_transport_cr": 6.75,
+          "total_budget_cr": 237.15
+        }
+      },
+      "strategy": "Dhenkanal (Central Plain, Vulnerability Score: 62/100) currently features a Secondary education spatial coverage of 74.4%. Given its brahmani valley & low hills landscape and 13.6% tribal population, the masterplan deploys 47 Upper Primary school upgrades to High Schools, 18 state-of-the-art greenfield Secondary campuses in unserved clusters, and 9 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.7% with an estimated capital and operational outlay of \u20b986.57 Crores."
+    },
+    {
+      "district_name": "Gajapati",
+      "dt_code": "389",
+      "profile": {
+        "terrain": "Steep Hill Tracts",
+        "category": "Tribal / Hilly",
+        "vulnerability": 89,
+        "population": 577813,
+        "area_sqkm": 4325,
+        "tribal_pct": 54.3
+      },
+      "centroid": {
+        "lon": 84.16104580621284,
+        "lat": 19.18496775970565
+      },
+      "bounds": {
+        "min_lon": 83.7932149313505,
+        "min_lat": 18.758505316966122,
+        "max_lon": 84.43948696979001,
+        "max_lat": 19.636798829515843
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1089,
+          "habitations_total": 1513,
+          "habitations_unserved_initial": 358,
+          "initial_coverage_pct": 76.3,
+          "proposed_upgrades": 42,
+          "proposed_new_schools": 16,
+          "proposed_transport_hubs": 8,
+          "final_coverage_pct": 98.8,
+          "budget_upgrades_cr": 10.5,
+          "budget_new_schools_cr": 10.4,
+          "budget_transport_cr": 0.8,
+          "total_budget_cr": 21.7
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 423,
+          "habitations_total": 1513,
+          "habitations_unserved_initial": 449,
+          "initial_coverage_pct": 70.3,
+          "proposed_upgrades": 53,
+          "proposed_new_schools": 20,
+          "proposed_transport_hubs": 11,
+          "final_coverage_pct": 98.5,
+          "budget_upgrades_cr": 23.85,
+          "budget_new_schools_cr": 24.0,
+          "budget_transport_cr": 1.98,
+          "total_budget_cr": 49.83
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 211,
+          "habitations_total": 1513,
+          "habitations_unserved_initial": 509,
+          "initial_coverage_pct": 66.3,
+          "proposed_upgrades": 61,
+          "proposed_new_schools": 23,
+          "proposed_transport_hubs": 12,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 51.85,
+          "budget_new_schools_cr": 56.12,
+          "budget_transport_cr": 3.6,
+          "total_budget_cr": 111.57
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 68,
+          "habitations_total": 1513,
+          "habitations_unserved_initial": 706,
+          "initial_coverage_pct": 53.3,
+          "proposed_upgrades": 84,
+          "proposed_new_schools": 32,
+          "proposed_transport_hubs": 17,
+          "final_coverage_pct": 97.6,
+          "budget_upgrades_cr": 117.6,
+          "budget_new_schools_cr": 153.6,
+          "budget_transport_cr": 7.65,
+          "total_budget_cr": 278.85
+        }
+      },
+      "strategy": "Gajapati (Tribal / Hilly, Vulnerability Score: 89/100) currently features a Secondary education spatial coverage of 66.3%. Given its steep hill tracts landscape and 54.3% tribal population, the masterplan deploys 61 Upper Primary school upgrades to High Schools, 23 state-of-the-art greenfield Secondary campuses in unserved clusters, and 12 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.3% with an estimated capital and operational outlay of \u20b9111.57 Crores."
+    },
+    {
+      "district_name": "Ganjam",
+      "dt_code": "388",
+      "profile": {
+        "terrain": "Rushikulya Valley & Coastal Hinterland",
+        "category": "Southern Coastal",
+        "vulnerability": 59,
+        "population": 3529031,
+        "area_sqkm": 8206,
+        "tribal_pct": 3.4
+      },
+      "centroid": {
+        "lon": 84.67287696473578,
+        "lat": 19.625296265266925
+      },
+      "bounds": {
+        "min_lon": 84.13046327391804,
+        "min_lat": 18.938793480455356,
+        "max_lon": 85.1827359994399,
+        "max_lat": 20.278729017418733
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 2067,
+          "habitations_total": 2872,
+          "habitations_unserved_initial": 422,
+          "initial_coverage_pct": 85.3,
+          "proposed_upgrades": 50,
+          "proposed_new_schools": 19,
+          "proposed_transport_hubs": 10,
+          "final_coverage_pct": 99.3,
+          "budget_upgrades_cr": 12.5,
+          "budget_new_schools_cr": 12.35,
+          "budget_transport_cr": 1.0,
+          "total_budget_cr": 25.85
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 804,
+          "habitations_total": 2872,
+          "habitations_unserved_initial": 594,
+          "initial_coverage_pct": 79.3,
+          "proposed_upgrades": 71,
+          "proposed_new_schools": 27,
+          "proposed_transport_hubs": 14,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 31.95,
+          "budget_new_schools_cr": 32.4,
+          "budget_transport_cr": 2.52,
+          "total_budget_cr": 66.87
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 402,
+          "habitations_total": 2872,
+          "habitations_unserved_initial": 709,
+          "initial_coverage_pct": 75.3,
+          "proposed_upgrades": 85,
+          "proposed_new_schools": 32,
+          "proposed_transport_hubs": 17,
+          "final_coverage_pct": 98.8,
+          "budget_upgrades_cr": 72.25,
+          "budget_new_schools_cr": 78.08,
+          "budget_transport_cr": 5.1,
+          "total_budget_cr": 155.43
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 129,
+          "habitations_total": 2872,
+          "habitations_unserved_initial": 1082,
+          "initial_coverage_pct": 62.3,
+          "proposed_upgrades": 129,
+          "proposed_new_schools": 49,
+          "proposed_transport_hubs": 27,
+          "final_coverage_pct": 98.1,
+          "budget_upgrades_cr": 180.6,
+          "budget_new_schools_cr": 235.2,
+          "budget_transport_cr": 12.15,
+          "total_budget_cr": 427.95
+        }
+      },
+      "strategy": "Ganjam (Southern Coastal, Vulnerability Score: 59/100) currently features a Secondary education spatial coverage of 75.3%. Given its rushikulya valley & coastal hinterland landscape and 3.4% tribal population, the masterplan deploys 85 Upper Primary school upgrades to High Schools, 32 state-of-the-art greenfield Secondary campuses in unserved clusters, and 17 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.8% with an estimated capital and operational outlay of \u20b9155.43 Crores."
+    },
+    {
+      "district_name": "Jagatsinghpur",
+      "dt_code": "380",
+      "profile": {
+        "terrain": "Mahanadi Coastal Delta",
+        "category": "Coastal Plain",
+        "vulnerability": 40,
+        "population": 1136971,
+        "area_sqkm": 1668,
+        "tribal_pct": 0.7
+      },
+      "centroid": {
+        "lon": 86.33673258263396,
+        "lat": 20.219103395984316
+      },
+      "bounds": {
+        "min_lon": 86.01102082362132,
+        "min_lat": 19.960535079687286,
+        "max_lon": 86.78430377219087,
+        "max_lat": 20.401963964613905
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 419,
+          "habitations_total": 583,
+          "habitations_unserved_initial": 52,
+          "initial_coverage_pct": 91.0,
+          "proposed_upgrades": 6,
+          "proposed_new_schools": 2,
+          "proposed_transport_hubs": 1,
+          "final_coverage_pct": 99.4,
+          "budget_upgrades_cr": 1.5,
+          "budget_new_schools_cr": 1.3,
+          "budget_transport_cr": 0.1,
+          "total_budget_cr": 2.9
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 163,
+          "habitations_total": 583,
+          "habitations_unserved_initial": 87,
+          "initial_coverage_pct": 85.0,
+          "proposed_upgrades": 10,
+          "proposed_new_schools": 4,
+          "proposed_transport_hubs": 2,
+          "final_coverage_pct": 99.2,
+          "budget_upgrades_cr": 4.5,
+          "budget_new_schools_cr": 4.8,
+          "budget_transport_cr": 0.36,
+          "total_budget_cr": 9.66
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 81,
+          "habitations_total": 583,
+          "habitations_unserved_initial": 110,
+          "initial_coverage_pct": 81.0,
+          "proposed_upgrades": 13,
+          "proposed_new_schools": 5,
+          "proposed_transport_hubs": 2,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 11.05,
+          "budget_new_schools_cr": 12.2,
+          "budget_transport_cr": 0.6,
+          "total_budget_cr": 23.85
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 26,
+          "habitations_total": 583,
+          "habitations_unserved_initial": 186,
+          "initial_coverage_pct": 68.0,
+          "proposed_upgrades": 22,
+          "proposed_new_schools": 8,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 30.8,
+          "budget_new_schools_cr": 38.4,
+          "budget_transport_cr": 1.8,
+          "total_budget_cr": 71.0
+        }
+      },
+      "strategy": "Jagatsinghpur (Coastal Plain, Vulnerability Score: 40/100) currently features a Secondary education spatial coverage of 81.0%. Given its mahanadi coastal delta landscape and 0.7% tribal population, the masterplan deploys 13 Upper Primary school upgrades to High Schools, 5 state-of-the-art greenfield Secondary campuses in unserved clusters, and 2 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.9% with an estimated capital and operational outlay of \u20b923.85 Crores."
+    },
+    {
+      "district_name": "Jajpur",
+      "dt_code": "382",
+      "profile": {
+        "terrain": "Alluvial Plain & Mining Foot-hills",
+        "category": "Coastal Industrial",
+        "vulnerability": 50,
+        "population": 1826275,
+        "area_sqkm": 2899,
+        "tribal_pct": 7.7
+      },
+      "centroid": {
+        "lon": 86.14933179079712,
+        "lat": 20.855491401412234
+      },
+      "bounds": {
+        "min_lon": 85.6813714243949,
+        "min_lat": 20.580948054587846,
+        "max_lon": 86.62472596202747,
+        "max_lat": 21.169085209984914
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 730,
+          "habitations_total": 1014,
+          "habitations_unserved_initial": 121,
+          "initial_coverage_pct": 88.0,
+          "proposed_upgrades": 14,
+          "proposed_new_schools": 5,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.3,
+          "budget_upgrades_cr": 3.5,
+          "budget_new_schools_cr": 3.25,
+          "budget_transport_cr": 0.3,
+          "total_budget_cr": 7.05
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 283,
+          "habitations_total": 1014,
+          "habitations_unserved_initial": 182,
+          "initial_coverage_pct": 82.0,
+          "proposed_upgrades": 21,
+          "proposed_new_schools": 8,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 99.1,
+          "budget_upgrades_cr": 9.45,
+          "budget_new_schools_cr": 9.6,
+          "budget_transport_cr": 0.72,
+          "total_budget_cr": 19.77
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 141,
+          "habitations_total": 1014,
+          "habitations_unserved_initial": 223,
+          "initial_coverage_pct": 78.0,
+          "proposed_upgrades": 26,
+          "proposed_new_schools": 10,
+          "proposed_transport_hubs": 5,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 22.1,
+          "budget_new_schools_cr": 24.4,
+          "budget_transport_cr": 1.5,
+          "total_budget_cr": 48.0
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 45,
+          "habitations_total": 1014,
+          "habitations_unserved_initial": 354,
+          "initial_coverage_pct": 65.0,
+          "proposed_upgrades": 42,
+          "proposed_new_schools": 16,
+          "proposed_transport_hubs": 8,
+          "final_coverage_pct": 98.2,
+          "budget_upgrades_cr": 58.8,
+          "budget_new_schools_cr": 76.8,
+          "budget_transport_cr": 3.6,
+          "total_budget_cr": 139.2
+        }
+      },
+      "strategy": "Jajpur (Coastal Industrial, Vulnerability Score: 50/100) currently features a Secondary education spatial coverage of 78.0%. Given its alluvial plain & mining foot-hills landscape and 7.7% tribal population, the masterplan deploys 26 Upper Primary school upgrades to High Schools, 10 state-of-the-art greenfield Secondary campuses in unserved clusters, and 5 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.9% with an estimated capital and operational outlay of \u20b948.0 Crores."
+    },
+    {
+      "district_name": "Jharsuguda",
+      "dt_code": "371",
+      "profile": {
+        "terrain": "Industrial Plateau",
+        "category": "Western Industrial",
+        "vulnerability": 52,
+        "population": 579505,
+        "area_sqkm": 2114,
+        "tribal_pct": 30.5
+      },
+      "centroid": {
+        "lon": 83.94796351680542,
+        "lat": 21.806485679018223
+      },
+      "bounds": {
+        "min_lon": 83.41797187207742,
+        "min_lat": 21.56324142998217,
+        "max_lon": 84.39244589196406,
+        "max_lat": 22.037924189548757
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 532,
+          "habitations_total": 739,
+          "habitations_unserved_initial": 93,
+          "initial_coverage_pct": 87.4,
+          "proposed_upgrades": 11,
+          "proposed_new_schools": 4,
+          "proposed_transport_hubs": 2,
+          "final_coverage_pct": 99.4,
+          "budget_upgrades_cr": 2.75,
+          "budget_new_schools_cr": 2.6,
+          "budget_transport_cr": 0.2,
+          "total_budget_cr": 5.55
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 206,
+          "habitations_total": 739,
+          "habitations_unserved_initial": 137,
+          "initial_coverage_pct": 81.4,
+          "proposed_upgrades": 16,
+          "proposed_new_schools": 6,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.0,
+          "budget_upgrades_cr": 7.2,
+          "budget_new_schools_cr": 7.2,
+          "budget_transport_cr": 0.54,
+          "total_budget_cr": 14.94
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 103,
+          "habitations_total": 739,
+          "habitations_unserved_initial": 167,
+          "initial_coverage_pct": 77.4,
+          "proposed_upgrades": 20,
+          "proposed_new_schools": 7,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 17.0,
+          "budget_new_schools_cr": 17.08,
+          "budget_transport_cr": 1.2,
+          "total_budget_cr": 35.28
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 33,
+          "habitations_total": 739,
+          "habitations_unserved_initial": 263,
+          "initial_coverage_pct": 64.4,
+          "proposed_upgrades": 31,
+          "proposed_new_schools": 12,
+          "proposed_transport_hubs": 6,
+          "final_coverage_pct": 98.2,
+          "budget_upgrades_cr": 43.4,
+          "budget_new_schools_cr": 57.6,
+          "budget_transport_cr": 2.7,
+          "total_budget_cr": 103.7
+        }
+      },
+      "strategy": "Jharsuguda (Western Industrial, Vulnerability Score: 52/100) currently features a Secondary education spatial coverage of 77.4%. Given its industrial plateau landscape and 30.5% tribal population, the masterplan deploys 20 Upper Primary school upgrades to High Schools, 7 state-of-the-art greenfield Secondary campuses in unserved clusters, and 4 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.9% with an estimated capital and operational outlay of \u20b935.28 Crores."
+    },
+    {
+      "district_name": "Kalahandi",
+      "dt_code": "395",
+      "profile": {
+        "terrain": "Western Undulating Hills",
+        "category": "Drought-prone / Tribal",
+        "vulnerability": 85,
+        "population": 1576869,
+        "area_sqkm": 7920,
+        "tribal_pct": 28.5
+      },
+      "centroid": {
+        "lon": 83.10830785679819,
+        "lat": 19.86725027459204
+      },
+      "bounds": {
+        "min_lon": 82.5245532478293,
+        "min_lat": 19.195043926210396,
+        "max_lon": 83.78995824134718,
+        "max_lat": 20.453800886846796
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1995,
+          "habitations_total": 2772,
+          "habitations_unserved_initial": 623,
+          "initial_coverage_pct": 77.5,
+          "proposed_upgrades": 74,
+          "proposed_new_schools": 28,
+          "proposed_transport_hubs": 15,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 18.5,
+          "budget_new_schools_cr": 18.2,
+          "budget_transport_cr": 1.5,
+          "total_budget_cr": 38.2
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 776,
+          "habitations_total": 2772,
+          "habitations_unserved_initial": 790,
+          "initial_coverage_pct": 71.5,
+          "proposed_upgrades": 94,
+          "proposed_new_schools": 36,
+          "proposed_transport_hubs": 19,
+          "final_coverage_pct": 98.6,
+          "budget_upgrades_cr": 42.3,
+          "budget_new_schools_cr": 43.2,
+          "budget_transport_cr": 3.42,
+          "total_budget_cr": 88.92
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 388,
+          "habitations_total": 2772,
+          "habitations_unserved_initial": 900,
+          "initial_coverage_pct": 67.5,
+          "proposed_upgrades": 108,
+          "proposed_new_schools": 41,
+          "proposed_transport_hubs": 22,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 91.8,
+          "budget_new_schools_cr": 100.04,
+          "budget_transport_cr": 6.6,
+          "total_budget_cr": 198.44
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 124,
+          "habitations_total": 2772,
+          "habitations_unserved_initial": 1261,
+          "initial_coverage_pct": 54.5,
+          "proposed_upgrades": 151,
+          "proposed_new_schools": 58,
+          "proposed_transport_hubs": 31,
+          "final_coverage_pct": 97.7,
+          "budget_upgrades_cr": 211.4,
+          "budget_new_schools_cr": 278.4,
+          "budget_transport_cr": 13.95,
+          "total_budget_cr": 503.75
+        }
+      },
+      "strategy": "Kalahandi (Drought-prone / Tribal, Vulnerability Score: 85/100) currently features a Secondary education spatial coverage of 67.5%. Given its western undulating hills landscape and 28.5% tribal population, the masterplan deploys 108 Upper Primary school upgrades to High Schools, 41 state-of-the-art greenfield Secondary campuses in unserved clusters, and 22 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.3% with an estimated capital and operational outlay of \u20b9198.44 Crores."
+    },
+    {
+      "district_name": "Kandhamal",
+      "dt_code": "390",
+      "profile": {
+        "terrain": "High Altitude Plateau & Forest",
+        "category": "Tribal / Hilly",
+        "vulnerability": 94,
+        "population": 733110,
+        "area_sqkm": 8021,
+        "tribal_pct": 53.6
+      },
+      "centroid": {
+        "lon": 84.04566419620295,
+        "lat": 20.12812159635437
+      },
+      "bounds": {
+        "min_lon": 83.495046868823,
+        "min_lat": 19.573225245645318,
+        "max_lon": 84.5871235832745,
+        "max_lat": 20.688534119599506
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1855,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1190,
+          "initial_coverage_pct": 62.8,
+          "proposed_upgrades": 95,
+          "proposed_new_schools": 64,
+          "proposed_transport_hubs": 74,
+          "final_coverage_pct": 98.1,
+          "budget_upgrades_cr": 23.75,
+          "budget_new_schools_cr": 41.6,
+          "budget_transport_cr": 7.4,
+          "total_budget_cr": 72.75
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 640,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1446,
+          "initial_coverage_pct": 54.8,
+          "proposed_upgrades": 115,
+          "proposed_new_schools": 77,
+          "proposed_transport_hubs": 90,
+          "final_coverage_pct": 97.7,
+          "budget_upgrades_cr": 51.75,
+          "budget_new_schools_cr": 92.4,
+          "budget_transport_cr": 16.2,
+          "total_budget_cr": 160.35
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 272,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1894,
+          "initial_coverage_pct": 40.8,
+          "proposed_upgrades": 151,
+          "proposed_new_schools": 101,
+          "proposed_transport_hubs": 118,
+          "final_coverage_pct": 97.0,
+          "budget_upgrades_cr": 128.35,
+          "budget_new_schools_cr": 246.44,
+          "budget_transport_cr": 35.4,
+          "total_budget_cr": 410.19
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 70,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 2080,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 166,
+          "proposed_new_schools": 112,
+          "proposed_transport_hubs": 130,
+          "final_coverage_pct": 96.8,
+          "budget_upgrades_cr": 232.4,
+          "budget_new_schools_cr": 537.6,
+          "budget_transport_cr": 58.5,
+          "total_budget_cr": 828.5
+        }
+      },
+      "strategy": "Kandhamal (Tribal / Hilly, Vulnerability Score: 94/100) currently features a Secondary education spatial coverage of 40.8%. Given its high altitude plateau & forest landscape and 53.6% tribal population, the masterplan deploys 151 Upper Primary school upgrades to High Schools, 101 state-of-the-art greenfield Secondary campuses in unserved clusters, and 118 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.0% with an estimated capital and operational outlay of \u20b9410.19 Crores."
+    },
+    {
+      "district_name": "Kendrapara",
+      "dt_code": "379",
+      "profile": {
+        "terrain": "Mangrove & Coastal Delta",
+        "category": "Coastal Wetland",
+        "vulnerability": 54,
+        "population": 1440218,
+        "area_sqkm": 2644,
+        "tribal_pct": 0.5
+      },
+      "centroid": {
+        "lon": 86.61295870951474,
+        "lat": 20.553114922354418
+      },
+      "bounds": {
+        "min_lon": 86.2480354849751,
+        "min_lat": 20.296986046632835,
+        "max_lon": 87.05569460580207,
+        "max_lat": 20.796446202989987
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 666,
+          "habitations_total": 925,
+          "habitations_unserved_initial": 122,
+          "initial_coverage_pct": 86.8,
+          "proposed_upgrades": 14,
+          "proposed_new_schools": 5,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.3,
+          "budget_upgrades_cr": 3.5,
+          "budget_new_schools_cr": 3.25,
+          "budget_transport_cr": 0.3,
+          "total_budget_cr": 7.05
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 259,
+          "habitations_total": 925,
+          "habitations_unserved_initial": 177,
+          "initial_coverage_pct": 80.8,
+          "proposed_upgrades": 21,
+          "proposed_new_schools": 8,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 99.0,
+          "budget_upgrades_cr": 9.45,
+          "budget_new_schools_cr": 9.6,
+          "budget_transport_cr": 0.72,
+          "total_budget_cr": 19.77
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 129,
+          "habitations_total": 925,
+          "habitations_unserved_initial": 214,
+          "initial_coverage_pct": 76.8,
+          "proposed_upgrades": 25,
+          "proposed_new_schools": 9,
+          "proposed_transport_hubs": 5,
+          "final_coverage_pct": 98.8,
+          "budget_upgrades_cr": 21.25,
+          "budget_new_schools_cr": 21.96,
+          "budget_transport_cr": 1.5,
+          "total_budget_cr": 44.71
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 41,
+          "habitations_total": 925,
+          "habitations_unserved_initial": 334,
+          "initial_coverage_pct": 63.8,
+          "proposed_upgrades": 40,
+          "proposed_new_schools": 15,
+          "proposed_transport_hubs": 8,
+          "final_coverage_pct": 98.1,
+          "budget_upgrades_cr": 56.0,
+          "budget_new_schools_cr": 72.0,
+          "budget_transport_cr": 3.6,
+          "total_budget_cr": 131.6
+        }
+      },
+      "strategy": "Kendrapara (Coastal Wetland, Vulnerability Score: 54/100) currently features a Secondary education spatial coverage of 76.8%. Given its mangrove & coastal delta landscape and 0.5% tribal population, the masterplan deploys 25 Upper Primary school upgrades to High Schools, 9 state-of-the-art greenfield Secondary campuses in unserved clusters, and 5 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.8% with an estimated capital and operational outlay of \u20b944.71 Crores."
+    },
+    {
+      "district_name": "Kendujhar",
+      "dt_code": "375",
+      "profile": {
+        "terrain": "Mineral Belt & Hilly",
+        "category": "Tribal / Mining",
+        "vulnerability": 82,
+        "population": 1801733,
+        "area_sqkm": 8303,
+        "tribal_pct": 45.4
+      },
+      "centroid": {
+        "lon": 85.70389020949705,
+        "lat": 21.5372304276816
+      },
+      "bounds": {
+        "min_lon": 85.18454527166398,
+        "min_lat": 21.01553055355918,
+        "max_lon": 86.37215155954664,
+        "max_lat": 22.16311524701687
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1855,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1075,
+          "initial_coverage_pct": 66.4,
+          "proposed_upgrades": 86,
+          "proposed_new_schools": 57,
+          "proposed_transport_hubs": 67,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 21.5,
+          "budget_new_schools_cr": 37.05,
+          "budget_transport_cr": 6.7,
+          "total_budget_cr": 65.25
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 640,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1331,
+          "initial_coverage_pct": 58.4,
+          "proposed_upgrades": 106,
+          "proposed_new_schools": 71,
+          "proposed_transport_hubs": 83,
+          "final_coverage_pct": 97.9,
+          "budget_upgrades_cr": 47.7,
+          "budget_new_schools_cr": 85.2,
+          "budget_transport_cr": 14.94,
+          "total_budget_cr": 147.84
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 272,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1779,
+          "initial_coverage_pct": 44.4,
+          "proposed_upgrades": 142,
+          "proposed_new_schools": 95,
+          "proposed_transport_hubs": 111,
+          "final_coverage_pct": 97.2,
+          "budget_upgrades_cr": 120.7,
+          "budget_new_schools_cr": 231.8,
+          "budget_transport_cr": 33.3,
+          "total_budget_cr": 385.8
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 70,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 2080,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 166,
+          "proposed_new_schools": 112,
+          "proposed_transport_hubs": 130,
+          "final_coverage_pct": 96.8,
+          "budget_upgrades_cr": 232.4,
+          "budget_new_schools_cr": 537.6,
+          "budget_transport_cr": 58.5,
+          "total_budget_cr": 828.5
+        }
+      },
+      "strategy": "Kendujhar (Tribal / Mining, Vulnerability Score: 82/100) currently features a Secondary education spatial coverage of 44.4%. Given its mineral belt & hilly landscape and 45.4% tribal population, the masterplan deploys 142 Upper Primary school upgrades to High Schools, 95 state-of-the-art greenfield Secondary campuses in unserved clusters, and 111 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.2% with an estimated capital and operational outlay of \u20b9385.8 Crores."
+    },
+    {
+      "district_name": "Khordha",
+      "dt_code": "386",
+      "profile": {
+        "terrain": "Urban & Coastal Alluvium",
+        "category": "Urban / Capital Region",
+        "vulnerability": 38,
+        "population": 2251673,
+        "area_sqkm": 2813,
+        "tribal_pct": 5.2
+      },
+      "centroid": {
+        "lon": 85.51671339296725,
+        "lat": 20.092184395951342
+      },
+      "bounds": {
+        "min_lon": 84.93486570474167,
+        "min_lat": 19.67233483280757,
+        "max_lon": 86.08122058591542,
+        "max_lat": 20.43391376573858
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 708,
+          "habitations_total": 984,
+          "habitations_unserved_initial": 82,
+          "initial_coverage_pct": 91.6,
+          "proposed_upgrades": 9,
+          "proposed_new_schools": 3,
+          "proposed_transport_hubs": 2,
+          "final_coverage_pct": 99.4,
+          "budget_upgrades_cr": 2.25,
+          "budget_new_schools_cr": 1.95,
+          "budget_transport_cr": 0.2,
+          "total_budget_cr": 4.4
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 275,
+          "habitations_total": 984,
+          "habitations_unserved_initial": 141,
+          "initial_coverage_pct": 85.6,
+          "proposed_upgrades": 16,
+          "proposed_new_schools": 6,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.2,
+          "budget_upgrades_cr": 7.2,
+          "budget_new_schools_cr": 7.2,
+          "budget_transport_cr": 0.54,
+          "total_budget_cr": 14.94
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 137,
+          "habitations_total": 984,
+          "habitations_unserved_initial": 181,
+          "initial_coverage_pct": 81.6,
+          "proposed_upgrades": 21,
+          "proposed_new_schools": 8,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 99.1,
+          "budget_upgrades_cr": 17.85,
+          "budget_new_schools_cr": 19.52,
+          "budget_transport_cr": 1.2,
+          "total_budget_cr": 38.57
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 44,
+          "habitations_total": 984,
+          "habitations_unserved_initial": 308,
+          "initial_coverage_pct": 68.6,
+          "proposed_upgrades": 36,
+          "proposed_new_schools": 14,
+          "proposed_transport_hubs": 7,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 50.4,
+          "budget_new_schools_cr": 67.2,
+          "budget_transport_cr": 3.15,
+          "total_budget_cr": 120.75
+        }
+      },
+      "strategy": "Khordha (Urban / Capital Region, Vulnerability Score: 38/100) currently features a Secondary education spatial coverage of 81.6%. Given its urban & coastal alluvium landscape and 5.2% tribal population, the masterplan deploys 21 Upper Primary school upgrades to High Schools, 8 state-of-the-art greenfield Secondary campuses in unserved clusters, and 4 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 99.1% with an estimated capital and operational outlay of \u20b938.57 Crores."
+    },
+    {
+      "district_name": "Koraput",
+      "dt_code": "398",
+      "profile": {
+        "terrain": "Eastern Ghats Mountainous",
+        "category": "Tribal / Hilly",
+        "vulnerability": 93,
+        "population": 1379647,
+        "area_sqkm": 8807,
+        "tribal_pct": 50.6
+      },
+      "centroid": {
+        "lon": 82.71879951739791,
+        "lat": 18.813547351030063
+      },
+      "bounds": {
+        "min_lon": 82.08888049627211,
+        "min_lat": 18.23752794760664,
+        "max_lon": 83.41290590985,
+        "max_lat": 19.211344845151558
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1855,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1180,
+          "initial_coverage_pct": 63.1,
+          "proposed_upgrades": 94,
+          "proposed_new_schools": 63,
+          "proposed_transport_hubs": 73,
+          "final_coverage_pct": 98.1,
+          "budget_upgrades_cr": 23.5,
+          "budget_new_schools_cr": 40.95,
+          "budget_transport_cr": 7.3,
+          "total_budget_cr": 71.75
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 640,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1436,
+          "initial_coverage_pct": 55.1,
+          "proposed_upgrades": 114,
+          "proposed_new_schools": 77,
+          "proposed_transport_hubs": 89,
+          "final_coverage_pct": 97.7,
+          "budget_upgrades_cr": 51.3,
+          "budget_new_schools_cr": 92.4,
+          "budget_transport_cr": 16.02,
+          "total_budget_cr": 159.72
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 272,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1884,
+          "initial_coverage_pct": 41.1,
+          "proposed_upgrades": 150,
+          "proposed_new_schools": 101,
+          "proposed_transport_hubs": 117,
+          "final_coverage_pct": 97.0,
+          "budget_upgrades_cr": 127.5,
+          "budget_new_schools_cr": 246.44,
+          "budget_transport_cr": 35.1,
+          "total_budget_cr": 409.04
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 70,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 2080,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 166,
+          "proposed_new_schools": 112,
+          "proposed_transport_hubs": 130,
+          "final_coverage_pct": 96.8,
+          "budget_upgrades_cr": 232.4,
+          "budget_new_schools_cr": 537.6,
+          "budget_transport_cr": 58.5,
+          "total_budget_cr": 828.5
+        }
+      },
+      "strategy": "Koraput (Tribal / Hilly, Vulnerability Score: 93/100) currently features a Secondary education spatial coverage of 41.1%. Given its eastern ghats mountainous landscape and 50.6% tribal population, the masterplan deploys 150 Upper Primary school upgrades to High Schools, 101 state-of-the-art greenfield Secondary campuses in unserved clusters, and 117 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.0% with an estimated capital and operational outlay of \u20b9409.04 Crores."
+    },
+    {
+      "district_name": "Malkangiri",
+      "dt_code": "399",
+      "profile": {
+        "terrain": "Hilly & Dense Forest",
+        "category": "Tribal / Remote",
+        "vulnerability": 96,
+        "population": 613192,
+        "area_sqkm": 5791,
+        "tribal_pct": 57.8
+      },
+      "centroid": {
+        "lon": 81.95009587641287,
+        "lat": 18.25858735038263
+      },
+      "bounds": {
+        "min_lon": 81.389054,
+        "min_lat": 17.812726,
+        "max_lon": 82.42829996550853,
+        "max_lat": 18.738292177479085
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1611,
+          "habitations_total": 2779,
+          "habitations_unserved_initial": 1050,
+          "initial_coverage_pct": 62.2,
+          "proposed_upgrades": 84,
+          "proposed_new_schools": 56,
+          "proposed_transport_hubs": 65,
+          "final_coverage_pct": 98.1,
+          "budget_upgrades_cr": 21.0,
+          "budget_new_schools_cr": 36.4,
+          "budget_transport_cr": 6.5,
+          "total_budget_cr": 63.9
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 555,
+          "habitations_total": 2779,
+          "habitations_unserved_initial": 1272,
+          "initial_coverage_pct": 54.2,
+          "proposed_upgrades": 101,
+          "proposed_new_schools": 68,
+          "proposed_transport_hubs": 79,
+          "final_coverage_pct": 97.7,
+          "budget_upgrades_cr": 45.45,
+          "budget_new_schools_cr": 81.6,
+          "budget_transport_cr": 14.22,
+          "total_budget_cr": 141.27
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 236,
+          "habitations_total": 2779,
+          "habitations_unserved_initial": 1661,
+          "initial_coverage_pct": 40.2,
+          "proposed_upgrades": 132,
+          "proposed_new_schools": 89,
+          "proposed_transport_hubs": 103,
+          "final_coverage_pct": 97.0,
+          "budget_upgrades_cr": 112.2,
+          "budget_new_schools_cr": 217.16,
+          "budget_transport_cr": 30.9,
+          "total_budget_cr": 360.26
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 61,
+          "habitations_total": 2779,
+          "habitations_unserved_initial": 1806,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 144,
+          "proposed_new_schools": 97,
+          "proposed_transport_hubs": 112,
+          "final_coverage_pct": 96.7,
+          "budget_upgrades_cr": 201.6,
+          "budget_new_schools_cr": 465.6,
+          "budget_transport_cr": 50.4,
+          "total_budget_cr": 717.6
+        }
+      },
+      "strategy": "Malkangiri (Tribal / Remote, Vulnerability Score: 96/100) currently features a Secondary education spatial coverage of 40.2%. Given its hilly & dense forest landscape and 57.8% tribal population, the masterplan deploys 132 Upper Primary school upgrades to High Schools, 89 state-of-the-art greenfield Secondary campuses in unserved clusters, and 103 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.0% with an estimated capital and operational outlay of \u20b9360.26 Crores."
+    },
+    {
+      "district_name": "Mayurbhanj",
+      "dt_code": "376",
+      "profile": {
+        "terrain": "Similipal Forest & Plateau",
+        "category": "Tribal / Forest",
+        "vulnerability": 86,
+        "population": 2519738,
+        "area_sqkm": 10418,
+        "tribal_pct": 58.7
+      },
+      "centroid": {
+        "lon": 86.40928034138025,
+        "lat": 21.895837088024738
+      },
+      "bounds": {
+        "min_lon": 85.6643642654886,
+        "min_lat": 21.26460859498011,
+        "max_lon": 87.18560035149063,
+        "max_lat": 22.566726
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1855,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1113,
+          "initial_coverage_pct": 65.2,
+          "proposed_upgrades": 89,
+          "proposed_new_schools": 59,
+          "proposed_transport_hubs": 69,
+          "final_coverage_pct": 98.2,
+          "budget_upgrades_cr": 22.25,
+          "budget_new_schools_cr": 38.35,
+          "budget_transport_cr": 6.9,
+          "total_budget_cr": 67.5
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 640,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1369,
+          "initial_coverage_pct": 57.2,
+          "proposed_upgrades": 109,
+          "proposed_new_schools": 73,
+          "proposed_transport_hubs": 85,
+          "final_coverage_pct": 97.8,
+          "budget_upgrades_cr": 49.05,
+          "budget_new_schools_cr": 87.6,
+          "budget_transport_cr": 15.3,
+          "total_budget_cr": 151.95
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 272,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1817,
+          "initial_coverage_pct": 43.2,
+          "proposed_upgrades": 145,
+          "proposed_new_schools": 97,
+          "proposed_transport_hubs": 113,
+          "final_coverage_pct": 97.1,
+          "budget_upgrades_cr": 123.25,
+          "budget_new_schools_cr": 236.68,
+          "budget_transport_cr": 33.9,
+          "total_budget_cr": 393.83
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 70,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 2080,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 166,
+          "proposed_new_schools": 112,
+          "proposed_transport_hubs": 130,
+          "final_coverage_pct": 96.8,
+          "budget_upgrades_cr": 232.4,
+          "budget_new_schools_cr": 537.6,
+          "budget_transport_cr": 58.5,
+          "total_budget_cr": 828.5
+        }
+      },
+      "strategy": "Mayurbhanj (Tribal / Forest, Vulnerability Score: 86/100) currently features a Secondary education spatial coverage of 43.2%. Given its similipal forest & plateau landscape and 58.7% tribal population, the masterplan deploys 145 Upper Primary school upgrades to High Schools, 97 state-of-the-art greenfield Secondary campuses in unserved clusters, and 113 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.1% with an estimated capital and operational outlay of \u20b9393.83 Crores."
+    },
+    {
+      "district_name": "Nabarangpur",
+      "dt_code": "397",
+      "profile": {
+        "terrain": "Undulating Forest Plateau",
+        "category": "Tribal / Plateau",
+        "vulnerability": 88,
+        "population": 1220946,
+        "area_sqkm": 5291,
+        "tribal_pct": 55.8
+      },
+      "centroid": {
+        "lon": 82.33443142042553,
+        "lat": 19.576415154370252
+      },
+      "bounds": {
+        "min_lon": 81.84499060046683,
+        "min_lat": 19.11810358880812,
+        "max_lon": 82.85637377372461,
+        "max_lat": 20.105287239884788
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1472,
+          "habitations_total": 2539,
+          "habitations_unserved_initial": 898,
+          "initial_coverage_pct": 64.6,
+          "proposed_upgrades": 71,
+          "proposed_new_schools": 48,
+          "proposed_transport_hubs": 56,
+          "final_coverage_pct": 98.2,
+          "budget_upgrades_cr": 17.75,
+          "budget_new_schools_cr": 31.2,
+          "budget_transport_cr": 5.6,
+          "total_budget_cr": 54.55
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 507,
+          "habitations_total": 2539,
+          "habitations_unserved_initial": 1101,
+          "initial_coverage_pct": 56.6,
+          "proposed_upgrades": 88,
+          "proposed_new_schools": 59,
+          "proposed_transport_hubs": 68,
+          "final_coverage_pct": 97.8,
+          "budget_upgrades_cr": 39.6,
+          "budget_new_schools_cr": 70.8,
+          "budget_transport_cr": 12.24,
+          "total_budget_cr": 122.64
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 215,
+          "habitations_total": 2539,
+          "habitations_unserved_initial": 1457,
+          "initial_coverage_pct": 42.6,
+          "proposed_upgrades": 116,
+          "proposed_new_schools": 78,
+          "proposed_transport_hubs": 91,
+          "final_coverage_pct": 97.1,
+          "budget_upgrades_cr": 98.6,
+          "budget_new_schools_cr": 190.32,
+          "budget_transport_cr": 27.3,
+          "total_budget_cr": 316.22
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 55,
+          "habitations_total": 2539,
+          "habitations_unserved_initial": 1650,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 132,
+          "proposed_new_schools": 88,
+          "proposed_transport_hubs": 103,
+          "final_coverage_pct": 96.7,
+          "budget_upgrades_cr": 184.8,
+          "budget_new_schools_cr": 422.4,
+          "budget_transport_cr": 46.35,
+          "total_budget_cr": 653.55
+        }
+      },
+      "strategy": "Nabarangpur (Tribal / Plateau, Vulnerability Score: 88/100) currently features a Secondary education spatial coverage of 42.6%. Given its undulating forest plateau landscape and 55.8% tribal population, the masterplan deploys 116 Upper Primary school upgrades to High Schools, 78 state-of-the-art greenfield Secondary campuses in unserved clusters, and 91 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.1% with an estimated capital and operational outlay of \u20b9316.22 Crores."
+    },
+    {
+      "district_name": "Nayagarh",
+      "dt_code": "385",
+      "profile": {
+        "terrain": "Foot-hill Agrarian Plain",
+        "category": "Central Plain",
+        "vulnerability": 65,
+        "population": 962789,
+        "area_sqkm": 3890,
+        "tribal_pct": 5.9
+      },
+      "centroid": {
+        "lon": 84.99856195391227,
+        "lat": 20.212526339275506
+      },
+      "bounds": {
+        "min_lon": 84.48327135761261,
+        "min_lat": 19.897287514195583,
+        "max_lon": 85.45485054194074,
+        "max_lat": 20.603443322726648
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 979,
+          "habitations_total": 1361,
+          "habitations_unserved_initial": 224,
+          "initial_coverage_pct": 83.5,
+          "proposed_upgrades": 26,
+          "proposed_new_schools": 10,
+          "proposed_transport_hubs": 5,
+          "final_coverage_pct": 99.1,
+          "budget_upgrades_cr": 6.5,
+          "budget_new_schools_cr": 6.5,
+          "budget_transport_cr": 0.5,
+          "total_budget_cr": 13.5
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 381,
+          "habitations_total": 1361,
+          "habitations_unserved_initial": 306,
+          "initial_coverage_pct": 77.5,
+          "proposed_upgrades": 36,
+          "proposed_new_schools": 14,
+          "proposed_transport_hubs": 7,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 16.2,
+          "budget_new_schools_cr": 16.8,
+          "budget_transport_cr": 1.26,
+          "total_budget_cr": 34.26
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 190,
+          "habitations_total": 1361,
+          "habitations_unserved_initial": 360,
+          "initial_coverage_pct": 73.5,
+          "proposed_upgrades": 43,
+          "proposed_new_schools": 16,
+          "proposed_transport_hubs": 9,
+          "final_coverage_pct": 98.6,
+          "budget_upgrades_cr": 36.55,
+          "budget_new_schools_cr": 39.04,
+          "budget_transport_cr": 2.7,
+          "total_budget_cr": 78.29
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 61,
+          "habitations_total": 1361,
+          "habitations_unserved_initial": 537,
+          "initial_coverage_pct": 60.5,
+          "proposed_upgrades": 64,
+          "proposed_new_schools": 24,
+          "proposed_transport_hubs": 13,
+          "final_coverage_pct": 98.0,
+          "budget_upgrades_cr": 89.6,
+          "budget_new_schools_cr": 115.2,
+          "budget_transport_cr": 5.85,
+          "total_budget_cr": 210.65
+        }
+      },
+      "strategy": "Nayagarh (Central Plain, Vulnerability Score: 65/100) currently features a Secondary education spatial coverage of 73.5%. Given its foot-hill agrarian plain landscape and 5.9% tribal population, the masterplan deploys 43 Upper Primary school upgrades to High Schools, 16 state-of-the-art greenfield Secondary campuses in unserved clusters, and 9 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.6% with an estimated capital and operational outlay of \u20b978.29 Crores."
+    },
+    {
+      "district_name": "Nuapada",
+      "dt_code": "394",
+      "profile": {
+        "terrain": "Dryland Forest & Hills",
+        "category": "Drought-prone / Tribal",
+        "vulnerability": 84,
+        "population": 610382,
+        "area_sqkm": 3852,
+        "tribal_pct": 33.8
+      },
+      "centroid": {
+        "lon": 82.57726955798385,
+        "lat": 20.465299192532033
+      },
+      "bounds": {
+        "min_lon": 82.33204668318776,
+        "min_lat": 19.988898678644905,
+        "max_lon": 82.86180159039684,
+        "max_lat": 21.08855867041558
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1071,
+          "habitations_total": 1848,
+          "habitations_unserved_initial": 632,
+          "initial_coverage_pct": 65.8,
+          "proposed_upgrades": 50,
+          "proposed_new_schools": 34,
+          "proposed_transport_hubs": 39,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 12.5,
+          "budget_new_schools_cr": 22.1,
+          "budget_transport_cr": 3.9,
+          "total_budget_cr": 38.5
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 369,
+          "habitations_total": 1848,
+          "habitations_unserved_initial": 779,
+          "initial_coverage_pct": 57.8,
+          "proposed_upgrades": 62,
+          "proposed_new_schools": 41,
+          "proposed_transport_hubs": 48,
+          "final_coverage_pct": 97.8,
+          "budget_upgrades_cr": 27.9,
+          "budget_new_schools_cr": 49.2,
+          "budget_transport_cr": 8.64,
+          "total_budget_cr": 85.74
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 157,
+          "habitations_total": 1848,
+          "habitations_unserved_initial": 1038,
+          "initial_coverage_pct": 43.8,
+          "proposed_upgrades": 83,
+          "proposed_new_schools": 55,
+          "proposed_transport_hubs": 64,
+          "final_coverage_pct": 97.2,
+          "budget_upgrades_cr": 70.55,
+          "budget_new_schools_cr": 134.2,
+          "budget_transport_cr": 19.2,
+          "total_budget_cr": 223.95
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 40,
+          "habitations_total": 1848,
+          "habitations_unserved_initial": 1201,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 96,
+          "proposed_new_schools": 64,
+          "proposed_transport_hubs": 75,
+          "final_coverage_pct": 96.7,
+          "budget_upgrades_cr": 134.4,
+          "budget_new_schools_cr": 307.2,
+          "budget_transport_cr": 33.75,
+          "total_budget_cr": 475.35
+        }
+      },
+      "strategy": "Nuapada (Drought-prone / Tribal, Vulnerability Score: 84/100) currently features a Secondary education spatial coverage of 43.8%. Given its dryland forest & hills landscape and 33.8% tribal population, the masterplan deploys 83 Upper Primary school upgrades to High Schools, 55 state-of-the-art greenfield Secondary campuses in unserved clusters, and 64 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.2% with an estimated capital and operational outlay of \u20b9223.95 Crores."
+    },
+    {
+      "district_name": "Puri",
+      "dt_code": "387",
+      "profile": {
+        "terrain": "Coastal Alluvium & Lagoon",
+        "category": "Coastal Plain",
+        "vulnerability": 45,
+        "population": 1698730,
+        "area_sqkm": 3479,
+        "tribal_pct": 0.3
+      },
+      "centroid": {
+        "lon": 85.72513159638234,
+        "lat": 19.878324901261074
+      },
+      "bounds": {
+        "min_lon": 85.13497121272434,
+        "min_lat": 19.467269272527773,
+        "max_lon": 86.41123183958665,
+        "max_lat": 20.2037447902894
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 876,
+          "habitations_total": 1217,
+          "habitations_unserved_initial": 127,
+          "initial_coverage_pct": 89.5,
+          "proposed_upgrades": 15,
+          "proposed_new_schools": 5,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.4,
+          "budget_upgrades_cr": 3.75,
+          "budget_new_schools_cr": 3.25,
+          "budget_transport_cr": 0.3,
+          "total_budget_cr": 7.3
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 340,
+          "habitations_total": 1217,
+          "habitations_unserved_initial": 200,
+          "initial_coverage_pct": 83.5,
+          "proposed_upgrades": 24,
+          "proposed_new_schools": 9,
+          "proposed_transport_hubs": 5,
+          "final_coverage_pct": 99.1,
+          "budget_upgrades_cr": 10.8,
+          "budget_new_schools_cr": 10.8,
+          "budget_transport_cr": 0.9,
+          "total_budget_cr": 22.5
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 170,
+          "habitations_total": 1217,
+          "habitations_unserved_initial": 249,
+          "initial_coverage_pct": 79.5,
+          "proposed_upgrades": 29,
+          "proposed_new_schools": 11,
+          "proposed_transport_hubs": 6,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 24.65,
+          "budget_new_schools_cr": 26.84,
+          "budget_transport_cr": 1.8,
+          "total_budget_cr": 53.29
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 54,
+          "habitations_total": 1217,
+          "habitations_unserved_initial": 407,
+          "initial_coverage_pct": 66.5,
+          "proposed_upgrades": 48,
+          "proposed_new_schools": 18,
+          "proposed_transport_hubs": 10,
+          "final_coverage_pct": 98.3,
+          "budget_upgrades_cr": 67.2,
+          "budget_new_schools_cr": 86.4,
+          "budget_transport_cr": 4.5,
+          "total_budget_cr": 158.1
+        }
+      },
+      "strategy": "Puri (Coastal Plain, Vulnerability Score: 45/100) currently features a Secondary education spatial coverage of 79.5%. Given its coastal alluvium & lagoon landscape and 0.3% tribal population, the masterplan deploys 29 Upper Primary school upgrades to High Schools, 11 state-of-the-art greenfield Secondary campuses in unserved clusters, and 6 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.9% with an estimated capital and operational outlay of \u20b953.29 Crores."
+    },
+    {
+      "district_name": "Rayagada",
+      "dt_code": "396",
+      "profile": {
+        "terrain": "Rugged Valleys & Forests",
+        "category": "Tribal / Hilly",
+        "vulnerability": 91,
+        "population": 965210,
+        "area_sqkm": 7073,
+        "tribal_pct": 55.8
+      },
+      "centroid": {
+        "lon": 83.51251498697141,
+        "lat": 19.3632872865157
+      },
+      "bounds": {
+        "min_lon": 82.87012424262758,
+        "min_lat": 18.910755899876563,
+        "max_lon": 84.03384813715245,
+        "max_lat": 19.9719457229461
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1855,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1161,
+          "initial_coverage_pct": 63.7,
+          "proposed_upgrades": 92,
+          "proposed_new_schools": 62,
+          "proposed_transport_hubs": 72,
+          "final_coverage_pct": 98.2,
+          "budget_upgrades_cr": 23.0,
+          "budget_new_schools_cr": 40.3,
+          "budget_transport_cr": 7.2,
+          "total_budget_cr": 70.5
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 640,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1417,
+          "initial_coverage_pct": 55.7,
+          "proposed_upgrades": 113,
+          "proposed_new_schools": 76,
+          "proposed_transport_hubs": 88,
+          "final_coverage_pct": 97.8,
+          "budget_upgrades_cr": 50.85,
+          "budget_new_schools_cr": 91.2,
+          "budget_transport_cr": 15.84,
+          "total_budget_cr": 157.89
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 272,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1865,
+          "initial_coverage_pct": 41.7,
+          "proposed_upgrades": 149,
+          "proposed_new_schools": 100,
+          "proposed_transport_hubs": 116,
+          "final_coverage_pct": 97.1,
+          "budget_upgrades_cr": 126.65,
+          "budget_new_schools_cr": 244.0,
+          "budget_transport_cr": 34.8,
+          "total_budget_cr": 405.45
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 70,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 2080,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 166,
+          "proposed_new_schools": 112,
+          "proposed_transport_hubs": 130,
+          "final_coverage_pct": 96.8,
+          "budget_upgrades_cr": 232.4,
+          "budget_new_schools_cr": 537.6,
+          "budget_transport_cr": 58.5,
+          "total_budget_cr": 828.5
+        }
+      },
+      "strategy": "Rayagada (Tribal / Hilly, Vulnerability Score: 91/100) currently features a Secondary education spatial coverage of 41.7%. Given its rugged valleys & forests landscape and 55.8% tribal population, the masterplan deploys 149 Upper Primary school upgrades to High Schools, 100 state-of-the-art greenfield Secondary campuses in unserved clusters, and 116 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.1% with an estimated capital and operational outlay of \u20b9405.45 Crores."
+    },
+    {
+      "district_name": "Sambalpur",
+      "dt_code": "372",
+      "profile": {
+        "terrain": "Hirakud Basin & Plateau",
+        "category": "Western Plateau",
+        "vulnerability": 64,
+        "population": 1041099,
+        "area_sqkm": 6657,
+        "tribal_pct": 34.5
+      },
+      "centroid": {
+        "lon": 84.27447343529526,
+        "lat": 21.451174216294316
+      },
+      "bounds": {
+        "min_lon": 83.79972831135719,
+        "min_lat": 20.922289297215745,
+        "max_lon": 84.77022193235086,
+        "max_lat": 22.189848754080373
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1676,
+          "habitations_total": 2329,
+          "habitations_unserved_initial": 377,
+          "initial_coverage_pct": 83.8,
+          "proposed_upgrades": 45,
+          "proposed_new_schools": 17,
+          "proposed_transport_hubs": 9,
+          "final_coverage_pct": 99.2,
+          "budget_upgrades_cr": 11.25,
+          "budget_new_schools_cr": 11.05,
+          "budget_transport_cr": 0.9,
+          "total_budget_cr": 23.2
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 652,
+          "habitations_total": 2329,
+          "habitations_unserved_initial": 517,
+          "initial_coverage_pct": 77.8,
+          "proposed_upgrades": 62,
+          "proposed_new_schools": 23,
+          "proposed_transport_hubs": 12,
+          "final_coverage_pct": 98.9,
+          "budget_upgrades_cr": 27.9,
+          "budget_new_schools_cr": 27.6,
+          "budget_transport_cr": 2.16,
+          "total_budget_cr": 57.66
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 326,
+          "habitations_total": 2329,
+          "habitations_unserved_initial": 610,
+          "initial_coverage_pct": 73.8,
+          "proposed_upgrades": 73,
+          "proposed_new_schools": 28,
+          "proposed_transport_hubs": 15,
+          "final_coverage_pct": 98.7,
+          "budget_upgrades_cr": 62.05,
+          "budget_new_schools_cr": 68.32,
+          "budget_transport_cr": 4.5,
+          "total_budget_cr": 134.87
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 104,
+          "habitations_total": 2329,
+          "habitations_unserved_initial": 912,
+          "initial_coverage_pct": 60.8,
+          "proposed_upgrades": 109,
+          "proposed_new_schools": 42,
+          "proposed_transport_hubs": 22,
+          "final_coverage_pct": 98.0,
+          "budget_upgrades_cr": 152.6,
+          "budget_new_schools_cr": 201.6,
+          "budget_transport_cr": 9.9,
+          "total_budget_cr": 364.1
+        }
+      },
+      "strategy": "Sambalpur (Western Plateau, Vulnerability Score: 64/100) currently features a Secondary education spatial coverage of 73.8%. Given its hirakud basin & plateau landscape and 34.5% tribal population, the masterplan deploys 73 Upper Primary school upgrades to High Schools, 28 state-of-the-art greenfield Secondary campuses in unserved clusters, and 15 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.7% with an estimated capital and operational outlay of \u20b9134.87 Crores."
+    },
+    {
+      "district_name": "Subarnapur",
+      "dt_code": "392",
+      "profile": {
+        "terrain": "Tel & Mahanadi Alluvial Plain",
+        "category": "Western Plain",
+        "vulnerability": 66,
+        "population": 610183,
+        "area_sqkm": 2337,
+        "tribal_pct": 9.8
+      },
+      "centroid": {
+        "lon": 83.8223240660573,
+        "lat": 20.93063002191063
+      },
+      "bounds": {
+        "min_lon": 83.44655837321778,
+        "min_lat": 20.530741224249073,
+        "max_lon": 84.27918545073699,
+        "max_lat": 21.175605577561377
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 588,
+          "habitations_total": 817,
+          "habitations_unserved_initial": 137,
+          "initial_coverage_pct": 83.2,
+          "proposed_upgrades": 16,
+          "proposed_new_schools": 6,
+          "proposed_transport_hubs": 3,
+          "final_coverage_pct": 99.1,
+          "budget_upgrades_cr": 4.0,
+          "budget_new_schools_cr": 3.9,
+          "budget_transport_cr": 0.3,
+          "total_budget_cr": 8.2
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 228,
+          "habitations_total": 817,
+          "habitations_unserved_initial": 186,
+          "initial_coverage_pct": 77.2,
+          "proposed_upgrades": 22,
+          "proposed_new_schools": 8,
+          "proposed_transport_hubs": 4,
+          "final_coverage_pct": 98.8,
+          "budget_upgrades_cr": 9.9,
+          "budget_new_schools_cr": 9.6,
+          "budget_transport_cr": 0.72,
+          "total_budget_cr": 20.22
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 114,
+          "habitations_total": 817,
+          "habitations_unserved_initial": 218,
+          "initial_coverage_pct": 73.2,
+          "proposed_upgrades": 26,
+          "proposed_new_schools": 10,
+          "proposed_transport_hubs": 5,
+          "final_coverage_pct": 98.5,
+          "budget_upgrades_cr": 22.1,
+          "budget_new_schools_cr": 24.4,
+          "budget_transport_cr": 1.5,
+          "total_budget_cr": 48.0
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 36,
+          "habitations_total": 817,
+          "habitations_unserved_initial": 325,
+          "initial_coverage_pct": 60.2,
+          "proposed_upgrades": 39,
+          "proposed_new_schools": 15,
+          "proposed_transport_hubs": 8,
+          "final_coverage_pct": 98.0,
+          "budget_upgrades_cr": 54.6,
+          "budget_new_schools_cr": 72.0,
+          "budget_transport_cr": 3.6,
+          "total_budget_cr": 130.2
+        }
+      },
+      "strategy": "Subarnapur (Western Plain, Vulnerability Score: 66/100) currently features a Secondary education spatial coverage of 73.2%. Given its tel & mahanadi alluvial plain landscape and 9.8% tribal population, the masterplan deploys 26 Upper Primary school upgrades to High Schools, 10 state-of-the-art greenfield Secondary campuses in unserved clusters, and 5 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 98.5% with an estimated capital and operational outlay of \u20b948.0 Crores."
+    },
+    {
+      "district_name": "Sundargarh",
+      "dt_code": "374",
+      "profile": {
+        "terrain": "Hilly Mining & Forest Basin",
+        "category": "Tribal / Industrial",
+        "vulnerability": 79,
+        "population": 2093437,
+        "area_sqkm": 9712,
+        "tribal_pct": 50.7
+      },
+      "centroid": {
+        "lon": 84.50902100496018,
+        "lat": 22.080718952070324
+      },
+      "bounds": {
+        "min_lon": 83.53702198442153,
+        "min_lat": 21.590952992182142,
+        "max_lon": 85.37813739963998,
+        "max_lat": 22.53118999670827
+      },
+      "tiers": {
+        "Primary": {
+          "norm_distance_km": 1.0,
+          "existing_schools": 1855,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1046,
+          "initial_coverage_pct": 67.3,
+          "proposed_upgrades": 83,
+          "proposed_new_schools": 56,
+          "proposed_transport_hubs": 65,
+          "final_coverage_pct": 98.4,
+          "budget_upgrades_cr": 20.75,
+          "budget_new_schools_cr": 36.4,
+          "budget_transport_cr": 6.5,
+          "total_budget_cr": 63.65
+        },
+        "Upper Primary": {
+          "norm_distance_km": 3.0,
+          "existing_schools": 640,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1302,
+          "initial_coverage_pct": 59.3,
+          "proposed_upgrades": 104,
+          "proposed_new_schools": 70,
+          "proposed_transport_hubs": 81,
+          "final_coverage_pct": 98.0,
+          "budget_upgrades_cr": 46.8,
+          "budget_new_schools_cr": 84.0,
+          "budget_transport_cr": 14.58,
+          "total_budget_cr": 145.38
+        },
+        "Secondary": {
+          "norm_distance_km": 5.0,
+          "existing_schools": 272,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 1750,
+          "initial_coverage_pct": 45.3,
+          "proposed_upgrades": 140,
+          "proposed_new_schools": 94,
+          "proposed_transport_hubs": 109,
+          "final_coverage_pct": 97.3,
+          "budget_upgrades_cr": 119.0,
+          "budget_new_schools_cr": 229.36,
+          "budget_transport_cr": 32.7,
+          "total_budget_cr": 381.06
+        },
+        "Higher Secondary": {
+          "norm_distance_km": 7.0,
+          "existing_schools": 70,
+          "habitations_total": 3200,
+          "habitations_unserved_initial": 2080,
+          "initial_coverage_pct": 35.0,
+          "proposed_upgrades": 166,
+          "proposed_new_schools": 112,
+          "proposed_transport_hubs": 130,
+          "final_coverage_pct": 96.8,
+          "budget_upgrades_cr": 232.4,
+          "budget_new_schools_cr": 537.6,
+          "budget_transport_cr": 58.5,
+          "total_budget_cr": 828.5
+        }
+      },
+      "strategy": "Sundargarh (Tribal / Industrial, Vulnerability Score: 79/100) currently features a Secondary education spatial coverage of 45.3%. Given its hilly mining & forest basin landscape and 50.7% tribal population, the masterplan deploys 140 Upper Primary school upgrades to High Schools, 94 state-of-the-art greenfield Secondary campuses in unserved clusters, and 109 dedicated student transport and residential hostel hubs. This spatial intervention elevates secondary schooling access to 97.3% with an estimated capital and operational outlay of \u20b9381.06 Crores."
+    }
+  ]
+}
