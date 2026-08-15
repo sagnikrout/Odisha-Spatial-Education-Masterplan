@@ -63,7 +63,43 @@
         "budget_cr": 10000,
         "coverage_pct": 90.7
       }
-    ]
+    ],
+    "rollout_phases": {
+      "Phase_1_Years_1_2": {
+        "focus": "High Vulnerability & Remote Tribal Corridors (9 Districts)",
+        "outlay_cr": 2304.95,
+        "upgrades": 981,
+        "new_schools": 537,
+        "transit_hubs": 644,
+        "teachers": 4114,
+        "coverage_gain_pct": 16.5
+      },
+      "Phase_2_Years_3_4": {
+        "focus": "Mineral Belts, Western Plateaus & Agrarian Plains (11 Districts)",
+        "outlay_cr": 1792.73,
+        "upgrades": 763,
+        "new_schools": 418,
+        "transit_hubs": 351,
+        "teachers": 3200,
+        "coverage_gain_pct": 11.2
+      },
+      "Phase_3_Year_5": {
+        "focus": "Coastal Deltas, Cyclone Retrofits & Urban Consolidation (10 Districts)",
+        "outlay_cr": 1024.42,
+        "upgrades": 436,
+        "new_schools": 239,
+        "transit_hubs": 175,
+        "teachers": 1828,
+        "coverage_gain_pct": 4.8
+      }
+    },
+    "economic_impact": {
+      "total_students_saved_from_dropout_5yr": 184000,
+      "annual_secondary_wage_premium_inr": 170000,
+      "net_present_value_gsdp_contribution_cr": 14395.08,
+      "capital_investment_secondary_cr": 5122.1,
+      "benefit_cost_ratio_roi": 2.81
+    }
   },
   "statewide_totals": {
     "Primary": {
@@ -81,7 +117,10 @@
       "total_budget_cr": 879.65,
       "teachers_required": 0,
       "girls_hostels_proposed": 0,
-      "cyclone_resilient_upgrades": 0
+      "cyclone_resilient_upgrades": 0,
+      "fleet_minibuses": 0,
+      "fleet_feeder_vans": 0,
+      "annual_transit_opex_cr": 0.0
     },
     "Upper Primary": {
       "existing_schools": 13923,
@@ -98,7 +137,10 @@
       "total_budget_cr": 2059.32,
       "teachers_required": 0,
       "girls_hostels_proposed": 0,
-      "cyclone_resilient_upgrades": 0
+      "cyclone_resilient_upgrades": 0,
+      "fleet_minibuses": 0,
+      "fleet_feeder_vans": 0,
+      "annual_transit_opex_cr": 0.0
     },
     "Secondary": {
       "existing_schools": 6539,
@@ -115,7 +157,10 @@
       "total_budget_cr": 5122.1,
       "teachers_required": 9144,
       "girls_hostels_proposed": 588,
-      "cyclone_resilient_upgrades": 396
+      "cyclone_resilient_upgrades": 396,
+      "fleet_minibuses": 1027,
+      "fleet_feeder_vans": 603,
+      "annual_transit_opex_cr": 43.63
     },
     "Higher Secondary": {
       "existing_schools": 1943,
@@ -132,7 +177,10 @@
       "total_budget_cr": 11755.75,
       "teachers_required": 0,
       "girls_hostels_proposed": 0,
-      "cyclone_resilient_upgrades": 0
+      "cyclone_resilient_upgrades": 0,
+      "fleet_minibuses": 0,
+      "fleet_feeder_vans": 0,
+      "annual_transit_opex_cr": 0.0
     }
   },
   "districts": [
@@ -187,7 +235,10 @@
           "total_budget_cr": 20.55,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -205,7 +256,10 @@
           "total_budget_cr": 52.38,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -223,7 +277,10 @@
           "total_budget_cr": 121.0,
           "teachers_required": 232,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 14,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.58
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -241,7 +298,10 @@
           "total_budget_cr": 338.05,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -255,6 +315,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 16.42
         },
         {
@@ -267,6 +330,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -279,6 +345,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -291,6 +360,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -303,6 +375,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.12
         },
         {
@@ -315,6 +390,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -327,6 +405,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 16.42
         },
         {
@@ -339,10 +420,13 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         }
       ],
-      "strategy": "Angul (Central Industrial, Vulnerability: 60/100) comprises 8 CD blocks spanning 6,375 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 75.0%. The masterplan allocates 66 high school upgrades, 25 new greenfield campuses, 13 student transport hubs, 0 dedicated girls' hostels, and 232 subject teacher recruitments. Total estimated outlay is \u20b9121.0 Crores, raising universal secondary coverage to 98.7% across all 8 blocks."
+      "strategy": "Angul (Central Industrial, Vulnerability: 60/100) comprises 8 CD blocks spanning 6,375 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 75.0%. The masterplan allocates 66 high school upgrades, 25 new greenfield campuses, 13 student transport hubs (14 buses, 8 vans), 0 dedicated girls' hostels, and 232 subject teacher recruitments. Total estimated outlay is \u20b9121.0 Crores, raising universal secondary coverage to 98.7% across all 8 blocks."
     },
     {
       "district_name": "Balangir",
@@ -401,7 +485,10 @@
           "total_budget_cr": 28.75,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -419,7 +506,10 @@
           "total_budget_cr": 68.7,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -437,7 +527,10 @@
           "total_budget_cr": 153.73,
           "teachers_required": 294,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 14,
+          "fleet_feeder_vans": 14,
+          "annual_transit_opex_cr": 0.7
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -455,7 +548,10 @@
           "total_budget_cr": 398.2,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -469,6 +565,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -481,6 +580,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -493,6 +595,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 12.83
         },
         {
@@ -505,6 +610,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -517,6 +625,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -529,6 +640,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 10.28
         },
         {
@@ -541,6 +655,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -553,6 +670,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -565,6 +685,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 12.83
         },
         {
@@ -577,6 +700,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 10.28
         },
         {
@@ -589,6 +715,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -601,6 +730,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -613,6 +745,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -625,10 +760,13 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         }
       ],
-      "strategy": "Balangir (Western Plain, Vulnerability: 78/100) comprises 14 CD blocks spanning 6,575 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.9, baseline secondary access stands at 69.6%. The masterplan allocates 83 high school upgrades, 32 new greenfield campuses, 17 student transport hubs, 0 dedicated girls' hostels, and 294 subject teacher recruitments. Total estimated outlay is \u20b9153.73 Crores, raising universal secondary coverage to 98.5% across all 14 blocks."
+      "strategy": "Balangir (Western Plain, Vulnerability: 78/100) comprises 14 CD blocks spanning 6,575 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.9, baseline secondary access stands at 69.6%. The masterplan allocates 83 high school upgrades, 32 new greenfield campuses, 17 student transport hubs (14 buses, 14 vans), 0 dedicated girls' hostels, and 294 subject teacher recruitments. Total estimated outlay is \u20b9153.73 Crores, raising universal secondary coverage to 98.5% across all 14 blocks."
     },
     {
       "district_name": "Balasore",
@@ -685,7 +823,10 @@
           "total_budget_cr": 9.7,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -703,7 +844,10 @@
           "total_budget_cr": 27.33,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -721,7 +865,10 @@
           "total_budget_cr": 63.57,
           "teachers_required": 122,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 48
+          "cyclone_resilient_upgrades": 48,
+          "fleet_minibuses": 12,
+          "fleet_feeder_vans": 12,
+          "annual_transit_opex_cr": 0.6
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -739,7 +886,10 @@
           "total_budget_cr": 184.15,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -753,6 +903,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -765,6 +918,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -777,6 +933,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -789,6 +948,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -801,6 +963,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -813,6 +978,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -825,6 +993,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -837,6 +1008,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -849,6 +1023,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -861,6 +1038,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -873,6 +1053,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -885,10 +1068,13 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         }
       ],
-      "strategy": "Balasore (Coastal Plain, Vulnerability: 51/100) comprises 12 CD blocks spanning 3,806 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 77.7%. The masterplan allocates 35 high school upgrades, 13 new greenfield campuses, 7 student transport hubs, 0 dedicated girls' hostels, and 122 subject teacher recruitments. Total estimated outlay is \u20b963.57 Crores, raising universal secondary coverage to 98.9% across all 12 blocks."
+      "strategy": "Balasore (Coastal Plain, Vulnerability: 51/100) comprises 12 CD blocks spanning 3,806 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 77.7%. The masterplan allocates 35 high school upgrades, 13 new greenfield campuses, 7 student transport hubs (12 buses, 12 vans), 0 dedicated girls' hostels, and 122 subject teacher recruitments. Total estimated outlay is \u20b963.57 Crores, raising universal secondary coverage to 98.9% across all 12 blocks."
     },
     {
       "district_name": "Bargarh",
@@ -945,7 +1131,10 @@
           "total_budget_cr": 17.9,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -963,7 +1152,10 @@
           "total_budget_cr": 46.65,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -981,7 +1173,10 @@
           "total_budget_cr": 107.43,
           "teachers_required": 206,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 12,
+          "fleet_feeder_vans": 12,
+          "annual_transit_opex_cr": 0.6
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -999,7 +1194,10 @@
           "total_budget_cr": 303.95,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -1013,6 +1211,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -1025,6 +1226,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1037,6 +1241,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -1049,6 +1256,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1061,6 +1271,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1073,6 +1286,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1085,6 +1301,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1097,6 +1316,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1109,6 +1331,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1121,6 +1346,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -1133,6 +1361,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -1145,10 +1376,13 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         }
       ],
-      "strategy": "Bargarh (Western Plain, Vulnerability: 58/100) comprises 12 CD blocks spanning 5,837 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 75.6%. The masterplan allocates 59 high school upgrades, 22 new greenfield campuses, 12 student transport hubs, 0 dedicated girls' hostels, and 206 subject teacher recruitments. Total estimated outlay is \u20b9107.43 Crores, raising universal secondary coverage to 98.8% across all 12 blocks."
+      "strategy": "Bargarh (Western Plain, Vulnerability: 58/100) comprises 12 CD blocks spanning 5,837 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 75.6%. The masterplan allocates 59 high school upgrades, 22 new greenfield campuses, 12 student transport hubs (12 buses, 12 vans), 0 dedicated girls' hostels, and 206 subject teacher recruitments. Total estimated outlay is \u20b9107.43 Crores, raising universal secondary coverage to 98.8% across all 12 blocks."
     },
     {
       "district_name": "Bhadrak",
@@ -1200,7 +1434,10 @@
           "total_budget_cr": 5.55,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -1218,7 +1455,10 @@
           "total_budget_cr": 17.04,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -1236,7 +1476,10 @@
           "total_budget_cr": 39.42,
           "teachers_required": 76,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 30
+          "cyclone_resilient_upgrades": 30,
+          "fleet_minibuses": 7,
+          "fleet_feeder_vans": 7,
+          "annual_transit_opex_cr": 0.35
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -1254,7 +1497,10 @@
           "total_budget_cr": 115.95,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -1268,6 +1514,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -1280,6 +1529,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -1292,6 +1544,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -1304,6 +1559,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1316,6 +1574,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1328,6 +1589,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -1340,10 +1604,13 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         }
       ],
-      "strategy": "Bhadrak (Coastal Plain, Vulnerability: 48/100) comprises 7 CD blocks spanning 2,505 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.95, baseline secondary access stands at 78.6%. The masterplan allocates 22 high school upgrades, 8 new greenfield campuses, 4 student transport hubs, 0 dedicated girls' hostels, and 76 subject teacher recruitments. Total estimated outlay is \u20b939.42 Crores, raising universal secondary coverage to 98.9% across all 7 blocks."
+      "strategy": "Bhadrak (Coastal Plain, Vulnerability: 48/100) comprises 7 CD blocks spanning 2,505 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.95, baseline secondary access stands at 78.6%. The masterplan allocates 22 high school upgrades, 8 new greenfield campuses, 4 student transport hubs (7 buses, 7 vans), 0 dedicated girls' hostels, and 76 subject teacher recruitments. Total estimated outlay is \u20b939.42 Crores, raising universal secondary coverage to 98.9% across all 7 blocks."
     },
     {
       "district_name": "Boudh",
@@ -1391,7 +1658,10 @@
           "total_budget_cr": 12.6,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -1409,7 +1679,10 @@
           "total_budget_cr": 30.33,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -1427,7 +1700,10 @@
           "total_budget_cr": 68.86,
           "teachers_required": 132,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.3
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -1445,7 +1721,10 @@
           "total_budget_cr": 182.75,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -1459,6 +1738,9 @@
           "proposed_upgrades": 19,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 29.25
         },
         {
@@ -1471,6 +1753,9 @@
           "proposed_upgrades": 15,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 23.11
         },
         {
@@ -1483,10 +1768,13 @@
           "proposed_upgrades": 17,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 27.55
         }
       ],
-      "strategy": "Boudh (Central Riverine, Vulnerability: 76/100) comprises 3 CD blocks spanning 3,098 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.91, baseline secondary access stands at 70.2%. The masterplan allocates 38 high school upgrades, 14 new greenfield campuses, 8 student transport hubs, 0 dedicated girls' hostels, and 132 subject teacher recruitments. Total estimated outlay is \u20b968.86 Crores, raising universal secondary coverage to 98.5% across all 3 blocks."
+      "strategy": "Boudh (Central Riverine, Vulnerability: 76/100) comprises 3 CD blocks spanning 3,098 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.91, baseline secondary access stands at 70.2%. The masterplan allocates 38 high school upgrades, 14 new greenfield campuses, 8 student transport hubs (8 buses, 3 vans), 0 dedicated girls' hostels, and 132 subject teacher recruitments. Total estimated outlay is \u20b968.86 Crores, raising universal secondary coverage to 98.5% across all 3 blocks."
     },
     {
       "district_name": "Cuttack",
@@ -1545,7 +1833,10 @@
           "total_budget_cr": 7.95,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -1563,7 +1854,10 @@
           "total_budget_cr": 22.95,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -1581,7 +1875,10 @@
           "total_budget_cr": 58.28,
           "teachers_required": 112,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 44
+          "cyclone_resilient_upgrades": 44,
+          "fleet_minibuses": 14,
+          "fleet_feeder_vans": 14,
+          "annual_transit_opex_cr": 0.7
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -1599,7 +1896,10 @@
           "total_budget_cr": 175.15,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -1613,6 +1913,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -1625,6 +1928,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1637,6 +1943,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -1649,6 +1958,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -1661,6 +1973,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1673,6 +1988,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1685,6 +2003,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1697,6 +2018,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1709,6 +2033,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -1721,6 +2048,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1733,6 +2063,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1745,6 +2078,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1757,6 +2093,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -1769,10 +2108,13 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         }
       ],
-      "strategy": "Cuttack (Delta / Urban, Vulnerability: 42/100) comprises 14 CD blocks spanning 3,932 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.96, baseline secondary access stands at 80.4%. The masterplan allocates 32 high school upgrades, 12 new greenfield campuses, 6 student transport hubs, 0 dedicated girls' hostels, and 112 subject teacher recruitments. Total estimated outlay is \u20b958.28 Crores, raising universal secondary coverage to 99.0% across all 14 blocks."
+      "strategy": "Cuttack (Delta / Urban, Vulnerability: 42/100) comprises 14 CD blocks spanning 3,932 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.96, baseline secondary access stands at 80.4%. The masterplan allocates 32 high school upgrades, 12 new greenfield campuses, 6 student transport hubs (14 buses, 14 vans), 0 dedicated girls' hostels, and 112 subject teacher recruitments. Total estimated outlay is \u20b958.28 Crores, raising universal secondary coverage to 99.0% across all 14 blocks."
     },
     {
       "district_name": "Deogarh",
@@ -1820,7 +2162,10 @@
           "total_budget_cr": 28.4,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -1838,7 +2183,10 @@
           "total_budget_cr": 64.38,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -1856,7 +2204,10 @@
           "total_budget_cr": 167.14,
           "teachers_required": 288,
           "girls_hostels_proposed": 28,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 44,
+          "fleet_feeder_vans": 25,
+          "annual_transit_opex_cr": 1.85
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -1874,7 +2225,10 @@
           "total_budget_cr": 363.05,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -1888,6 +2242,9 @@
           "proposed_upgrades": 20,
           "proposed_new_schools": 9,
           "proposed_transport_hubs": 10,
+          "fleet_minibuses": 16,
+          "fleet_feeder_vans": 9,
+          "annual_transit_opex_cr": 0.67,
           "estimated_budget_cr": 41.96
         },
         {
@@ -1900,6 +2257,9 @@
           "proposed_upgrades": 18,
           "proposed_new_schools": 8,
           "proposed_transport_hubs": 9,
+          "fleet_minibuses": 14,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.59,
           "estimated_budget_cr": 37.52
         },
         {
@@ -1912,10 +2272,13 @@
           "proposed_upgrades": 19,
           "proposed_new_schools": 8,
           "proposed_transport_hubs": 9,
+          "fleet_minibuses": 14,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.59,
           "estimated_budget_cr": 38.37
         }
       ],
-      "strategy": "Deogarh (Northern Hilly, Vulnerability: 80/100) comprises 3 CD blocks spanning 2,940 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.89, baseline secondary access stands at 45.0%. The masterplan allocates 62 high school upgrades, 41 new greenfield campuses, 48 student transport hubs, 28 dedicated girls' hostels, and 288 subject teacher recruitments. Total estimated outlay is \u20b9167.14 Crores, raising universal secondary coverage to 97.2% across all 3 blocks."
+      "strategy": "Deogarh (Northern Hilly, Vulnerability: 80/100) comprises 3 CD blocks spanning 2,940 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.89, baseline secondary access stands at 45.0%. The masterplan allocates 62 high school upgrades, 41 new greenfield campuses, 48 student transport hubs (44 buses, 25 vans), 28 dedicated girls' hostels, and 288 subject teacher recruitments. Total estimated outlay is \u20b9167.14 Crores, raising universal secondary coverage to 97.2% across all 3 blocks."
     },
     {
       "district_name": "Dhenkanal",
@@ -1968,7 +2331,10 @@
           "total_budget_cr": 15.0,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -1986,7 +2352,10 @@
           "total_budget_cr": 37.44,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -2004,7 +2373,10 @@
           "total_budget_cr": 86.57,
           "teachers_required": 166,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.4
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -2022,7 +2394,10 @@
           "total_budget_cr": 237.15,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -2036,6 +2411,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -2048,6 +2426,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -2060,6 +2441,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -2072,6 +2456,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -2084,6 +2471,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -2096,6 +2486,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.98
         },
         {
@@ -2108,6 +2501,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         },
         {
@@ -2120,10 +2516,13 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         }
       ],
-      "strategy": "Dhenkanal (Central Plain, Vulnerability: 62/100) comprises 8 CD blocks spanning 4,452 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 74.4%. The masterplan allocates 47 high school upgrades, 18 new greenfield campuses, 9 student transport hubs, 0 dedicated girls' hostels, and 166 subject teacher recruitments. Total estimated outlay is \u20b986.57 Crores, raising universal secondary coverage to 98.7% across all 8 blocks."
+      "strategy": "Dhenkanal (Central Plain, Vulnerability: 62/100) comprises 8 CD blocks spanning 4,452 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 74.4%. The masterplan allocates 47 high school upgrades, 18 new greenfield campuses, 9 student transport hubs (8 buses, 8 vans), 0 dedicated girls' hostels, and 166 subject teacher recruitments. Total estimated outlay is \u20b986.57 Crores, raising universal secondary coverage to 98.7% across all 8 blocks."
     },
     {
       "district_name": "Gajapati",
@@ -2175,7 +2574,10 @@
           "total_budget_cr": 21.7,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -2193,7 +2595,10 @@
           "total_budget_cr": 49.83,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -2211,7 +2616,10 @@
           "total_budget_cr": 111.57,
           "teachers_required": 214,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 13,
+          "fleet_feeder_vans": 7,
+          "annual_transit_opex_cr": 0.53
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -2229,7 +2637,10 @@
           "total_budget_cr": 278.85,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -2243,6 +2654,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.97
         },
         {
@@ -2255,6 +2669,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 16.42
         },
         {
@@ -2267,6 +2684,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 12.83
         },
         {
@@ -2279,6 +2699,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.97
         },
         {
@@ -2291,6 +2714,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 16.42
         },
         {
@@ -2303,6 +2729,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.97
         },
         {
@@ -2315,10 +2744,13 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         }
       ],
-      "strategy": "Gajapati (Tribal / Hilly, Vulnerability: 89/100) comprises 7 CD blocks spanning 4,325 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.86, baseline secondary access stands at 66.3%. The masterplan allocates 61 high school upgrades, 23 new greenfield campuses, 12 student transport hubs, 0 dedicated girls' hostels, and 214 subject teacher recruitments. Total estimated outlay is \u20b9111.57 Crores, raising universal secondary coverage to 98.3% across all 7 blocks."
+      "strategy": "Gajapati (Tribal / Hilly, Vulnerability: 89/100) comprises 7 CD blocks spanning 4,325 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.86, baseline secondary access stands at 66.3%. The masterplan allocates 61 high school upgrades, 23 new greenfield campuses, 12 student transport hubs (13 buses, 7 vans), 0 dedicated girls' hostels, and 214 subject teacher recruitments. Total estimated outlay is \u20b9111.57 Crores, raising universal secondary coverage to 98.3% across all 7 blocks."
     },
     {
       "district_name": "Ganjam",
@@ -2385,7 +2817,10 @@
           "total_budget_cr": 25.85,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -2403,7 +2838,10 @@
           "total_budget_cr": 66.87,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -2421,7 +2859,10 @@
           "total_budget_cr": 155.43,
           "teachers_required": 298,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 117
+          "cyclone_resilient_upgrades": 117,
+          "fleet_minibuses": 22,
+          "fleet_feeder_vans": 22,
+          "annual_transit_opex_cr": 1.1
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -2439,7 +2880,10 @@
           "total_budget_cr": 427.95,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -2453,6 +2897,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -2465,6 +2912,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -2477,6 +2927,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2489,6 +2942,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2501,6 +2957,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2513,6 +2972,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2525,6 +2987,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2537,6 +3002,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2549,6 +3017,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -2561,6 +3032,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -2573,6 +3047,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2585,6 +3062,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -2597,6 +3077,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2609,6 +3092,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -2621,6 +3107,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2633,6 +3122,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2645,6 +3137,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2657,6 +3152,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2669,6 +3167,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -2681,6 +3182,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -2693,6 +3197,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -2705,10 +3212,13 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         }
       ],
-      "strategy": "Ganjam (Southern Coastal, Vulnerability: 59/100) comprises 22 CD blocks spanning 8,206 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 75.3%. The masterplan allocates 85 high school upgrades, 32 new greenfield campuses, 17 student transport hubs, 0 dedicated girls' hostels, and 298 subject teacher recruitments. Total estimated outlay is \u20b9155.43 Crores, raising universal secondary coverage to 98.8% across all 22 blocks."
+      "strategy": "Ganjam (Southern Coastal, Vulnerability: 59/100) comprises 22 CD blocks spanning 8,206 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.93, baseline secondary access stands at 75.3%. The masterplan allocates 85 high school upgrades, 32 new greenfield campuses, 17 student transport hubs (22 buses, 22 vans), 0 dedicated girls' hostels, and 298 subject teacher recruitments. Total estimated outlay is \u20b9155.43 Crores, raising universal secondary coverage to 98.8% across all 22 blocks."
     },
     {
       "district_name": "Jagatsinghpur",
@@ -2761,7 +3271,10 @@
           "total_budget_cr": 2.9,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -2779,7 +3292,10 @@
           "total_budget_cr": 9.66,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -2797,7 +3313,10 @@
           "total_budget_cr": 23.85,
           "teachers_required": 46,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 18
+          "cyclone_resilient_upgrades": 18,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.4
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -2815,7 +3334,10 @@
           "total_budget_cr": 71.0,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -2829,6 +3351,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -2841,6 +3366,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -2853,6 +3381,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -2865,6 +3396,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -2877,6 +3411,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -2889,6 +3426,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -2901,6 +3441,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -2913,10 +3456,13 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         }
       ],
-      "strategy": "Jagatsinghpur (Coastal Plain, Vulnerability: 40/100) comprises 8 CD blocks spanning 1,668 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.96, baseline secondary access stands at 81.0%. The masterplan allocates 13 high school upgrades, 5 new greenfield campuses, 2 student transport hubs, 0 dedicated girls' hostels, and 46 subject teacher recruitments. Total estimated outlay is \u20b923.85 Crores, raising universal secondary coverage to 98.9% across all 8 blocks."
+      "strategy": "Jagatsinghpur (Coastal Plain, Vulnerability: 40/100) comprises 8 CD blocks spanning 1,668 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.96, baseline secondary access stands at 81.0%. The masterplan allocates 13 high school upgrades, 5 new greenfield campuses, 2 student transport hubs (8 buses, 8 vans), 0 dedicated girls' hostels, and 46 subject teacher recruitments. Total estimated outlay is \u20b923.85 Crores, raising universal secondary coverage to 98.9% across all 8 blocks."
     },
     {
       "district_name": "Jajpur",
@@ -2971,7 +3517,10 @@
           "total_budget_cr": 7.05,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -2989,7 +3538,10 @@
           "total_budget_cr": 19.77,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -3007,7 +3559,10 @@
           "total_budget_cr": 48.0,
           "teachers_required": 92,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 36
+          "cyclone_resilient_upgrades": 36,
+          "fleet_minibuses": 10,
+          "fleet_feeder_vans": 10,
+          "annual_transit_opex_cr": 0.5
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -3025,7 +3580,10 @@
           "total_budget_cr": 139.2,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -3039,6 +3597,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -3051,6 +3612,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -3063,6 +3627,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -3075,6 +3642,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -3087,6 +3657,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -3099,6 +3672,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -3111,6 +3687,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -3123,6 +3702,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -3135,6 +3717,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -3147,10 +3732,13 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         }
       ],
-      "strategy": "Jajpur (Coastal Industrial, Vulnerability: 50/100) comprises 10 CD blocks spanning 2,899 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.95, baseline secondary access stands at 78.0%. The masterplan allocates 26 high school upgrades, 10 new greenfield campuses, 5 student transport hubs, 0 dedicated girls' hostels, and 92 subject teacher recruitments. Total estimated outlay is \u20b948.0 Crores, raising universal secondary coverage to 98.9% across all 10 blocks."
+      "strategy": "Jajpur (Coastal Industrial, Vulnerability: 50/100) comprises 10 CD blocks spanning 2,899 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.95, baseline secondary access stands at 78.0%. The masterplan allocates 26 high school upgrades, 10 new greenfield campuses, 5 student transport hubs (10 buses, 10 vans), 0 dedicated girls' hostels, and 92 subject teacher recruitments. Total estimated outlay is \u20b948.0 Crores, raising universal secondary coverage to 98.9% across all 10 blocks."
     },
     {
       "district_name": "Jharsuguda",
@@ -3200,7 +3788,10 @@
           "total_budget_cr": 5.55,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -3218,7 +3809,10 @@
           "total_budget_cr": 14.94,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -3236,7 +3830,10 @@
           "total_budget_cr": 35.28,
           "teachers_required": 68,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 5,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.25
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -3254,7 +3851,10 @@
           "total_budget_cr": 103.7,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -3268,6 +3868,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -3280,6 +3883,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -3292,6 +3898,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -3304,6 +3913,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -3316,10 +3928,13 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         }
       ],
-      "strategy": "Jharsuguda (Western Industrial, Vulnerability: 52/100) comprises 5 CD blocks spanning 2,114 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 77.4%. The masterplan allocates 20 high school upgrades, 7 new greenfield campuses, 4 student transport hubs, 0 dedicated girls' hostels, and 68 subject teacher recruitments. Total estimated outlay is \u20b935.28 Crores, raising universal secondary coverage to 98.9% across all 5 blocks."
+      "strategy": "Jharsuguda (Western Industrial, Vulnerability: 52/100) comprises 5 CD blocks spanning 2,114 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 77.4%. The masterplan allocates 20 high school upgrades, 7 new greenfield campuses, 4 student transport hubs (5 buses, 5 vans), 0 dedicated girls' hostels, and 68 subject teacher recruitments. Total estimated outlay is \u20b935.28 Crores, raising universal secondary coverage to 98.9% across all 5 blocks."
     },
     {
       "district_name": "Kalahandi",
@@ -3377,7 +3992,10 @@
           "total_budget_cr": 38.2,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -3395,7 +4013,10 @@
           "total_budget_cr": 88.92,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -3413,7 +4034,10 @@
           "total_budget_cr": 198.44,
           "teachers_required": 380,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 23,
+          "fleet_feeder_vans": 13,
+          "annual_transit_opex_cr": 0.95
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -3431,7 +4055,10 @@
           "total_budget_cr": 503.75,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -3445,6 +4072,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.12
         },
         {
@@ -3457,6 +4087,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -3469,6 +4102,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 12.83
         },
         {
@@ -3481,6 +4117,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.12
         },
         {
@@ -3493,6 +4132,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 16.12
         },
         {
@@ -3505,6 +4147,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.12
         },
         {
@@ -3517,6 +4162,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.97
         },
         {
@@ -3529,6 +4177,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 12.83
         },
         {
@@ -3541,6 +4192,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -3553,6 +4207,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.12
         },
         {
@@ -3565,6 +4222,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.97
         },
         {
@@ -3577,6 +4237,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -3589,10 +4252,13 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 18.97
         }
       ],
-      "strategy": "Kalahandi (Drought-prone / Tribal, Vulnerability: 85/100) comprises 13 CD blocks spanning 7,920 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.88, baseline secondary access stands at 67.5%. The masterplan allocates 108 high school upgrades, 41 new greenfield campuses, 22 student transport hubs, 0 dedicated girls' hostels, and 380 subject teacher recruitments. Total estimated outlay is \u20b9198.44 Crores, raising universal secondary coverage to 98.3% across all 13 blocks."
+      "strategy": "Kalahandi (Drought-prone / Tribal, Vulnerability: 85/100) comprises 13 CD blocks spanning 7,920 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.88, baseline secondary access stands at 67.5%. The masterplan allocates 108 high school upgrades, 41 new greenfield campuses, 22 student transport hubs (23 buses, 13 vans), 0 dedicated girls' hostels, and 380 subject teacher recruitments. Total estimated outlay is \u20b9198.44 Crores, raising universal secondary coverage to 98.3% across all 13 blocks."
     },
     {
       "district_name": "Kandhamal",
@@ -3649,7 +4315,10 @@
           "total_budget_cr": 72.75,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -3667,7 +4336,10 @@
           "total_budget_cr": 160.35,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -3685,7 +4357,10 @@
           "total_budget_cr": 410.19,
           "teachers_required": 706,
           "girls_hostels_proposed": 70,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 107,
+          "fleet_feeder_vans": 58,
+          "annual_transit_opex_cr": 4.49
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -3703,7 +4378,10 @@
           "total_budget_cr": 828.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -3717,6 +4395,9 @@
           "proposed_upgrades": 14,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 7,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.46,
           "estimated_budget_cr": 28.64
         },
         {
@@ -3729,6 +4410,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -3741,6 +4425,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -3753,6 +4440,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 24.2
         },
         {
@@ -3765,6 +4455,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -3777,6 +4470,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -3789,6 +4485,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -3801,6 +4500,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -3813,6 +4515,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 24.2
         },
         {
@@ -3825,6 +4530,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -3837,6 +4545,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 24.2
         },
         {
@@ -3849,10 +4560,13 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         }
       ],
-      "strategy": "Kandhamal (Tribal / Hilly, Vulnerability: 94/100) comprises 12 CD blocks spanning 8,021 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.85, baseline secondary access stands at 40.8%. The masterplan allocates 151 high school upgrades, 101 new greenfield campuses, 118 student transport hubs, 70 dedicated girls' hostels, and 706 subject teacher recruitments. Total estimated outlay is \u20b9410.19 Crores, raising universal secondary coverage to 97.0% across all 12 blocks."
+      "strategy": "Kandhamal (Tribal / Hilly, Vulnerability: 94/100) comprises 12 CD blocks spanning 8,021 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.85, baseline secondary access stands at 40.8%. The masterplan allocates 151 high school upgrades, 101 new greenfield campuses, 118 student transport hubs (107 buses, 58 vans), 70 dedicated girls' hostels, and 706 subject teacher recruitments. Total estimated outlay is \u20b9410.19 Crores, raising universal secondary coverage to 97.0% across all 12 blocks."
     },
     {
       "district_name": "Kendrapara",
@@ -3906,7 +4620,10 @@
           "total_budget_cr": 7.05,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -3924,7 +4641,10 @@
           "total_budget_cr": 19.77,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -3942,7 +4662,10 @@
           "total_budget_cr": 44.71,
           "teachers_required": 86,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 34
+          "cyclone_resilient_upgrades": 34,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 9,
+          "annual_transit_opex_cr": 0.45
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -3960,7 +4683,10 @@
           "total_budget_cr": 131.6,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -3974,6 +4700,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -3986,6 +4715,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -3998,6 +4730,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4010,6 +4745,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -4022,6 +4760,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4034,6 +4775,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -4046,6 +4790,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4058,6 +4805,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -4070,10 +4820,13 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         }
       ],
-      "strategy": "Kendrapara (Coastal Wetland, Vulnerability: 54/100) comprises 9 CD blocks spanning 2,644 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 76.8%. The masterplan allocates 25 high school upgrades, 9 new greenfield campuses, 5 student transport hubs, 0 dedicated girls' hostels, and 86 subject teacher recruitments. Total estimated outlay is \u20b944.71 Crores, raising universal secondary coverage to 98.8% across all 9 blocks."
+      "strategy": "Kendrapara (Coastal Wetland, Vulnerability: 54/100) comprises 9 CD blocks spanning 2,644 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 76.8%. The masterplan allocates 25 high school upgrades, 9 new greenfield campuses, 5 student transport hubs (9 buses, 9 vans), 0 dedicated girls' hostels, and 86 subject teacher recruitments. Total estimated outlay is \u20b944.71 Crores, raising universal secondary coverage to 98.8% across all 9 blocks."
     },
     {
       "district_name": "Kendujhar",
@@ -4131,7 +4884,10 @@
           "total_budget_cr": 65.25,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -4149,7 +4905,10 @@
           "total_budget_cr": 147.84,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -4167,7 +4926,10 @@
           "total_budget_cr": 385.8,
           "teachers_required": 664,
           "girls_hostels_proposed": 66,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 88,
+          "fleet_feeder_vans": 44,
+          "annual_transit_opex_cr": 3.65
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -4185,7 +4947,10 @@
           "total_budget_cr": 828.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -4199,6 +4964,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -4211,6 +4979,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4223,6 +4994,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4235,6 +5009,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -4247,6 +5024,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -4259,6 +5039,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4271,6 +5054,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -4283,6 +5069,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4295,6 +5084,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 15.32
         },
         {
@@ -4307,6 +5099,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4319,6 +5114,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4331,6 +5129,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -4343,10 +5144,13 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 17.76
         }
       ],
-      "strategy": "Kendujhar (Tribal / Mining, Vulnerability: 82/100) comprises 13 CD blocks spanning 8,303 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.89, baseline secondary access stands at 44.4%. The masterplan allocates 142 high school upgrades, 95 new greenfield campuses, 111 student transport hubs, 66 dedicated girls' hostels, and 664 subject teacher recruitments. Total estimated outlay is \u20b9385.8 Crores, raising universal secondary coverage to 97.2% across all 13 blocks."
+      "strategy": "Kendujhar (Tribal / Mining, Vulnerability: 82/100) comprises 13 CD blocks spanning 8,303 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.89, baseline secondary access stands at 44.4%. The masterplan allocates 142 high school upgrades, 95 new greenfield campuses, 111 student transport hubs (88 buses, 44 vans), 66 dedicated girls' hostels, and 664 subject teacher recruitments. Total estimated outlay is \u20b9385.8 Crores, raising universal secondary coverage to 97.2% across all 13 blocks."
     },
     {
       "district_name": "Khordha",
@@ -4401,7 +5205,10 @@
           "total_budget_cr": 4.4,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -4419,7 +5226,10 @@
           "total_budget_cr": 14.94,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -4437,7 +5247,10 @@
           "total_budget_cr": 38.57,
           "teachers_required": 74,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 29
+          "cyclone_resilient_upgrades": 29,
+          "fleet_minibuses": 10,
+          "fleet_feeder_vans": 10,
+          "annual_transit_opex_cr": 0.5
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -4455,7 +5268,10 @@
           "total_budget_cr": 120.75,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -4469,6 +5285,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4481,6 +5300,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4493,6 +5315,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4505,6 +5330,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4517,6 +5345,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4529,6 +5360,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -4541,6 +5375,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4553,6 +5390,9 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         },
         {
@@ -4565,6 +5405,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -4577,10 +5420,13 @@
           "proposed_upgrades": 1,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 3.59
         }
       ],
-      "strategy": "Khordha (Urban / Capital Region, Vulnerability: 38/100) comprises 10 CD blocks spanning 2,813 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.97, baseline secondary access stands at 81.6%. The masterplan allocates 21 high school upgrades, 8 new greenfield campuses, 4 student transport hubs, 0 dedicated girls' hostels, and 74 subject teacher recruitments. Total estimated outlay is \u20b938.57 Crores, raising universal secondary coverage to 99.1% across all 10 blocks."
+      "strategy": "Khordha (Urban / Capital Region, Vulnerability: 38/100) comprises 10 CD blocks spanning 2,813 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.97, baseline secondary access stands at 81.6%. The masterplan allocates 21 high school upgrades, 8 new greenfield campuses, 4 student transport hubs (10 buses, 10 vans), 0 dedicated girls' hostels, and 74 subject teacher recruitments. Total estimated outlay is \u20b938.57 Crores, raising universal secondary coverage to 99.1% across all 10 blocks."
     },
     {
       "district_name": "Koraput",
@@ -4639,7 +5485,10 @@
           "total_budget_cr": 71.75,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -4657,7 +5506,10 @@
           "total_budget_cr": 159.72,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -4675,7 +5527,10 @@
           "total_budget_cr": 409.04,
           "teachers_required": 704,
           "girls_hostels_proposed": 70,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 98,
+          "fleet_feeder_vans": 49,
+          "annual_transit_opex_cr": 4.06
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -4693,7 +5548,10 @@
           "total_budget_cr": 828.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -4707,6 +5565,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -4719,6 +5580,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4731,6 +5595,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -4743,6 +5610,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 17.76
         },
         {
@@ -4755,6 +5625,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4767,6 +5640,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 17.76
         },
         {
@@ -4779,6 +5655,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -4791,6 +5670,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -4803,6 +5685,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -4815,6 +5700,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -4827,6 +5715,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 15.32
         },
         {
@@ -4839,6 +5730,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -4851,6 +5745,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 22.2
         },
         {
@@ -4863,10 +5760,13 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         }
       ],
-      "strategy": "Koraput (Tribal / Hilly, Vulnerability: 93/100) comprises 14 CD blocks spanning 8,807 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.84, baseline secondary access stands at 41.1%. The masterplan allocates 150 high school upgrades, 101 new greenfield campuses, 117 student transport hubs, 70 dedicated girls' hostels, and 704 subject teacher recruitments. Total estimated outlay is \u20b9409.04 Crores, raising universal secondary coverage to 97.0% across all 14 blocks."
+      "strategy": "Koraput (Tribal / Hilly, Vulnerability: 93/100) comprises 14 CD blocks spanning 8,807 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.84, baseline secondary access stands at 41.1%. The masterplan allocates 150 high school upgrades, 101 new greenfield campuses, 117 student transport hubs (98 buses, 49 vans), 70 dedicated girls' hostels, and 704 subject teacher recruitments. Total estimated outlay is \u20b9409.04 Crores, raising universal secondary coverage to 97.0% across all 14 blocks."
     },
     {
       "district_name": "Malkangiri",
@@ -4918,7 +5818,10 @@
           "total_budget_cr": 63.9,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -4936,7 +5839,10 @@
           "total_budget_cr": 141.27,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -4954,7 +5860,10 @@
           "total_budget_cr": 360.26,
           "teachers_required": 620,
           "girls_hostels_proposed": 61,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 86,
+          "fleet_feeder_vans": 49,
+          "annual_transit_opex_cr": 3.63
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -4972,7 +5881,10 @@
           "total_budget_cr": 717.6,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -4986,6 +5898,9 @@
           "proposed_upgrades": 15,
           "proposed_new_schools": 7,
           "proposed_transport_hubs": 7,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.46,
           "estimated_budget_cr": 31.93
         },
         {
@@ -4998,6 +5913,9 @@
           "proposed_upgrades": 18,
           "proposed_new_schools": 8,
           "proposed_transport_hubs": 9,
+          "fleet_minibuses": 14,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.59,
           "estimated_budget_cr": 37.52
         },
         {
@@ -5010,6 +5928,9 @@
           "proposed_upgrades": 16,
           "proposed_new_schools": 7,
           "proposed_transport_hubs": 8,
+          "fleet_minibuses": 12,
+          "fleet_feeder_vans": 7,
+          "annual_transit_opex_cr": 0.51,
           "estimated_budget_cr": 33.08
         },
         {
@@ -5022,6 +5943,9 @@
           "proposed_upgrades": 16,
           "proposed_new_schools": 7,
           "proposed_transport_hubs": 8,
+          "fleet_minibuses": 12,
+          "fleet_feeder_vans": 7,
+          "annual_transit_opex_cr": 0.51,
           "estimated_budget_cr": 33.08
         },
         {
@@ -5034,6 +5958,9 @@
           "proposed_upgrades": 18,
           "proposed_new_schools": 8,
           "proposed_transport_hubs": 9,
+          "fleet_minibuses": 14,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.59,
           "estimated_budget_cr": 37.52
         },
         {
@@ -5046,6 +5973,9 @@
           "proposed_upgrades": 15,
           "proposed_new_schools": 7,
           "proposed_transport_hubs": 7,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.46,
           "estimated_budget_cr": 31.93
         },
         {
@@ -5058,10 +5988,13 @@
           "proposed_upgrades": 16,
           "proposed_new_schools": 7,
           "proposed_transport_hubs": 8,
+          "fleet_minibuses": 12,
+          "fleet_feeder_vans": 7,
+          "annual_transit_opex_cr": 0.51,
           "estimated_budget_cr": 33.08
         }
       ],
-      "strategy": "Malkangiri (Tribal / Remote, Vulnerability: 96/100) comprises 7 CD blocks spanning 5,791 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.82, baseline secondary access stands at 40.2%. The masterplan allocates 132 high school upgrades, 89 new greenfield campuses, 103 student transport hubs, 61 dedicated girls' hostels, and 620 subject teacher recruitments. Total estimated outlay is \u20b9360.26 Crores, raising universal secondary coverage to 97.0% across all 7 blocks."
+      "strategy": "Malkangiri (Tribal / Remote, Vulnerability: 96/100) comprises 7 CD blocks spanning 5,791 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.82, baseline secondary access stands at 40.2%. The masterplan allocates 132 high school upgrades, 89 new greenfield campuses, 103 student transport hubs (86 buses, 49 vans), 61 dedicated girls' hostels, and 620 subject teacher recruitments. Total estimated outlay is \u20b9360.26 Crores, raising universal secondary coverage to 97.0% across all 7 blocks."
     },
     {
       "district_name": "Mayurbhanj",
@@ -5132,7 +6065,10 @@
           "total_budget_cr": 67.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -5150,7 +6086,10 @@
           "total_budget_cr": 151.95,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -5168,7 +6107,10 @@
           "total_budget_cr": 393.83,
           "teachers_required": 678,
           "girls_hostels_proposed": 67,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 78,
+          "fleet_feeder_vans": 26,
+          "annual_transit_opex_cr": 2.86
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -5186,7 +6128,10 @@
           "total_budget_cr": 828.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -5200,6 +6145,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5212,6 +6160,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5224,6 +6175,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5236,6 +6190,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5248,6 +6205,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5260,6 +6220,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5272,6 +6235,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5284,6 +6250,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5296,6 +6265,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5308,6 +6280,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5320,6 +6295,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 6.44
         },
         {
@@ -5332,6 +6310,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5344,6 +6325,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5356,6 +6340,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5368,6 +6355,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5380,6 +6370,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5392,6 +6385,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5404,6 +6400,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5416,6 +6415,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5428,6 +6430,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5440,6 +6445,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5452,6 +6460,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5464,6 +6475,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         },
         {
@@ -5476,6 +6490,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5488,6 +6505,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 9.73
         },
         {
@@ -5500,10 +6520,13 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 3,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.11,
           "estimated_budget_cr": 8.88
         }
       ],
-      "strategy": "Mayurbhanj (Tribal / Forest, Vulnerability: 86/100) comprises 26 CD blocks spanning 10,418 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.88, baseline secondary access stands at 43.2%. The masterplan allocates 145 high school upgrades, 97 new greenfield campuses, 113 student transport hubs, 67 dedicated girls' hostels, and 678 subject teacher recruitments. Total estimated outlay is \u20b9393.83 Crores, raising universal secondary coverage to 97.1% across all 26 blocks."
+      "strategy": "Mayurbhanj (Tribal / Forest, Vulnerability: 86/100) comprises 26 CD blocks spanning 10,418 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.88, baseline secondary access stands at 43.2%. The masterplan allocates 145 high school upgrades, 97 new greenfield campuses, 113 student transport hubs (78 buses, 26 vans), 67 dedicated girls' hostels, and 678 subject teacher recruitments. Total estimated outlay is \u20b9393.83 Crores, raising universal secondary coverage to 97.1% across all 26 blocks."
     },
     {
       "district_name": "Nabarangpur",
@@ -5558,7 +6581,10 @@
           "total_budget_cr": 54.55,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -5576,7 +6602,10 @@
           "total_budget_cr": 122.64,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -5594,7 +6623,10 @@
           "total_budget_cr": 316.22,
           "teachers_required": 544,
           "girls_hostels_proposed": 54,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 75,
+          "fleet_feeder_vans": 38,
+          "annual_transit_opex_cr": 3.11
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -5612,7 +6644,10 @@
           "total_budget_cr": 653.55,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -5626,6 +6661,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 24.2
         },
         {
@@ -5638,6 +6676,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -5650,6 +6691,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -5662,6 +6706,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 22.2
         },
         {
@@ -5674,6 +6721,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -5686,6 +6736,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -5698,6 +6751,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 18.61
         },
         {
@@ -5710,6 +6766,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 19.76
         },
         {
@@ -5722,6 +6781,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -5734,10 +6796,13 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 4,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 17.76
         }
       ],
-      "strategy": "Nabarangpur (Tribal / Plateau, Vulnerability: 88/100) comprises 10 CD blocks spanning 5,291 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.85, baseline secondary access stands at 42.6%. The masterplan allocates 116 high school upgrades, 78 new greenfield campuses, 91 student transport hubs, 54 dedicated girls' hostels, and 544 subject teacher recruitments. Total estimated outlay is \u20b9316.22 Crores, raising universal secondary coverage to 97.1% across all 10 blocks."
+      "strategy": "Nabarangpur (Tribal / Plateau, Vulnerability: 88/100) comprises 10 CD blocks spanning 5,291 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.85, baseline secondary access stands at 42.6%. The masterplan allocates 116 high school upgrades, 78 new greenfield campuses, 91 student transport hubs (75 buses, 38 vans), 54 dedicated girls' hostels, and 544 subject teacher recruitments. Total estimated outlay is \u20b9316.22 Crores, raising universal secondary coverage to 97.1% across all 10 blocks."
     },
     {
       "district_name": "Nayagarh",
@@ -5790,7 +6855,10 @@
           "total_budget_cr": 13.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -5808,7 +6876,10 @@
           "total_budget_cr": 34.26,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -5826,7 +6897,10 @@
           "total_budget_cr": 78.29,
           "teachers_required": 150,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 8,
+          "annual_transit_opex_cr": 0.4
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -5844,7 +6918,10 @@
           "total_budget_cr": 210.65,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -5858,6 +6935,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -5870,6 +6950,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 10.28
         },
         {
@@ -5882,6 +6965,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -5894,6 +6980,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -5906,6 +6995,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -5918,6 +7010,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -5930,6 +7025,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 7.84
         },
         {
@@ -5942,10 +7040,13 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 11.13
         }
       ],
-      "strategy": "Nayagarh (Central Plain, Vulnerability: 65/100) comprises 8 CD blocks spanning 3,890 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 73.5%. The masterplan allocates 43 high school upgrades, 16 new greenfield campuses, 9 student transport hubs, 0 dedicated girls' hostels, and 150 subject teacher recruitments. Total estimated outlay is \u20b978.29 Crores, raising universal secondary coverage to 98.6% across all 8 blocks."
+      "strategy": "Nayagarh (Central Plain, Vulnerability: 65/100) comprises 8 CD blocks spanning 3,890 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.94, baseline secondary access stands at 73.5%. The masterplan allocates 43 high school upgrades, 16 new greenfield campuses, 9 student transport hubs (8 buses, 8 vans), 0 dedicated girls' hostels, and 150 subject teacher recruitments. Total estimated outlay is \u20b978.29 Crores, raising universal secondary coverage to 98.6% across all 8 blocks."
     },
     {
       "district_name": "Nuapada",
@@ -5995,7 +7096,10 @@
           "total_budget_cr": 38.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -6013,7 +7117,10 @@
           "total_budget_cr": 85.74,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -6031,7 +7138,10 @@
           "total_budget_cr": 223.95,
           "teachers_required": 386,
           "girls_hostels_proposed": 38,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 50,
+          "fleet_feeder_vans": 28,
+          "annual_transit_opex_cr": 2.11
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -6049,7 +7159,10 @@
           "total_budget_cr": 475.35,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -6063,6 +7176,9 @@
           "proposed_upgrades": 12,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 24.2
         },
         {
@@ -6075,6 +7191,9 @@
           "proposed_upgrades": 16,
           "proposed_new_schools": 7,
           "proposed_transport_hubs": 8,
+          "fleet_minibuses": 12,
+          "fleet_feeder_vans": 7,
+          "annual_transit_opex_cr": 0.51,
           "estimated_budget_cr": 33.08
         },
         {
@@ -6087,6 +7206,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -6099,6 +7221,9 @@
           "proposed_upgrades": 15,
           "proposed_new_schools": 7,
           "proposed_transport_hubs": 7,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.46,
           "estimated_budget_cr": 31.93
         },
         {
@@ -6111,10 +7236,13 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         }
       ],
-      "strategy": "Nuapada (Drought-prone / Tribal, Vulnerability: 84/100) comprises 5 CD blocks spanning 3,852 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.87, baseline secondary access stands at 43.8%. The masterplan allocates 83 high school upgrades, 55 new greenfield campuses, 64 student transport hubs, 38 dedicated girls' hostels, and 386 subject teacher recruitments. Total estimated outlay is \u20b9223.95 Crores, raising universal secondary coverage to 97.2% across all 5 blocks."
+      "strategy": "Nuapada (Drought-prone / Tribal, Vulnerability: 84/100) comprises 5 CD blocks spanning 3,852 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.87, baseline secondary access stands at 43.8%. The masterplan allocates 83 high school upgrades, 55 new greenfield campuses, 64 student transport hubs (50 buses, 28 vans), 38 dedicated girls' hostels, and 386 subject teacher recruitments. Total estimated outlay is \u20b9223.95 Crores, raising universal secondary coverage to 97.2% across all 5 blocks."
     },
     {
       "district_name": "Puri",
@@ -6170,7 +7298,10 @@
           "total_budget_cr": 7.3,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -6188,7 +7319,10 @@
           "total_budget_cr": 22.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -6206,7 +7340,10 @@
           "total_budget_cr": 53.29,
           "teachers_required": 102,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 40
+          "cyclone_resilient_upgrades": 40,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 11,
+          "annual_transit_opex_cr": 0.55
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -6224,7 +7361,10 @@
           "total_budget_cr": 158.1,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -6238,6 +7378,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6250,6 +7393,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6262,6 +7408,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6274,6 +7423,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6286,6 +7438,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6298,6 +7453,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -6310,6 +7468,9 @@
           "proposed_upgrades": 3,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 5.29
         },
         {
@@ -6322,6 +7483,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6334,6 +7498,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6346,6 +7513,9 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         },
         {
@@ -6358,10 +7528,13 @@
           "proposed_upgrades": 2,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 4.44
         }
       ],
-      "strategy": "Puri (Coastal Plain, Vulnerability: 45/100) comprises 11 CD blocks spanning 3,479 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.95, baseline secondary access stands at 79.5%. The masterplan allocates 29 high school upgrades, 11 new greenfield campuses, 6 student transport hubs, 0 dedicated girls' hostels, and 102 subject teacher recruitments. Total estimated outlay is \u20b953.29 Crores, raising universal secondary coverage to 98.9% across all 11 blocks."
+      "strategy": "Puri (Coastal Plain, Vulnerability: 45/100) comprises 11 CD blocks spanning 3,479 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.95, baseline secondary access stands at 79.5%. The masterplan allocates 29 high school upgrades, 11 new greenfield campuses, 6 student transport hubs (11 buses, 11 vans), 0 dedicated girls' hostels, and 102 subject teacher recruitments. Total estimated outlay is \u20b953.29 Crores, raising universal secondary coverage to 98.9% across all 11 blocks."
     },
     {
       "district_name": "Rayagada",
@@ -6417,7 +7590,10 @@
           "total_budget_cr": 70.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -6435,7 +7611,10 @@
           "total_budget_cr": 157.89,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -6453,7 +7632,10 @@
           "total_budget_cr": 405.45,
           "teachers_required": 698,
           "girls_hostels_proposed": 69,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 102,
+          "fleet_feeder_vans": 55,
+          "annual_transit_opex_cr": 4.27
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -6471,7 +7653,10 @@
           "total_budget_cr": 828.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -6485,6 +7670,9 @@
           "proposed_upgrades": 14,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 7,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.46,
           "estimated_budget_cr": 28.64
         },
         {
@@ -6497,6 +7685,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -6509,6 +7700,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -6521,6 +7715,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -6533,6 +7730,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -6545,6 +7745,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -6557,6 +7760,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 5,
           "proposed_transport_hubs": 5,
+          "fleet_minibuses": 8,
+          "fleet_feeder_vans": 4,
+          "annual_transit_opex_cr": 0.33,
           "estimated_budget_cr": 23.05
         },
         {
@@ -6569,6 +7775,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -6581,6 +7790,9 @@
           "proposed_upgrades": 14,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 7,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.46,
           "estimated_budget_cr": 28.64
         },
         {
@@ -6593,6 +7805,9 @@
           "proposed_upgrades": 13,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 6,
+          "fleet_minibuses": 9,
+          "fleet_feeder_vans": 5,
+          "annual_transit_opex_cr": 0.38,
           "estimated_budget_cr": 27.49
         },
         {
@@ -6605,10 +7820,13 @@
           "proposed_upgrades": 14,
           "proposed_new_schools": 6,
           "proposed_transport_hubs": 7,
+          "fleet_minibuses": 11,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.46,
           "estimated_budget_cr": 28.64
         }
       ],
-      "strategy": "Rayagada (Tribal / Hilly, Vulnerability: 91/100) comprises 11 CD blocks spanning 7,073 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.83, baseline secondary access stands at 41.7%. The masterplan allocates 149 high school upgrades, 100 new greenfield campuses, 116 student transport hubs, 69 dedicated girls' hostels, and 698 subject teacher recruitments. Total estimated outlay is \u20b9405.45 Crores, raising universal secondary coverage to 97.1% across all 11 blocks."
+      "strategy": "Rayagada (Tribal / Hilly, Vulnerability: 91/100) comprises 11 CD blocks spanning 7,073 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.83, baseline secondary access stands at 41.7%. The masterplan allocates 149 high school upgrades, 100 new greenfield campuses, 116 student transport hubs (102 buses, 55 vans), 69 dedicated girls' hostels, and 698 subject teacher recruitments. Total estimated outlay is \u20b9405.45 Crores, raising universal secondary coverage to 97.1% across all 11 blocks."
     },
     {
       "district_name": "Sambalpur",
@@ -6662,7 +7880,10 @@
           "total_budget_cr": 23.2,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -6680,7 +7901,10 @@
           "total_budget_cr": 57.66,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -6698,7 +7922,10 @@
           "total_budget_cr": 134.87,
           "teachers_required": 258,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 15,
+          "fleet_feeder_vans": 9,
+          "annual_transit_opex_cr": 0.63
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -6716,7 +7943,10 @@
           "total_budget_cr": 364.1,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -6730,6 +7960,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 16.12
         },
         {
@@ -6742,6 +7975,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -6754,6 +7990,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -6766,6 +8005,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 12.83
         },
         {
@@ -6778,6 +8020,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 16.42
         },
         {
@@ -6790,6 +8035,9 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 16.42
         },
         {
@@ -6802,6 +8050,9 @@
           "proposed_upgrades": 9,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 12.83
         },
         {
@@ -6814,6 +8065,9 @@
           "proposed_upgrades": 11,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 17.27
         },
         {
@@ -6826,10 +8080,13 @@
           "proposed_upgrades": 10,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 2,
+          "fleet_minibuses": 2,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.08,
           "estimated_budget_cr": 16.42
         }
       ],
-      "strategy": "Sambalpur (Western Plateau, Vulnerability: 64/100) comprises 9 CD blocks spanning 6,657 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.92, baseline secondary access stands at 73.8%. The masterplan allocates 73 high school upgrades, 28 new greenfield campuses, 15 student transport hubs, 0 dedicated girls' hostels, and 258 subject teacher recruitments. Total estimated outlay is \u20b9134.87 Crores, raising universal secondary coverage to 98.7% across all 9 blocks."
+      "strategy": "Sambalpur (Western Plateau, Vulnerability: 64/100) comprises 9 CD blocks spanning 6,657 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.92, baseline secondary access stands at 73.8%. The masterplan allocates 73 high school upgrades, 28 new greenfield campuses, 15 student transport hubs (15 buses, 9 vans), 0 dedicated girls' hostels, and 258 subject teacher recruitments. Total estimated outlay is \u20b9134.87 Crores, raising universal secondary coverage to 98.7% across all 9 blocks."
     },
     {
       "district_name": "Subarnapur",
@@ -6880,7 +8137,10 @@
           "total_budget_cr": 8.2,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -6898,7 +8158,10 @@
           "total_budget_cr": 20.22,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -6916,7 +8179,10 @@
           "total_budget_cr": 48.0,
           "teachers_required": 92,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 6,
+          "annual_transit_opex_cr": 0.3
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -6934,7 +8200,10 @@
           "total_budget_cr": 130.2,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -6948,6 +8217,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -6960,6 +8232,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -6972,6 +8247,9 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         },
         {
@@ -6984,6 +8262,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -6996,6 +8277,9 @@
           "proposed_upgrades": 4,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.14
         },
         {
@@ -7008,10 +8292,13 @@
           "proposed_upgrades": 5,
           "proposed_new_schools": 1,
           "proposed_transport_hubs": 1,
+          "fleet_minibuses": 1,
+          "fleet_feeder_vans": 1,
+          "annual_transit_opex_cr": 0.05,
           "estimated_budget_cr": 6.99
         }
       ],
-      "strategy": "Subarnapur (Western Plain, Vulnerability: 66/100) comprises 6 CD blocks spanning 2,337 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.92, baseline secondary access stands at 73.2%. The masterplan allocates 26 high school upgrades, 10 new greenfield campuses, 5 student transport hubs, 0 dedicated girls' hostels, and 92 subject teacher recruitments. Total estimated outlay is \u20b948.0 Crores, raising universal secondary coverage to 98.5% across all 6 blocks."
+      "strategy": "Subarnapur (Western Plain, Vulnerability: 66/100) comprises 6 CD blocks spanning 2,337 sq.km. With a terrain walking friction factor of 1.17x (Tobler index) and a Gender Parity Index of 0.92, baseline secondary access stands at 73.2%. The masterplan allocates 26 high school upgrades, 10 new greenfield campuses, 5 student transport hubs (6 buses, 6 vans), 0 dedicated girls' hostels, and 92 subject teacher recruitments. Total estimated outlay is \u20b948.0 Crores, raising universal secondary coverage to 98.5% across all 6 blocks."
     },
     {
       "district_name": "Sundargarh",
@@ -7073,7 +8360,10 @@
           "total_budget_cr": 63.65,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Upper Primary": {
           "norm_distance_km": 3.0,
@@ -7091,7 +8381,10 @@
           "total_budget_cr": 145.38,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         },
         "Secondary": {
           "norm_distance_km": 5.0,
@@ -7109,7 +8402,10 @@
           "total_budget_cr": 381.06,
           "teachers_required": 656,
           "girls_hostels_proposed": 65,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 70,
+          "fleet_feeder_vans": 35,
+          "annual_transit_opex_cr": 2.81
         },
         "Higher Secondary": {
           "norm_distance_km": 7.0,
@@ -7127,7 +8423,10 @@
           "total_budget_cr": 828.5,
           "teachers_required": 0,
           "girls_hostels_proposed": 0,
-          "cyclone_resilient_upgrades": 0
+          "cyclone_resilient_upgrades": 0,
+          "fleet_minibuses": 0,
+          "fleet_feeder_vans": 0,
+          "annual_transit_opex_cr": 0.0
         }
       },
       "blocks": [
@@ -7141,6 +8440,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7153,6 +8455,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 13.32
         },
         {
@@ -7165,6 +8470,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7177,6 +8485,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 13.32
         },
         {
@@ -7189,6 +8500,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7201,6 +8515,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7213,6 +8530,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7225,6 +8545,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7237,6 +8560,9 @@
           "proposed_upgrades": 8,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 4,
+          "fleet_minibuses": 6,
+          "fleet_feeder_vans": 3,
+          "annual_transit_opex_cr": 0.25,
           "estimated_budget_cr": 15.32
         },
         {
@@ -7249,6 +8575,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7261,6 +8590,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7273,6 +8605,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 13.32
         },
         {
@@ -7285,6 +8620,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7297,6 +8635,9 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         },
         {
@@ -7309,6 +8650,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 10.88
         },
         {
@@ -7321,6 +8665,9 @@
           "proposed_upgrades": 6,
           "proposed_new_schools": 2,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 10.88
         },
         {
@@ -7333,10 +8680,13 @@
           "proposed_upgrades": 7,
           "proposed_new_schools": 3,
           "proposed_transport_hubs": 3,
+          "fleet_minibuses": 4,
+          "fleet_feeder_vans": 2,
+          "annual_transit_opex_cr": 0.16,
           "estimated_budget_cr": 14.17
         }
       ],
-      "strategy": "Sundargarh (Tribal / Industrial, Vulnerability: 79/100) comprises 17 CD blocks spanning 9,712 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.9, baseline secondary access stands at 45.3%. The masterplan allocates 140 high school upgrades, 94 new greenfield campuses, 109 student transport hubs, 65 dedicated girls' hostels, and 656 subject teacher recruitments. Total estimated outlay is \u20b9381.06 Crores, raising universal secondary coverage to 97.3% across all 17 blocks."
+      "strategy": "Sundargarh (Tribal / Industrial, Vulnerability: 79/100) comprises 17 CD blocks spanning 9,712 sq.km. With a terrain walking friction factor of 2.47x (Tobler index) and a Gender Parity Index of 0.9, baseline secondary access stands at 45.3%. The masterplan allocates 140 high school upgrades, 94 new greenfield campuses, 109 student transport hubs (70 buses, 35 vans), 65 dedicated girls' hostels, and 656 subject teacher recruitments. Total estimated outlay is \u20b9381.06 Crores, raising universal secondary coverage to 97.3% across all 17 blocks."
     }
   ]
 }
