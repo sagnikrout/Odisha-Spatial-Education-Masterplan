@@ -1,5 +1,5 @@
 """
-Odisha Spatial Education Masterplan: 10-Slide Executive Presentation Deck Generator
+Odisha Spatial Education Masterplan: 10-Slide Executive Presentation Deck Generator (Audited Edition)
 Compiles a publication-ready landscape presentation deck (A4 Landscape, 842x595 pt)
 for high-level executive, ministerial, and conference briefings.
 """
@@ -20,15 +20,15 @@ ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 OUTPUT_DECK = os.path.join(BASE_DIR, "Odisha_Spatial_Education_Executive_Deck.pdf")
 
 # Palette
-PRIMARY = colors.HexColor("#1E3A8A")     # Deep Royal Navy
-SECONDARY = colors.HexColor("#0284C7")   # Slate Cyan
-DARK_TEXT = colors.HexColor("#0F172A")   # Dark Slate
-MUTED_TEXT = colors.HexColor("#64748B")  # Medium Gray
-LIGHT_BG = colors.HexColor("#F8FAFC")    # Soft Slate 50
-PANEL_BG = colors.HexColor("#F1F5F9")    # Slate 100
-BORDER_COL = colors.HexColor("#CBD5E1")  # Border Line
-GREEN_ACC = colors.HexColor("#059669")   # Emerald Green
-ACCENT_RED = colors.HexColor("#DC2626")  # Accent Coral
+PRIMARY = colors.HexColor("#1E3A8A")
+SECONDARY = colors.HexColor("#0284C7")
+DARK_TEXT = colors.HexColor("#0F172A")
+MUTED_TEXT = colors.HexColor("#64748B")
+LIGHT_BG = colors.HexColor("#F8FAFC")
+PANEL_BG = colors.HexColor("#F1F5F9")
+BORDER_COL = colors.HexColor("#CBD5E1")
+GREEN_ACC = colors.HexColor("#059669")
+ACCENT_RED = colors.HexColor("#DC2626")
 
 
 class SlideCanvas(canvas.Canvas):
@@ -51,7 +51,7 @@ class SlideCanvas(canvas.Canvas):
 
     def draw_slide_decorations(self, total_slides):
         if self._pageNumber == 1:
-            return  # Suppress on title slide
+            return
 
         self.saveState()
         self.setFont("Helvetica-Bold", 8)
@@ -66,7 +66,7 @@ class SlideCanvas(canvas.Canvas):
 
         # Slide Bottom Bar
         self.setFont("Helvetica", 8)
-        self.drawString(36, 22, "Executive Briefing Deck — Operations Research & Spatial Decision Support")
+        self.drawString(36, 22, "Audited Executive Briefing Deck — Operations Research & Spatial Decision Support")
         self.drawRightString(842 - 36, 22, f"Slide {self._pageNumber} of {total_slides}")
         self.line(36, 30, 842 - 36, 30)
 
@@ -173,15 +173,14 @@ def build_executive_deck():
     story.append(HRFlowable(width="40%", thickness=2, color=PRIMARY, spaceBefore=0, spaceAfter=15))
     
     story.append(Paragraph("ODISHA SPATIAL SCHOOL EDUCATION MASTERPLAN (2026–2031)", ParagraphStyle('CoverTitleSlide', fontName='Helvetica-Bold', fontSize=22, leading=26, textColor=PRIMARY, alignment=1, spaceAfter=6)))
-    story.append(Paragraph("Executive Policy Deck: Operations Research Optimization, 314-Block GIS Analysis & 5-Year Socio-Economic Capital Plan", ParagraphStyle('CoverSubSlide', fontName='Helvetica', fontSize=11, leading=15, textColor=MUTED_TEXT, alignment=1, spaceAfter=20)))
+    story.append(Paragraph("Executive Policy Deck: Audited OR Optimization, 314-Block GIS Analysis & PWD Hill Cost Calibrated Capital Plan", ParagraphStyle('CoverSubSlide', fontName='Helvetica', fontSize=11, leading=15, textColor=MUTED_TEXT, alignment=1, spaceAfter=20)))
 
-    # Highlight Cards
     c1 = [
         [
             Paragraph(f"<b>{sec['initial_coverage_pct']}% → {sec['final_coverage_pct']}%</b><br/><font size=7 color='#64748B'>Secondary Access</font>", cell_bold),
-            Paragraph(f"<b>₹{sec['total_budget_cr']:,.1f} Cr</b><br/><font size=7 color='#64748B'>Estimated Outlay</font>", cell_bold),
+            Paragraph(f"<b>₹{sec['total_budget_cr']:,.1f} Cr</b><br/><font size=7 color='#64748B'>Hill-Adjusted Outlay</font>", cell_bold),
             Paragraph(f"<b>314 Blocks</b><br/><font size=7 color='#64748B'>Statewide Coverage</font>", cell_bold),
-            Paragraph(f"<b>2.81x GSDP ROI</b><br/><font size=7 color='#64748B'>₹14,395 Cr Value</font>", cell_bold)
+            Paragraph(f"<b>{econ.get('benefit_cost_ratio_roi', 1.8)}x GSDP ROI</b><br/><font size=7 color='#64748B'>₹{econ.get('net_present_value_gsdp_contribution_cr', 10796):,.0f} Cr Value</font>", cell_bold)
         ]
     ]
     tc1 = Table(c1, colWidths=[185, 185, 185, 185])
@@ -227,19 +226,19 @@ def build_executive_deck():
     # =========================================================================
     # SLIDE 3: METHODOLOGY & OPERATIONS RESEARCH
     # =========================================================================
-    story.append(Paragraph("Methodology: Operations Research & Topographic Friction", slide_title))
-    story.append(Paragraph("Replacing ad-hoc planning with PuLP Mixed-Integer Linear Programming (MILP) and Tobler terrain impedance.", slide_subtitle))
+    story.append(Paragraph("Methodology: Operations Research & PWD Hill Cost Index", slide_title))
+    story.append(Paragraph("PuLP Mixed-Integer Linear Programming (MILP), Tobler terrain friction, and dynamic hill cost multipliers.", slide_subtitle))
 
     or_box = [
         [
             Paragraph("<b>1. Mathematical Formulation (MCLP / MILP)</b>", ParagraphStyle('M1', fontName='Helvetica-Bold', fontSize=9.5, leading=12, textColor=PRIMARY)),
-            Paragraph("<b>2. Topographic Walking Friction</b>", ParagraphStyle('M2', fontName='Helvetica-Bold', fontSize=9.5, leading=12, textColor=PRIMARY)),
+            Paragraph("<b>2. Tobler Friction & PWD Hill Index</b>", ParagraphStyle('M2', fontName='Helvetica-Bold', fontSize=9.5, leading=12, textColor=PRIMARY)),
             Paragraph("<b>3. Tri-Pillar Decision Framework</b>", ParagraphStyle('M3', fontName='Helvetica-Bold', fontSize=9.5, leading=12, textColor=PRIMARY))
         ],
         [
             Paragraph("• Solves the Maximal Covering Location Problem using PuLP / CBC solver.<br/>• <b>Objective:</b> Maximize covered student population &Sigma;(w<sub>i</sub> &times; y<sub>i</sub>).<br/>• <b>Constraint:</b> Total capital expenditure &le; Budget constraint (B).", bullet_text),
-            Paragraph("• Replaces flat Euclidean lines with <b>Tobler's Hiking Function</b>:<br/>&nbsp;&nbsp;&nbsp;&nbsp;v(&theta;) = 6 &times; e<sup>-3.5|tan &theta; + 0.05|</sup><br/>• Terrain walking impedance factors reach <b>1.8x to 2.4x</b> in Eastern Ghats/forest valleys.", bullet_text),
-            Paragraph("• <b>School Upgrades (₹85L):</b> Expanding existing Upper Primary schools.<br/>• <b>Greenfield High Schools (₹244L):</b> Dense unserved clusters.<br/>• <b>Transit & Hostel Hubs (₹30L):</b> Sparse, rugged hamlets.", bullet_text)
+            Paragraph("• <b>Tobler Walking Friction:</b> 1.8x to 2.4x impedance in ghats.<br/>• <b>PWD Hill Cost Index:</b> Scales construction costs dynamically (+18% to +30% in Eastern Ghats) for material haulage and ghat logistics.", bullet_text),
+            Paragraph("• <b>School Upgrades (₹85L–₹105L):</b> Expanding existing middle schools.<br/>• <b>Greenfield High Schools (₹244L–₹317L):</b> Dense unserved clusters.<br/>• <b>Transit & Hostel Hubs (₹30L):</b> Sparse, rugged hamlets.", bullet_text)
         ]
     ]
     t_or = Table(or_box, colWidths=[250, 250, 250])
@@ -253,13 +252,12 @@ def build_executive_deck():
     story.append(t_or)
     story.append(Spacer(1, 12))
 
-    # Standard Distances Summary
     dist_norm_data = [
-        [Paragraph("Tier", cell_header), Paragraph("Policy Standard", cell_header), Paragraph("Upgrade Cost", cell_header), Paragraph("Greenfield Cost", cell_header), Paragraph("Transit / Hostel Hub", cell_header)],
-        [Paragraph("Primary (Grades 1–5)", cell_text), Paragraph("1.0 km Walking Radius", cell_text), Paragraph("₹25.0 Lakhs", cell_text), Paragraph("₹65.0 Lakhs", cell_text), Paragraph("₹10.0 Lakhs", cell_text)],
-        [Paragraph("Upper Primary (Grades 6–8)", cell_text), Paragraph("3.0 km Walking Radius", cell_text), Paragraph("₹45.0 Lakhs", cell_text), Paragraph("₹120.0 Lakhs", cell_text), Paragraph("₹18.0 Lakhs", cell_text)],
-        [Paragraph("Secondary (Grades 9–10)", cell_bold), Paragraph("5.0 km Catchment Buffer", cell_bold), Paragraph("₹85.0 Lakhs", cell_bold), Paragraph("₹244.0 Lakhs", cell_bold), Paragraph("₹30.0 Lakhs", cell_bold)],
-        [Paragraph("Higher Secondary (Grades 11–12)", cell_text), Paragraph("7.0 km Transit Radius", cell_text), Paragraph("₹140.0 Lakhs", cell_text), Paragraph("₹480.0 Lakhs", cell_text), Paragraph("₹45.0 Lakhs", cell_text)]
+        [Paragraph("Tier", cell_header), Paragraph("Policy Standard", cell_header), Paragraph("Base Upgrade Cost", cell_header), Paragraph("Base Greenfield Cost", cell_header), Paragraph("Hill Cost Range", cell_header)],
+        [Paragraph("Primary (Grades 1–5)", cell_text), Paragraph("1.0 km Walking Radius", cell_text), Paragraph("₹25.0 Lakhs", cell_text), Paragraph("₹65.0 Lakhs", cell_text), Paragraph("₹65L – ₹84L", cell_text)],
+        [Paragraph("Upper Primary (Grades 6–8)", cell_text), Paragraph("3.0 km Walking Radius", cell_text), Paragraph("₹45.0 Lakhs", cell_text), Paragraph("₹120.0 Lakhs", cell_text), Paragraph("₹120L – ₹156L", cell_text)],
+        [Paragraph("Secondary (Grades 9–10)", cell_bold), Paragraph("5.0 km Catchment Buffer", cell_bold), Paragraph("₹85.0 Lakhs", cell_bold), Paragraph("₹244.0 Lakhs", cell_bold), Paragraph("₹244L – ₹317L", cell_bold)],
+        [Paragraph("Higher Secondary (Grades 11–12)", cell_text), Paragraph("7.0 km Transit Radius", cell_text), Paragraph("₹140.0 Lakhs", cell_text), Paragraph("₹480.0 Lakhs", cell_text), Paragraph("₹480L – ₹624L", cell_text)]
     ]
     t_norms = Table(dist_norm_data, colWidths=[150, 150, 150, 150, 150])
     t_norms.setStyle(TableStyle([
@@ -276,7 +274,7 @@ def build_executive_deck():
     # SLIDE 4: STATEWIDE MULTI-TIER FINDINGS
     # =========================================================================
     story.append(Paragraph("Statewide Multi-Tier Infrastructure & Capital Requirements", slide_title))
-    story.append(Paragraph("Comprehensive assessment across foundational, middle, high, and senior secondary schooling.", slide_subtitle))
+    story.append(Paragraph("Comprehensive assessment across foundational, middle, high, and senior secondary schooling (Hill Cost Adjusted).", slide_subtitle))
 
     st_table = [
         [
@@ -332,9 +330,9 @@ def build_executive_deck():
 
     right_frontier = [
         Paragraph("<b>Key Insights from Mathematical Optimization:</b>", ParagraphStyle('FHead', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY, spaceAfter=6)),
-        Paragraph("• <b>Diminishing Marginal Returns:</b> Below ₹2,000 Cr, access gains are steep (+22%). Beyond ₹6,000 Cr, marginal access gains flatten significantly.", bullet_text),
-        Paragraph("• <b>Optimal Knee-Point at ₹5,122.1 Cr:</b> This investment achieves <b>91.6% statewide secondary access</b>, capturing 98.5% of addressable habitations efficiently.", bullet_text),
-        Paragraph("• <b>Cost Savings vs. Blanket Construction:</b> Traditional un-optimized expansion would require over <b>₹12,000 Crores</b>. The spatial optimization saves <b>₹6,878 Crores</b> while achieving identical access.", bullet_text),
+        Paragraph("• <b>Diminishing Marginal Returns:</b> Below ₹2,000 Cr, access gains are steep (+22%). Beyond ₹7,000 Cr, marginal access gains flatten significantly.", bullet_text),
+        Paragraph(f"• <b>Optimal Knee-Point at ₹{sec['total_budget_cr']:,.1f} Cr:</b> Achieves <b>91.6% statewide secondary access</b>, capturing 98.5% of addressable habitations efficiently.", bullet_text),
+        Paragraph("• <b>Cost Savings vs. Blanket Construction:</b> Traditional un-optimized expansion would require over <b>₹12,000 Crores</b>. The spatial optimization saves over <b>₹5,990 Crores</b>.", bullet_text),
         Paragraph("• <b>Targeted Capital Allocation:</b> 43% of funds allocated to UP-to-Secondary upgrades, 47% to high-density greenfield campuses, and 10% to transit/hostel hubs.", bullet_text)
     ]
     t_slide5 = Table([[left_frontier, right_frontier]], colWidths=[430, 340])
@@ -389,16 +387,16 @@ def build_executive_deck():
     story.append(PageBreak())
 
     # =========================================================================
-    # SLIDE 8: TRANSIT FLEET & ROUTING STRATEGY
+    # SLIDE 8: TRANSIT FLEET & REALIZED OPEX
     # =========================================================================
-    story.append(Paragraph("Student Transit Fleet Sizing & Vehicle Routing Strategy", slide_title))
-    story.append(Paragraph("Multi-modal transit operations connecting 1,172 remote clusters with minimal capital outlay.", slide_subtitle))
+    story.append(Paragraph("Calibrated Student Transit Fleet & Realized Operational Opex", slide_title))
+    story.append(Paragraph("Multi-modal transit operations connecting 1,172 remote clusters with realistic operational budgeting.", slide_subtitle))
 
     fleet_summary = [
         [
-            Paragraph("<b>1,027 Mini-Buses (24-Seater)</b><br/><font size=7 color='#64748B'>For medium-density trunk routes</font>", cell_bold),
-            Paragraph("<b>603 Feeder Vans (12-Seater)</b><br/><font size=7 color='#64748B'>For narrow, rugged hill trails</font>", cell_bold),
-            Paragraph("<b>₹43.6 Cr / Year Opex</b><br/><font size=7 color='#64748B'>Fuel, maintenance & driver staffing</font>", cell_bold),
+            Paragraph(f"<b>{sec['fleet_minibuses']:,} Mini-Buses (24-Seater)</b><br/><font size=7 color='#64748B'>@ ₹4.80L/yr Opex</font>", cell_bold),
+            Paragraph(f"<b>{sec['fleet_feeder_vans']:,} Feeder Vans (12-Seater)</b><br/><font size=7 color='#64748B'>@ ₹3.00L/yr Opex</font>", cell_bold),
+            Paragraph(f"<b>₹{sec['annual_transit_opex_cr']:.1f} Cr / Year Opex</b><br/><font size=7 color='#64748B'>Fuel, maintenance & chaperones</font>", cell_bold),
             Paragraph("<b>32.4 km Avg Route</b><br/><font size=7 color='#64748B'>Optimized shortest-path loops</font>", cell_bold)
         ]
     ]
@@ -414,8 +412,8 @@ def build_executive_deck():
     story.append(Spacer(1, 15))
 
     transit_bullets = [
+        Paragraph("• <b>Auditor-Calibrated Opex:</b> Budgeted at ₹4.80L/mini-bus and ₹3.00L/van to cover commercial driver salaries, all-weather tire maintenance, insurance, and Mission Shakti female chaperone honorariums.", bullet_text),
         Paragraph("• <b>Vehicle Routing Optimization (VRP):</b> Routes are structured as closed feeder loops connecting 3–5 remote hamlets to a central hub school.", bullet_text),
-        Paragraph("• <b>Fleet Composition:</b> 24-seater mini-buses for all-weather paved roads and 12-seater high-clearance 4WD vans for unpaved forest trails.", bullet_text),
         Paragraph("• <b>Community Fleet Management:</b> Managed via School Management Committees (SMCs) and local Women Self-Help Groups (Mission Shakti SHGs) for local employment.", bullet_text),
         Paragraph("• <b>Safety & Telematics:</b> Real-time GPS tracking and geofencing integrated into the Odisha State Education GIS Portal.", bullet_text)
     ]
@@ -426,8 +424,8 @@ def build_executive_deck():
     # =========================================================================
     # SLIDE 9: 5-YEAR ROLLOUT & ECONOMIC ROI
     # =========================================================================
-    story.append(Paragraph("5-Year Phased Rollout & Socio-Economic ROI (2.81x Return)", slide_title))
-    story.append(Paragraph("Longitudinal capital deployment and economic lifetime earnings contribution.", slide_subtitle))
+    story.append(Paragraph("5-Year Phased Rollout & Calibrated Economic ROI (1.8x Return)", slide_title))
+    story.append(Paragraph("Longitudinal capital deployment and labor-discounted lifetime earnings contribution.", slide_subtitle))
 
     p_table = [
         [
@@ -442,7 +440,7 @@ def build_executive_deck():
         [
             Paragraph("<b>Phase 1 (Y1–Y2)</b>", cell_bold),
             Paragraph("High Vulnerability Tribal Districts (9 Dists)", cell_text),
-            Paragraph("₹2,305.0 Cr (45%)", cell_bold),
+            Paragraph("₹2,703.8 Cr (45%)", cell_bold),
             Paragraph("981", cell_text),
             Paragraph("537", cell_text),
             Paragraph("644", cell_text),
@@ -451,7 +449,7 @@ def build_executive_deck():
         [
             Paragraph("<b>Phase 2 (Y3–Y4)</b>", cell_bold),
             Paragraph("Mineral Belts & Western Plateaus (11 Dists)", cell_text),
-            Paragraph("₹1,792.7 Cr (35%)", cell_bold),
+            Paragraph("₹2,102.9 Cr (35%)", cell_bold),
             Paragraph("763", cell_text),
             Paragraph("418", cell_text),
             Paragraph("351", cell_text),
@@ -460,7 +458,7 @@ def build_executive_deck():
         [
             Paragraph("<b>Phase 3 (Y5)</b>", cell_bold),
             Paragraph("Coastal Deltas & Cyclone Retrofits (10 Dists)", cell_text),
-            Paragraph("₹1,024.4 Cr (20%)", cell_bold),
+            Paragraph("₹1,201.7 Cr (20%)", cell_bold),
             Paragraph("436", cell_text),
             Paragraph("239", cell_text),
             Paragraph("175", cell_text),
@@ -480,11 +478,11 @@ def build_executive_deck():
 
     roi_box = [
         [
-            Paragraph(f"<b>Socio-Economic Return on Investment (ROI):</b><br/>"
+            Paragraph(f"<b>Audited Socio-Economic Return on Investment (ROI):</b><br/>"
                       f"• <b>184,000 Students Saved From Dropout</b> over 5 years.<br/>"
-                      f"• <b>Secondary Wage Premium:</b> +₹1.70 Lakhs/student/year higher lifetime earnings.<br/>"
-                      f"• <b>Net Present Value (NPV) GSDP Contribution:</b> <b>₹14,395.1 Crores</b>.<br/>"
-                      f"• <b>Benefit-Cost Ratio (ROI):</b> <b>2.81x</b> (Every ₹1 invested returns ₹2.81 to the state economy).",
+                      f"• <b>Labor-Discounted Wage Premium:</b> +₹1.70 Lakhs/yr (0.75x rural absorption discount).<br/>"
+                      f"• <b>Net Present Value (NPV) GSDP Contribution:</b> <b>₹10,796.3 Crores</b>.<br/>"
+                      f"• <b>Benefit-Cost Ratio (ROI):</b> <b>1.8x</b> on ₹{sec['total_budget_cr']:,.1f} Cr Hill-Adjusted Capital Outlay.",
                       ParagraphStyle('ROI', fontName='Helvetica', fontSize=9, leading=13, textColor=PRIMARY, backColor=PANEL_BG, borderPadding=8))
         ]
     ]
@@ -493,31 +491,31 @@ def build_executive_deck():
     story.append(PageBreak())
 
     # =========================================================================
-    # SLIDE 10: POLICY RECOMMENDATIONS & NEXT STEPS
+    # SLIDE 10: POLICY RECOMMENDATIONS & TEACHER RETENTION CADRE
     # =========================================================================
-    story.append(Paragraph("Executive Policy Recommendations & Action Roadmap", slide_title))
-    story.append(Paragraph("Immediate strategic steps for state administrative adoption and ground implementation.", slide_subtitle))
+    story.append(Paragraph("Executive Policy Recommendations & Administrative Solutions", slide_title))
+    story.append(Paragraph("Targeted institutional measures to overcome teacher posting and land acquisition bottlenecks.", slide_subtitle))
 
     rec_data = [
         [
-            Paragraph("<b>1. Inter-Departmental Taskforce</b>", ParagraphStyle('R1', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
-            Paragraph("<b>2. UDISE+ & ORSAC Ground Sync</b>", ParagraphStyle('R2', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
-            Paragraph("<b>3. Teacher Staffing Fast-Track</b>", ParagraphStyle('R3', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY))
+            Paragraph("<b>1. Special Tribal Teacher Cadre</b>", ParagraphStyle('R1', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
+            Paragraph("<b>2. PESA / FRA Fast-Track Land SOP</b>", ParagraphStyle('R2', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
+            Paragraph("<b>3. Mission Shakti Transit Schedulers</b>", ParagraphStyle('R3', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY))
         ],
         [
-            Paragraph("Establish a joint steering committee between <b>S&ME Department, ST&SC Development Department, and PR&DW</b> to coordinate school upgrades with road paving and electricity connections.", bullet_text),
-            Paragraph("Import official GPS coordinates from UDISE+ and ORSAC GIS layers into this mathematical solver to finalize land availability and geo-fenced construction sites.", bullet_text),
-            Paragraph("Sanction and initiate recruitment for <b>9,144 Subject Teacher Posts</b> (Math, Science, English, Social Science) aligned with the Phase 1 school commissioning schedule.", bullet_text)
+            Paragraph("Sanction <b>9,144 Subject Teacher Posts</b> (Math/Science/English) with a <b>25% Remote Area Allowance</b> and 3-year mandatory rural service bond to resolve tribal transfer vacancies.", bullet_text),
+            Paragraph("Prioritize unencumbered panchayat wasteland and school expansion with Gram Sabha consent under PESA Section 4(i) to bypass lengthy private land acquisition.", bullet_text),
+            Paragraph("Partner with Mission Shakti Women SHGs for vehicle fleet management, female chaperones, and student transit loop operations in remote tribal blocks.", bullet_text)
         ],
         [
-            Paragraph("<b>4. Transit Schedulers with SHGs</b>", ParagraphStyle('R4', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
-            Paragraph("<b>5. Cyclone Resilient Standards</b>", ParagraphStyle('R5', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
-            Paragraph("<b>6. Real-Time GIS M&E Portal</b>", ParagraphStyle('R6', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY))
+            Paragraph("<b>4. Cyclone Resilient School Codes</b>", ParagraphStyle('R4', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
+            Paragraph("<b>5. ORSAC Satellite Milestone Audit</b>", ParagraphStyle('R5', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY)),
+            Paragraph("<b>6. UDISE+ Ground Data Ingestion</b>", ParagraphStyle('R6', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY))
         ],
         [
-            Paragraph("Partner with Mission Shakti Self-Help Groups to manage vehicle maintenance, female chaperone staffing, and daily student bus scheduling in remote tribal blocks.", bullet_text),
-            Paragraph("Enforce disaster-resilient building codes and solar backup power for all 396 high school campuses located in high-risk coastal cyclone corridors.", bullet_text),
-            Paragraph("Deploy an open satellite-monitoring dashboard to track construction progress, student attendance, and transition rate gains across all 314 blocks.", bullet_text)
+            Paragraph("Mandate disaster-resilient building codes and rooftop solar backup for all 396 high school campuses in high-risk coastal cyclone belts.", bullet_text),
+            Paragraph("Deploy geo-fenced satellite monitoring to audit construction milestones and biometric student attendance across 5km catchment corridors.", bullet_text),
+            Paragraph("Import official UDISE+ GPS coordinates directly into this mathematical solver prior to statutory fund disbursement.", bullet_text)
         ]
     ]
     t_rec = Table(rec_data, colWidths=[245, 245, 245])

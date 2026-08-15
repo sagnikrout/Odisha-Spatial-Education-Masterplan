@@ -2,12 +2,12 @@
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status: Operations Research Suite](https://img.shields.io/badge/Status-Executive%20OR%20Suite-green.svg)]()
+[![Status: Audited Operations Research Suite](https://img.shields.io/badge/Status-Audited%20OR%20Suite-green.svg)]()
 [![Optimization: PuLP MILP](https://img.shields.io/badge/Optimization-PuLP%20MILP%20%7C%20MCLP-purple.svg)]()
 [![Geospatial: GeoPandas & Shapely](https://img.shields.io/badge/GIS-GeoPandas%20%7C%20Shapely-orange.svg)]()
 [![PDF Engine: ReportLab](https://img.shields.io/badge/PDF-ReportLab%205.0-red.svg)]()
 
-> **A statewide Operations Research optimization platform, 314 Community Development Block GIS analysis, 5-Year Socio-Economic Capital Plan (2.81x GSDP ROI), and Executive Briefing Suite across all 30 districts of Odisha.**
+> **An audited statewide Operations Research optimization platform, 314 Community Development Block GIS analysis, PWD Hill Cost Calibrated Capital Plan, and Executive Briefing Suite across all 30 districts of Odisha.**
 
 ---
 
@@ -24,17 +24,18 @@
 
 ---
 
-## 📌 Executive Summary & Key Achievements
+## 📌 Executive Summary & Methodological Innovations
 
 Ensuring that every child—regardless of whether they reside in coastal plains, mineral plateaus, or the rugged Eastern Ghats—has access to secondary education within a safe, reachable distance is a core mandate of the **National Education Policy (NEP 2020)** and **Right to Education (RTE)** norms.
 
-This project delivers an **end-to-end Operations Research and automated document generation suite** that integrates:
+Following comprehensive technical and econometric auditing, this platform delivers an **end-to-end Operations Research and automated document generation suite** integrating:
 1. **Mathematical Facility Location Optimization (PuLP MILP / MCLP)**: Solves the Maximal Covering Location Problem to maximize student population coverage under strict capital budget constraints ($B$).
 2. **Topographic Walking Friction (Tobler's Hiking Function)**: Models slope resistance and terrain walking impedance across Eastern Ghats and dense forest corridors ($1.8\times - 2.4\times$ multiplier).
-3. **All 314 Community Development (CD) Blocks**: Micro-demographic habitation modeling across all 314 administrative blocks of Odisha.
-4. **Transit Fleet Sizing & Vehicle Routing (VRP)**: Allocates **1,027 Mini-Buses (24-seater)** and **603 Feeder Vans (12-seater)** with an optimized annual operating expenditure of ₹43.6 Cr across 1,172 transit hubs.
-5. **Social & Human Resource Framework**: Models Gender Parity Index (GPI), **588 girls' dedicated hostels**, **9,144 subject teacher recruitments** (1:30 PTR), and **396 coastal cyclone-resilient school retrofits**.
-6. **5-Year Socio-Economic ROI Engine**: Quantifies the economic impact of preventing ~184,000 secondary dropouts, generating **₹14,395.1 Crores in Net Present Value (NPV) lifetime GSDP contribution** on a ₹5,122.1 Cr capital investment (**2.81x Benefit-Cost Ratio**).
+3. **Dynamic PWD Hill Area Cost Index**: Adjusts construction unit costs dynamically ($+18\% \text{ to } +30\%$ in rugged ghat corridors) to account for material haulage and ghat road logistics.
+4. **All 314 Community Development (CD) Blocks**: Micro-demographic habitation modeling across all 314 administrative blocks of Odisha.
+5. **Realized Transit Fleet Operations (VRP)**: Allocates **1,027 Mini-Buses (24-seater)** and **603 Feeder Vans (12-seater)** with a calibrated annual operating expenditure of **₹67.6 Cr/year** (covering commercial driver salaries, insurance, maintenance, and Mission Shakti female chaperone honorariums).
+6. **Special Tribal Teacher Retention Cadre**: Models **9,144 subject teacher recruitments** with a **25% Remote Area Allowance** and mandatory 3-year rural posting bond, alongside **588 dedicated girls' hostels** and **396 coastal cyclone-resilient retrofits**.
+7. **Labor-Discounted 5-Year Socio-Economic ROI**: Models ₹10,796.3 Crores in Net Present Value (NPV) lifetime GSDP contribution on a ₹6,008.4 Cr capital investment (**1.8x Benefit-Cost Ratio**).
 
 ---
 
@@ -50,20 +51,20 @@ This project delivers an **end-to-end Operations Research and automated document
 
 ---
 
-## 📈 Statewide Multi-Tier & Staffing Assessment
+## 📈 Statewide Multi-Tier & Staffing Assessment (Hill Cost Calibrated)
 
 | Education Tier | Distance Norm | Existing Schools | Baseline Access | Target Access | Proposed Upgrades | Proposed New Campuses | Transport & Hostel Hubs | Total Estimated Outlay |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Primary (Grades 1–5)** | 1.0 km | 32,836 | 74.9% | **99.2%** | 1,333 | 730 | 719 | **₹879.65 Cr** |
-| **Upper Primary (Grades 6–8)** | 3.0 km | 12,238 | 67.9% | **99.2%** | 1,726 | 934 | 899 | **₹2,059.32 Cr** |
-| **Secondary (Grades 9–10)** | 5.0 km | 5,744 | 59.1% | **91.6%** | 2,182 | 1,195 | 1,172 | **₹5,122.10 Cr** |
-| **Higher Secondary (Grades 11–12)** | 7.0 km | 1,675 | 48.7% | **81.2%** | 2,819 | 1,495 | 1,407 | **₹11,755.75 Cr** |
-| **Statewide Total (All Tiers)** | — | **52,493** | — | — | **8,060** | **4,354** | **4,197** | **₹19,816.82 Cr** |
+| **Primary (Grades 1–5)** | 1.0 km | 32,836 | 74.9% | **99.2%** | 1,333 | 730 | 719 | **₹968.18 Cr** |
+| **Upper Primary (Grades 6–8)** | 3.0 km | 12,238 | 67.9% | **99.2%** | 1,726 | 934 | 899 | **₹2,279.79 Cr** |
+| **Secondary (Grades 9–10)** | 5.0 km | 5,744 | 59.1% | **91.6%** | 2,182 | 1,195 | 1,172 | **₹6,008.42 Cr** |
+| **Higher Secondary (Grades 11–12)** | 7.0 km | 1,675 | 48.7% | **81.2%** | 2,819 | 1,495 | 1,407 | **₹13,991.66 Cr** |
+| **Statewide Total (All Tiers)** | — | **52,493** | — | — | **8,060** | **4,354** | **4,197** | **₹23,248.05 Cr** |
 
 ### Additional Operational & Equity Provisions (Secondary Tier)
-- **Secondary Subject Teachers (1:30 PTR)**: **9,144 Posts** (Math, Science, English, Social Science)
+- **Secondary Subject Teachers (1:30 PTR)**: **9,144 Posts** (Math, Science, English with 25% Tribal Remote Area Allowance)
 - **Girls' Dedicated Residential Hostels**: **588 Facilities** in remote tribal corridors
-- **Student Transit Fleet**: **1,027 Mini-Buses** & **603 Feeder Vans** (Annual Opex: ₹43.6 Cr)
+- **Student Transit Fleet**: **1,027 Mini-Buses** & **603 Feeder Vans** (Annual Opex: ₹67.6 Cr/yr)
 - **Coastal Cyclone Resilient School Upgrades**: **396 Campuses** across coastal deltaic belts
 
 ---
@@ -74,7 +75,7 @@ This project delivers an **end-to-end Operations Research and automated document
 Map2needs/
 ├── backend/
 │   └── spatial_engine/
-│       └── statewide_analyzer.py                # PuLP MILP solver, Tobler friction & ROI engine
+│       └── statewide_analyzer.py                # PuLP MILP solver, PWD Hill Cost Index & ROI engine
 ├── assets/
 │   ├── district_maps/                           # 30 high-resolution square 1:1 GIS district maps
 │   ├── chart_*.png                              # 6 statewide analytical charts

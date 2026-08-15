@@ -1,5 +1,5 @@
 """
-Odisha Spatial Education Masterplan: High-Precision Visual Asset Generator
+Odisha Spatial Education Masterplan: High-Precision Visual Asset Generator (Auditor-Calibrated Edition)
 Generates 30 un-distorted 1:1 square district GIS maps and 6 publication-ready analytical charts.
 """
 
@@ -64,6 +64,7 @@ def generate_all_district_maps(geojson_data, assessment_data):
         sec_tier = info["tiers"]["Secondary"]
         profile = info["profile"]
         terrain_friction = info.get("terrain_friction_factor", 1.0)
+        hill_mult = info.get("pwd_hill_cost_multiplier", 1.0)
         num_blocks = len(info.get("blocks", []))
 
         # Square 10x10 figure at 200 dpi
@@ -84,7 +85,7 @@ def generate_all_district_maps(geojson_data, assessment_data):
                         ax.fill(x, y, color="#E2E8F0", alpha=0.35, zorder=1)
                         ax.plot(x, y, color="#CBD5E1", linewidth=0.6, alpha=0.6, zorder=2)
 
-        # Highlight target district
+        # Target district fill & stroke
         polys = [geom] if geom.geom_type == 'Polygon' else list(geom.geoms)
         for poly in polys:
             x, y = poly.exterior.xy
@@ -100,7 +101,7 @@ def generate_all_district_maps(geojson_data, assessment_data):
         ax.set_xlim(cx - half_span, cx + half_span)
         ax.set_ylim(cy - half_span, cy + half_span)
 
-        # Generate spatial points
+        # Spatial points
         np.random.seed(i * 23 + 107)
         num_existing = min(120, sec_tier["existing_schools"])
         num_unserved = min(60, int(num_existing * (100.0 - sec_tier["initial_coverage_pct"]) / 100.0 * 0.8))
@@ -159,9 +160,9 @@ def generate_all_district_maps(geojson_data, assessment_data):
             spine.set_color(BORDER_COLOR)
             spine.set_linewidth(1.2)
 
-        # Header Title Overlay
+        # Header Title Overlay with PWD Cost Index
         header_text = f"{dist_name.upper()} DISTRICT ({num_blocks} CD BLOCKS)"
-        sub_text = f"Terrain: {profile['terrain']}  |  Tobler Friction: {terrain_friction}x  |  GPI: {profile['gpi']}  |  Vuln: {profile['vulnerability']}/100"
+        sub_text = f"Terrain: {profile['terrain']}  |  Tobler Friction: {terrain_friction}x  |  PWD Hill Index: {hill_mult}x  |  GPI: {profile['gpi']}"
         
         props_title = dict(boxstyle='round,pad=0.5', facecolor='#FFFFFF', edgecolor='#CBD5E1', alpha=0.95, linewidth=1.0)
         ax.text(0.5, 0.96, header_text, transform=ax.transAxes, fontsize=13.5, fontweight='bold',
@@ -174,19 +175,17 @@ def generate_all_district_maps(geojson_data, assessment_data):
             f"Coverage: {sec_tier['initial_coverage_pct']}% → {sec_tier['final_coverage_pct']}%   |   "
             f"Upgrades: {sec_tier['proposed_upgrades']}   |   "
             f"New Campuses: {sec_tier['proposed_new_schools']}   |   "
-            f"Transport Hubs: {sec_tier['proposed_transport_hubs']}   |   "
-            f"Outlay: ₹{sec_tier['total_budget_cr']:.2f} Cr"
+            f"Transit Hubs: {sec_tier['proposed_transport_hubs']}   |   "
+            f"Capital Outlay: ₹{sec_tier['total_budget_cr']:.2f} Cr"
         )
         props_kpi = dict(boxstyle='round,pad=0.45', facecolor='#1E293B', edgecolor='#0F172A', alpha=0.92)
         ax.text(0.5, 0.045, kpi_text, transform=ax.transAxes, fontsize=8.0, fontweight='bold',
                 color='#F8FAFC', ha='center', va='bottom', bbox=props_kpi, zorder=20)
 
-        # Floating Legend
         legend = ax.legend(loc='lower left', bbox_to_anchor=(0.03, 0.10), fontsize=7.2,
                            framealpha=0.92, facecolor='#FFFFFF', edgecolor='#CBD5E1', labelspacing=0.35)
         legend.set_zorder(20)
 
-        # North Arrow
         ax.annotate('N', xy=(0.94, 0.88), xytext=(0.94, 0.83),
                     arrowprops=dict(facecolor='#1E3A8A', width=2.5, headwidth=7),
                     ha='center', va='center', fontsize=9, fontweight='bold', color='#1E3A8A',
@@ -236,7 +235,7 @@ def generate_global_charts(assessment_data):
     fig.savefig(os.path.join(ASSETS_DIR, "chart_dropout_cliff.png"), dpi=220, facecolor=BG_COLOR)
     plt.close(fig)
 
-    # 2. Budget Breakdown Chart
+    # 2. Budget Breakdown Chart (with PWD Hill Cost Index)
     fig, ax = plt.subplots(figsize=(8, 4.6), dpi=220, facecolor=BG_COLOR)
     ax.set_facecolor(PANEL_BG)
 
@@ -249,19 +248,19 @@ def generate_global_charts(assessment_data):
     x = np.arange(len(tiers))
     width = 0.55
 
-    ax.bar(x, upgrades_cost, width, label='School Upgrades & Expansion', color='#10B981', edgecolor='#047857')
-    ax.bar(x, new_cost, width, bottom=upgrades_cost, label='New Greenfield Campuses', color='#3B82F6', edgecolor='#1D4ED8')
+    ax.bar(x, upgrades_cost, width, label='School Upgrades (PWD Hill Adjusted)', color='#10B981', edgecolor='#047857')
+    ax.bar(x, new_cost, width, bottom=upgrades_cost, label='New Greenfield Campuses (PWD Hill Adjusted)', color='#3B82F6', edgecolor='#1D4ED8')
     ax.bar(x, transit_cost, width, bottom=np.array(upgrades_cost) + np.array(new_cost), label='Student Transport & Hostel Hubs', color='#8B5CF6', edgecolor='#6D28D9')
 
     for i in range(len(tiers)):
         total_val = upgrades_cost[i] + new_cost[i] + transit_cost[i]
         ax.text(x[i], total_val + 200, f"₹{total_val:,.1f} Cr", ha='center', va='bottom', fontsize=8.2, fontweight='bold', color=TEXT_DARK)
 
-    ax.set_title("Estimated Capital & Operational Budget by Education Tier (in ₹ Crores)", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
+    ax.set_title("Calibrated Multi-Tier Capital Budget with PWD Hill Cost Index (in ₹ Crores)", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
     ax.set_xticks(x)
     ax.set_xticklabels(tiers, fontsize=9, fontweight='bold')
     ax.set_ylabel("Estimated Outlay (₹ Crores)", fontsize=9, fontweight='bold', color=TEXT_DARK)
-    ax.set_ylim(0, max(totals["Higher Secondary"]["total_budget_cr"] * 1.18, 13000))
+    ax.set_ylim(0, max(totals["Higher Secondary"]["total_budget_cr"] * 1.18, 14000))
     ax.grid(True, linestyle='--', alpha=0.4, axis='y', color='#94A3B8')
     ax.legend(loc='upper left', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
     for spine in ax.spines.values():
@@ -345,14 +344,15 @@ def generate_global_charts(assessment_data):
     ax.set_facecolor(PANEL_BG)
 
     frontier = assessment_data.get("metadata", {}).get("pareto_frontier", [])
+    sec_budget = assessment_data["statewide_totals"]["Secondary"]["total_budget_cr"]
     if frontier:
         budgets = [p["budget_cr"] for p in frontier]
         covs = [p["coverage_pct"] for p in frontier]
         ax.plot(budgets, covs, marker='o', markersize=6, color='#059669', linewidth=2.4, label='PuLP MILP Optimal Coverage Frontier')
-        ax.scatter([5122], [91.6], color='#DC2626', s=100, zorder=10, label='Recommended Masterplan Budget (₹5,122.1 Cr @ 91.6%)')
+        ax.scatter([sec_budget], [91.6], color='#DC2626', s=100, zorder=10, label=f'Recommended Masterplan Budget (₹{sec_budget:,.1f} Cr @ 91.6%)')
         
-        ax.annotate('Optimal Policy Knee-Point\n(₹5,122 Cr achieves 91.6% access)',
-                    xy=(5122, 91.6), xytext=(6200, 80.0),
+        ax.annotate(f'Optimal Policy Knee-Point\n(₹{sec_budget:,.0f} Cr achieves 91.6% access)',
+                    xy=(sec_budget, 91.6), xytext=(sec_budget + 1000, 80.0),
                     arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=-0.15", color='#DC2626', lw=1.8),
                     fontsize=8.2, fontweight='bold', color='#DC2626',
                     bbox=dict(boxstyle="round,pad=0.35", facecolor='#FEF2F2', edgecolor='#EF4444'))
@@ -395,7 +395,6 @@ def generate_global_charts(assessment_data):
     ax1.set_xticklabels(cat_names, fontsize=8.0, fontweight='bold')
     ax1.set_title("Gender Parity Index & Girls' Residential Hostel Allocations by Terrain Category", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
 
-    # Combine legends
     lines1, labels1 = ax1.get_legend_handles_labels()
     lines2, labels2 = ax2.get_legend_handles_labels()
     ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')

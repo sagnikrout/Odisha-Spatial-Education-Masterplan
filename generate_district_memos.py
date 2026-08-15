@@ -1,5 +1,5 @@
 """
-Odisha Spatial Education Masterplan: 30 Standalone District Action Memos Generator
+Odisha Spatial Education Masterplan: 30 Standalone District Action Memos Generator (Audited Edition)
 Compiles 30 dedicated 2-page action memos tailored for individual District Collectors and District Education Officers (DEOs).
 """
 
@@ -57,7 +57,7 @@ class MemoCanvas(canvas.Canvas):
 
         # Header
         self.drawString(36, 842 - 28, f"GOVERNMENT OF ODISHA | {self.district_name.upper()} DISTRICT ADMINISTRATION")
-        self.drawRightString(595 - 36, 842 - 28, "EDUCATION ACTION MEMO (2026–2031)")
+        self.drawRightString(595 - 36, 842 - 28, "AUDITED EDUCATION ACTION MEMO (2026–2031)")
         self.setStrokeColor(BORDER_COL)
         self.setLineWidth(0.75)
         self.line(36, 842 - 34, 595 - 36, 842 - 34)
@@ -82,8 +82,8 @@ def generate_all_district_memos():
         'MemoTitle',
         parent=styles['Heading1'],
         fontName='Helvetica-Bold',
-        fontSize=13,
-        leading=16,
+        fontSize=12.5,
+        leading=15.5,
         textColor=PRIMARY,
         spaceBefore=0,
         spaceAfter=2
@@ -93,8 +93,8 @@ def generate_all_district_memos():
         'MemoSub',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=8.2,
-        leading=10.5,
+        fontSize=8.0,
+        leading=10.2,
         textColor=MUTED_TEXT,
         spaceAfter=6
     )
@@ -115,8 +115,8 @@ def generate_all_district_memos():
         'MemoBody',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=7.5,
-        leading=10.0,
+        fontSize=7.4,
+        leading=9.8,
         textColor=DARK_TEXT,
         spaceAfter=3
     )
@@ -160,7 +160,6 @@ def generate_all_district_memos():
         map_path = os.path.join(MAPS_DIR, map_filename)
         out_pdf = os.path.join(MEMOS_DIR, f"{dist_name.replace(' ', '_')}_DEO_Action_Memo.pdf")
 
-        # Custom canvasmaker wrapper
         def make_canvas(*args, **kwargs):
             return MemoCanvas(*args, district_name=dist_name, **kwargs)
 
@@ -182,19 +181,18 @@ def generate_all_district_memos():
         sub_text = (
             f"Category: <b>{prof['category']}</b> | Terrain: <b>{prof['terrain']}</b> | "
             f"Tobler Friction: <b>{d.get('terrain_friction_factor', 1.0)}x</b> | "
-            f"Vulnerability Score: <b>{prof['vulnerability']}/100</b> | "
-            f"GPI: <b>{prof['gpi']}</b>"
+            f"PWD Hill Index: <b>{d.get('pwd_hill_cost_multiplier', 1.0)}x</b> | "
+            f"Vulnerability: <b>{prof['vulnerability']}/100</b>"
         )
         story.append(Paragraph(sub_text, subtitle_style))
         story.append(HRFlowable(width="100%", thickness=1, color=PRIMARY, spaceBefore=0, spaceAfter=5))
 
-        # Two-column layout: Map on Left (250x250), KPI Matrix on Right
         left_box = []
         if os.path.exists(map_path):
             left_box.append(Image(map_path, width=250, height=250))
 
         right_box = [
-            Paragraph("<b>4-Tier Infrastructure Targets:</b>", sec_head),
+            Paragraph("<b>4-Tier Infrastructure Targets (Hill Adjusted):</b>", sec_head),
         ]
         tier_table_data = [
             [Paragraph("Tier", cell_header), Paragraph("Baseline", cell_header), Paragraph("Target", cell_header), Paragraph("Upgrades", cell_header), Paragraph("New", cell_header), Paragraph("Transit", cell_header), Paragraph("Outlay", cell_header)],
@@ -214,8 +212,9 @@ def generate_all_district_memos():
         right_box.append(t_tier)
         right_box.append(Spacer(1, 4))
         right_box.append(Paragraph(f"<b>Key Operational Allocations:</b><br/>"
-                                   f"• <b>Subject Teachers (1:30 PTR):</b> {sec.get('teachers_required', 0)} Posts<br/>"
+                                   f"• <b>Subject Teachers (25% Hardship Allowance):</b> {sec.get('teachers_required', 0)} Posts<br/>"
                                    f"• <b>Transit Fleet:</b> {sec.get('fleet_minibuses', 0)} Mini-Buses, {sec.get('fleet_feeder_vans', 0)} Vans<br/>"
+                                   f"• <b>Annual Transit Opex:</b> ₹{sec.get('annual_transit_opex_cr', 0.0):.2f} Cr/yr<br/>"
                                    f"• <b>Dedicated Girls' Hostels:</b> {sec.get('girls_hostels_proposed', 0)} Units<br/>"
                                    f"• <b>Cyclone Retrofits:</b> {sec.get('cyclone_resilient_upgrades', 0)} Schools", body_text))
 
@@ -277,10 +276,10 @@ def generate_all_district_memos():
 
         story.append(Paragraph("<b>Collector & DEO Priority Action Steps:</b>", sec_head))
         action_steps = (
-            "1. <b>Land Acquisition & Geofencing:</b> Identify encumbrance-free revenue land within top-priority unserved clusters for greenfield high schools.<br/>"
-            "2. <b>SMC & Transit Coordination:</b> Convene Block Education Officers (BEOs) to establish Mission Shakti SHG vehicle operations for remote feeder loops.<br/>"
-            "3. <b>Teacher Staffing Verification:</b> Submit formal requisition for subject teacher recruitments aligned with new classroom construction.<br/>"
-            "4. <b>Monitoring & Milestone Tracking:</b> Track monthly civil works milestones on the state GIS portal."
+            "1. <b>Fast-Track PESA Land Clearance:</b> Fast-track panchayat wasteland transfer with Gram Sabha consent under Section 4(i) of PESA for greenfield sites.<br/>"
+            "2. <b>Mission Shakti Transit Schedulers:</b> Convene BEOs to establish Women SHG vehicle operations for remote feeder loops with chaperone honorariums.<br/>"
+            "3. <b>Special Teacher Hardship Cadre:</b> Submit formal requisition for subject teacher recruitments with 25% Remote Area Allowance.<br/>"
+            "4. <b>ORSAC Satellite Monitoring:</b> Track monthly civil works milestones and geofenced attendance on the state GIS portal."
         )
         story.append(Paragraph(action_steps, body_text))
 
