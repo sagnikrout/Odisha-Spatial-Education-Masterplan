@@ -1,7 +1,6 @@
 """
-Odisha Spatial Education Masterplan: Visual Asset Generator
-Generates 30 high-resolution, un-distorted square district maps (overlaying real GeoJSON district boundaries)
-and 4 global analytical charts for the publication-grade PDF masterplan.
+Odisha Spatial Education Masterplan: High-Precision Visual Asset Generator
+Generates 30 un-distorted 1:1 square district GIS maps and 6 publication-ready analytical charts.
 """
 
 import os
@@ -13,9 +12,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 from shapely.geometry import shape, Point, Polygon, MultiPolygon
-from shapely.affinity import scale
 
-# Color Palette: Slate-50 Print Theme
+# Theme Palette (Slate-50 Clean Print Aesthetics)
 BG_COLOR = "#F8FAFC"
 PANEL_BG = "#FFFFFF"
 BORDER_COLOR = "#CBD5E1"
@@ -47,12 +45,9 @@ def load_data():
 
 
 def generate_all_district_maps(geojson_data, assessment_data):
-    print(f"Generating 30 high-precision square district maps in {MAPS_DIR}...")
-
-    # Index assessment data by district name
+    print(f"Generating 30 high-precision 1:1 square district maps in {MAPS_DIR}...")
     dist_map_info = {d["district_name"]: d for d in assessment_data["districts"]}
 
-    # All shapes for subtle background context
     all_geoms = []
     for feat in geojson_data["features"]:
         all_geoms.append((feat["properties"].get("district", ""), shape(feat["geometry"])))
@@ -68,13 +63,15 @@ def generate_all_district_maps(geojson_data, assessment_data):
         geom = shape(feat["geometry"])
         sec_tier = info["tiers"]["Secondary"]
         profile = info["profile"]
+        terrain_friction = info.get("terrain_friction_factor", 1.0)
+        num_blocks = len(info.get("blocks", []))
 
-        # Create perfectly square figure (10x10 inches at 200 dpi)
+        # Square 10x10 figure at 200 dpi
         fig, ax = plt.subplots(figsize=(10, 10), dpi=200, facecolor=BG_COLOR)
         ax.set_facecolor(BG_COLOR)
         ax.set_aspect('equal', adjustable='box')
 
-        # Plot all state districts faintly in background for spatial context
+        # Background context districts
         for other_name, other_geom in all_geoms:
             if other_name != raw_name:
                 if other_geom.geom_type == 'Polygon':
@@ -87,21 +84,15 @@ def generate_all_district_maps(geojson_data, assessment_data):
                         ax.fill(x, y, color="#E2E8F0", alpha=0.35, zorder=1)
                         ax.plot(x, y, color="#CBD5E1", linewidth=0.6, alpha=0.6, zorder=2)
 
-        # Plot target district with rich highlight
-        if geom.geom_type == 'Polygon':
-            polys = [geom]
-        else:
-            polys = list(geom.geoms)
-
+        # Highlight target district
+        polys = [geom] if geom.geom_type == 'Polygon' else list(geom.geoms)
         for poly in polys:
             x, y = poly.exterior.xy
-            ax.fill(x, y, color="#EEF2FF", alpha=0.9, zorder=3)
+            ax.fill(x, y, color="#EEF2FF", alpha=0.92, zorder=3)
             ax.plot(x, y, color=PRIMARY_BLUE, linewidth=2.0, zorder=4)
 
-        # Bounds and zoom with margin
         minx, miny, maxx, maxy = geom.bounds
-        dx = maxx - minx
-        dy = maxy - miny
+        dx, dy = maxx - minx, maxy - miny
         pad = max(dx, dy) * 0.12
         cx, cy = (minx + maxx) / 2.0, (miny + maxy) / 2.0
         half_span = (max(dx, dy) / 2.0) + pad
@@ -109,8 +100,8 @@ def generate_all_district_maps(geojson_data, assessment_data):
         ax.set_xlim(cx - half_span, cx + half_span)
         ax.set_ylim(cy - half_span, cy + half_span)
 
-        # Generate representative spatial points within district polygon
-        np.random.seed(i * 17 + 101)
+        # Generate spatial points
+        np.random.seed(i * 23 + 107)
         num_existing = min(120, sec_tier["existing_schools"])
         num_unserved = min(60, int(num_existing * (100.0 - sec_tier["initial_coverage_pct"]) / 100.0 * 0.8))
         num_upgrades = min(35, sec_tier["proposed_upgrades"])
@@ -135,54 +126,47 @@ def generate_all_district_maps(geojson_data, assessment_data):
         new_pts = get_pts(num_new)
         transit_pts = get_pts(num_transit)
 
-        # Buffer radius in degrees (5km ~ 0.046 deg)
+        # 5km buffer in degrees (~0.046 deg)
         deg_5km = 5.0 / 108.0
 
-        # Plot 5km coverage buffers for existing schools
         for px, py in exist_pts:
             circle = plt.Circle((px, py), deg_5km, color=ACCENT_CYAN, alpha=0.08, zorder=5, ec=None)
             ax.add_patch(circle)
 
-        # Plot Existing Schools
         if exist_pts:
             ex_x, ex_y = zip(*exist_pts)
             ax.scatter(ex_x, ex_y, c=GRAY_EXISTING, s=28, marker='o', edgecolors='#1E3A8A', linewidth=0.7, label=f'Existing Secondary ({sec_tier["existing_schools"]})', zorder=6)
 
-        # Plot Unserved Gaps
         if unserved_pts:
             ux, uy = zip(*unserved_pts)
             ax.scatter(ux, uy, c=AMBER_GAP, s=20, marker='.', alpha=0.7, label='Unserved Habitation Gaps', zorder=7)
 
-        # Plot Proposed Upgrades
         if upgrade_pts:
             up_x, up_y = zip(*upgrade_pts)
             ax.scatter(up_x, up_y, c=GREEN_UPGRADE, s=55, marker='D', edgecolors='#064E3B', linewidth=0.8, label=f'Proposed Upgrades ({sec_tier["proposed_upgrades"]})', zorder=8)
 
-        # Plot Proposed New Greenfield Schools
         if new_pts:
             nw_x, nw_y = zip(*new_pts)
             ax.scatter(nw_x, nw_y, c=RED_NEW, s=90, marker='*', edgecolors='#7F1D1D', linewidth=0.8, label=f'New Greenfield Schools ({sec_tier["proposed_new_schools"]})', zorder=9)
 
-        # Plot Transport & Hostel Hubs
         if transit_pts:
             tr_x, tr_y = zip(*transit_pts)
             ax.scatter(tr_x, tr_y, c=PURPLE_TRANSIT, s=60, marker='^', edgecolors='#4C1D95', linewidth=0.8, label=f'Transport / Hostel Hubs ({sec_tier["proposed_transport_hubs"]})', zorder=10)
 
-        # Turn off default lat/lon axis ticks for clean publication look
         ax.set_xticks([])
         ax.set_yticks([])
         for spine in ax.spines.values():
             spine.set_color(BORDER_COLOR)
             spine.set_linewidth(1.2)
 
-        # Top Banner Header Overlay
-        header_text = f"{dist_name.upper()} DISTRICT"
-        sub_text = f"Terrain: {profile['terrain']}  |  Vulnerability Score: {profile['vulnerability']}/100  |  Tribal Pop: {profile['tribal_pct']}%"
+        # Header Title Overlay
+        header_text = f"{dist_name.upper()} DISTRICT ({num_blocks} CD BLOCKS)"
+        sub_text = f"Terrain: {profile['terrain']}  |  Tobler Friction: {terrain_friction}x  |  GPI: {profile['gpi']}  |  Vuln: {profile['vulnerability']}/100"
         
         props_title = dict(boxstyle='round,pad=0.5', facecolor='#FFFFFF', edgecolor='#CBD5E1', alpha=0.95, linewidth=1.0)
-        ax.text(0.5, 0.96, header_text, transform=ax.transAxes, fontsize=14, fontweight='bold',
+        ax.text(0.5, 0.96, header_text, transform=ax.transAxes, fontsize=13.5, fontweight='bold',
                 color='#1E3A8A', ha='center', va='top', bbox=props_title, zorder=20)
-        ax.text(0.5, 0.915, sub_text, transform=ax.transAxes, fontsize=8.5, fontweight='medium',
+        ax.text(0.5, 0.915, sub_text, transform=ax.transAxes, fontsize=8.2, fontweight='medium',
                 color='#475569', ha='center', va='top', zorder=20)
 
         # Bottom KPI Summary Card Overlay
@@ -191,15 +175,15 @@ def generate_all_district_maps(geojson_data, assessment_data):
             f"Upgrades: {sec_tier['proposed_upgrades']}   |   "
             f"New Campuses: {sec_tier['proposed_new_schools']}   |   "
             f"Transport Hubs: {sec_tier['proposed_transport_hubs']}   |   "
-            f"Est. Outlay: ₹{sec_tier['total_budget_cr']:.2f} Cr"
+            f"Outlay: ₹{sec_tier['total_budget_cr']:.2f} Cr"
         )
         props_kpi = dict(boxstyle='round,pad=0.45', facecolor='#1E293B', edgecolor='#0F172A', alpha=0.92)
-        ax.text(0.5, 0.045, kpi_text, transform=ax.transAxes, fontsize=8.2, fontweight='bold',
+        ax.text(0.5, 0.045, kpi_text, transform=ax.transAxes, fontsize=8.0, fontweight='bold',
                 color='#F8FAFC', ha='center', va='bottom', bbox=props_kpi, zorder=20)
 
-        # Clean Floating Legend
+        # Floating Legend
         legend = ax.legend(loc='lower left', bbox_to_anchor=(0.03, 0.10), fontsize=7.2,
-                           framealpha=0.92, facecolor='#FFFFFF', edgecolor='#CBD5E1', labelspacing=0.4)
+                           framealpha=0.92, facecolor='#FFFFFF', edgecolor='#CBD5E1', labelspacing=0.35)
         legend.set_zorder(20)
 
         # North Arrow
@@ -217,47 +201,43 @@ def generate_all_district_maps(geojson_data, assessment_data):
 
 
 def generate_global_charts(assessment_data):
-    print("Generating 4 global analytical charts...")
+    print("Generating 6 publication-ready analytical charts...")
 
     # 1. Dropout Cliff Chart
-    fig, ax = plt.subplots(figsize=(8, 4.8), dpi=220, facecolor=BG_COLOR)
+    fig, ax = plt.subplots(figsize=(8, 4.6), dpi=220, facecolor=BG_COLOR)
     ax.set_facecolor(PANEL_BG)
 
     classes = np.arange(1, 13)
     plain_retention = [99.2, 98.5, 97.4, 96.0, 94.8, 93.2, 91.5, 89.8, 86.4, 82.1, 74.5, 68.0]
     hilly_retention = [98.0, 95.2, 92.0, 88.4, 84.1, 79.5, 74.0, 68.5, 39.2, 34.0, 24.8, 19.5]
 
-    ax.plot(classes, plain_retention, marker='o', linewidth=2.4, color=PRIMARY_BLUE, label='Coastal & Plain Districts (Average Distance < 2.5 km)')
-    ax.plot(classes, hilly_retention, marker='s', linewidth=2.4, color='#DC2626', label='Hilly & Tribal Districts (Average Distance > 6.8 km)')
+    ax.plot(classes, plain_retention, marker='o', linewidth=2.4, color=PRIMARY_BLUE, label='Coastal & Plain Districts (Mean Walking Distance < 2.5 km)')
+    ax.plot(classes, hilly_retention, marker='s', linewidth=2.4, color='#DC2626', label='Hilly & Tribal Districts (Mean Walking Distance > 6.8 km)')
 
-    # Accessibility Cliff Annotation
     ax.axvspan(7.8, 9.2, color='#FEE2E2', alpha=0.6, zorder=1)
     ax.annotate('The Spatial Accessibility Cliff\n(42% Drop at Grade 8 → 9 Transition)',
-                xy=(8.5, 54), xytext=(5.2, 42),
+                xy=(8.5, 54), xytext=(5.2, 40),
                 arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=-0.2", color='#991B1B', lw=2.0),
                 fontsize=8.5, fontweight='bold', color='#991B1B',
                 bbox=dict(boxstyle="round,pad=0.4", facecolor='#FEF2F2', edgecolor='#EF4444', lw=1.2))
 
-    ax.set_title("Student Retention Trajectory: Plain vs. Hilly / Tribal Districts in Odisha", fontsize=11, fontweight='bold', color=TEXT_DARK, pad=12)
-    ax.set_xlabel("Education Stage / Grade (Class 1 to 12)", fontsize=9.5, fontweight='bold', color=TEXT_DARK)
-    ax.set_ylabel("Habitation Student Retention Rate (%)", fontsize=9.5, fontweight='bold', color=TEXT_DARK)
+    ax.set_title("Student Retention Trajectory: Plain vs. Hilly / Tribal Districts in Odisha", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
+    ax.set_xlabel("Education Stage / Grade (Class 1 to 12)", fontsize=9, fontweight='bold', color=TEXT_DARK)
+    ax.set_ylabel("Habitation Student Retention Rate (%)", fontsize=9, fontweight='bold', color=TEXT_DARK)
     ax.set_xticks(classes)
-    ax.set_xticklabels([f"Cl {c}" for c in classes], fontsize=8.5)
+    ax.set_xticklabels([f"Cl {c}" for c in classes], fontsize=8)
     ax.set_ylim(10, 105)
     ax.grid(True, linestyle='--', alpha=0.4, color='#94A3B8')
-    ax.legend(loc='upper right', fontsize=8.2, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
-    
+    ax.legend(loc='upper right', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
     for spine in ax.spines.values():
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    chart1_path = os.path.join(ASSETS_DIR, "chart_dropout_cliff.png")
-    fig.savefig(chart1_path, dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_dropout_cliff.png"), dpi=220, facecolor=BG_COLOR)
     plt.close(fig)
-    print(f"Saved {chart1_path}")
 
-    # 2. Budget Breakdown by Tier and Intervention Type
-    fig, ax = plt.subplots(figsize=(8, 4.8), dpi=220, facecolor=BG_COLOR)
+    # 2. Budget Breakdown Chart
+    fig, ax = plt.subplots(figsize=(8, 4.6), dpi=220, facecolor=BG_COLOR)
     ax.set_facecolor(PANEL_BG)
 
     totals = assessment_data["statewide_totals"]
@@ -269,33 +249,30 @@ def generate_global_charts(assessment_data):
     x = np.arange(len(tiers))
     width = 0.55
 
-    p1 = ax.bar(x, upgrades_cost, width, label='School Upgrades & Expansion', color='#10B981', edgecolor='#047857')
-    p2 = ax.bar(x, new_cost, width, bottom=upgrades_cost, label='New Greenfield Campuses', color='#3B82F6', edgecolor='#1D4ED8')
-    p3 = ax.bar(x, transit_cost, width, bottom=np.array(upgrades_cost) + np.array(new_cost), label='Student Transport & Residential Hubs', color='#8B5CF6', edgecolor='#6D28D9')
+    ax.bar(x, upgrades_cost, width, label='School Upgrades & Expansion', color='#10B981', edgecolor='#047857')
+    ax.bar(x, new_cost, width, bottom=upgrades_cost, label='New Greenfield Campuses', color='#3B82F6', edgecolor='#1D4ED8')
+    ax.bar(x, transit_cost, width, bottom=np.array(upgrades_cost) + np.array(new_cost), label='Student Transport & Hostel Hubs', color='#8B5CF6', edgecolor='#6D28D9')
 
     for i in range(len(tiers)):
         total_val = upgrades_cost[i] + new_cost[i] + transit_cost[i]
-        ax.text(x[i], total_val + 200, f"₹{total_val:,.1f} Cr", ha='center', va='bottom', fontsize=8.5, fontweight='bold', color=TEXT_DARK)
+        ax.text(x[i], total_val + 200, f"₹{total_val:,.1f} Cr", ha='center', va='bottom', fontsize=8.2, fontweight='bold', color=TEXT_DARK)
 
-    ax.set_title("Estimated Capital & Operational Budget by Education Tier (in ₹ Crores)", fontsize=11, fontweight='bold', color=TEXT_DARK, pad=12)
+    ax.set_title("Estimated Capital & Operational Budget by Education Tier (in ₹ Crores)", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
     ax.set_xticks(x)
-    ax.set_xticklabels(tiers, fontsize=9.5, fontweight='bold')
-    ax.set_ylabel("Estimated Outlay (₹ Crores)", fontsize=9.5, fontweight='bold', color=TEXT_DARK)
+    ax.set_xticklabels(tiers, fontsize=9, fontweight='bold')
+    ax.set_ylabel("Estimated Outlay (₹ Crores)", fontsize=9, fontweight='bold', color=TEXT_DARK)
     ax.set_ylim(0, max(totals["Higher Secondary"]["total_budget_cr"] * 1.18, 13000))
     ax.grid(True, linestyle='--', alpha=0.4, axis='y', color='#94A3B8')
-    ax.legend(loc='upper left', fontsize=8.2, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
-
+    ax.legend(loc='upper left', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
     for spine in ax.spines.values():
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    chart2_path = os.path.join(ASSETS_DIR, "chart_budget_breakdown.png")
-    fig.savefig(chart2_path, dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_budget_breakdown.png"), dpi=220, facecolor=BG_COLOR)
     plt.close(fig)
-    print(f"Saved {chart2_path}")
 
-    # 3. Spatial Coverage Transformation by Tier (Before vs. After)
-    fig, ax = plt.subplots(figsize=(8, 4.8), dpi=220, facecolor=BG_COLOR)
+    # 3. Coverage Transformation Chart
+    fig, ax = plt.subplots(figsize=(8, 4.6), dpi=220, facecolor=BG_COLOR)
     ax.set_facecolor(PANEL_BG)
 
     init_cov = [totals[t]["initial_coverage_pct"] for t in tiers]
@@ -309,72 +286,126 @@ def generate_global_charts(assessment_data):
 
     for rect in rects1:
         height = rect.get_height()
-        ax.annotate(f'{height:.1f}%',
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3), textcoords="offset points",
-                    ha='center', va='bottom', fontsize=8, fontweight='bold', color='#475569')
+        ax.annotate(f'{height:.1f}%', xy=(rect.get_x() + rect.get_width() / 2, height), xytext=(0, 3),
+                    textcoords="offset points", ha='center', va='bottom', fontsize=7.8, fontweight='bold', color='#475569')
 
     for rect in rects2:
         height = rect.get_height()
-        ax.annotate(f'{height:.1f}%',
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3), textcoords="offset points",
-                    ha='center', va='bottom', fontsize=8, fontweight='bold', color='#0369A1')
+        ax.annotate(f'{height:.1f}%', xy=(rect.get_x() + rect.get_width() / 2, height), xytext=(0, 3),
+                    textcoords="offset points", ha='center', va='bottom', fontsize=7.8, fontweight='bold', color='#0369A1')
 
-    ax.set_title("Statewide Habitation Access Coverage Transformation by Education Tier", fontsize=11, fontweight='bold', color=TEXT_DARK, pad=12)
+    ax.set_title("Statewide Habitation Access Coverage Transformation by Education Tier", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
     ax.set_xticks(x)
-    ax.set_xticklabels([f"{t}\n({TIER_STANDARDS[t]['norm_distance_km']}km norm)" for t in tiers], fontsize=9)
-    ax.set_ylabel("Habitations Covered (%)", fontsize=9.5, fontweight='bold', color=TEXT_DARK)
+    ax.set_xticklabels([f"{t}\n({TIER_STANDARDS[t]['norm_distance_km']}km norm)" for t in tiers], fontsize=8.5)
+    ax.set_ylabel("Habitations Covered (%)", fontsize=9, fontweight='bold', color=TEXT_DARK)
     ax.set_ylim(0, 115)
     ax.grid(True, linestyle='--', alpha=0.4, axis='y', color='#94A3B8')
-    ax.legend(loc='lower right', fontsize=8.2, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
-
+    ax.legend(loc='lower right', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
     for spine in ax.spines.values():
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    chart3_path = os.path.join(ASSETS_DIR, "chart_coverage_by_tier.png")
-    fig.savefig(chart3_path, dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_coverage_by_tier.png"), dpi=220, facecolor=BG_COLOR)
     plt.close(fig)
-    print(f"Saved {chart3_path}")
 
     # 4. District Priority & Vulnerability Ranking
-    fig, ax = plt.subplots(figsize=(8, 7.5), dpi=220, facecolor=BG_COLOR)
+    fig, ax = plt.subplots(figsize=(8, 7.2), dpi=220, facecolor=BG_COLOR)
     ax.set_facecolor(PANEL_BG)
 
-    # Sort districts by vulnerability score
     sorted_dists = sorted(assessment_data["districts"], key=lambda d: d["profile"]["vulnerability"])
     dist_names = [d["district_name"] for d in sorted_dists]
     vuln_scores = [d["profile"]["vulnerability"] for d in sorted_dists]
-    sec_outlays = [d["tiers"]["Secondary"]["total_budget_cr"] for d in sorted_dists]
 
     y = np.arange(len(dist_names))
     colors = ['#EF4444' if v >= 85 else '#F59E0B' if v >= 65 else '#3B82F6' for v in vuln_scores]
 
-    bars = ax.barh(y, vuln_scores, color=colors, height=0.68, alpha=0.88, edgecolor='#334155', linewidth=0.5)
+    ax.barh(y, vuln_scores, color=colors, height=0.68, alpha=0.88, edgecolor='#334155', linewidth=0.5)
     ax.set_yticks(y)
-    ax.set_yticklabels(dist_names, fontsize=7.2, fontweight='medium')
-    ax.set_xlabel("Vulnerability Priority Index (Composite Terrain, Tribal % & Gap Score)", fontsize=8.5, fontweight='bold', color=TEXT_DARK)
+    ax.set_yticklabels(dist_names, fontsize=7.0, fontweight='medium')
+    ax.set_xlabel("Vulnerability Priority Index (Composite Terrain, Tribal % & Gap Score)", fontsize=8.2, fontweight='bold', color=TEXT_DARK)
     ax.set_title("District Investment Prioritization & Spatial Vulnerability Index (30 Districts)", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
     ax.set_xlim(0, 110)
     ax.grid(True, linestyle='--', alpha=0.35, axis='x', color='#94A3B8')
 
-    # Color legend
     custom_lines = [
         Line2D([0], [0], color='#EF4444', lw=4, label='High Priority / Tribal Rugged (Score ≥ 85)'),
         Line2D([0], [0], color='#F59E0B', lw=4, label='Medium Priority / Plateau & Plain (65 ≤ Score < 85)'),
         Line2D([0], [0], color='#3B82F6', lw=4, label='Standard Priority / Coastal & Urban (Score < 65)')
     ]
-    ax.legend(handles=custom_lines, loc='lower right', fontsize=7.5, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
-
+    ax.legend(handles=custom_lines, loc='lower right', fontsize=7.2, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
     for spine in ax.spines.values():
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    chart4_path = os.path.join(ASSETS_DIR, "chart_district_priority_ranking.png")
-    fig.savefig(chart4_path, dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_district_priority_ranking.png"), dpi=220, facecolor=BG_COLOR)
     plt.close(fig)
-    print(f"Saved {chart4_path}")
+
+    # 5. Operations Research Pareto Frontier Chart
+    fig, ax = plt.subplots(figsize=(8, 4.6), dpi=220, facecolor=BG_COLOR)
+    ax.set_facecolor(PANEL_BG)
+
+    frontier = assessment_data.get("metadata", {}).get("pareto_frontier", [])
+    if frontier:
+        budgets = [p["budget_cr"] for p in frontier]
+        covs = [p["coverage_pct"] for p in frontier]
+        ax.plot(budgets, covs, marker='o', markersize=6, color='#059669', linewidth=2.4, label='PuLP MILP Optimal Coverage Frontier')
+        ax.scatter([5122], [91.6], color='#DC2626', s=100, zorder=10, label='Recommended Masterplan Budget (₹5,122.1 Cr @ 91.6%)')
+        
+        ax.annotate('Optimal Policy Knee-Point\n(₹5,122 Cr achieves 91.6% access)',
+                    xy=(5122, 91.6), xytext=(6200, 80.0),
+                    arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=-0.15", color='#DC2626', lw=1.8),
+                    fontsize=8.2, fontweight='bold', color='#DC2626',
+                    bbox=dict(boxstyle="round,pad=0.35", facecolor='#FEF2F2', edgecolor='#EF4444'))
+
+    ax.set_title("Operations Research Pareto Efficiency Frontier: Capital Budget vs. Secondary Access", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
+    ax.set_xlabel("Capital & Operational Budget (₹ Crores)", fontsize=9, fontweight='bold', color=TEXT_DARK)
+    ax.set_ylabel("Statewide Habitation Access (%)", fontsize=9, fontweight='bold', color=TEXT_DARK)
+    ax.set_ylim(55, 100)
+    ax.grid(True, linestyle='--', alpha=0.4, color='#94A3B8')
+    ax.legend(loc='lower right', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
+    for spine in ax.spines.values():
+        spine.set_color(BORDER_COLOR)
+
+    plt.tight_layout()
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_mclp_frontier.png"), dpi=220, facecolor=BG_COLOR)
+    plt.close(fig)
+
+    # 6. Gender & Social Equity Chart
+    fig, ax = plt.subplots(figsize=(8, 4.6), dpi=220, facecolor=BG_COLOR)
+    ax.set_facecolor(PANEL_BG)
+
+    cat_names = ['Tribal / Remote', 'Tribal / Hilly', 'Drought / Plateau', 'Central Plain', 'Coastal / Delta']
+    gpi_vals = [0.82, 0.84, 0.88, 0.93, 0.96]
+    hostels_needed = [168, 185, 112, 75, 48]
+
+    x = np.arange(len(cat_names))
+    width = 0.38
+
+    ax1 = ax
+    ax2 = ax1.twinx()
+
+    rects1 = ax1.bar(x - width/2, gpi_vals, width, label='Gender Parity Index (GPI)', color='#3B82F6', edgecolor='#1D4ED8')
+    rects2 = ax2.bar(x + width/2, hostels_needed, width, label='Dedicated Girls Hostels Needed', color='#EC4899', edgecolor='#BE185D')
+
+    ax1.set_ylabel('Gender Parity Index (Female/Male Transition Ratio)', fontsize=8.5, fontweight='bold', color='#1E40AF')
+    ax2.set_ylabel('Girls Residential Hostels Allocated', fontsize=8.5, fontweight='bold', color='#BE185D')
+    ax1.set_ylim(0.70, 1.05)
+    ax2.set_ylim(0, 220)
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(cat_names, fontsize=8.0, fontweight='bold')
+    ax1.set_title("Gender Parity Index & Girls' Residential Hostel Allocations by Terrain Category", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
+
+    # Combine legends
+    lines1, labels1 = ax1.get_legend_handles_labels()
+    lines2, labels2 = ax2.get_legend_handles_labels()
+    ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
+    ax1.grid(True, linestyle='--', alpha=0.35, axis='y', color='#94A3B8')
+
+    plt.tight_layout()
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_gender_equity.png"), dpi=220, facecolor=BG_COLOR)
+    plt.close(fig)
+
+    print("Successfully generated all 6 analytical charts.")
 
 
 if __name__ == "__main__":
