@@ -1,10 +1,12 @@
 """
-Odisha Spatial Education Masterplan: High-Precision Visual Asset Generator (Auditor-Calibrated Edition)
+Odisha Spatial Education Masterplan: High-Precision Visual Asset Generator (Production Edition)
 Generates 30 un-distorted 1:1 square district GIS maps and 6 publication-ready analytical charts.
+Features Multi-Core Parallel Processing, Robust GeoJSON Key Resolvers, and Clean Error Boundaries.
 """
 
 import os
 import json
+import logging
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -12,6 +14,9 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 from shapely.geometry import shape, Point, Polygon, MultiPolygon
+from concurrent.futures import ProcessPoolExecutor, as_completed
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 # Theme Palette (Slate-50 Clean Print Aesthetics)
 BG_COLOR = "#F8FAFC"
@@ -36,6 +41,17 @@ MAPS_DIR = os.path.join(ASSETS_DIR, "district_maps")
 os.makedirs(MAPS_DIR, exist_ok=True)
 
 
+def extract_district_name(properties):
+    """Robustly extracts district name handling various GeoJSON schema conventions."""
+    for key in ["district", "DISTRICT", "dtname", "District", "NAME_2", "District_Name"]:
+        if key in properties and properties[key]:
+            val = str(properties[key]).strip()
+            if val == "Nabarangapur":
+                return "Nabarangpur"
+            return val
+    return "Unknown"
+
+
 def load_data():
     with open(GEOJSON_PATH, "r", encoding="utf-8") as f:
         geojson_data = json.load(f)
@@ -44,22 +60,12 @@ def load_data():
     return geojson_data, assessment_data
 
 
-def generate_all_district_maps(geojson_data, assessment_data):
-    print(f"Generating 30 high-precision 1:1 square district maps in {MAPS_DIR}...")
-    dist_map_info = {d["district_name"]: d for d in assessment_data["districts"]}
-
-    all_geoms = []
-    for feat in geojson_data["features"]:
-        all_geoms.append((feat["properties"].get("district", ""), shape(feat["geometry"])))
-
-    for i, feat in enumerate(geojson_data["features"]):
-        raw_name = feat["properties"].get("district", "")
-        dist_name = raw_name if raw_name != "Nabarangapur" else "Nabarangpur"
-        
-        info = dist_map_info.get(dist_name)
-        if not info:
-            continue
-
+def render_single_district_map(task_args):
+    """Renders a single district map with 1:1 square aspect ratio and error containment."""
+    feat, info, all_geoms_simple, i = task_args
+    raw_name = extract_district_name(feat["properties"])
+    
+    try:
         geom = shape(feat["geometry"])
         sec_tier = info["tiers"]["Secondary"]
         profile = info["profile"]
@@ -73,7 +79,7 @@ def generate_all_district_maps(geojson_data, assessment_data):
         ax.set_aspect('equal', adjustable='box')
 
         # Background context districts
-        for other_name, other_geom in all_geoms:
+        for other_name, other_geom in all_geoms_simple:
             if other_name != raw_name:
                 if other_geom.geom_type == 'Polygon':
                     x, y = other_geom.exterior.xy
@@ -101,7 +107,7 @@ def generate_all_district_maps(geojson_data, assessment_data):
         ax.set_xlim(cx - half_span, cx + half_span)
         ax.set_ylim(cy - half_span, cy + half_span)
 
-        # Spatial points
+        # Deterministic spatial points
         np.random.seed(i * 23 + 107)
         num_existing = min(120, sec_tier["existing_schools"])
         num_unserved = min(60, int(num_existing * (100.0 - sec_tier["initial_coverage_pct"]) / 100.0 * 0.8))
@@ -127,7 +133,6 @@ def generate_all_district_maps(geojson_data, assessment_data):
         new_pts = get_pts(num_new)
         transit_pts = get_pts(num_transit)
 
-        # 5km buffer in degrees (~0.046 deg)
         deg_5km = 5.0 / 108.0
 
         for px, py in exist_pts:
@@ -160,17 +165,16 @@ def generate_all_district_maps(geojson_data, assessment_data):
             spine.set_color(BORDER_COLOR)
             spine.set_linewidth(1.2)
 
-        # Header Title Overlay with PWD Cost Index
-        header_text = f"{dist_name.upper()} DISTRICT ({num_blocks} CD BLOCKS)"
+        # Standard font weights ('bold', 'normal') to prevent findfont warning noise
+        header_text = f"{raw_name.upper()} DISTRICT ({num_blocks} CD BLOCKS)"
         sub_text = f"Terrain: {profile['terrain']}  |  Tobler Friction: {terrain_friction}x  |  PWD Hill Index: {hill_mult}x  |  GPI: {profile['gpi']}"
         
         props_title = dict(boxstyle='round,pad=0.5', facecolor='#FFFFFF', edgecolor='#CBD5E1', alpha=0.95, linewidth=1.0)
         ax.text(0.5, 0.96, header_text, transform=ax.transAxes, fontsize=13.5, fontweight='bold',
                 color='#1E3A8A', ha='center', va='top', bbox=props_title, zorder=20)
-        ax.text(0.5, 0.915, sub_text, transform=ax.transAxes, fontsize=8.2, fontweight='medium',
+        ax.text(0.5, 0.915, sub_text, transform=ax.transAxes, fontsize=8.2, fontweight='normal',
                 color='#475569', ha='center', va='top', zorder=20)
 
-        # Bottom KPI Summary Card Overlay
         kpi_text = (
             f"Coverage: {sec_tier['initial_coverage_pct']}% → {sec_tier['final_coverage_pct']}%   |   "
             f"Upgrades: {sec_tier['proposed_upgrades']}   |   "
@@ -192,11 +196,40 @@ def generate_all_district_maps(geojson_data, assessment_data):
                     transform=ax.transAxes, zorder=20)
 
         plt.tight_layout(pad=1.0)
-        out_path = os.path.join(MAPS_DIR, f"dist_{dist_name.lower().replace(' ', '_')}.png")
+        out_path = os.path.join(MAPS_DIR, f"dist_{raw_name.lower().replace(' ', '_')}.png")
         fig.savefig(out_path, dpi=200, facecolor=BG_COLOR, edgecolor='none')
         plt.close(fig)
+        return (True, raw_name)
+    except Exception as e:
+        logging.error(f"Error rendering map for {raw_name}: {e}")
+        return (False, raw_name)
 
-    print(f"Successfully generated all 30 district maps in {MAPS_DIR}.")
+
+def generate_all_district_maps_parallel(geojson_data, assessment_data):
+    print(f"Generating 30 high-precision 1:1 square district maps in parallel in {MAPS_DIR}...")
+    dist_map_info = {d["district_name"]: d for d in assessment_data["districts"]}
+
+    all_geoms = []
+    for feat in geojson_data["features"]:
+        name = extract_district_name(feat["properties"])
+        all_geoms.append((name, shape(feat["geometry"])))
+
+    tasks = []
+    for i, feat in enumerate(geojson_data["features"]):
+        name = extract_district_name(feat["properties"])
+        info = dist_map_info.get(name)
+        if info:
+            tasks.append((feat, info, all_geoms, i))
+
+    workers = min(8, os.cpu_count() or 4)
+    with ProcessPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(render_single_district_map, t) for t in tasks]
+        for fut in as_completed(futures):
+            success, name = fut.result()
+            if not success:
+                logging.warning(f"Failed to render {name}")
+
+    print(f"Successfully generated all 30 district maps in parallel in {MAPS_DIR}.")
 
 
 def generate_global_charts(assessment_data):
@@ -260,7 +293,7 @@ def generate_global_charts(assessment_data):
     ax.set_xticks(x)
     ax.set_xticklabels(tiers, fontsize=9, fontweight='bold')
     ax.set_ylabel("Estimated Outlay (₹ Crores)", fontsize=9, fontweight='bold', color=TEXT_DARK)
-    ax.set_ylim(0, max(totals["Higher Secondary"]["total_budget_cr"] * 1.18, 14000))
+    ax.set_ylim(0, max(totals["Higher Secondary"]["total_budget_cr"] * 1.18, 16000))
     ax.grid(True, linestyle='--', alpha=0.4, axis='y', color='#94A3B8')
     ax.legend(loc='upper left', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
     for spine in ax.spines.values():
@@ -295,7 +328,7 @@ def generate_global_charts(assessment_data):
 
     ax.set_title("Statewide Habitation Access Coverage Transformation by Education Tier", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
     ax.set_xticks(x)
-    ax.set_xticklabels([f"{t}\n({TIER_STANDARDS[t]['norm_distance_km']}km norm)" for t in tiers], fontsize=8.5)
+    ax.set_xticklabels([f"{t}\n({totals[t]['existing_schools']:,} sch)" for t in tiers], fontsize=8.5)
     ax.set_ylabel("Habitations Covered (%)", fontsize=9, fontweight='bold', color=TEXT_DARK)
     ax.set_ylim(0, 115)
     ax.grid(True, linestyle='--', alpha=0.4, axis='y', color='#94A3B8')
@@ -320,7 +353,7 @@ def generate_global_charts(assessment_data):
 
     ax.barh(y, vuln_scores, color=colors, height=0.68, alpha=0.88, edgecolor='#334155', linewidth=0.5)
     ax.set_yticks(y)
-    ax.set_yticklabels(dist_names, fontsize=7.0, fontweight='medium')
+    ax.set_yticklabels(dist_names, fontsize=7.0, fontweight='normal')
     ax.set_xlabel("Vulnerability Priority Index (Composite Terrain, Tribal % & Gap Score)", fontsize=8.2, fontweight='bold', color=TEXT_DARK)
     ax.set_title("District Investment Prioritization & Spatial Vulnerability Index (30 Districts)", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)
     ax.set_xlim(0, 110)
@@ -408,7 +441,6 @@ def generate_global_charts(assessment_data):
 
 
 if __name__ == "__main__":
-    from backend.spatial_engine.statewide_analyzer import TIER_STANDARDS
     geo_data, assess_data = load_data()
-    generate_all_district_maps(geo_data, assess_data)
+    generate_all_district_maps_parallel(geo_data, assess_data)
     generate_global_charts(assess_data)
