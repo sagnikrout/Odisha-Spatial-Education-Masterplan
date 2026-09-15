@@ -1,13 +1,13 @@
-# 📦 Share Pack: Odisha Spatial Education Masterplan
+# Share pack: Odisha Spatial Education Masterplan
 
-This folder contains high-resolution preview graphics and templates curated for presentations, social posts, and discussions with researchers and policy teams.
+This directory contains preview graphics for presentations and reports.
 
-## 🖼️ Included Assets
+## Included assets
 
-1. **`dist_malkangiri.png`**: High-resolution 1:1 GIS catchment overlay of Malkangiri district showing existing schools (blue), 5km buffer circles, underserved habitation clusters (amber), and proposed upgrades, greenfield campuses, and transport/hostel hubs.
-2. **`chart_dropout_cliff.png`**: Dual-line graph illustrating the Grade 8 → Grade 9 "Spatial Accessibility Cliff" in hilly/tribal districts compared to plain districts.
-3. **`chart_budget_breakdown.png`**: Capital outlay breakdown across Primary, Upper Primary, Secondary, and Higher Secondary tiers by intervention type.
+1. `dist_malkangiri.png`: Square 1:1 GIS catchment map of Malkangiri district showing existing schools, 5 km buffer zones, unserved habitations, proposed upgrades, and transit hubs.
+2. `chart_dropout_cliff.png`: Graph of Grade 8 to Grade 9 transition rates comparing hill and plain districts.
+3. `chart_budget_breakdown.png`: Capital outlay across education tiers by intervention type.
 
-## 📄 Main PDF Masterplan
-The full 47-page publication-grade report is located at the root of the repository:
-👉 [Odisha_Spatial_School_Education_Masterplan.pdf](../Odisha_Spatial_School_Education_Masterplan.pdf)
+## Masterplan report
+The 47-page report is located at the root of the repository:
+[Odisha_Spatial_School_Education_Masterplan.pdf](../Odisha_Spatial_School_Education_Masterplan.pdf)

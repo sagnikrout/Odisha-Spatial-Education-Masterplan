@@ -1,83 +1,47 @@
-# Odisha Spatial Education Masterplan: Replication & Verification Steps
+# Replication and verification guide
 
-The following document details the exact sequence of technical fixes, logic recalibrations, and compilation commands performed to produce the final, publication-grade `Odisha_Spatial_School_Education_Masterplan.pdf`. 
+This document details the configuration and commands used to produce the masterplan outputs and verify results.
 
-You can use these steps to replicate the environment, understand the applied logic, and independently verify the results.
-
----
-
-## 1. Spatial Financial Engine Recalibration
-**Goal:** Adjust the cost modeling to reflect realistic, modern infrastructure construction and boarding/transport costs (increasing the budget by ~10x).
-
-**Steps Performed:**
-1. Edited `backend/spatial_engine/statewide_analyzer.py`.
-2. Located the `THRESHOLDS` configuration dictionary for the `Secondary` tier.
-3. Updated the unit costs to increase the budget by a factor of ~3.75x to 10x depending on the tier. Specifically for `Secondary`:
-   - `unit_cost_lakhs` updated to `244.0` (up from 65.0).
-   - `migration_cost_lakhs` updated to `30.0` (up from 8.0).
-4. **Command Executed:** 
+## 1. Unit cost configuration
+1. Open `backend/spatial_engine/statewide_analyzer.py`.
+2. Locate `TIER_STANDARDS` for the Secondary tier.
+3. Review base unit costs:
+   - `base_upgrade_cost_lakhs`: 85.0
+   - `base_new_school_cost_lakhs`: 244.0
+   - `base_migration_cost_lakhs`: 30.0
+4. Execute analyzer:
    ```bash
    python backend/spatial_engine/statewide_analyzer.py
    ```
-5. **Result:** This recalculated the data for all 30 districts and 314 CD blocks and updated `odisha_statewide_assessment.json` with the PWD Hill Area Cost Index and calibrated transit operational expenditures, establishing the statewide Secondary tier capital budget at **₹6,008.4 Crores**.
+5. The analyzer computes metrics for all 30 districts and 314 CD blocks, applying the PWD hill cost index and transit operational expenses, setting the statewide secondary capital budget at 6,008.4 crore rupees.
 
----
-
-## 2. Visual Asset Generator Fixes
-**Goal:** Fix layout issues, map logic, and data hardcoding in the visual assets.
-
-**Steps Performed:**
-1. Edited `generate_district_maps.py`.
-2. **Data Tier Fix:** Changed the map iteration loop to pull from `dist['tiers']['Secondary']` instead of the Primary tier. This ensured the 30 district maps were visualizing high schools instead of elementary schools.
-3. **Aesthetic Fixes:**
-   - Changed the background colours (`BG` and `PANEL_BG`) from harsh dark mode to a soft, printable `slate-50` (light grey-blue).
-   - Redesigned the district layouts from a side-by-side horizontal squeeze to a stacked vertical layout (Top/Bottom, 14x14 figure size) for maximum legibility.
-4. **Global Charts Logic Restoration:**
-   - Rewrote the placeholder "text" charts back to actual programmatic `matplotlib` graphs.
-   - **Dropout Chart:** Implemented a dual-line graph comparing Plain districts vs. Hilly districts and added the "Accessibility Cliff" red annotation pointer.
-   - **Budget Chart:** Updated the hardcoded strings to match the new financial engine output (Smart Plan: ₹2,474.1 Crores vs. Old Approach: ₹12,000 Crores).
-5. **Command Executed:**
+## 2. Visual asset generation
+1. Execute map generator:
    ```bash
    python generate_district_maps.py
    ```
-6. **Result:** Generated 30 high-resolution district maps and 4 global charts inside the `assets/` directory.
+2. Generates 30 square 1:1 district catchment maps and 6 analytical charts in `assets/`.
 
----
-
-## 3. PDF Assembly Engine Fixes
-**Goal:** Resolve clipping, overlapping, and incorrect text formatting in the final PDF assembly.
-
-**Steps Performed:**
-1. Edited `generate_pdf_report.py`.
-2. **Page Dimensions & Layouts:**
-   - Adjusted `topMargin=52` and `bottomMargin=55` in the `SimpleDocTemplate` to prevent the text from overlapping with the blue running headers/footers.
-   - Configured the map image embeds (`Image(map_path, width=420, height=420)`) to accommodate the new square, stacked aspect ratio. Wrapped the maps, headers, and tables in a `KeepTogether` block to prevent awkward page breaks.
-3. **Table of Contents:** Removed hardcoded, incorrect page numbers from the TOC arrays.
-4. **Data Table Fixes:** 
-   - Replaced arbitrary mathematical multipliers (e.g., `* 0.6`, `* 0.5`) in the Primary and Higher Secondary comparison tables with the actual analytical values pulled from the JSON output.
-   - Removed the 40-character truncation (`[:40]...`) on the district strategy texts so they display in full.
-5. **Command Executed:**
+## 3. Document assembly
+1. Compile full 47-page masterplan:
    ```bash
    python generate_pdf_report.py
    ```
-6. **Result:** Compiled all JSON data, styled paragraphs, and visual assets into the final 21.2 MB PDF report.
+2. Compile 10-slide executive presentation deck:
+   ```bash
+   python generate_executive_deck.py
+   ```
+3. Compile 1-page executive policy brief:
+   ```bash
+   python generate_policy_brief.py
+   ```
+4. Compile 30 district action memos:
+   ```bash
+   python generate_district_memos.py
+   ```
 
----
-
-## How to Replicate from Scratch
-
-If you wish to run the entire pipeline on a fresh machine, execute the following commands in order:
-
+## 4. Test verification
+Run the test suite:
 ```bash
-# 1. Ensure dependencies are installed
-pip install -r requirements.txt
-
-# 2. Run the spatial assessment engine to calculate math/costs
-python backend/spatial_engine/statewide_analyzer.py
-
-# 3. Generate all maps, charts, and visualizations
-python generate_district_maps.py
-
-# 4. Assemble the final PDF report
-python generate_pdf_report.py
+python -m unittest tests/test_masterplan_suite.py
 ```
