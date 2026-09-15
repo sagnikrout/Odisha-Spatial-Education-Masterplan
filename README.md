@@ -1,6 +1,6 @@
 # Odisha Spatial School Education Masterplan (2026-2031)
 
-[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Optimization: PuLP MILP](https://img.shields.io/badge/Optimization-PuLP%20MILP%20%7C%20MCLP-purple.svg)](https://coin-or.github.io/pulp/)
 [![Geospatial: GeoPandas & Shapely](https://img.shields.io/badge/GIS-GeoPandas%20%7C%20Shapely-orange.svg)](https://geopandas.org/)
