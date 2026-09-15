@@ -399,7 +399,7 @@ def run_statewide_assessment():
             f"The masterplan allocates {sec_tier['proposed_upgrades']} high school upgrades, {sec_tier['proposed_new_schools']} greenfield campuses, "
             f"{sec_tier['proposed_transport_hubs']} student transport hubs ({sec_tier['fleet_minibuses']} mini-buses, {sec_tier['fleet_feeder_vans']} vans), "
             f"{sec_tier['girls_hostels_proposed']} dedicated girls' hostels, and {sec_tier['teachers_required']} subject teacher recruitments (25% tribal hardship allowance). "
-            f"Total estimated capital outlay is ₹{sec_tier['total_budget_cr']} Crores, raising universal secondary coverage to {sec_tier['final_coverage_pct']}% across all {num_blocks} blocks."
+            f"Total estimated capital outlay is Rs. {sec_tier['total_budget_cr']} Crores, raising universal secondary coverage to {sec_tier['final_coverage_pct']}% across all {num_blocks} blocks."
         )
 
         district_entry = {

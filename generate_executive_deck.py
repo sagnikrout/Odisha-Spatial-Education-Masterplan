@@ -59,14 +59,14 @@ class SlideCanvas(canvas.Canvas):
 
         # Slide Top Bar
         self.drawString(36, 595 - 28, "GOVERNMENT OF ODISHA | DEPARTMENT OF SCHOOL & MASS EDUCATION")
-        self.drawRightString(842 - 36, 595 - 28, "ODISHA SPATIAL EDUCATION MASTERPLAN (2026–2031)")
+        self.drawRightString(842 - 36, 595 - 28, "ODISHA SPATIAL EDUCATION MASTERPLAN (2026-2031)")
         self.setStrokeColor(BORDER_COL)
         self.setLineWidth(0.75)
         self.line(36, 595 - 34, 842 - 36, 595 - 34)
 
         # Slide Bottom Bar
         self.setFont("Helvetica", 8)
-        self.drawString(36, 22, "Audited Executive Briefing Deck — Operations Research & Spatial Decision Support")
+        self.drawString(36, 22, "Audited Executive Briefing Deck  -  Operations Research & Spatial Decision Support")
         self.drawRightString(842 - 36, 22, f"Slide {self._pageNumber} of {total_slides}")
         self.line(36, 30, 842 - 36, 30)
 
@@ -172,15 +172,15 @@ def build_executive_deck():
     story.append(Paragraph("DEPARTMENT OF SCHOOL & MASS EDUCATION", ParagraphStyle('CoverDept', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=MUTED_TEXT, alignment=1, spaceAfter=15)))
     story.append(HRFlowable(width="40%", thickness=2, color=PRIMARY, spaceBefore=0, spaceAfter=15))
     
-    story.append(Paragraph("ODISHA SPATIAL SCHOOL EDUCATION MASTERPLAN (2026–2031)", ParagraphStyle('CoverTitleSlide', fontName='Helvetica-Bold', fontSize=22, leading=26, textColor=PRIMARY, alignment=1, spaceAfter=6)))
+    story.append(Paragraph("ODISHA SPATIAL SCHOOL EDUCATION MASTERPLAN (2026-2031)", ParagraphStyle('CoverTitleSlide', fontName='Helvetica-Bold', fontSize=22, leading=26, textColor=PRIMARY, alignment=1, spaceAfter=6)))
     story.append(Paragraph("Executive Policy Deck: Audited OR Optimization, 314-Block GIS Analysis & PWD Hill Cost Calibrated Capital Plan", ParagraphStyle('CoverSubSlide', fontName='Helvetica', fontSize=11, leading=15, textColor=MUTED_TEXT, alignment=1, spaceAfter=20)))
 
     c1 = [
         [
             Paragraph(f"<b>{sec['initial_coverage_pct']}% → {sec['final_coverage_pct']}%</b><br/><font size=7 color='#64748B'>Secondary Access</font>", cell_bold),
-            Paragraph(f"<b>₹{sec['total_budget_cr']:,.1f} Cr</b><br/><font size=7 color='#64748B'>Hill-Adjusted Outlay</font>", cell_bold),
+            Paragraph(f"<b>Rs. {sec['total_budget_cr']:,.1f} Cr</b><br/><font size=7 color='#64748B'>Hill-Adjusted Outlay</font>", cell_bold),
             Paragraph(f"<b>314 Blocks</b><br/><font size=7 color='#64748B'>Statewide Coverage</font>", cell_bold),
-            Paragraph(f"<b>{econ.get('benefit_cost_ratio_roi', 1.8)}x GSDP ROI</b><br/><font size=7 color='#64748B'>₹{econ.get('net_present_value_gsdp_contribution_cr', 10796):,.0f} Cr Value</font>", cell_bold)
+            Paragraph(f"<b>{econ.get('benefit_cost_ratio_roi', 1.8)}x GSDP ROI</b><br/><font size=7 color='#64748B'>Rs. {econ.get('net_present_value_gsdp_contribution_cr', 10796):,.0f} Cr Value</font>", cell_bold)
         ]
     ]
     tc1 = Table(c1, colWidths=[185, 185, 185, 185])
@@ -238,7 +238,7 @@ def build_executive_deck():
         [
             Paragraph("• Solves the Maximal Covering Location Problem using PuLP / CBC solver.<br/>• <b>Objective:</b> Maximize covered student population &Sigma;(w<sub>i</sub> &times; y<sub>i</sub>).<br/>• <b>Constraint:</b> Total capital expenditure &le; Budget constraint (B).", bullet_text),
             Paragraph("• <b>Tobler Walking Friction:</b> 1.8x to 2.4x impedance in ghats.<br/>• <b>PWD Hill Cost Index:</b> Scales construction costs dynamically (+18% to +30% in Eastern Ghats) for material haulage and ghat logistics.", bullet_text),
-            Paragraph("• <b>School Upgrades (₹85L–₹105L):</b> Expanding existing middle schools.<br/>• <b>Greenfield High Schools (₹244L–₹317L):</b> Dense unserved clusters.<br/>• <b>Transit & Hostel Hubs (₹30L):</b> Sparse, rugged hamlets.", bullet_text)
+            Paragraph("• <b>School Upgrades (Rs. 85L-Rs. 105L):</b> Expanding existing middle schools.<br/>• <b>Greenfield High Schools (Rs. 244L-Rs. 317L):</b> Dense unserved clusters.<br/>• <b>Transit & Hostel Hubs (Rs. 30L):</b> Sparse, rugged hamlets.", bullet_text)
         ]
     ]
     t_or = Table(or_box, colWidths=[250, 250, 250])
@@ -254,10 +254,10 @@ def build_executive_deck():
 
     dist_norm_data = [
         [Paragraph("Tier", cell_header), Paragraph("Policy Standard", cell_header), Paragraph("Base Upgrade Cost", cell_header), Paragraph("Base Greenfield Cost", cell_header), Paragraph("Hill Cost Range", cell_header)],
-        [Paragraph("Primary (Grades 1–5)", cell_text), Paragraph("1.0 km Walking Radius", cell_text), Paragraph("₹25.0 Lakhs", cell_text), Paragraph("₹65.0 Lakhs", cell_text), Paragraph("₹65L – ₹84L", cell_text)],
-        [Paragraph("Upper Primary (Grades 6–8)", cell_text), Paragraph("3.0 km Walking Radius", cell_text), Paragraph("₹45.0 Lakhs", cell_text), Paragraph("₹120.0 Lakhs", cell_text), Paragraph("₹120L – ₹156L", cell_text)],
-        [Paragraph("Secondary (Grades 9–10)", cell_bold), Paragraph("5.0 km Catchment Buffer", cell_bold), Paragraph("₹85.0 Lakhs", cell_bold), Paragraph("₹244.0 Lakhs", cell_bold), Paragraph("₹244L – ₹317L", cell_bold)],
-        [Paragraph("Higher Secondary (Grades 11–12)", cell_text), Paragraph("7.0 km Transit Radius", cell_text), Paragraph("₹140.0 Lakhs", cell_text), Paragraph("₹480.0 Lakhs", cell_text), Paragraph("₹480L – ₹624L", cell_text)]
+        [Paragraph("Primary (Grades 1-5)", cell_text), Paragraph("1.0 km Walking Radius", cell_text), Paragraph("Rs. 25.0 Lakhs", cell_text), Paragraph("Rs. 65.0 Lakhs", cell_text), Paragraph("Rs. 65L - Rs. 84L", cell_text)],
+        [Paragraph("Upper Primary (Grades 6-8)", cell_text), Paragraph("3.0 km Walking Radius", cell_text), Paragraph("Rs. 45.0 Lakhs", cell_text), Paragraph("Rs. 120.0 Lakhs", cell_text), Paragraph("Rs. 120L - Rs. 156L", cell_text)],
+        [Paragraph("Secondary (Grades 9-10)", cell_bold), Paragraph("5.0 km Catchment Buffer", cell_bold), Paragraph("Rs. 85.0 Lakhs", cell_bold), Paragraph("Rs. 244.0 Lakhs", cell_bold), Paragraph("Rs. 244L - Rs. 317L", cell_bold)],
+        [Paragraph("Higher Secondary (Grades 11-12)", cell_text), Paragraph("7.0 km Transit Radius", cell_text), Paragraph("Rs. 140.0 Lakhs", cell_text), Paragraph("Rs. 480.0 Lakhs", cell_text), Paragraph("Rs. 480L - Rs. 624L", cell_text)]
     ]
     t_norms = Table(dist_norm_data, colWidths=[150, 150, 150, 150, 150])
     t_norms.setStyle(TableStyle([
@@ -297,7 +297,7 @@ def build_executive_deck():
             Paragraph(f"{t_vals['proposed_new_schools']:,}", cell_text),
             Paragraph(f"{t_vals['proposed_transport_hubs']:,}", cell_text),
             Paragraph(f"<b>{t_vals['final_coverage_pct']}%</b>", cell_bold),
-            Paragraph(f"<b>₹{t_vals['total_budget_cr']:,.1f} Cr</b>", cell_bold)
+            Paragraph(f"<b>Rs. {t_vals['total_budget_cr']:,.1f} Cr</b>", cell_bold)
         ])
 
     t_st_slide = Table(st_table, colWidths=[105, 90, 85, 95, 95, 90, 95, 115])
@@ -330,9 +330,9 @@ def build_executive_deck():
 
     right_frontier = [
         Paragraph("<b>Key Insights from Mathematical Optimization:</b>", ParagraphStyle('FHead', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY, spaceAfter=6)),
-        Paragraph("• <b>Diminishing Marginal Returns:</b> Below ₹2,000 Cr, access gains are steep (+22%). Beyond ₹7,000 Cr, marginal access gains flatten significantly.", bullet_text),
-        Paragraph(f"• <b>Optimal Knee-Point at ₹{sec['total_budget_cr']:,.1f} Cr:</b> Achieves <b>91.6% statewide secondary access</b>, capturing 98.5% of addressable habitations efficiently.", bullet_text),
-        Paragraph("• <b>Cost Savings vs. Blanket Construction:</b> Traditional un-optimized expansion would require over <b>₹12,000 Crores</b>. The spatial optimization saves over <b>₹5,990 Crores</b>.", bullet_text),
+        Paragraph("• <b>Diminishing Marginal Returns:</b> Below Rs. 2,000 Cr, access gains are steep (+22%). Beyond Rs. 7,000 Cr, marginal access gains flatten significantly.", bullet_text),
+        Paragraph(f"• <b>Optimal Knee-Point at Rs. {sec['total_budget_cr']:,.1f} Cr:</b> Achieves <b>91.6% statewide secondary access</b>, capturing 98.5% of addressable habitations efficiently.", bullet_text),
+        Paragraph("• <b>Cost Savings vs. Blanket Construction:</b> Traditional un-optimized expansion would require over <b>Rs. 12,000 Crores</b>. The spatial optimization saves over <b>Rs. 5,990 Crores</b>.", bullet_text),
         Paragraph("• <b>Targeted Capital Allocation:</b> 43% of funds allocated to UP-to-Secondary upgrades, 47% to high-density greenfield campuses, and 10% to transit/hostel hubs.", bullet_text)
     ]
     t_slide5 = Table([[left_frontier, right_frontier]], colWidths=[430, 340])
@@ -355,7 +355,7 @@ def build_executive_deck():
         Paragraph("<b>Block-Level Equity Findings:</b>", ParagraphStyle('BHead', fontName='Helvetica-Bold', fontSize=10, leading=13, textColor=PRIMARY, spaceAfter=6)),
         Paragraph("• <b>High Vulnerability Cluster (72 Blocks):</b> Concentrated in Malkangiri, Koraput, Rayagada, Kandhamal, and Nabarangpur. Average secondary coverage is currently under 45%.", bullet_text),
         Paragraph("• <b>Challenging Terrain Corridors:</b> Blocks like Chitrakonda (Malkangiri), Thuamul Rampur (Kalahandi), and Daringbadi (Kandhamal) require 100% transit/hostel intervention.", bullet_text),
-        Paragraph("• <b>Central & Agrarian Plateau (142 Blocks):</b> Moderate access (55–70%). Primary need is upgrading existing middle schools to high schools.", bullet_text),
+        Paragraph("• <b>Central & Agrarian Plateau (142 Blocks):</b> Moderate access (55-70%). Primary need is upgrading existing middle schools to high schools.", bullet_text),
         Paragraph("• <b>Coastal & Urban Belts (100 Blocks):</b> High baseline coverage (>75%). Priority is infrastructure modernization and cyclone-resilient structural upgrades.", bullet_text)
     ]
     t_slide6 = Table([[left_rank, right_rank]], colWidths=[420, 350])
@@ -394,9 +394,9 @@ def build_executive_deck():
 
     fleet_summary = [
         [
-            Paragraph(f"<b>{sec['fleet_minibuses']:,} Mini-Buses (24-Seater)</b><br/><font size=7 color='#64748B'>@ ₹4.80L/yr Opex</font>", cell_bold),
-            Paragraph(f"<b>{sec['fleet_feeder_vans']:,} Feeder Vans (12-Seater)</b><br/><font size=7 color='#64748B'>@ ₹3.00L/yr Opex</font>", cell_bold),
-            Paragraph(f"<b>₹{sec['annual_transit_opex_cr']:.1f} Cr / Year Opex</b><br/><font size=7 color='#64748B'>Fuel, maintenance & chaperones</font>", cell_bold),
+            Paragraph(f"<b>{sec['fleet_minibuses']:,} Mini-Buses (24-Seater)</b><br/><font size=7 color='#64748B'>@ Rs. 4.80L/yr Opex</font>", cell_bold),
+            Paragraph(f"<b>{sec['fleet_feeder_vans']:,} Feeder Vans (12-Seater)</b><br/><font size=7 color='#64748B'>@ Rs. 3.00L/yr Opex</font>", cell_bold),
+            Paragraph(f"<b>Rs. {sec['annual_transit_opex_cr']:.1f} Cr / Year Opex</b><br/><font size=7 color='#64748B'>Fuel, maintenance & chaperones</font>", cell_bold),
             Paragraph("<b>32.4 km Avg Route</b><br/><font size=7 color='#64748B'>Optimized shortest-path loops</font>", cell_bold)
         ]
     ]
@@ -412,8 +412,8 @@ def build_executive_deck():
     story.append(Spacer(1, 15))
 
     transit_bullets = [
-        Paragraph("• <b>Auditor-Calibrated Opex:</b> Budgeted at ₹4.80L/mini-bus and ₹3.00L/van to cover commercial driver salaries, all-weather tire maintenance, insurance, and Mission Shakti female chaperone honorariums.", bullet_text),
-        Paragraph("• <b>Vehicle Routing Optimization (VRP):</b> Routes are structured as closed feeder loops connecting 3–5 remote hamlets to a central hub school.", bullet_text),
+        Paragraph("• <b>Auditor-Calibrated Opex:</b> Budgeted at Rs. 4.80L/mini-bus and Rs. 3.00L/van to cover commercial driver salaries, all-weather tire maintenance, insurance, and Mission Shakti female chaperone honorariums.", bullet_text),
+        Paragraph("• <b>Vehicle Routing Optimization (VRP):</b> Routes are structured as closed feeder loops connecting 3-5 remote hamlets to a central hub school.", bullet_text),
         Paragraph("• <b>Community Fleet Management:</b> Managed via School Management Committees (SMCs) and local Women Self-Help Groups (Mission Shakti SHGs) for local employment.", bullet_text),
         Paragraph("• <b>Safety & Telematics:</b> Real-time GPS tracking and geofencing integrated into the Odisha State Education GIS Portal.", bullet_text)
     ]
@@ -438,18 +438,18 @@ def build_executive_deck():
             Paragraph("Access Gain", cell_header)
         ],
         [
-            Paragraph("<b>Phase 1 (Y1–Y2)</b>", cell_bold),
+            Paragraph("<b>Phase 1 (Y1-Y2)</b>", cell_bold),
             Paragraph("High Vulnerability Tribal Districts (9 Dists)", cell_text),
-            Paragraph("₹2,703.8 Cr (45%)", cell_bold),
+            Paragraph("Rs. 2,703.8 Cr (45%)", cell_bold),
             Paragraph("981", cell_text),
             Paragraph("537", cell_text),
             Paragraph("644", cell_text),
             Paragraph("+16.5%", cell_bold)
         ],
         [
-            Paragraph("<b>Phase 2 (Y3–Y4)</b>", cell_bold),
+            Paragraph("<b>Phase 2 (Y3-Y4)</b>", cell_bold),
             Paragraph("Mineral Belts & Western Plateaus (11 Dists)", cell_text),
-            Paragraph("₹2,102.9 Cr (35%)", cell_bold),
+            Paragraph("Rs. 2,102.9 Cr (35%)", cell_bold),
             Paragraph("763", cell_text),
             Paragraph("418", cell_text),
             Paragraph("351", cell_text),
@@ -458,7 +458,7 @@ def build_executive_deck():
         [
             Paragraph("<b>Phase 3 (Y5)</b>", cell_bold),
             Paragraph("Coastal Deltas & Cyclone Retrofits (10 Dists)", cell_text),
-            Paragraph("₹1,201.7 Cr (20%)", cell_bold),
+            Paragraph("Rs. 1,201.7 Cr (20%)", cell_bold),
             Paragraph("436", cell_text),
             Paragraph("239", cell_text),
             Paragraph("175", cell_text),
@@ -480,9 +480,9 @@ def build_executive_deck():
         [
             Paragraph(f"<b>Audited Socio-Economic Return on Investment (ROI):</b><br/>"
                       f"• <b>184,000 Students Saved From Dropout</b> over 5 years.<br/>"
-                      f"• <b>Labor-Discounted Wage Premium:</b> +₹1.70 Lakhs/yr (0.75x rural absorption discount).<br/>"
-                      f"• <b>Net Present Value (NPV) GSDP Contribution:</b> <b>₹10,796.3 Crores</b>.<br/>"
-                      f"• <b>Benefit-Cost Ratio (ROI):</b> <b>1.8x</b> on ₹{sec['total_budget_cr']:,.1f} Cr Hill-Adjusted Capital Outlay.",
+                      f"• <b>Labor-Discounted Wage Premium:</b> +Rs. 1.70 Lakhs/yr (0.75x rural absorption discount).<br/>"
+                      f"• <b>Net Present Value (NPV) GSDP Contribution:</b> <b>Rs. 10,796.3 Crores</b>.<br/>"
+                      f"• <b>Benefit-Cost Ratio (ROI):</b> <b>1.8x</b> on Rs. {sec['total_budget_cr']:,.1f} Cr Hill-Adjusted Capital Outlay.",
                       ParagraphStyle('ROI', fontName='Helvetica', fontSize=9, leading=13, textColor=PRIMARY, backColor=PANEL_BG, borderPadding=8))
         ]
     ]

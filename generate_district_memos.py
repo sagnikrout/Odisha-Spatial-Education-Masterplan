@@ -59,14 +59,14 @@ class MemoCanvas(canvas.Canvas):
 
         # Header
         self.drawString(36, 842 - 28, f"GOVERNMENT OF ODISHA | {self.district_name.upper()} DISTRICT ADMINISTRATION")
-        self.drawRightString(595 - 36, 842 - 28, "AUDITED EDUCATION ACTION MEMO (2026–2031)")
+        self.drawRightString(595 - 36, 842 - 28, "AUDITED EDUCATION ACTION MEMO (2026-2031)")
         self.setStrokeColor(BORDER_COL)
         self.setLineWidth(0.75)
         self.line(36, 842 - 34, 595 - 36, 842 - 34)
 
         # Footer
         self.setFont("Helvetica", 7.5)
-        self.drawString(36, 22, f"Confidential — For Collector & District Magistrate / DEO {self.district_name}")
+        self.drawString(36, 22, f"Confidential  -  For Collector & District Magistrate / DEO {self.district_name}")
         self.drawRightString(595 - 36, 22, f"Page {self._pageNumber} of {total_pages}")
         self.line(36, 30, 595 - 36, 30)
 
@@ -192,10 +192,10 @@ def compile_single_district_memo(d):
     ]
     tier_table_data = [
         [Paragraph("Tier", cell_header), Paragraph("Baseline", cell_header), Paragraph("Target", cell_header), Paragraph("Upgrades", cell_header), Paragraph("New", cell_header), Paragraph("Transit", cell_header), Paragraph("Outlay", cell_header)],
-        [Paragraph("Primary", cell_text), Paragraph(f"{d['tiers']['Primary']['initial_coverage_pct']}%", cell_text), Paragraph(f"{d['tiers']['Primary']['final_coverage_pct']}%", cell_text), Paragraph(str(d['tiers']['Primary']['proposed_upgrades']), cell_text), Paragraph(str(d['tiers']['Primary']['proposed_new_schools']), cell_text), Paragraph(str(d['tiers']['Primary']['proposed_transport_hubs']), cell_text), Paragraph(f"₹{d['tiers']['Primary']['total_budget_cr']:.1f}Cr", cell_text)],
-        [Paragraph("UP (Middle)", cell_text), Paragraph(f"{d['tiers']['Upper Primary']['initial_coverage_pct']}%", cell_text), Paragraph(f"{d['tiers']['Upper Primary']['final_coverage_pct']}%", cell_text), Paragraph(str(d['tiers']['Upper Primary']['proposed_upgrades']), cell_text), Paragraph(str(d['tiers']['Upper Primary']['proposed_new_schools']), cell_text), Paragraph(str(d['tiers']['Upper Primary']['proposed_transport_hubs']), cell_text), Paragraph(f"₹{d['tiers']['Upper Primary']['total_budget_cr']:.1f}Cr", cell_text)],
-        [Paragraph("Secondary", cell_bold), Paragraph(f"{sec['initial_coverage_pct']}%", cell_bold), Paragraph(f"{sec['final_coverage_pct']}%", cell_bold), Paragraph(str(sec['proposed_upgrades']), cell_bold), Paragraph(str(sec['proposed_new_schools']), cell_bold), Paragraph(str(sec['proposed_transport_hubs']), cell_bold), Paragraph(f"₹{sec['total_budget_cr']:.1f}Cr", cell_bold)],
-        [Paragraph("Higher Sec", cell_text), Paragraph(f"{d['tiers']['Higher Secondary']['initial_coverage_pct']}%", cell_text), Paragraph(f"{d['tiers']['Higher Secondary']['final_coverage_pct']}%", cell_text), Paragraph(str(d['tiers']['Higher Secondary']['proposed_upgrades']), cell_text), Paragraph(str(d['tiers']['Higher Secondary']['proposed_new_schools']), cell_text), Paragraph(str(d['tiers']['Higher Secondary']['proposed_transport_hubs']), cell_text), Paragraph(f"₹{d['tiers']['Higher Secondary']['total_budget_cr']:.1f}Cr", cell_text)]
+        [Paragraph("Primary", cell_text), Paragraph(f"{d['tiers']['Primary']['initial_coverage_pct']}%", cell_text), Paragraph(f"{d['tiers']['Primary']['final_coverage_pct']}%", cell_text), Paragraph(str(d['tiers']['Primary']['proposed_upgrades']), cell_text), Paragraph(str(d['tiers']['Primary']['proposed_new_schools']), cell_text), Paragraph(str(d['tiers']['Primary']['proposed_transport_hubs']), cell_text), Paragraph(f"Rs. {d['tiers']['Primary']['total_budget_cr']:.1f}Cr", cell_text)],
+        [Paragraph("UP (Middle)", cell_text), Paragraph(f"{d['tiers']['Upper Primary']['initial_coverage_pct']}%", cell_text), Paragraph(f"{d['tiers']['Upper Primary']['final_coverage_pct']}%", cell_text), Paragraph(str(d['tiers']['Upper Primary']['proposed_upgrades']), cell_text), Paragraph(str(d['tiers']['Upper Primary']['proposed_new_schools']), cell_text), Paragraph(str(d['tiers']['Upper Primary']['proposed_transport_hubs']), cell_text), Paragraph(f"Rs. {d['tiers']['Upper Primary']['total_budget_cr']:.1f}Cr", cell_text)],
+        [Paragraph("Secondary", cell_bold), Paragraph(f"{sec['initial_coverage_pct']}%", cell_bold), Paragraph(f"{sec['final_coverage_pct']}%", cell_bold), Paragraph(str(sec['proposed_upgrades']), cell_bold), Paragraph(str(sec['proposed_new_schools']), cell_bold), Paragraph(str(sec['proposed_transport_hubs']), cell_bold), Paragraph(f"Rs. {sec['total_budget_cr']:.1f}Cr", cell_bold)],
+        [Paragraph("Higher Sec", cell_text), Paragraph(f"{d['tiers']['Higher Secondary']['initial_coverage_pct']}%", cell_text), Paragraph(f"{d['tiers']['Higher Secondary']['final_coverage_pct']}%", cell_text), Paragraph(str(d['tiers']['Higher Secondary']['proposed_upgrades']), cell_text), Paragraph(str(d['tiers']['Higher Secondary']['proposed_new_schools']), cell_text), Paragraph(str(d['tiers']['Higher Secondary']['proposed_transport_hubs']), cell_text), Paragraph(f"Rs. {d['tiers']['Higher Secondary']['total_budget_cr']:.1f}Cr", cell_text)]
     ]
     t_tier = Table(tier_table_data, colWidths=[55, 40, 40, 42, 35, 38, 45])
     t_tier.setStyle(TableStyle([
@@ -210,7 +210,7 @@ def compile_single_district_memo(d):
     right_box.append(Paragraph(f"<b>Key Operational Allocations:</b><br/>"
                                f"• <b>Subject Teachers (25% Hardship Allowance):</b> {sec.get('teachers_required', 0)} Posts<br/>"
                                f"• <b>Transit Fleet:</b> {sec.get('fleet_minibuses', 0)} Mini-Buses, {sec.get('fleet_feeder_vans', 0)} Vans<br/>"
-                               f"• <b>Annual Transit Opex:</b> ₹{sec.get('annual_transit_opex_cr', 0.0):.2f} Cr/yr<br/>"
+                               f"• <b>Annual Transit Opex:</b> Rs. {sec.get('annual_transit_opex_cr', 0.0):.2f} Cr/yr<br/>"
                                f"• <b>Dedicated Girls' Hostels:</b> {sec.get('girls_hostels_proposed', 0)} Units<br/>"
                                f"• <b>Cyclone Retrofits:</b> {sec.get('cyclone_resilient_upgrades', 0)} Schools", body_text))
 
@@ -254,7 +254,7 @@ def compile_single_district_memo(d):
             Paragraph(str(b['proposed_new_schools']), cell_text),
             Paragraph(str(b['proposed_transport_hubs']), cell_text),
             Paragraph(f"{b.get('fleet_minibuses', 1)}B / {b.get('fleet_feeder_vans', 1)}V", cell_text),
-            Paragraph(f"₹{b['estimated_budget_cr']:.2f}Cr", cell_text)
+            Paragraph(f"Rs. {b['estimated_budget_cr']:.2f}Cr", cell_text)
         ])
 
     t_blk = Table(blk_table_data, colWidths=[70, 52, 28, 28, 45, 48, 40, 32, 35, 50, 45])

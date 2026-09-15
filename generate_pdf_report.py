@@ -69,7 +69,7 @@ class NumberedCanvas(canvas.Canvas):
 
         # Running Header
         header_text_left = "GOVERNMENT OF ODISHA | DEPARTMENT OF SCHOOL & MASS EDUCATION"
-        header_text_right = "SPATIAL EDUCATION MASTERPLAN (2026–2031)"
+        header_text_right = "SPATIAL EDUCATION MASTERPLAN (2026-2031)"
         self.drawString(36, 842 - 32, header_text_left)
         self.drawRightString(595 - 36, 842 - 32, header_text_right)
         
@@ -167,8 +167,8 @@ def create_masterplan_pdf():
         'TableCell',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=7.2,
-        leading=9.0,
+        fontSize=6.8,
+        leading=8.2,
         textColor=DARK_TEXT
     )
 
@@ -176,8 +176,8 @@ def create_masterplan_pdf():
         'TableCellBold',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=7.2,
-        leading=9.0,
+        fontSize=6.8,
+        leading=8.2,
         textColor=DARK_TEXT
     )
 
@@ -185,8 +185,8 @@ def create_masterplan_pdf():
         'TableCellHeader',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=7.5,
-        leading=9.5,
+        fontSize=7.0,
+        leading=8.5,
         textColor=colors.white,
         alignment=1
     )
@@ -205,7 +205,7 @@ def create_masterplan_pdf():
     
     story.append(HRFlowable(width="60%", thickness=2, color=PRIMARY, spaceBefore=4, spaceAfter=20))
     
-    story.append(Paragraph("ODISHA SPATIAL SCHOOL EDUCATION<br/>MASTERPLAN (2026–2031)", title_style))
+    story.append(Paragraph("ODISHA SPATIAL SCHOOL EDUCATION<br/>MASTERPLAN (2026-2031)", title_style))
     story.append(Paragraph("Audited Operations Research Optimization, 314-Block GIS Analysis, PWD Hill Cost Calibrations,<br/>and Multi-Tier Infrastructure Investment Model", subtitle_style))
     
     story.append(Spacer(1, 10))
@@ -218,13 +218,13 @@ def create_masterplan_pdf():
         ],
         [
             Paragraph(f"<b>{sec_totals['proposed_transport_hubs']:,}</b><br/><font size=6.5 color='#64748B'>Transport/Hostel Hubs</font>", table_cell_bold),
-            Paragraph(f"<b>₹{sec_totals['total_budget_cr']:,.1f} Cr</b><br/><font size=6.5 color='#64748B'>Hill-Adjusted Outlay</font>", table_cell_bold),
+            Paragraph(f"<b>Rs. {sec_totals['total_budget_cr']:,.1f} Cr</b><br/><font size=6.5 color='#64748B'>Hill-Adjusted Outlay</font>", table_cell_bold),
             Paragraph(f"<b>{total_blocks} CD Blocks</b><br/><font size=6.5 color='#64748B'>30 Districts Analyzed</font>", table_cell_bold)
         ],
         [
             Paragraph(f"<b>{sec_totals['teachers_required']:,} Posts</b><br/><font size=6.5 color='#64748B'>Teachers (25% Hardship)</font>", table_cell_bold),
             Paragraph(f"<b>{sec_totals['girls_hostels_proposed']:,} Units</b><br/><font size=6.5 color='#64748B'>Girls' Dedicated Hostels</font>", table_cell_bold),
-            Paragraph(f"<b>₹{sec_totals['annual_transit_opex_cr']:.1f} Cr / yr</b><br/><font size=6.5 color='#64748B'>Transit Opex ({sec_totals['fleet_minibuses']:,}B/{sec_totals['fleet_feeder_vans']:,}V)</font>", table_cell_bold)
+            Paragraph(f"<b>Rs. {sec_totals['annual_transit_opex_cr']:.1f} Cr / yr</b><br/><font size=6.5 color='#64748B'>Transit Opex ({sec_totals['fleet_minibuses']:,}B/{sec_totals['fleet_feeder_vans']:,}V)</font>", table_cell_bold)
         ]
     ]
     t_kpi = Table(kpi_data, colWidths=[165, 165, 165])
@@ -281,7 +281,7 @@ def create_masterplan_pdf():
         "1. <b>Tobler Walking Friction:</b> Straight-line Euclidean buffers underestimate walking effort in the Eastern Ghats. Using Tobler's function "
         "<i>v(&theta;) = 6 &times; e<sup>-3.5|tan &theta; + 0.05|</sup></i>, terrain impedance reaches <b>1.8x to 2.4x</b> in rugged corridors.<br/>"
         "2. <b>PWD Hill Cost Index:</b> To account for material haulage and ghat road construction logistics, unit costs scale dynamically: "
-        "<i>Cost(d) = Base Cost &times; (1.0 + 0.18 &times; (Friction - 1.0))</i>, ranging from ₹244L in coastal plains to ₹317L in high ghats."
+        "<i>Cost(d) = Base Cost &times; (1.0 + 0.18 &times; (Friction - 1.0))</i>, ranging from Rs. 244L in coastal plains to Rs. 317L in high ghats."
     )
     story.append(Paragraph(tobler_text, body_style))
 
@@ -310,7 +310,7 @@ def create_masterplan_pdf():
             Paragraph(f"{t_vals['proposed_new_schools']:,}", table_cell),
             Paragraph(f"{t_vals['proposed_transport_hubs']:,}", table_cell),
             Paragraph(f"<b>{t_vals['final_coverage_pct']}%</b>", table_cell_bold),
-            Paragraph(f"<b>₹{t_vals['total_budget_cr']:,.1f} Cr</b>", table_cell_bold)
+            Paragraph(f"<b>Rs. {t_vals['total_budget_cr']:,.1f} Cr</b>", table_cell_bold)
         ])
 
     t_st = Table(st_table_data, colWidths=[70, 52, 52, 54, 54, 52, 54, 58, 77])
@@ -418,7 +418,7 @@ def create_masterplan_pdf():
                 Paragraph(str(sec['proposed_transport_hubs']), table_cell),
                 Paragraph(f"<b>{sec['final_coverage_pct']}%</b>", table_cell_bold),
                 Paragraph(str(sec.get('teachers_required', 0)), table_cell),
-                Paragraph(f"<b>₹{sec['total_budget_cr']:.2f} Cr</b>", table_cell_bold)
+                Paragraph(f"<b>Rs. {sec['total_budget_cr']:.2f} Cr</b>", table_cell_bold)
             ])
 
         t_dist = Table(dist_table_data, colWidths=[60, 70, 26, 28, 25, 38, 35, 35, 32, 42, 36, 48])
@@ -493,10 +493,10 @@ def create_masterplan_pdf():
             ],
             [
                 Paragraph("<b>Est. Capital Outlay</b>", table_cell),
-                Paragraph(f"₹{d['tiers']['Primary']['total_budget_cr']:.2f} Cr", table_cell),
-                Paragraph(f"₹{d['tiers']['Upper Primary']['total_budget_cr']:.2f} Cr", table_cell),
-                Paragraph(f"<b>₹{d['tiers']['Secondary']['total_budget_cr']:.2f} Cr</b>", table_cell_bold),
-                Paragraph(f"₹{d['tiers']['Higher Secondary']['total_budget_cr']:.2f} Cr", table_cell),
+                Paragraph(f"Rs. {d['tiers']['Primary']['total_budget_cr']:.2f} Cr", table_cell),
+                Paragraph(f"Rs. {d['tiers']['Upper Primary']['total_budget_cr']:.2f} Cr", table_cell),
+                Paragraph(f"<b>Rs. {d['tiers']['Secondary']['total_budget_cr']:.2f} Cr</b>", table_cell_bold),
+                Paragraph(f"Rs. {d['tiers']['Higher Secondary']['total_budget_cr']:.2f} Cr", table_cell),
             ]
         ]
 
@@ -555,9 +555,15 @@ def create_masterplan_pdf():
                 "cost_cr": b["estimated_budget_cr"]
             })
 
-    chunk_size = 35
-    for start_idx in range(0, len(all_blocks_flat), chunk_size):
-        chunk = all_blocks_flat[start_idx:start_idx + chunk_size]
+    # Page 38 has introductory text and headings, so it takes 32 items.
+    # The remaining 8 pages take up to 36 items each (32 + 7*36 + 30 = 314).
+    chunk_sizes = [32] + [36] * 7 + [30]
+    curr_idx = 0
+    for chunk_len in chunk_sizes:
+        chunk = all_blocks_flat[curr_idx:curr_idx + chunk_len]
+        curr_idx += chunk_len
+        if not chunk:
+            break
         block_table_data = [
             [
                 Paragraph("District", table_cell_header),
@@ -586,7 +592,7 @@ def create_masterplan_pdf():
                 Paragraph(str(b['upgrades']), table_cell),
                 Paragraph(str(b['new_sch']), table_cell),
                 Paragraph(str(b['transit']), table_cell),
-                Paragraph(f"₹{b['cost_cr']:.2f} Cr", table_cell)
+                Paragraph(f"Rs. {b['cost_cr']:.2f} Cr", table_cell)
             ])
 
         t_blk = Table(block_table_data, colWidths=[65, 80, 50, 32, 28, 45, 48, 40, 32, 35, 50])
@@ -596,8 +602,8 @@ def create_masterplan_pdf():
             ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
             ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
             ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, PANEL_BG]),
-            ('TOPPADDING', (0, 0), (-1, -1), 2.5),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), 2.5),
+            ('TOPPADDING', (0, 0), (-1, -1), 1.4),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 1.4),
         ]))
         story.append(t_blk)
         story.append(PageBreak())
@@ -610,13 +616,13 @@ def create_masterplan_pdf():
 
     roadmap_text = (
         "To achieve universal secondary schooling equity efficiently across all 314 blocks, the masterplan establishes a structured 3-phase rollout:<br/><br/>"
-        "<b>Phase 1: High Vulnerability & Remote Tribal Corridors (Years 1–2 | ₹2,703.8 Cr / 45%)</b><br/>"
+        "<b>Phase 1: High Vulnerability & Remote Tribal Corridors (Years 1-2 | Rs. 2,703.8 Cr / 45%)</b><br/>"
         "• <b>Priority Districts:</b> Malkangiri, Koraput, Rayagada, Kandhamal, Gajapati, Nabarangpur, Mayurbhanj, Nuapada, Kalahandi.<br/>"
         "• <b>Interventions:</b> Fast-track construction of 588 dedicated girls' hostels, deployment of 1,172 student transit hubs ({sec_totals['fleet_minibuses']:,} mini-buses, {sec_totals['fleet_feeder_vans']:,} feeder vans), and 4,115 subject teacher recruitments.<br/><br/>"
-        "<b>Phase 2: Mineral Belts, Plateaus & Western Agrarian Plains (Years 3–4 | ₹2,102.9 Cr / 35%)</b><br/>"
+        "<b>Phase 2: Mineral Belts, Plateaus & Western Agrarian Plains (Years 3-4 | Rs. 2,102.9 Cr / 35%)</b><br/>"
         "• <b>Priority Districts:</b> Kendujhar, Sundargarh, Deogarh, Balangir, Boudh, Sambalpur, Bargarh, Subarnapur, Angul, Dhenkanal, Nayagarh.<br/>"
         "• <b>Interventions:</b> Construction of greenfield high schools in dense mining periphery settlements and 3,200 subject teacher recruitments.<br/><br/>"
-        "<b>Phase 3: Coastal Deltas, Disaster Retrofits & Urban Consolidation (Year 5 | ₹1,201.7 Cr / 20%)</b><br/>"
+        "<b>Phase 3: Coastal Deltas, Disaster Retrofits & Urban Consolidation (Year 5 | Rs. 1,201.7 Cr / 20%)</b><br/>"
         "• <b>Priority Districts:</b> Khordha, Cuttack, Puri, Jagatsinghpur, Kendrapara, Jajpur, Bhadrak, Balasore, Ganjam, Jharsuguda.<br/>"
         "• <b>Interventions:</b> 396 cyclone-resilient structural retrofits, advanced STEM smart-lab installations, and digital classroom integration."
     )
@@ -629,7 +635,7 @@ def create_masterplan_pdf():
         "teachers posted in Tobler friction zones (>1.8x) will receive a <b>25% Remote Area Allowance</b> paired with a mandatory 3-year rural posting bond.<br/>"
         "2. <b>PESA & FRA Fast-Track Land Resolution:</b> Greenfield school site selections prioritize unencumbered revenue wasteland with Gram Sabha consent "
         "under Section 4(i) of PESA to prevent construction delays.<br/>"
-        "3. <b>Calibrated Transit Opex:</b> Annual operating expenditure is calibrated at <b>₹67.6 Cr/year</b> (Mini-Bus @ ₹4.8L/yr, Van @ ₹3.0L/yr) "
+        "3. <b>Calibrated Transit Opex:</b> Annual operating expenditure is calibrated at <b>Rs. 67.6 Cr/year</b> (Mini-Bus @ Rs. 4.8L/yr, Van @ Rs. 3.0L/yr) "
         "including Mission Shakti female chaperone honorariums."
     )
     story.append(Paragraph(staff_text, body_style))
