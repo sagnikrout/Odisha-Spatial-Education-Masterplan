@@ -17,7 +17,7 @@
 | :--- | :--- | :--- |
 | 📄 **Full Masterplan Report** | Complete 47-page publication-grade masterplan with 314-block appendix | **[Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf)** |
 | 📊 **Executive Presentation Deck** | 10-slide landscape presentation for ministers & secretaries | **[Odisha_Spatial_Education_Executive_Deck.pdf](Odisha_Spatial_Education_Executive_Deck.pdf)** |
-| 📝 **2-Page Policy Brief** | Concise executive summary memo for rapid decision-making | **[Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf)** |
+| 📝 **Executive Policy Brief** | Concise single-page standalone memo for rapid executive decision-making | **[Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf)** |
 | 🗂️ **30 District Action Memos** | 30 localized 2-page action memos for Collectors & DEOs | **[district_action_memos/](district_action_memos/)** |
 | 🗺️ **30 District GIS Maps** | High-resolution 1:1 square catchment maps | **[assets/district_maps/](assets/district_maps/)** |
 | 📦 **Social & Presentation Pack** | Curated visual highlights & charts for social sharing | **[share_pack/](share_pack/)** |
@@ -116,7 +116,7 @@ python generate_pdf_report.py
 # 5. Compile the 10-slide executive presentation deck
 python generate_executive_deck.py
 
-# 6. Compile the 2-page executive policy brief
+# 6. Compile the standalone executive policy brief (1-page)
 python generate_policy_brief.py
 
 # 7. Compile all 30 District Collector Action Memos

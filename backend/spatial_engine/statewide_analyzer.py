@@ -17,7 +17,10 @@ import random
 import numpy as np
 from shapely.geometry import shape, Point, Polygon, MultiPolygon
 from shapely.ops import unary_union
-import pulp
+try:
+    import pulp
+except ImportError:
+    pulp = None
 
 # Deterministic Seed for Reproducibility
 RANDOM_SEED = 42
