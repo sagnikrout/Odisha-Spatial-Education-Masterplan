@@ -19,7 +19,7 @@ You can use these steps to replicate the environment, understand the applied log
    ```bash
    python backend/spatial_engine/statewide_analyzer.py
    ```
-5. **Result:** This successfully recalculated the data for all 30 districts and overwrote `odisha_statewide_assessment.json` with the new financial metrics, bringing the total statewide Secondary tier budget to **₹2,474.1 Crores**.
+5. **Result:** This recalculated the data for all 30 districts and 314 CD blocks and updated `odisha_statewide_assessment.json` with the PWD Hill Area Cost Index and calibrated transit operational expenditures, establishing the statewide Secondary tier capital budget at **₹6,008.4 Crores**.
 
 ---
 

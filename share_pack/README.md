@@ -9,5 +9,5 @@ This folder contains high-resolution preview graphics and templates curated for 
 3. **`chart_budget_breakdown.png`**: Capital outlay breakdown across Primary, Upper Primary, Secondary, and Higher Secondary tiers by intervention type.
 
 ## 📄 Main PDF Masterplan
-The full 37-page publication-grade report is located at the root of the repository:
+The full 47-page publication-grade report is located at the root of the repository:
 👉 [Odisha_Spatial_School_Education_Masterplan.pdf](../Odisha_Spatial_School_Education_Masterplan.pdf)
