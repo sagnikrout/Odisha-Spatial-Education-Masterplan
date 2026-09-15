@@ -127,7 +127,7 @@ python generate_district_memos.py
 
 ## ⚖️ Disclaimer & Academic Scope
 
-> **Note:** This project is an **independent exploratory simulation and decision-support modeling platform** developed for research, methodology demonstration, and public policy discourse. All figures, habitation coordinates, and unit costs are modeled approximations designed to showcase geospatial operations research methodologies. They do not represent official government statistics or audited departmental expenditures. Policy execution requires field verification by local administrative authorities.
+> **Note:** This project is an **independent exploratory simulation and decision-support modeling platform** developed for research, methodology demonstration, and public policy discourse. All figures, habitation coordinates, and unit costs are modeled approximations designed to demonstrate geospatial operations research methodologies. They do not represent official government statistics or audited departmental expenditures. Policy execution requires field verification by local administrative authorities.
 
 ---
 

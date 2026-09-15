@@ -1,7 +1,7 @@
 """
 Odisha Spatial Education Masterplan: High-Precision Visual Asset Generator (Production Edition)
 Generates 30 un-distorted 1:1 square district GIS maps and 6 publication-ready analytical charts.
-Features Multi-Core Parallel Processing, Robust GeoJSON Key Resolvers, and Clean Error Boundaries.
+Includes Multi-Core Parallel Processing and GeoJSON Key Resolvers.
 """
 
 import os
@@ -42,7 +42,7 @@ os.makedirs(MAPS_DIR, exist_ok=True)
 
 
 def extract_district_name(properties):
-    """Robustly extracts district name handling various GeoJSON schema conventions."""
+    """Extracts district name across various GeoJSON schema conventions."""
     for key in ["district", "DISTRICT", "dtname", "District", "NAME_2", "District_Name"]:
         if key in properties and properties[key]:
             val = str(properties[key]).strip()
