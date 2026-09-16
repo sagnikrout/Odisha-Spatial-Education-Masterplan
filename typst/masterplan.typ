@@ -9,7 +9,7 @@
   margin: (x: 1.2cm, top: 1.4cm, bottom: 1.4cm),
   header: locate(loc => {
     if loc.page() > 1 {
-      set text(size: 7.2pt, font: "Liberation Sans", fill: rgb("#64748B"), weight: "bold")
+      set text(size: 7.2pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
       grid(
         columns: (1fr, 1fr),
         align(left)[GOVERNMENT OF ODISHA | DEPARTMENT OF SCHOOL & MASS EDUCATION],
@@ -23,7 +23,7 @@
     if loc.page() > 1 {
       line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
       v(-2pt)
-      set text(size: 7.0pt, font: "Liberation Sans", fill: rgb("#64748B"))
+      set text(size: 7.0pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
       grid(
         columns: (1fr, 1fr),
         align(left)[AUDITED OPERATIONS RESEARCH & SPATIAL DECISION SUPPORT FRAMEWORK],
@@ -33,7 +33,7 @@
   })
 )
 
-#set text(font: "Liberation Sans", size: 8.0pt, fill: rgb("#0F172A"))
+#set text(font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), size: 8.0pt, fill: rgb("#0F172A"))
 #set par(leading: 0.45em, justify: true)
 
 // ============================================================================

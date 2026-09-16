@@ -7,7 +7,7 @@
   flipped: false,
   margin: (x: 1.0cm, top: 1.0cm, bottom: 1.0cm),
   header: locate(loc => {
-    set text(size: 7.5pt, font: "Liberation Sans", fill: rgb("#64748B"), weight: "bold")
+    set text(size: 7.5pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
     grid(
       columns: (1fr, 1fr),
       align(left)[GOVERNMENT OF ODISHA | DEPARTMENT OF SCHOOL & MASS EDUCATION],
@@ -19,16 +19,16 @@
   footer: locate(loc => {
     line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
     v(-2pt)
-    set text(size: 7.0pt, font: "Liberation Sans", fill: rgb("#64748B"))
+    set text(size: 7.0pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
     grid(
       columns: (1fr, 1fr),
-      align(left)[Confidential — Operations Research & Spatial Decision-Support Brief],
+      align(left)[Confidential: Operations Research & Spatial Decision-Support Brief],
       align(right)[Page 1 of 1]
     )
   })
 )
 
-#set text(font: "Liberation Sans", size: 6.8pt, fill: rgb("#0F172A"))
+#set text(font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), size: 6.8pt, fill: rgb("#0F172A"))
 #set par(leading: 0.45em, justify: true)
 
 // Title & Subtitle

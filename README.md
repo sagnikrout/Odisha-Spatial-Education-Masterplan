@@ -1,6 +1,6 @@
 # Odisha Spatial School Education Masterplan (2026-2031)
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Optimization: Submodular Pareto MCLP](https://img.shields.io/badge/Optimization-Submodular%20Pareto%20MCLP-purple.svg)](https://en.wikipedia.org/wiki/Maximum_coverage_problem)
 [![Geospatial: Pure Python & Matplotlib](https://img.shields.io/badge/GIS-Pure%20Python%20%7C%20Matplotlib-orange.svg)](https://matplotlib.org/)
@@ -79,7 +79,7 @@ Map2needs/
 # 1. Install lean dependencies
 pip install -r requirements.txt
 
-# 2. Complete End-to-End Build (Assess, Map, Compile, Test)
+# 2. Complete end-to-end build (assess, map, compile, test)
 python build.py --all
 
 # Or run individual stages:
