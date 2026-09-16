@@ -18,7 +18,7 @@ This platform replaces discretionary, demand-driven capital allocations with a m
 
 | Deliverable | Description | Extent | Path |
 | :--- | :--- | :--- | :--- |
-| Full masterplan publication | Complete institutional masterplan report with statewide analytics, 30 district atlas plates, operational rollout schedule, and 314-block register | 37 pages | [Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf) |
+| Full masterplan publication | Complete institutional masterplan report with statewide analytics, 30 district atlas plates, operational rollout schedule, and 314-block register | 23 pages | [Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf) |
 | Executive policy brief | High-density dashboard for Cabinet Ministers, Development Commissioners, and Department Secretaries | 1 page | [Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf) |
 | District action memos | Localized operational directives for District Collectors and District Education Officers (DEOs) | 2 pages each | [district_action_memos/](district_action_memos/) |
 | District GIS maps | Cartographic plates showing habitation clusters, buffer zones, and proposed interventions | 30 maps | [assets/district_maps/](assets/district_maps/) |
