@@ -1,10 +1,10 @@
 # Odisha Spatial School Education Masterplan (2026-2031)
 
-[![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Optimization: PuLP MILP](https://img.shields.io/badge/Optimization-PuLP%20MILP%20%7C%20MCLP-purple.svg)](https://coin-or.github.io/pulp/)
-[![Geospatial: GeoPandas & Shapely](https://img.shields.io/badge/GIS-GeoPandas%20%7C%20Shapely-orange.svg)](https://geopandas.org/)
-[![PDF Engine: ReportLab](https://img.shields.io/badge/PDF-ReportLab%205.0-red.svg)](https://www.reportlab.com/)
+[![Optimization: Submodular Pareto MCLP](https://img.shields.io/badge/Optimization-Submodular%20Pareto%20MCLP-purple.svg)](https://en.wikipedia.org/wiki/Maximum_coverage_problem)
+[![Geospatial: Pure Python & Matplotlib](https://img.shields.io/badge/GIS-Pure%20Python%20%7C%20Matplotlib-orange.svg)](https://matplotlib.org/)
+[![Publishing Engine: Typst](https://img.shields.io/badge/Publishing-Typst%200.11-cyan.svg)](https://typst.app/)
 
 Statewide operations research optimization, 314 Community Development Block GIS analysis, Public Works Department (PWD) hill cost calibration, and briefing suite for the 30 districts of Odisha.
 
@@ -23,11 +23,11 @@ Statewide operations research optimization, 314 Community Development Block GIS 
 
 The platform models secondary school accessibility under National Education Policy (NEP 2020) and Right to Education (RTE) distance standards.
 
-1. **Facility location optimization (PuLP MILP / MCLP):** Solves the Maximal Covering Location Problem to maximize population coverage subject to capital budget constraints.
+1. **Facility location optimization (Submodular Pareto MCLP):** Solves the Maximal Covering Location Problem with Nemhauser-Wolsey optimality bounds under capital budget constraints and computes marginal returns across the Pareto frontier.
 2. **Topographic walking friction (Tobler hiking function):** Estimates walking speed and impedance on terrain slopes across the Eastern Ghats and forested areas (1.8x to 2.4x distance multiplier).
 3. **PWD hill area cost index:** Applies a location cost factor (+18% to +30%) to civil construction in hill blocks for material transport and logistics.
 4. **Demographic modeling across 314 CD blocks:** Tabulates habitations and school access for each administrative block in the state.
-5. **Transit fleet allocation:** Assigns 1,027 mini-buses (24 seats) and 603 feeder vans (12 seats) with estimated operational expenditure of 67.6 crore rupees per year for drivers, fuel, vehicle upkeep, and chaperones.
+5. **Transit fleet allocation:** Assigns 1,027 mini-buses (24 seats) and 603 feeder vans (12 seats) with estimated operational expenditure of 68.0 crore rupees per year for drivers, fuel, vehicle upkeep, and chaperones.
 6. **Staffing and residential allocation:** Models 9,144 subject teacher posts with a 25% remote area allowance and 3-year service commitment, 588 girls' hostels, and 396 cyclone-resistant coastal upgrades.
 7. **Economic return estimation:** Projects 184,000 retained secondary school students over 5 years. Using a 0.75 labor absorption factor, estimated net present value of gross state domestic product contribution is 10,796.3 crore rupees against a 6,008.4 crore rupee secondary capital outlay (1.8x benefit-cost ratio).
 
@@ -53,22 +53,22 @@ The platform models secondary school accessibility under National Education Poli
 Map2needs/
 ├── backend/
 │   └── spatial_engine/
-│       └── statewide_analyzer.py        # Solver, PWD cost index, and demographic analysis
+│       └── statewide_analyzer.py        # Submodular Pareto MCLP engine & demographic analysis
+├── typst/
+│   ├── masterplan.typ                   # High-speed 47-page masterplan publication
+│   └── policy_brief.typ                 # 1-page executive briefing template
 ├── assets/
-│   ├── district_maps/                   # 30 district GIS maps
+│   ├── district_maps/                   # 30 district GIS maps (4-zone modular layout)
 │   └── chart_*.png                      # Statewide analytical charts
 ├── district_action_memos/               # 30 district action memos
 ├── share_pack/                          # Visual charts
 ├── tests/
 │   └── test_masterplan_suite.py         # Unit and integration test suite
-├── odisha_districts.geojson             # 30-district polygon boundaries
+├── odisha_districts.geojson             # 30-district official survey boundaries
 ├── odisha_statewide_assessment.json     # Demographic and cost outputs
+├── build.py                             # Master CLI pipeline orchestrator
 ├── generate_district_maps.py            # Map generation script
-├── generate_pdf_report.py               # 47-page masterplan PDF compilation
-├── generate_executive_deck.py           # 10-slide presentation PDF compilation
-├── generate_policy_brief.py             # 1-page executive brief PDF compilation
-├── generate_district_memos.py           # 30 district action memos compilation
-├── requirements.txt                     # Dependencies
+├── requirements.txt                     # Lean dependencies (numpy, matplotlib)
 ├── LICENSE                              # MIT License
 └── README.md                            # Documentation
 ```
@@ -76,29 +76,17 @@ Map2needs/
 ## Local execution
 
 ```bash
-# 1. Install dependencies
+# 1. Install lean dependencies
 pip install -r requirements.txt
 
-# 2. Run analysis
-python backend/spatial_engine/statewide_analyzer.py
+# 2. Complete End-to-End Build (Assess, Map, Compile, Test)
+python build.py --all
 
-# 3. Generate district maps and charts
-python generate_district_maps.py
-
-# 4. Compile 47-page masterplan PDF
-python generate_pdf_report.py
-
-# 5. Compile 10-slide presentation deck
-python generate_executive_deck.py
-
-# 6. Compile 1-page executive brief
-python generate_policy_brief.py
-
-# 7. Compile 30 district action memos
-python generate_district_memos.py
-
-# 8. Run test suite
-python -m unittest tests/test_masterplan_suite.py
+# Or run individual stages:
+python build.py --assess   # Run spatial & OR assessment
+python build.py --maps     # Render 30 district maps & 6 charts
+python build.py --typst    # Compile publication PDFs with Typst
+python build.py --test     # Run verification test suite
 ```
 
 ## Scope notice

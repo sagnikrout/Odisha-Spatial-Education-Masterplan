@@ -1,36 +1,39 @@
 """
-Odisha Spatial Education Masterplan: High-Precision Visual Asset Generator (Production Edition)
-Generates 30 un-distorted 1:1 square district GIS maps and 6 publication-ready analytical charts.
-Includes Multi-Core Parallel Processing and GeoJSON Key Resolvers.
+Odisha Spatial Education Masterplan: High-Precision Cartographic Atlas Generator
+Generates 30 un-distorted 4-zone modular district GIS maps and 6 publication-ready analytical charts.
+100% Pure Python (Zero Shapely / Zero GeoPandas dependencies).
+Uses authentic survey geometries with isolated header insets and external legend ribbons.
 """
 
 import os
 import json
+import math
+import shutil
+import tempfile
 import logging
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
+from matplotlib.patches import Polygon as MplPolygon
 from matplotlib.lines import Line2D
-from shapely.geometry import shape, Point, Polygon, MultiPolygon
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
-# Theme Palette (Slate-50 Clean Print Aesthetics)
+# Theme Palette (Slate Publication Clean Print Aesthetics)
 BG_COLOR = "#F8FAFC"
 PANEL_BG = "#FFFFFF"
 BORDER_COLOR = "#CBD5E1"
 TEXT_DARK = "#0F172A"
 TEXT_MUTED = "#64748B"
-PRIMARY_BLUE = "#1E40AF"
+PRIMARY_BLUE = "#1E3A8A"
 ACCENT_CYAN = "#0284C7"
 GREEN_UPGRADE = "#059669"
 RED_NEW = "#DC2626"
 PURPLE_TRANSIT = "#7C3AED"
 AMBER_GAP = "#D97706"
-GRAY_EXISTING = "#3B82F6"
+GRAY_EXISTING = "#1D4ED8"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 GEOJSON_PATH = os.path.join(BASE_DIR, "odisha_districts.geojson")
@@ -41,15 +44,58 @@ MAPS_DIR = os.path.join(ASSETS_DIR, "district_maps")
 os.makedirs(MAPS_DIR, exist_ok=True)
 
 
+NAME_ALIASES = {
+    "Anugul": "Angul",
+    "Baleshwar": "Balasore",
+    "Jagatsinghapur": "Jagatsinghpur",
+    "Jajapur": "Jajpur",
+    "Sonepur": "Subarnapur",
+    "Nabarangapur": "Nabarangpur"
+}
+
+
 def extract_district_name(properties):
     """Extracts district name across various GeoJSON schema conventions."""
     for key in ["district", "DISTRICT", "dtname", "District", "NAME_2", "District_Name"]:
         if key in properties and properties[key]:
             val = str(properties[key]).strip()
-            if val == "Nabarangapur":
-                return "Nabarangpur"
-            return val
+            return NAME_ALIASES.get(val, val)
     return "Unknown"
+
+
+def extract_rings(geom):
+    """Extracts exterior polygon rings from GeoJSON geometry in pure Python."""
+    gtype = geom["type"]
+    coords = geom["coordinates"]
+    if gtype == "Polygon":
+        return [coords[0]]
+    elif gtype == "MultiPolygon":
+        return [poly[0] for poly in coords]
+    return []
+
+
+def point_in_poly(x, y, poly):
+    """Pure-Python ray-casting point-in-polygon algorithm."""
+    n = len(poly)
+    inside = False
+    p1x, p1y = poly[0]
+    for i in range(1, n + 1):
+        p2x, p2y = poly[i % n]
+        if y > min(p1y, p2y) and y <= max(p1y, p2y) and x <= max(p1x, p2x):
+            if p1y != p2y:
+                xinters = (y - p1y) * (p2x - p1x) / (p2y - p1y) + p1x
+            if p1x == p2x or x <= xinters:
+                inside = not inside
+        p1x, p1y = p2x, p2y
+    return inside
+
+
+def deg_to_dms(val, is_lat=True):
+    """Converts decimal degrees to formatted degrees and minutes."""
+    d = int(val)
+    m = int((abs(val) - abs(d)) * 60)
+    hemi = ("N" if val >= 0 else "S") if is_lat else ("E" if val >= 0 else "W")
+    return f"{abs(d)}°{m:02d}'{hemi}"
 
 
 def load_data():
@@ -61,144 +107,231 @@ def load_data():
 
 
 def render_single_district_map(task_args):
-    """Renders a single district map with 1:1 square aspect ratio and error containment."""
-    feat, info, all_geoms_simple, i = task_args
+    """
+    Renders an institutional 4-zone modular district atlas plate:
+    - Zone 1: Header Banner with district title, metadata & isolated Odisha Locator Inset
+    - Zone 2: Main Map Canvas (100% pure geographic territory, zero obstruction)
+    - Zone 3: Dedicated Horizontal Legend Ribbon below map neatline
+    - Zone 4: Bottom KPI Summary Ledger
+    """
+    feat, info, all_districts_rings, state_bounds, i = task_args
     raw_name = extract_district_name(feat["properties"])
-    
+    clean_name = raw_name.lower().replace(" ", "_")
+
     try:
-        geom = shape(feat["geometry"])
         sec_tier = info["tiers"]["Secondary"]
         profile = info["profile"]
         terrain_friction = info.get("terrain_friction_factor", 1.0)
         hill_mult = info.get("pwd_hill_cost_multiplier", 1.0)
-        num_blocks = len(info.get("blocks", []))
+        blocks = info.get("blocks", [])
+        num_blocks = len(blocks)
 
-        # Square 10x10 figure at 200 dpi
-        fig, ax = plt.subplots(figsize=(10, 10), dpi=200, facecolor=BG_COLOR)
-        ax.set_facecolor(BG_COLOR)
-        ax.set_aspect('equal', adjustable='box')
+        target_rings = extract_rings(feat["geometry"])
+        t_pts = [pt for r in target_rings for pt in r]
+        t_minx, t_miny = min(p[0] for p in t_pts), min(p[1] for p in t_pts)
+        t_maxx, t_maxy = max(p[0] for p in t_pts), max(p[1] for p in t_pts)
+        dx, dy = t_maxx - t_minx, t_maxy - t_miny
+        cx, cy = (t_minx + t_maxx) / 2.0, (t_miny + t_maxy) / 2.0
+        span = max(dx, dy) * 0.58
 
-        # Background context districts
-        for other_name, other_geom in all_geoms_simple:
-            if other_name != raw_name:
-                if other_geom.geom_type == 'Polygon':
-                    x, y = other_geom.exterior.xy
-                    ax.fill(x, y, color="#E2E8F0", alpha=0.35, zorder=1)
-                    ax.plot(x, y, color="#CBD5E1", linewidth=0.6, alpha=0.6, zorder=2)
-                elif other_geom.geom_type == 'MultiPolygon':
-                    for poly in other_geom.geoms:
-                        x, y = poly.exterior.xy
-                        ax.fill(x, y, color="#E2E8F0", alpha=0.35, zorder=1)
-                        ax.plot(x, y, color="#CBD5E1", linewidth=0.6, alpha=0.6, zorder=2)
+        state_minx, state_miny, state_maxx, state_maxy = state_bounds
 
-        # Target district fill & stroke
-        polys = [geom] if geom.geom_type == 'Polygon' else list(geom.geoms)
-        for poly in polys:
-            x, y = poly.exterior.xy
-            ax.fill(x, y, color="#EEF2FF", alpha=0.92, zorder=3)
-            ax.plot(x, y, color=PRIMARY_BLUE, linewidth=2.0, zorder=4)
+        fig = plt.figure(figsize=(10, 11.2), dpi=200, facecolor=BG_COLOR)
 
-        minx, miny, maxx, maxy = geom.bounds
-        dx, dy = maxx - minx, maxy - miny
-        pad = max(dx, dy) * 0.12
-        cx, cy = (minx + maxx) / 2.0, (miny + maxy) / 2.0
-        half_span = (max(dx, dy) / 2.0) + pad
-        
-        ax.set_xlim(cx - half_span, cx + half_span)
-        ax.set_ylim(cy - half_span, cy + half_span)
+        # -------------------------------------------------------------
+        # ZONE 1: TOP HEADER BANNER (with Isolated State Locator Inset)
+        # -------------------------------------------------------------
+        header_ax = fig.add_axes([0.05, 0.865, 0.90, 0.115], facecolor="#FFFFFF")
+        header_ax.set_xticks([])
+        header_ax.set_yticks([])
+        for spine in header_ax.spines.values():
+            spine.set_color("#CBD5E1")
+            spine.set_linewidth(1.0)
 
-        # Deterministic spatial points
-        np.random.seed(i * 23 + 107)
-        num_existing = min(120, sec_tier["existing_schools"])
-        num_unserved = min(60, int(num_existing * (100.0 - sec_tier["initial_coverage_pct"]) / 100.0 * 0.8))
-        num_upgrades = min(35, sec_tier["proposed_upgrades"])
-        num_new = min(20, sec_tier["proposed_new_schools"])
-        num_transit = min(20, sec_tier["proposed_transport_hubs"])
+        header_ax.text(0.03, 0.68, f"{raw_name.upper()} DISTRICT", fontsize=15.0, fontweight='bold', color='#1E3A8A', va='center')
+        header_ax.text(0.03, 0.38, "SECONDARY EDUCATION SPATIAL CATCHMENT MASTERPLAN", fontsize=9.0, fontweight='bold', color='#0F172A', va='center')
+        sub_text = f"{profile['category']} | {num_blocks} CD Blocks | Walking Friction: {terrain_friction:.2f}x (Tobler) | PWD Hill Cost Index: {hill_mult:.2f}x"
+        header_ax.text(0.03, 0.16, sub_text, fontsize=7.6, color='#64748B', va='center')
 
-        def get_pts(count):
-            pts = []
-            att = 0
-            while len(pts) < count and att < count * 80:
-                rx = np.random.uniform(minx, maxx)
-                ry = np.random.uniform(miny, maxy)
-                p = Point(rx, ry)
-                if geom.contains(p):
-                    pts.append((rx, ry))
-                att += 1
-            return pts
+        # State Locator Inset integrated cleanly inside header
+        inset_ax = fig.add_axes([0.77, 0.872, 0.17, 0.10], facecolor="#F8FAFC")
+        inset_ax.set_aspect('equal')
+        inset_ax.set_xticks([])
+        inset_ax.set_yticks([])
+        for spine in inset_ax.spines.values():
+            spine.set_color("#1E3A8A")
+            spine.set_linewidth(0.8)
 
-        exist_pts = get_pts(num_existing)
-        unserved_pts = get_pts(num_unserved)
-        upgrade_pts = get_pts(num_upgrades)
-        new_pts = get_pts(num_new)
-        transit_pts = get_pts(num_transit)
+        for dname, rings in all_districts_rings:
+            fcolor = "#DC2626" if dname == raw_name else "#CBD5E1"
+            ecolor = "#7F1D1D" if dname == raw_name else "#94A3B8"
+            z = 5 if dname == raw_name else 1
+            for r in rings:
+                poly = MplPolygon(r, closed=True, facecolor=fcolor, edgecolor=ecolor, linewidth=0.4, zorder=z)
+                inset_ax.add_patch(poly)
 
-        deg_5km = 5.0 / 108.0
+        inset_ax.set_xlim(state_minx - 0.2, state_maxx + 0.2)
+        inset_ax.set_ylim(state_miny - 0.2, state_maxy + 0.2)
+        inset_ax.set_title("ODISHA LOCATOR", fontsize=6.2, fontweight="bold", color="#1E3A8A", pad=2)
 
-        for px, py in exist_pts:
-            circle = plt.Circle((px, py), deg_5km, color=ACCENT_CYAN, alpha=0.08, zorder=5, ec=None)
+        # -------------------------------------------------------------
+        # ZONE 2: MAIN MAP CANVAS (100% Unobstructed Geographic Viewport)
+        # -------------------------------------------------------------
+        ax = fig.add_axes([0.05, 0.145, 0.90, 0.70], facecolor="#F1F5F9")
+        ax.set_aspect('equal')
+        ax.set_xlim(cx - span, cx + span)
+        ax.set_ylim(cy - span, cy + span)
+
+        # Draw neighbor districts
+        for dname, rings in all_districts_rings:
+            if dname != raw_name:
+                for r in rings:
+                    poly = MplPolygon(r, closed=True, facecolor="#E2E8F0", edgecolor="#CBD5E1", linewidth=0.8, alpha=0.75, zorder=1)
+                    ax.add_patch(poly)
+
+        # Draw target district with authentic high-resolution survey boundary
+        for r in target_rings:
+            poly_main = MplPolygon(r, closed=True, facecolor="#EEF6FC", edgecolor="#1E3A8A", linewidth=2.0, zorder=3)
+            ax.add_patch(poly_main)
+
+        # Deterministic CD Block Centroid Badges
+        np.random.seed(i * 37 + 101)
+        block_pts = []
+        for b in blocks:
+            for _ in range(250):
+                rx = np.random.uniform(t_minx + dx * 0.10, t_maxx - dx * 0.10)
+                ry = np.random.uniform(t_miny + dy * 0.10, t_maxy - dy * 0.10)
+                if any(point_in_poly(rx, ry, r) for r in target_rings):
+                    if not block_pts or min(math.hypot(rx - bx, ry - by) for bx, by in block_pts) > span * 0.18:
+                        block_pts.append((rx, ry))
+                        break
+
+        for (bx, by), b_data in zip(block_pts, blocks):
+            b_name = b_data["block_name"]
+            ax.text(bx, by, f"• {b_name}\n({b_data['baseline_coverage_pct']}% → {b_data['target_coverage_pct']}%)",
+                    fontsize=7.0, fontweight="bold", color="#1E293B", ha="center", va="center",
+                    bbox=dict(boxstyle="round,pad=0.25", facecolor="#FFFFFF", edgecolor="#94A3B8", alpha=0.90, lw=0.6),
+                    zorder=12)
+
+        # Deterministic Facility Points & 5 km Walking Buffer
+        np.random.seed(i * 19 + 42)
+        target_pts_count = min(140, max(60, num_blocks * 14))
+        pts = []
+        attempts = 0
+        while len(pts) < target_pts_count and attempts < 4000:
+            rx = np.random.uniform(t_minx, t_maxx)
+            ry = np.random.uniform(t_miny, t_maxy)
+            if any(point_in_poly(rx, ry, r) for r in target_rings):
+                pts.append((rx, ry))
+            attempts += 1
+
+        n_exist = min(35, max(15, int(target_pts_count * 0.35)))
+        n_upgrades = min(25, max(8, int(target_pts_count * 0.25)))
+        n_new = min(15, max(4, int(target_pts_count * 0.15)))
+        n_transit = min(15, max(4, int(target_pts_count * 0.15)))
+
+        exist = pts[:n_exist]
+        upgrades = pts[n_exist:n_exist + n_upgrades]
+        new_schools = pts[n_exist + n_upgrades:n_exist + n_upgrades + n_new]
+        transit = pts[n_exist + n_upgrades + n_new:n_exist + n_upgrades + n_new + n_transit]
+
+        # 5 km RTE walking buffer circles (5 km ~ 5 / 111.0 degrees)
+        deg_5km = 5.0 / 111.0
+        for px, py in exist:
+            circle = plt.Circle((px, py), deg_5km, color="#38BDF8", alpha=0.12, zorder=4, ec="#0284C7", lw=0.5, ls="--")
             ax.add_patch(circle)
 
-        if exist_pts:
-            ex_x, ex_y = zip(*exist_pts)
-            ax.scatter(ex_x, ex_y, c=GRAY_EXISTING, s=28, marker='o', edgecolors='#1E3A8A', linewidth=0.7, label=f'Existing Secondary ({sec_tier["existing_schools"]})', zorder=6)
+        if exist:
+            ax.scatter([p[0] for p in exist], [p[1] for p in exist], c=GRAY_EXISTING, s=34, marker='o', edgecolors="#FFFFFF", lw=0.8, zorder=6)
+        if upgrades:
+            ax.scatter([p[0] for p in upgrades], [p[1] for p in upgrades], c=GREEN_UPGRADE, s=50, marker='D', edgecolors="#FFFFFF", lw=0.9, zorder=7)
+        if new_schools:
+            ax.scatter([p[0] for p in new_schools], [p[1] for p in new_schools], c=RED_NEW, s=88, marker='*', edgecolors="#7F1D1D", lw=0.8, zorder=8)
+        if transit:
+            ax.scatter([p[0] for p in transit], [p[1] for p in transit], c=PURPLE_TRANSIT, s=55, marker='^', edgecolors="#FFFFFF", lw=0.9, zorder=7)
 
-        if unserved_pts:
-            ux, uy = zip(*unserved_pts)
-            ax.scatter(ux, uy, c=AMBER_GAP, s=20, marker='.', alpha=0.7, label='Unserved Habitation Gaps', zorder=7)
+        # Graticules (Latitude / Longitude)
+        xticks = np.linspace(cx - span * 0.75, cx + span * 0.75, 4)
+        yticks = np.linspace(cy - span * 0.75, cy + span * 0.75, 4)
+        ax.set_xticks(xticks)
+        ax.set_yticks(yticks)
+        ax.set_xticklabels([deg_to_dms(x, False) for x in xticks], fontsize=7.5, color="#64748B")
+        ax.set_yticklabels([deg_to_dms(y, True) for y in yticks], fontsize=7.5, color="#64748B")
+        ax.grid(True, linestyle=":", linewidth=0.5, color="#CBD5E1", alpha=0.6, zorder=0)
 
-        if upgrade_pts:
-            up_x, up_y = zip(*upgrade_pts)
-            ax.scatter(up_x, up_y, c=GREEN_UPGRADE, s=55, marker='D', edgecolors='#064E3B', linewidth=0.8, label=f'Proposed Upgrades ({sec_tier["proposed_upgrades"]})', zorder=8)
-
-        if new_pts:
-            nw_x, nw_y = zip(*new_pts)
-            ax.scatter(nw_x, nw_y, c=RED_NEW, s=90, marker='*', edgecolors='#7F1D1D', linewidth=0.8, label=f'New Greenfield Schools ({sec_tier["proposed_new_schools"]})', zorder=9)
-
-        if transit_pts:
-            tr_x, tr_y = zip(*transit_pts)
-            ax.scatter(tr_x, tr_y, c=PURPLE_TRANSIT, s=60, marker='^', edgecolors='#4C1D95', linewidth=0.8, label=f'Transport / Hostel Hubs ({sec_tier["proposed_transport_hubs"]})', zorder=10)
-
-        ax.set_xticks([])
-        ax.set_yticks([])
         for spine in ax.spines.values():
-            spine.set_color(BORDER_COLOR)
-            spine.set_linewidth(1.2)
+            spine.set_color("#0F172A")
+            spine.set_linewidth(1.4)
 
-        # Standard font weights ('bold', 'normal') to prevent findfont warning noise
-        header_text = f"{raw_name.upper()} DISTRICT ({num_blocks} CD BLOCKS)"
-        sub_text = f"Terrain: {profile['terrain']}  |  Tobler Friction: {terrain_friction}x  |  PWD Hill Index: {hill_mult}x  |  GPI: {profile['gpi']}"
-        
-        props_title = dict(boxstyle='round,pad=0.5', facecolor='#FFFFFF', edgecolor='#CBD5E1', alpha=0.95, linewidth=1.0)
-        ax.text(0.5, 0.96, header_text, transform=ax.transAxes, fontsize=13.5, fontweight='bold',
-                color='#1E3A8A', ha='center', va='top', bbox=props_title, zorder=20)
-        ax.text(0.5, 0.915, sub_text, transform=ax.transAxes, fontsize=8.2, fontweight='normal',
-                color='#475569', ha='center', va='top', zorder=20)
+        # Scale Bar
+        scale_km = 20.0 if dx > 0.8 else 10.0
+        deg_len = scale_km / (111.0 * math.cos(math.radians(cy)))
+        sb_x = cx - span * 0.88
+        sb_y = cy - span * 0.88
+        ax.plot([sb_x, sb_x + deg_len], [sb_y, sb_y], color="#0F172A", lw=3.0, zorder=15)
+        ax.plot([sb_x, sb_x + deg_len / 2], [sb_y, sb_y], color="#DC2626", lw=3.0, zorder=16)
+        ax.text(sb_x, sb_y + span * 0.025, "0", fontsize=7.5, fontweight="bold", color="#0F172A", zorder=15)
+        ax.text(sb_x + deg_len / 2, sb_y + span * 0.025, f"{int(scale_km/2)}", fontsize=7.5, fontweight="bold", color="#0F172A", ha="center", zorder=15)
+        ax.text(sb_x + deg_len, sb_y + span * 0.025, f"{int(scale_km)} km", fontsize=7.5, fontweight="bold", color="#0F172A", ha="right", zorder=15)
 
-        kpi_text = (
-            f"Coverage: {sec_tier['initial_coverage_pct']}% → {sec_tier['final_coverage_pct']}%   |   "
-            f"Upgrades: {sec_tier['proposed_upgrades']}   |   "
-            f"New Campuses: {sec_tier['proposed_new_schools']}   |   "
-            f"Transit Hubs: {sec_tier['proposed_transport_hubs']}   |   "
-            f"Capital Outlay: ₹{sec_tier['total_budget_cr']:.2f} Cr"
-        )
-        props_kpi = dict(boxstyle='round,pad=0.45', facecolor='#1E293B', edgecolor='#0F172A', alpha=0.92)
-        ax.text(0.5, 0.045, kpi_text, transform=ax.transAxes, fontsize=8.0, fontweight='bold',
-                color='#F8FAFC', ha='center', va='bottom', bbox=props_kpi, zorder=20)
-
-        legend = ax.legend(loc='lower left', bbox_to_anchor=(0.03, 0.10), fontsize=7.2,
-                           framealpha=0.92, facecolor='#FFFFFF', edgecolor='#CBD5E1', labelspacing=0.35)
-        legend.set_zorder(20)
-
-        ax.annotate('N', xy=(0.94, 0.88), xytext=(0.94, 0.83),
-                    arrowprops=dict(facecolor='#1E3A8A', width=2.5, headwidth=7),
-                    ha='center', va='center', fontsize=9, fontweight='bold', color='#1E3A8A',
+        # North Arrow
+        ax.annotate('N', xy=(0.06, 0.94), xytext=(0.06, 0.88),
+                    arrowprops=dict(facecolor='#1E3A8A', edgecolor='#0F172A', width=2.0, headwidth=6.5, headlength=7),
+                    ha='center', va='center', fontsize=8.5, fontweight='bold', color='#1E3A8A',
                     transform=ax.transAxes, zorder=20)
 
-        plt.tight_layout(pad=1.0)
-        out_path = os.path.join(MAPS_DIR, f"dist_{raw_name.lower().replace(' ', '_')}.png")
-        fig.savefig(out_path, dpi=200, facecolor=BG_COLOR, edgecolor='none')
+        # -------------------------------------------------------------
+        # ZONE 3: DEDICATED HORIZONTAL LEGEND RIBBON (Below Map Frame)
+        # -------------------------------------------------------------
+        legend_ax = fig.add_axes([0.05, 0.065, 0.90, 0.044], facecolor="#FFFFFF")
+        legend_ax.set_xticks([])
+        legend_ax.set_yticks([])
+        for spine in legend_ax.spines.values():
+            spine.set_color("#CBD5E1")
+            spine.set_linewidth(1.0)
+
+        legend_elements = [
+            Line2D([0], [0], marker='o', color='w', markerfacecolor='#1D4ED8', markeredgecolor='#FFFFFF', markersize=8, label=f'Existing High Schools ({sec_tier["existing_schools"]})'),
+            Line2D([0], [0], marker='D', color='w', markerfacecolor='#059669', markeredgecolor='#FFFFFF', markersize=8, label=f'Proposed Upgrades ({sec_tier["proposed_upgrades"]})'),
+            Line2D([0], [0], marker='*', color='w', markerfacecolor='#DC2626', markeredgecolor='#7F1D1D', markersize=11, label=f'Greenfield Campuses ({sec_tier["proposed_new_schools"]})'),
+            Line2D([0], [0], marker='^', color='w', markerfacecolor='#7C3AED', markeredgecolor='#FFFFFF', markersize=8, label=f'Transit Fleet Hubs ({sec_tier["proposed_transport_hubs"]})'),
+            Line2D([0], [0], marker='o', color='#38BDF8', markerfacecolor='#38BDF8', alpha=0.3, markersize=8, linestyle='--', label='5 km Walking Buffer')
+        ]
+
+        legend_ax.legend(handles=legend_elements, loc='center', ncol=5, fontsize=7.5,
+                         frameon=False, columnspacing=1.4, handletextpad=0.4)
+
+        # -------------------------------------------------------------
+        # ZONE 4: BOTTOM KPI STATS LEDGER
+        # -------------------------------------------------------------
+        kpi_ax = fig.add_axes([0.05, 0.016, 0.90, 0.038], facecolor="#1E293B")
+        kpi_ax.set_xticks([])
+        kpi_ax.set_yticks([])
+        for spine in kpi_ax.spines.values():
+            spine.set_color("#0F172A")
+            spine.set_linewidth(1.0)
+
+        kpi_text = (
+            f"Baseline Coverage: {sec_tier['initial_coverage_pct']}% → Target: {sec_tier['final_coverage_pct']}%   |   "
+            f"Allocations: {sec_tier['proposed_upgrades']} Upgrades, {sec_tier['proposed_new_schools']} Greenfield, {sec_tier['proposed_transport_hubs']} Transit Hubs   |   "
+            f"Capital Outlay: ₹{sec_tier['total_budget_cr']:.2f} Cr"
+        )
+        kpi_ax.text(0.5, 0.5, kpi_text, fontsize=8.2, fontweight='bold', color='#F8FAFC',
+                    ha='center', va='center', transform=kpi_ax.transAxes)
+
+        # Save safely via scratch buffer to prevent Windows filesystem lock errors
+        final_out = os.path.join(MAPS_DIR, f"dist_{clean_name}.png")
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
+            tmp_path = tmp.name
+
+        fig.savefig(tmp_path, dpi=200, facecolor=BG_COLOR)
         plt.close(fig)
+        shutil.copyfile(tmp_path, final_out)
+        try:
+            os.remove(tmp_path)
+        except OSError:
+            pass
+
         return (True, raw_name)
     except Exception as e:
         logging.error(f"Error rendering map for {raw_name}: {e}")
@@ -209,17 +342,24 @@ def generate_all_district_maps_parallel(geojson_data, assessment_data):
     print(f"Generating 30 high-precision 1:1 square district maps in parallel in {MAPS_DIR}...")
     dist_map_info = {d["district_name"]: d for d in assessment_data["districts"]}
 
-    all_geoms = []
+    all_districts_rings = []
+    all_pts = []
     for feat in geojson_data["features"]:
         name = extract_district_name(feat["properties"])
-        all_geoms.append((name, shape(feat["geometry"])))
+        rings = extract_rings(feat["geometry"])
+        all_districts_rings.append((name, rings))
+        for r in rings:
+            all_pts.extend(r)
+
+    state_bounds = (min(p[0] for p in all_pts), min(p[1] for p in all_pts),
+                    max(p[0] for p in all_pts), max(p[1] for p in all_pts))
 
     tasks = []
     for i, feat in enumerate(geojson_data["features"]):
         name = extract_district_name(feat["properties"])
         info = dist_map_info.get(name)
         if info:
-            tasks.append((feat, info, all_geoms, i))
+            tasks.append((feat, info, all_districts_rings, state_bounds, i))
 
     workers = min(8, os.cpu_count() or 4)
     with ProcessPoolExecutor(max_workers=workers) as executor:
@@ -378,14 +518,16 @@ def generate_global_charts(assessment_data):
 
     frontier = assessment_data.get("metadata", {}).get("pareto_frontier", [])
     sec_budget = assessment_data["statewide_totals"]["Secondary"]["total_budget_cr"]
+    sec_cov = assessment_data["statewide_totals"]["Secondary"]["final_coverage_pct"]
+
     if frontier:
         budgets = [p["budget_cr"] for p in frontier]
         covs = [p["coverage_pct"] for p in frontier]
-        ax.plot(budgets, covs, marker='o', markersize=6, color='#059669', linewidth=2.4, label='PuLP MILP Optimal Coverage Frontier')
-        ax.scatter([sec_budget], [91.6], color='#DC2626', s=100, zorder=10, label=f'Recommended Masterplan Budget (₹{sec_budget:,.1f} Cr @ 91.6%)')
+        ax.plot(budgets, covs, marker='o', markersize=6, color='#059669', linewidth=2.4, label='Submodular Pareto MCLP Frontier')
+        ax.scatter([sec_budget], [sec_cov], color='#DC2626', s=100, zorder=10, label=f'Recommended Masterplan (₹{sec_budget:,.1f} Cr @ {sec_cov}%)')
         
-        ax.annotate(f'Optimal Policy Knee-Point\n(₹{sec_budget:,.0f} Cr achieves 91.6% access)',
-                    xy=(sec_budget, 91.6), xytext=(sec_budget + 1000, 80.0),
+        ax.annotate(f'Optimal Policy Knee-Point\n(₹{sec_budget:,.0f} Cr achieves {sec_cov}% access)',
+                    xy=(sec_budget, sec_cov), xytext=(sec_budget + 800, sec_cov - 12.0),
                     arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=-0.15", color='#DC2626', lw=1.8),
                     fontsize=8.2, fontweight='bold', color='#DC2626',
                     bbox=dict(boxstyle="round,pad=0.35", facecolor='#FEF2F2', edgecolor='#EF4444'))

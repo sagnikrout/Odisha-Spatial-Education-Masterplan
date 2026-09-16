@@ -13,24 +13,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-try:
-    import pymupdf as fitz
-    def get_pdf_page_count(path):
-        doc = fitz.open(path)
-        count = len(doc)
-        doc.close()
-        return count
-except ImportError:
-    try:
-        import pypdf
-        def get_pdf_page_count(path):
-            reader = pypdf.PdfReader(path)
-            return len(reader.pages)
-    except ImportError:
-        import pypdfium2 as pdfium
-        def get_pdf_page_count(path):
-            doc = pdfium.PdfDocument(path)
-            return len(doc)
+def get_pdf_page_count(path):
+    """Pure Python PDF page counter (zero third-party dependencies)."""
+    with open(path, "rb") as f:
+        content = f.read()
+    import re
+    pages = re.findall(rb"/Type\s*/Page\b", content)
+    return len(pages)
 
 JSON_PATH = os.path.join(BASE_DIR, "odisha_statewide_assessment.json")
 GEOJSON_PATH = os.path.join(BASE_DIR, "odisha_districts.geojson")
@@ -176,8 +165,12 @@ class TestDocumentOutputIntegrity(unittest.TestCase):
 
     def test_all_30_district_maps_exist(self):
         self.assertTrue(os.path.exists(MAPS_DIR))
-        map_files = [f for f in os.listdir(MAPS_DIR) if f.endswith(".png")]
-        self.assertEqual(len(map_files), 30, f"Expected 30 district map images, found {len(map_files)}")
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for d in data["districts"]:
+            clean_name = d["district_name"].lower().replace(" ", "_")
+            map_path = os.path.join(MAPS_DIR, f"dist_{clean_name}.png")
+            self.assertTrue(os.path.exists(map_path), f"Missing map for district {d['district_name']} at {map_path}")
 
 
 if __name__ == "__main__":

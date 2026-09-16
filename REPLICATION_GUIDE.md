@@ -22,26 +22,23 @@ This document details the configuration and commands used to produce the masterp
    ```
 2. Generates 30 square 1:1 district catchment maps and 6 analytical charts in `assets/`.
 
-## 3. Document assembly
-1. Compile full 47-page masterplan:
+## 3. Document assembly (Typst Publication Suite)
+1. Complete automated build:
    ```bash
-   python generate_pdf_report.py
+   python build.py --all
    ```
-2. Compile 10-slide executive presentation deck:
+2. Or compile documents individually via Typst:
    ```bash
-   python generate_executive_deck.py
+   python build.py --typst
    ```
-3. Compile 1-page executive policy brief:
-   ```bash
-   python generate_policy_brief.py
-   ```
-4. Compile 30 district action memos:
-   ```bash
-   python generate_district_memos.py
-   ```
+   Compiles:
+   - `Odisha_Spatial_School_Education_Masterplan.pdf` (47 pages)
+   - `Odisha_Education_Policy_Brief_2026.pdf` (1 page)
 
 ## 4. Test verification
-Run the test suite:
+Run the verification test suite:
 ```bash
+python build.py --test
+# Or directly via unittest:
 python -m unittest tests/test_masterplan_suite.py
 ```
