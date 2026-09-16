@@ -10,8 +10,8 @@
     set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
     grid(
       columns: (3.2fr, 1fr),
-      align(left)[ODISHA SPATIAL EDUCATION MASTERPLAN | TECHNICAL POLICY BRIEF],
-      align(right)[POLICY BRIEF (2026-2031)]
+      align(left)[Odisha spatial education masterplan | technical policy brief],
+      align(right)[Policy brief (2026-2031)]
     )
     v(-4pt)
     line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
@@ -22,7 +22,7 @@
     set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
     grid(
       columns: (3fr, 1fr),
-      align(left)[Decision Support Framework: Operations Research & Spatial Optimization],
+      align(left)[Decision support framework: operations research and spatial optimization],
       align(right)[Page 1 of 1]
     )
   })
@@ -34,9 +34,9 @@
 // Title & Subtitle
 #v(4pt)
 #align(center)[
-  #text(size: 14.5pt, weight: "bold", fill: rgb("#1E3A8A"))[ODISHA SPATIAL SCHOOL EDUCATION MASTERPLAN (2026-2031)] \
+  #text(size: 14.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Odisha spatial school education masterplan (2026-2031)] \
   #v(3pt)
-  #text(size: 8.6pt, fill: rgb("#475569"))[Operations Research Optimization & PWD Hill Cost Calibrated Strategy Across 314 CD Blocks]
+  #text(size: 8.6pt, fill: rgb("#475569"))[Operations research optimization and PWD hill cost calibrated strategy across 314 CD blocks]
 ]
 #v(3pt)
 #line(length: 100%, stroke: 1.2pt + rgb("#1E3A8A"))
@@ -84,13 +84,13 @@
 )
 
 #v(8pt)
-#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[1. Strategic Context & Operations Research Methodology]
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[1. Strategic context and operations research methodology]
 #v(4pt)
 - *Grade 8 to 9 Spatial Dropout Cliff:* Primary access achieves 74.9%, but secondary coverage drops to 59.1% due to distance barriers (mean walking distance exceeds 6.8 km in Eastern Ghats), driving a 42% tribal dropout rate with adolescent girls dropping out at higher rates without dedicated transit.
 - *Submodular Pareto Optimization & PWD Hill Multipliers:* Interventions are optimized using a submodular Maximum Coverage Location Problem (MCLP) formulation under capital budget constraints, incorporating *Tobler hiking friction (1.8x–2.4x)* and *PWD hill area cost multipliers (+18% to +30%)* to reflect actual terrain haulage logistics.
 
 #v(8pt)
-#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[2. Statewide Multi-Tier Investment & Physical Targets (Hill Cost Calibrated)]
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[2. Statewide multi-tier investment and physical targets (hill cost calibrated)]
 #v(4pt)
 
 #table(
@@ -128,7 +128,7 @@
 )
 
 #v(8pt)
-#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[3. 314 CD Blocks Regional Stratification, Transit Fleet & Teacher Cadre]
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[3. 314 CD blocks regional stratification, transit fleet and teacher cadre]
 #v(4pt)
 - *High Vulnerability (72 Blocks in 9 Tribal Districts):* Baseline coverage below 45%. Priority for 588 dedicated girls' hostels, feeder transit corridors, and specialized teacher hardship allowances.
 - *Central & Agrarian (142 Blocks):* Coverage 55% to 70%. Focus on upgrading Upper Primary schools into High Schools.
@@ -176,7 +176,7 @@
 )
 
 #v(8pt)
-#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[4. 5-Year Capital Rollout, Calibrated Economic ROI & Cabinet Directives]
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[4. 5-year capital rollout, calibrated economic ROI and cabinet directives]
 #v(4pt)
 
 #table(

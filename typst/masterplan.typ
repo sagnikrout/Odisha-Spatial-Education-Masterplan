@@ -41,9 +41,9 @@
 // ============================================================================
 #v(0.6cm)
 #align(center)[
-  #text(size: 10.5pt, weight: "bold", fill: rgb("#0284C7"))[COMPUTATIONAL SPATIAL PLANNING & POLICY REPORT] \
+  #text(size: 10.5pt, weight: "bold", fill: rgb("#0284C7"))[Computational spatial planning and policy report] \
   #v(2pt)
-  #text(size: 8.5pt, weight: "bold", fill: rgb("#64748B"))[STATEWIDE SECONDARY EDUCATION ACCESSIBILITY SUITE] \
+  #text(size: 8.5pt, weight: "bold", fill: rgb("#64748B"))[Statewide secondary education accessibility suite] \
   #v(6pt)
   #line(length: 40%, stroke: 1.8pt + rgb("#1E3A8A")) \
   #v(10pt)
@@ -62,21 +62,21 @@
   columns: (1fr, 1fr, 1fr),
   gutter: 10pt,
   rect(width: 100%, fill: rgb("#F0F9FF"), stroke: 0.5pt + rgb("#0284C7"), radius: 3pt, inset: 8pt)[
-    #text(size: 7.5pt, fill: rgb("#0369A1"), weight: "bold")[TOTAL CAPITAL OUTLAY] \
+    #text(size: 7.5pt, fill: rgb("#0369A1"), weight: "bold")[Total capital outlay] \
     #v(2pt)
     #text(size: 15pt, weight: "bold", fill: rgb("#0F172A"))[₹#{calc.round(sec.total_budget_cr, digits: 0)} Cr] \
     #v(1pt)
     #text(size: 7.0pt, fill: rgb("#475569"))[Secondary & Transit Outlay]
   ],
   rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.5pt + rgb("#64748B"), radius: 3pt, inset: 8pt)[
-    #text(size: 7.5pt, fill: rgb("#475569"), weight: "bold")[PHYSICAL CAMPUSES] \
+    #text(size: 7.5pt, fill: rgb("#475569"), weight: "bold")[Physical campuses] \
     #v(2pt)
     #text(size: 15pt, weight: "bold", fill: rgb("#0F172A"))[#{sec.proposed_upgrades + sec.proposed_new_schools}] \
     #v(1pt)
     #text(size: 7.0pt, fill: rgb("#475569"))[#{sec.proposed_upgrades} Upgrades + #{sec.proposed_new_schools} Greenfield]
   ],
   rect(width: 100%, fill: rgb("#F0FDF4"), stroke: 0.5pt + rgb("#059669"), radius: 3pt, inset: 8pt)[
-    #text(size: 7.5pt, fill: rgb("#047857"), weight: "bold")[GSDP ECONOMIC RETURN] \
+    #text(size: 7.5pt, fill: rgb("#047857"), weight: "bold")[GSDP economic return] \
     #v(2pt)
     #text(size: 15pt, weight: "bold", fill: rgb("#0F172A"))[#{econ.benefit_cost_ratio_roi}x BCR] \
     #v(1pt)
@@ -91,14 +91,14 @@
   columns: (1fr, 1fr),
   gutter: 14pt,
   [
-    #text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Spatial Challenge & Problem Statement]
+    #text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Spatial challenge and problem statement]
     #v(2pt)
     This technical report establishes the spatial allocation architecture for achieving universal secondary education access across the State of Odisha by 2031. Under the Right to Education (RTE) Act of 2009, primary schooling saturation reached 69.9% baseline coverage within a 1 km radius. However, secondary education (Grades 9-10, 5 km norm) was not expanded at parity, creating an acute geographic transition barrier.
     
     Across the Eastern Ghats and forested corridors, adolescent students—predominantly females—are forced to walk over 7 to 10 kilometers across steep, unpaved terrain to access the nearest high school. This logistical friction produces a severe drop in continuation rates between Grade 8 and Grade 9. Traditional demand-based funding favored politically active plain districts while leaving tribal belts unserved. This masterplan replaces subjective approvals with an objective spatial optimization model.
   ],
   [
-    #text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Algorithmic Model & Operational Solution]
+    #text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Algorithmic model and operational solution]
     #v(2pt)
     The allocation framework formulates school placement as a Submodular Maximum Coverage Location Problem (MCLP) bounded by the Nemhauser-Wolsey $(1 - 1/e) approx 63.2%$ approximation guarantee. The algorithm tabulates unserved habitations across all 314 CD blocks and applies Tobler hiking friction curves to model realistic pedestrian travel speeds across terrain gradients.
     
@@ -109,7 +109,7 @@
 #v(8pt)
 
 // 5-Year Rollout Phase Summary Table
-#text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[5-Year Strategic Rollout Schedule (2026-2031)]
+#text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[5-year strategic rollout schedule (2026-2031)]
 #v(3pt)
 
 #table(
@@ -140,7 +140,7 @@
 // ============================================================================
 // PAGE 2: STRATEGIC CONTEXT & SPATIAL STANDARDS
 // ============================================================================
-#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[1. Strategic Policy Context & Spatial Standards]
+#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[1. Strategic policy context and spatial standards]
 #v(-3pt)
 #line(length: 100%, stroke: 0.8pt + rgb("#1E3A8A"))
 #v(4pt)
@@ -149,21 +149,21 @@
   columns: (1fr, 1fr),
   gutter: 14pt,
   [
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[The Grade 8-to-9 Spatial Dropout Cliff]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[The grade 8-to-9 spatial dropout cliff]
     #v(2pt)
     The structural bottleneck in Odisha's educational attainment is concentrated at the secondary transition. Primary schools (Grades 1-5) operate within 1 km, and upper-primary schools (Grades 6-8) within 3 km. However, secondary schools (Grades 9-10) are governed by a 5 km norm. In hilly districts like Malkangiri, Koraput, and Rayagada, habitations are dispersed across undulating terrain where actual footpath travel distances exceed 8 km.
     
     This physical impedance disproportionately impacts adolescent girls, whose transition rates drop by over 40% when round-trip walking distance exceeds 6 km. Under National Education Policy (NEP) 2020 directives, the state must ensure universal access to secondary education. Achieving this mandate requires moving beyond static distance buffers to dynamic spatial accessibility modeling.
     
     #v(5pt)
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Topographic Walking Friction (Tobler Hiking Function)]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Topographic walking friction (Tobler hiking function)]
     #v(2pt)
-    Nominal Euclidean radius buffers misrepresent travel times in mountainous areas. We compute slope-adjusted walking velocity using Waldo Tobler's empirical hiking formula:
+    Nominal Euclidean radius buffers misrepresent travel times in mountainous areas. We compute slope-adjusted walking velocity using Waldo Tobler's derived hiking formula:
     $ W = 6.0 dot exp(-3.5 dot |tan(theta) + 0.05|) $
     where $theta$ is terrain slope angle. On flat coastal plains (slope 0° to 2.5°), walking speed averages 5.0 km/h. On Eastern Ghats slopes (10° to 20°), velocity falls to 1.8 to 2.6 km/h. This introduces a distance friction multiplier of 1.8x to 2.5x, requiring denser school siting or motorized transit intervention.
   ],
   [
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Submodular Pareto MCLP Optimization Engine]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Submodular Pareto MCLP optimization engine]
     #v(2pt)
     Facility allocation is modeled as a Maximum Coverage Location Problem (MCLP). Let $H$ be the set of unserved habitations, $C$ the set of candidate school upgrades, new sites, and transit hubs, and $B$ the available budget. The objective maximizes population-weighted habitation coverage under submodular returns:
     $ max_(S subset.eq C, c(S) <= B) f(S) = sum_(h in union_(j in S) N(j)) w_h dot text("pop")_h $
@@ -172,7 +172,7 @@
     guarantees a solution within $(1 - 1/e) approx 63.2%$ of the global optimum. Candidate chunking enables generating a smooth Pareto frontier across budgets from ₹500 Cr to ₹10,000 Cr.
     
     #v(5pt)
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[PWD Hill Area Civil Cost Calibration]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[PWD hill area civil cost calibration]
     #v(2pt)
     Civil construction in ghat corridors incurs substantial logistical surcharges for material haulage, slope excavation, and retaining structures. We calibrate base unit costs against the Public Works Department (PWD) Schedule of Rates:
     - Coastal plain blocks: Cost multiplier = 1.00x to 1.05x (base cost ₹244 Lakhs/new school)
@@ -184,7 +184,7 @@
 #v(6pt)
 
 // Statewide Multi-Tier Investment Architecture Table
-#text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Statewide Multi-Tier Investment Architecture (Hill-Cost Calibrated)]
+#text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Statewide multi-tier investment architecture (hill-cost calibrated)]
 #v(3pt)
 
 #table(
@@ -236,7 +236,7 @@
 // ============================================================================
 // PAGE 3: CORE SPATIAL ANALYTICS & VISUAL EVIDENCE
 // ============================================================================
-#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[2. Core Spatial Analytics & Model Performance]
+#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[2. Core spatial analytics and model performance]
 #v(-3pt)
 #line(length: 100%, stroke: 0.8pt + rgb("#1E3A8A"))
 #v(4pt)
@@ -280,14 +280,14 @@
   columns: (1fr, 1fr),
   gutter: 14pt,
   [
-    #text(size: 7.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Discussion of Accessibility Cliff & Pareto Knee-Point]
+    #text(size: 7.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Discussion of accessibility cliff and Pareto knee-point]
     #v(1.5pt)
     Figure 1 illustrates the steep decline in student retention between Grade 8 (Upper Primary) and Grade 9 (Secondary). In coastal districts with flat terrain, continuation rates remain above 82%. In Eastern Ghats districts, retention drops below 48%, directly driven by distance and terrain friction.
     
     Figure 2 displays the Submodular Pareto MCLP efficiency frontier. Below ₹3,500 Cr, marginal coverage increases steeply at +6.8% per ₹1,000 Cr. Beyond the recommended ₹6,932 Cr allocation, marginal returns flatten to under +1.2% per ₹1,000 Cr, confirming ₹6,932 Cr as the mathematically optimal budget knee-point.
   ],
   [
-    #text(size: 7.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Discussion of Tier Allocations & Gender Equity]
+    #text(size: 7.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Discussion of tier allocations and gender equity]
     #v(1.5pt)
     Figure 3 delineates the capital distribution across tiers. Higher Secondary represents the largest outlay (₹11,925 Cr) due to specialized laboratories and vocational wings, while Secondary (₹6,932 Cr) absorbs the highest volume of physical upgrades (2,340) and transit routes.
     
@@ -300,7 +300,7 @@
 // ============================================================================
 // PAGE 4: STATEWIDE 30-DISTRICT COMPARATIVE INVESTMENT MATRIX
 // ============================================================================
-#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[3. Statewide 30-District Comparative Investment & Vulnerability Matrix]
+#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[3. Statewide 30-district comparative investment and vulnerability matrix]
 #v(-3pt)
 #line(length: 100%, stroke: 0.8pt + rgb("#1E3A8A"))
 #v(3pt)
@@ -368,15 +368,15 @@
   columns: (1fr, 1fr, 1fr),
   gutter: 10pt,
   rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.3pt + rgb("#CBD5E1"), radius: 2pt, inset: 4pt)[
-    #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Southern Tribal Priority Corridor] \
+    #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Southern tribal priority corridor] \
     #text(size: 5.8pt)[Malkangiri, Koraput, Rayagada, Nabarangpur, Gajapati account for ₹2,382.3 Cr (34.4% of secondary outlay), requiring 3,374 teachers.]
   ],
   rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.3pt + rgb("#CBD5E1"), radius: 2pt, inset: 4pt)[
-    #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Central & Northern Tribal Belt] \
+    #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Central and northern tribal belt] \
     #text(size: 5.8pt)[Kandhamal, Mayurbhanj, Kendujhar, Sundargarh absorb ₹1,950.4 Cr (28.1%), prioritizing residential boarding hostels for remote habitations.]
   ],
   rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.3pt + rgb("#CBD5E1"), radius: 2pt, inset: 4pt)[
-    #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Coastal Plains & Western Agrarian] \
+    #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Coastal plains and western agrarian] \
     #text(size: 5.8pt)[Remaining 21 districts absorb ₹2,599.1 Cr (37.5%), emphasizing cyclone-resilient structural upgrades and transit feeder routes.]
   ]
 )
@@ -408,7 +408,7 @@
       [
         #image(map_path, width: 100%)
         #v(2pt)
-        #text(size: 6.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Priority CD Blocks (Secondary Targets)]
+        #text(size: 6.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Priority CD blocks (secondary targets)]
         #v(1.5pt)
         #table(
           columns: (1fr, 24pt, 20pt, 20pt, 28pt),
@@ -434,12 +434,12 @@
         )
       ],
       [
-        #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Spatial Strategy & Operational Mandate]
+        #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Spatial strategy and operational mandate]
         #v(1.2pt)
         #text(size: 6.2pt)[#d.strategy]
         #v(3pt)
         
-        #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Multi-Tier Infrastructure Allocations]
+        #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Multi-tier infrastructure allocations]
         #v(1.2pt)
         #table(
           columns: (64pt, 26pt, 24pt, 24pt, 1fr),
@@ -465,7 +465,7 @@
         )
         #v(2.5pt)
         
-        #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Logistics & Operational Staffing]
+        #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Logistics and operational staffing]
         #v(1.2pt)
         #grid(
           columns: (1fr, 1fr),
@@ -504,7 +504,7 @@
 // ============================================================================
 // PAGE 20: 5-YEAR PHASED ROLLOUT, TRANSIT FLEET & TEACHER RETENTION
 // ============================================================================
-#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[5. Operations & Logistics: Phased Rollout, Transit & Staffing]
+#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[5. Operations and logistics: phased rollout, transit, and staffing]
 #v(-3pt)
 #line(length: 100%, stroke: 0.8pt + rgb("#1E3A8A"))
 #v(4pt)
@@ -513,21 +513,21 @@
   columns: (1fr, 1fr),
   gutter: 14pt,
   [
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[5-Year Phased Rollout Architecture]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[5-year phased rollout architecture]
     #v(2pt)
     To balance state fiscal absorptive capacity with construction logistics across 314 blocks, execution is partitioned into three chronological phases:
     
-    *Phase 1 (Years 1-2): High-Vulnerability Tribal Corridors*
+    *Phase 1 (years 1-2): high-vulnerability tribal corridors*
     Focuses on 9 districts (Malkangiri, Koraput, Rayagada, Nabarangpur, Gajapati, Kandhamal, Kalahandi, Nuapada, Boudh). Allocates ₹3,119.3 Cr (45% of secondary capital budget). Delivers 1,053 school upgrades, 614 new campuses, and 829 transit routes, lifting baseline coverage from 36.2% to 52.7% (+16.5% gain).
     
-    *Phase 2 (Years 3-4): Mineral Belts & Western Plateaus*
+    *Phase 2 (years 3-4): mineral belts and western plateaus*
     Focuses on 11 districts (Kendujhar, Mayurbhanj, Sundargarh, Deogarh, Angul, Sambalpur, Bargarh, Balangir, Subarnapur, Jharsuguda, Dhenkanal). Allocates ₹2,426.1 Cr (35%). Delivers 819 upgrades, 477 new campuses, and 452 transit hubs (+11.2% coverage gain).
     
-    *Phase 3 (Year 5): Coastal Deltas & Consolidation*
+    *Phase 3 (year 5): coastal deltas and consolidation*
     Focuses on 10 coastal districts (Ganjam, Puri, Khordha, Cuttack, Jagatsinghpur, Kendrapara, Jajpur, Bhadrak, Balasore, Nayagarh). Allocates ₹1,386.4 Cr (20%). Prioritizes 331 cyclone-resilient structural retrofits and urban periphery feeder vans (+4.8% gain, reaching 97.2% statewide).
   ],
   [
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Transit Fleet Architecture & Operations]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Transit fleet architecture and operations]
     #v(2pt)
     Where terrain or low habitation density renders school construction cost-ineffective, the masterplan integrates a synchronized student transit network:
     - *2,250 Mini-Buses (24-Seater):* Deployed on paved radial trunk roads connecting peripheral habitations to nodal high schools at ₹4.80 Lakhs/year per vehicle.
@@ -535,7 +535,7 @@
     - *Operational Governance:* Managed through District Level Transport Societies in partnership with local Mission Shakti Women Self-Help Groups (SHGs). Annual operating expenditure is calibrated at ₹#{sec.annual_transit_opex_cr} Cr/year.
     
     #v(5pt)
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Tribal Teacher Retention Cadre & PESA Protocols]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Tribal teacher retention cadre and PESA protocols]
     #v(2pt)
     1. *Special Hardship Allowance:* 10,136 secondary teacher posts sanctioned with a 25% Remote Area Allowance in Tobler friction zones (> 1.8x), paired with a mandatory 3-year rural posting bond.
     2. *Fast-Track Land Transfers:* Greenfield school sites prioritize unencumbered revenue wasteland with Gram Sabha consent under Section 4(i) of PESA 1996.
@@ -551,15 +551,15 @@
     columns: (1fr, 1fr, 1fr),
     gutter: 8pt,
     [
-      #text(size: 7.2pt, weight: "bold", fill: rgb("#1E3A8A"))[TRANSIT FLEET LOGISTICS] \
+      #text(size: 7.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Transit fleet logistics] \
       #text(size: 6.2pt)[3,558 total vehicles (2,250 mini-buses, 1,308 vans) serving 1,507 transit hubs across 314 blocks.]
     ],
     [
-      #text(size: 7.2pt, weight: "bold", fill: rgb("#1E3A8A"))[TEACHER CADRE PROVISION] \
+      #text(size: 7.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Teacher cadre provision] \
       #text(size: 6.2pt)[10,136 secondary teacher posts ensuring 1:30 pupil-teacher ratio across upgraded and greenfield facilities.]
     ],
     [
-      #text(size: 7.2pt, weight: "bold", fill: rgb("#1E3A8A"))[RESIDENTIAL HOSTELS] \
+      #text(size: 7.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Residential hostels] \
       #text(size: 6.2pt)[743 dedicated girls' hostels eliminating travel-related dropouts for 74,300 adolescent girls.]
     ]
   )
@@ -570,7 +570,7 @@
 // ============================================================================
 // PAGE 21: ECONOMETRIC RETURNS, CABINET DIRECTIVES & SIGN-OFF
 // ============================================================================
-#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[6. Econometric Return Modeling & Implementation Framework]
+#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[6. Econometric return modeling and implementation framework]
 #v(-3pt)
 #line(length: 100%, stroke: 0.8pt + rgb("#1E3A8A"))
 #v(4pt)
@@ -579,16 +579,16 @@
   columns: (1fr, 1fr),
   gutter: 14pt,
   [
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Econometric ROI Model (GSDP Contribution)]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Econometric ROI model (GSDP contribution)]
     #v(2pt)
-    The econometric model evaluates the public return on secondary capital outlay through labor productivity enhancement across five graduating cohorts:
+    The econometric model evaluates the public return on secondary capital outlay through labor productivity increases across five graduating cohorts:
     - *Cohort Retention:* Retains 184,000 secondary students over the 5-year rollout who would otherwise exit school after Grade 8.
     - *Lifetime Wage Premium:* Calibrated at ₹42,000/year (₹3,500/month differential between secondary and primary graduates in rural labor markets).
     - *Discount & Absorption Factors:* Incorporates a 6% annual social discount rate and a conservative 70% rural labor market absorption rate over a 25-year working career.
     - *Net Present Value (NPV):* The cumulative discounted GSDP addition is ₹#{calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 1)} Crores. Against the ₹#{calc.round(sec.total_budget_cr, digits: 1)} Cr capital outlay, this yields a *#{econ.benefit_cost_ratio_roi}x direct wage BCR*, proving economic viability before accounting for inter-generational health and fertility benefits.
   ],
   [
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Strategic Implementation Recommendations]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Strategic implementation recommendations]
     #v(2pt)
     1. *Staffing Provision:* Structure secondary subject teacher recruitment with 25% remote area hardship allowances for high-friction zones (> 1.8x) to resolve specialist deficits.
     2. *Land Identification:* Prioritize unencumbered government wasteland for greenfield facilities, engaging local village bodies early to prevent construction delays.
@@ -601,7 +601,7 @@
 
 // Economic Sensitivity Matrix
 #rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.4pt + rgb("#CBD5E1"), radius: 3pt, inset: 6pt)[
-  #text(size: 7.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Sensitivity Analysis: Economic Return Robustness Across Parameters]
+  #text(size: 7.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Sensitivity Analysis: Economic return stability across parameters]
   #v(2pt)
   #table(
     columns: (1fr, 68pt, 68pt, 68pt, 68pt),
@@ -623,21 +623,21 @@
 
 #v(6pt)
 
-// Methodological Grounding & Data Sources
+// Methodological grounding and data sources
 #rect(width: 100%, fill: rgb("#FFFFFF"), stroke: 0.35pt + rgb("#CBD5E1"), radius: 2pt, inset: 6pt)[
   #grid(
     columns: (1fr, 1fr),
     gutter: 12pt,
     [
-      #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Mathematical Formulation & Optimality] \
+      #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Mathematical formulation and optimality] \
       #text(size: 6.0pt, fill: rgb("#475569"))[
         The spatial optimization executes a Submodular Maximum Coverage Location Problem (MCLP) with provable $(1 - 1/e) approx 63.2%$ Nemhauser-Wolsey approximation bounds. District statistics represent exact bottom-up summations across 314 CD block catchments with zero mathematical conservation error.
       ]
     ],
     [
-      #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Data Sources & Technical Assumptions] \
+      #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Data sources and technical assumptions] \
       #text(size: 6.0pt, fill: rgb("#475569"))[
-        Boundaries sourced from official Survey of India administrative boundary vectors. Walking speeds computed via Waldo Tobler's empirical hiking formula (1993). Civil engineering unit costs calibrated to Public Works Department (PWD) schedule of rates for plain vs. ghat terrain.
+        Boundaries sourced from official Survey of India administrative boundary vectors. Walking speeds computed via Waldo Tobler's derived hiking formula (1993). Civil engineering unit costs calibrated to Public Works Department (PWD) schedule of rates for plain vs. ghat terrain.
       ]
     ]
   )
@@ -648,7 +648,7 @@
 // ============================================================================
 // PAGES 22 TO 24: STATEWIDE 314 CD BLOCK REGISTER (Appendix, 3 Pages)
 // ============================================================================
-#text(size: 10.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Appendix: Statewide 314 CD Block Masterplan Register]
+#text(size: 10.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Appendix: statewide 314 CD block masterplan register]
 #v(-3pt)
 #line(length: 100%, stroke: 0.8pt + rgb("#1E3A8A"))
 #v(3pt)
