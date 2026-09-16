@@ -405,7 +405,7 @@ def generate_global_charts(assessment_data):
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    fig.savefig(os.path.join(ASSETS_DIR, "chart_dropout_cliff.png"), dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_dropout_cliff.png"), dpi=220, facecolor=BG_COLOR, bbox_inches='tight', pad_inches=0.15)
     plt.close(fig)
 
     # 2. Budget Breakdown Chart (with PWD Hill Cost Index)
@@ -440,7 +440,7 @@ def generate_global_charts(assessment_data):
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    fig.savefig(os.path.join(ASSETS_DIR, "chart_budget_breakdown.png"), dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_budget_breakdown.png"), dpi=220, facecolor=BG_COLOR, bbox_inches='tight', pad_inches=0.15)
     plt.close(fig)
 
     # 3. Coverage Transformation Chart
@@ -477,7 +477,7 @@ def generate_global_charts(assessment_data):
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    fig.savefig(os.path.join(ASSETS_DIR, "chart_coverage_by_tier.png"), dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_coverage_by_tier.png"), dpi=220, facecolor=BG_COLOR, bbox_inches='tight', pad_inches=0.15)
     plt.close(fig)
 
     # 4. District Priority & Vulnerability Ranking
@@ -509,7 +509,7 @@ def generate_global_charts(assessment_data):
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    fig.savefig(os.path.join(ASSETS_DIR, "chart_district_priority_ranking.png"), dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_district_priority_ranking.png"), dpi=220, facecolor=BG_COLOR, bbox_inches='tight', pad_inches=0.15)
     plt.close(fig)
 
     # 5. Operations Research Pareto Frontier Chart
@@ -542,7 +542,7 @@ def generate_global_charts(assessment_data):
         spine.set_color(BORDER_COLOR)
 
     plt.tight_layout()
-    fig.savefig(os.path.join(ASSETS_DIR, "chart_mclp_frontier.png"), dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_mclp_frontier.png"), dpi=220, facecolor=BG_COLOR, bbox_inches='tight', pad_inches=0.15)
     plt.close(fig)
 
     # 6. Gender & Social Equity Chart
@@ -576,7 +576,7 @@ def generate_global_charts(assessment_data):
     ax1.grid(True, linestyle='--', alpha=0.35, axis='y', color='#94A3B8')
 
     plt.tight_layout()
-    fig.savefig(os.path.join(ASSETS_DIR, "chart_gender_equity.png"), dpi=220, facecolor=BG_COLOR)
+    fig.savefig(os.path.join(ASSETS_DIR, "chart_gender_equity.png"), dpi=220, facecolor=BG_COLOR, bbox_inches='tight', pad_inches=0.15)
     plt.close(fig)
 
     print("Successfully generated all 6 analytical charts.")

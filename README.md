@@ -12,7 +12,7 @@ Statewide operations research optimization, 314 Community Development Block GIS 
 
 | Deliverable | Description | Path |
 | :--- | :--- | :--- |
-| Full masterplan report | 47-page masterplan with 314-block appendix | [Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf) |
+| Full masterplan report | 6-page executive masterplan with statewide spatial optimization | [Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf) |
 | Executive presentation deck | 10-slide presentation | [Odisha_Spatial_Education_Executive_Deck.pdf](Odisha_Spatial_Education_Executive_Deck.pdf) |
 | Executive policy brief | Single-page standalone summary | [Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf) |
 | 30 district action memos | Localized 2-page action memos for administrative officers | [district_action_memos/](district_action_memos/) |
@@ -55,7 +55,7 @@ Map2needs/
 │   └── spatial_engine/
 │       └── statewide_analyzer.py        # Submodular Pareto MCLP engine & demographic analysis
 ├── typst/
-│   ├── masterplan.typ                   # High-speed 47-page masterplan publication
+│   ├── masterplan.typ                   # High-speed 6-page executive masterplan publication
 │   └── policy_brief.typ                 # 1-page executive briefing template
 ├── assets/
 │   ├── district_maps/                   # 30 district GIS maps (4-zone modular layout)

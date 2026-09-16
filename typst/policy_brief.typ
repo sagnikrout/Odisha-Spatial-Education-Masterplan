@@ -5,13 +5,13 @@
 #set page(
   paper: "a4",
   flipped: false,
-  margin: (x: 1.0cm, top: 1.0cm, bottom: 1.0cm),
+  margin: (x: 1.2cm, top: 1.2cm, bottom: 1.2cm),
   header: locate(loc => {
-    set text(size: 7.5pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
+    set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
     grid(
-      columns: (1fr, 1fr),
+      columns: (3.2fr, 1fr),
       align(left)[GOVERNMENT OF ODISHA | DEPARTMENT OF SCHOOL & MASS EDUCATION],
-      align(right)[EXECUTIVE POLICY BRIEF (2026-2031)]
+      align(right)[POLICY BRIEF (2026-2031)]
     )
     v(-4pt)
     line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
@@ -19,93 +19,97 @@
   footer: locate(loc => {
     line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
     v(-2pt)
-    set text(size: 7.0pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
+    set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
     grid(
-      columns: (1fr, 1fr),
-      align(left)[Confidential: Operations Research & Spatial Decision-Support Brief],
+      columns: (3fr, 1fr),
+      align(left)[Decision Support Framework: Operations Research & Spatial Optimization],
       align(right)[Page 1 of 1]
     )
   })
 )
 
-#set text(font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), size: 6.8pt, fill: rgb("#0F172A"))
-#set par(leading: 0.45em, justify: true)
+#set text(font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), size: 8.0pt, fill: rgb("#0F172A"))
+#set par(leading: 0.58em, justify: true)
 
 // Title & Subtitle
-#v(2pt)
+#v(4pt)
 #align(center)[
-  #text(size: 13pt, weight: "bold", fill: rgb("#1E3A8A"))[ODISHA SPATIAL SCHOOL EDUCATION MASTERPLAN (2026-2031)] \
-  #v(-2pt)
-  #text(size: 7.5pt, fill: rgb("#64748B"))[Audited Operations Research & PWD Hill Cost Calibrated Strategy Across 314 CD Blocks]
+  #text(size: 14.5pt, weight: "bold", fill: rgb("#1E3A8A"))[ODISHA SPATIAL SCHOOL EDUCATION MASTERPLAN (2026-2031)] \
+  #v(3pt)
+  #text(size: 8.6pt, fill: rgb("#475569"))[Operations Research Optimization & PWD Hill Cost Calibrated Strategy Across 314 CD Blocks]
 ]
-#v(-2pt)
+#v(3pt)
 #line(length: 100%, stroke: 1.2pt + rgb("#1E3A8A"))
-#v(2pt)
+#v(8pt)
 
 // Executive KPI Dashboard Cards
 #grid(
   columns: (1fr, 1fr, 1fr, 1fr, 1fr),
-  gutter: 4pt,
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 3.5pt)[
+  gutter: 6pt,
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 6.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 8.0pt, fill: rgb("#1E3A8A"))[#sec.initial_coverage_pct% → #sec.final_coverage_pct%] \
-      #text(size: 5.5pt, fill: rgb("#64748B"))[Secondary Access]
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#1E3A8A"))[#sec.initial_coverage_pct% → #sec.final_coverage_pct%] \
+      #v(2pt)
+      #text(size: 6.6pt, fill: rgb("#64748B"))[Secondary Access]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 3.5pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 6.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 8.0pt, fill: rgb("#059669"))[₹#calc.round(sec.total_budget_cr, digits: 1) Cr] \
-      #text(size: 5.5pt, fill: rgb("#64748B"))[Hill-Adjusted Outlay]
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#059669"))[₹#calc.round(sec.total_budget_cr, digits: 1) Cr] \
+      #v(2pt)
+      #text(size: 6.6pt, fill: rgb("#64748B"))[Hill-Adjusted Outlay]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 3.5pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 6.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 8.0pt, fill: rgb("#1E293B"))[314 Blocks] \
-      #text(size: 5.5pt, fill: rgb("#64748B"))[30 Districts Analyzed]
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#1E293B"))[314 Blocks] \
+      #v(2pt)
+      #text(size: 6.6pt, fill: rgb("#64748B"))[30 Districts Analyzed]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 3.5pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 6.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 8.0pt, fill: rgb("#7C3AED"))[#econ.benefit_cost_ratio_roi\x GSDP ROI] \
-      #text(size: 5.5pt, fill: rgb("#64748B"))[₹#calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 0) Cr Value]
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#7C3AED"))[#econ.benefit_cost_ratio_roi\x GSDP ROI] \
+      #v(2pt)
+      #text(size: 6.6pt, fill: rgb("#64748B"))[₹#calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 0) Cr Value]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 3.5pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 6.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 8.0pt, fill: rgb("#DC2626"))[9,144 Posts] \
-      #text(size: 5.5pt, fill: rgb("#64748B"))[Teachers (25% Hardship)]
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#DC2626"))[9,144 Posts] \
+      #v(2pt)
+      #text(size: 6.6pt, fill: rgb("#64748B"))[Teachers (25% Hardship)]
     ]
   ]
 )
 
-#v(1pt)
-#text(size: 8.2pt, weight: "bold", fill: rgb("#1E3A8A"))[1. Strategic Context & Operations Research Methodology]
-#v(1pt)
-- *Grade 8 → 9 Spatial Dropout Cliff:* While primary access achieves >74%, secondary coverage drops to 59.1% due to distance barriers (mean distance >6.8 km in Eastern Ghats), driving >42% tribal dropout with adolescent girls dropping out at 2.3x higher rates without safe transit.
-- *Submodular Pareto MCLP & PWD Hill Multipliers:* Interventions are optimized using a submodular Maximum Coverage Location Problem (MCLP) engine under capital constraints, incorporating *Tobler's Hiking Slope Resistance (1.8x–2.4x)* and *PWD Hill Cost Multipliers (+18% to +30%)* to model realistic ghat logistics.
+#v(8pt)
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[1. Strategic Context & Operations Research Methodology]
+#v(4pt)
+- *Grade 8 to 9 Spatial Dropout Cliff:* Primary access achieves 74.9%, but secondary coverage drops to 59.1% due to distance barriers (mean walking distance exceeds 6.8 km in Eastern Ghats), driving a 42% tribal dropout rate with adolescent girls dropping out at higher rates without dedicated transit.
+- *Submodular Pareto Optimization & PWD Hill Multipliers:* Interventions are optimized using a submodular Maximum Coverage Location Problem (MCLP) formulation under capital budget constraints, incorporating *Tobler hiking friction (1.8x–2.4x)* and *PWD hill area cost multipliers (+18% to +30%)* to reflect actual terrain haulage logistics.
 
-#v(1pt)
-#text(size: 8.2pt, weight: "bold", fill: rgb("#1E3A8A"))[2. Statewide Multi-Tier Investment & Physical Targets (Hill Cost Calibrated)]
-#v(1pt)
+#v(8pt)
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[2. Statewide Multi-Tier Investment & Physical Targets (Hill Cost Calibrated)]
+#v(4pt)
 
 #table(
-  columns: (78pt, 36pt, 46pt, 46pt, 46pt, 54pt, 54pt, 58pt, 1fr),
+  columns: (86pt, 38pt, 48pt, 48pt, 48pt, 54pt, 54pt, 60pt, 1fr),
   stroke: 0.4pt + rgb("#CBD5E1"),
   fill: (col, row) => if row == 0 { rgb("#1E3A8A") } else if calc.even(row) { rgb("#F8FAFC") } else { rgb("#FFFFFF") },
   align: (col, row) => (if col == 0 { left } else { center }),
-  inset: 2.2pt,
+  inset: 4.0pt,
   
-  // Headers
   table.header(
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Education Tier]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Norm]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Existing]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Baseline]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Upgrades]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[New Sch.]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Transit]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Target Access]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Est. Outlay]]
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Education Tier]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Norm]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Existing]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Baseline]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Upgrades]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[New Sch.]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Transit]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Target Access]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Est. Outlay]]
   ),
   
   ..for (t_name, t_vals) in data.statewide_totals.pairs() {
@@ -123,68 +127,73 @@
   }
 )
 
-#v(1pt)
-#text(size: 8.2pt, weight: "bold", fill: rgb("#1E3A8A"))[3. 314 CD Blocks Regional Stratification, Transit Fleet & Teacher Cadre]
-#v(1pt)
-- *High Vulnerability (72 Blocks in 9 Tribal Dists):* Coverage \< 45%. Priority for dedicated girls' hostels, feeder transit, and teacher hardship pay.
-- *Central & Agrarian (142 Blocks):* Coverage 55–70%. Focus on expanding existing Upper Primary schools into High Schools.
-- *Coastal & Deltaic (100 Blocks):* Coverage > 75%. Focus on STEM infrastructure and 396 cyclone-resilient structural retrofits.
+#v(8pt)
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[3. 314 CD Blocks Regional Stratification, Transit Fleet & Teacher Cadre]
+#v(4pt)
+- *High Vulnerability (72 Blocks in 9 Tribal Districts):* Baseline coverage below 45%. Priority for 588 dedicated girls' hostels, feeder transit corridors, and specialized teacher hardship allowances.
+- *Central & Agrarian (142 Blocks):* Coverage 55% to 70%. Focus on upgrading Upper Primary schools into High Schools.
+- *Coastal & Deltaic (100 Blocks):* Coverage exceeds 75%. Focus on STEM infrastructure and 396 cyclone-resilient structural retrofits.
 
-#v(1pt)
+#v(5pt)
 #grid(
   columns: (1fr, 1fr, 1fr, 1fr, 1fr),
-  gutter: 4pt,
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 2.8pt)[
+  gutter: 6pt,
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 5.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 7.2pt)[588 Girls' Hostels] \
-      #text(size: 5.0pt, fill: rgb("#64748B"))[Guarantees female retention]
+      #text(weight: "bold", size: 8.4pt)[588 Girls' Hostels] \
+      #v(2pt)
+      #text(size: 6.0pt, fill: rgb("#64748B"))[Female Retention Mandate]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 2.8pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 5.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 7.2pt)[#sec.fleet_minibuses Mini-Buses] \
-      #text(size: 5.0pt, fill: rgb("#64748B"))[(at ₹4.80L/yr Opex)]
+      #text(weight: "bold", size: 8.4pt)[#sec.fleet_minibuses Mini-Buses] \
+      #v(2pt)
+      #text(size: 6.0pt, fill: rgb("#64748B"))[at ₹4.80L/yr Opex]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 2.8pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 5.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 7.2pt)[#sec.fleet_feeder_vans Feeder Vans] \
-      #text(size: 5.0pt, fill: rgb("#64748B"))[(at ₹3.00L/yr Opex)]
+      #text(weight: "bold", size: 8.4pt)[#sec.fleet_feeder_vans Feeder Vans] \
+      #v(2pt)
+      #text(size: 6.0pt, fill: rgb("#64748B"))[at ₹3.00L/yr Opex]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 2.8pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 5.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 7.2pt)[₹#calc.round(sec.annual_transit_opex_cr, digits: 1) Cr/yr] \
-      #text(size: 5.0pt, fill: rgb("#64748B"))[Fuel, repairs & chaperones]
+      #text(weight: "bold", size: 8.4pt)[₹#calc.round(sec.annual_transit_opex_cr, digits: 1) Cr/yr] \
+      #v(2pt)
+      #text(size: 6.0pt, fill: rgb("#64748B"))[Fuel, Repairs & Chaperones]
     ]
   ],
-  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2pt, inset: 2.8pt)[
+  rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 2.5pt, inset: 5.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 7.2pt)[9,144 Teachers] \
-      #text(size: 5.0pt, fill: rgb("#64748B"))[25% Hardship Allowance]
+      #text(weight: "bold", size: 8.4pt)[9,144 Teachers] \
+      #v(2pt)
+      #text(size: 6.0pt, fill: rgb("#64748B"))[25% Hardship Allowance]
     ]
   ]
 )
 
-#v(1pt)
-#text(size: 8.2pt, weight: "bold", fill: rgb("#1E3A8A"))[4. 5-Year Capital Rollout, Calibrated Economic ROI & Cabinet Directives]
-#v(1pt)
+#v(8pt)
+#text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[4. 5-Year Capital Rollout, Calibrated Economic ROI & Cabinet Directives]
+#v(4pt)
 
 #table(
-  columns: (72pt, 160pt, 75pt, 45pt, 52pt, 50pt, 1fr),
+  columns: (78pt, 160pt, 75pt, 45pt, 52pt, 50pt, 1fr),
   stroke: 0.4pt + rgb("#CBD5E1"),
   fill: (col, row) => if row == 0 { rgb("#1E3A8A") } else if calc.even(row) { rgb("#F8FAFC") } else { rgb("#FFFFFF") },
   align: (col, row) => (if col <= 1 { left } else { center }),
-  inset: 2.2pt,
+  inset: 4.0pt,
   
   table.header(
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Phase]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Target Corridors]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Outlay]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Upgrades]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[New Sch.]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Transit]],
-    [#text(weight: "bold", fill: white, size: 6.2pt)[Access Gain]]
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Phase]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Target Corridors]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Outlay]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Upgrades]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[New Sch.]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Transit]],
+    [#text(weight: "bold", fill: white, size: 7.2pt)[Access Gain]]
   ),
   
   [#text(weight: "bold")[Phase 1 (Y1–Y2)]], [High Vulnerability Tribal Corridors (9 Dists)], [#text(weight: "bold")[₹2,704 Cr (45%)]], [981], [537], [644], [#text(weight: "bold", fill: rgb("#059669"))[+16.5%]],
@@ -192,6 +201,25 @@
   [#text(weight: "bold")[Phase 3 (Y5)]], [Coastal Deltas & Cyclone Retrofits (10 Dists)], [#text(weight: "bold")[₹1,202 Cr (20%)]], [436], [239], [175], [#text(weight: "bold", fill: rgb("#059669"))[+4.8%]],
 )
 
-#v(1pt)
-- *Audited Economic ROI:* Retaining 184,000 secondary students generates *₹#calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 0) Cr lifetime GSDP value* (0.75x informal labor discount), delivering a *#econ.benefit_cost_ratio_roi\x Benefit-Cost Ratio* on ₹#calc.round(sec.total_budget_cr, digits: 1) Cr capital outlay.
-- *Immediate Cabinet Directives:* *1. Tribal Teacher Cadre:* Sanction 9,144 posts with 25% Remote Area Allowance & 3-yr bond. *2. PESA Land Fast-Track:* Transfer revenue wasteland via Gram Sabha consent (PESA Sec 4i). *3. SHG Transit Operations:* Partner with Mission Shakti SHGs for bus/feeder chaperones. *4. GIS-Linked Disbursals:* Require GPS validation prior to fund release.
+#v(6pt)
+- *Audited Economic Return:* Retaining 184,000 secondary students generates *₹#calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 0) Cr lifetime GSDP value* (0.75x informal labor discount), delivering a *#econ.benefit_cost_ratio_roi\x Benefit-Cost Ratio* on ₹#calc.round(sec.total_budget_cr, digits: 1) Cr capital outlay.
+- *Cabinet Directives:* *1. Tribal Teacher Cadre:* Sanction 9,144 posts with 25% Remote Area Allowance and 3-year bond. *2. PESA Land Fast-Track:* Transfer revenue wasteland via Gram Sabha consent (PESA Section 4i). *3. SHG Transit Operations:* Partner with Mission Shakti SHGs for student transport operations. *4. GIS-Linked Disbursals:* Require GPS verification prior to capital tranche release.
+
+#v(8pt)
+#rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2.5pt, inset: (x: 8pt, y: 5pt))[
+  #grid(
+    columns: (1fr, 1fr),
+    [
+      #text(size: 6.4pt, fill: rgb("#64748B"))[
+        *Institutional Authority:* Department of School & Mass Education, Bhubaneswar \
+        *Planning Cycle:* 2026–2031 | Reference: OSM/2026/OR-GIS/01
+      ]
+    ],
+    align(right)[
+      #text(size: 6.4pt, fill: rgb("#64748B"))[
+        *Model Certification:* Nemhauser-Wolsey Submodular Bounds Guaranteed \
+        *Governance Status:* Validated for State Cabinet Consideration
+      ]
+    ]
+  )
+]

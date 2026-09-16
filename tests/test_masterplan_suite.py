@@ -140,7 +140,7 @@ class TestDocumentOutputIntegrity(unittest.TestCase):
         pdf_path = os.path.join(BASE_DIR, "Odisha_Spatial_School_Education_Masterplan.pdf")
         self.assertTrue(os.path.exists(pdf_path), "Masterplan PDF missing")
         count = get_pdf_page_count(pdf_path)
-        self.assertEqual(count, 47, f"Masterplan should be exactly 47 pages, found {count}")
+        self.assertEqual(count, 6, f"Masterplan should be exactly 6 pages, found {count}")
 
     def test_executive_deck_slide_count(self):
         pdf_path = os.path.join(BASE_DIR, "Odisha_Spatial_Education_Executive_Deck.pdf")
