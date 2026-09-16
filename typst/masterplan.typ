@@ -12,7 +12,7 @@
       set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
       grid(
         columns: (3.2fr, 1fr),
-        align(left)[GOVERNMENT OF ODISHA | DEPARTMENT OF SCHOOL & MASS EDUCATION],
+        align(left)[ODISHA SPATIAL EDUCATION MASTERPLAN | TECHNICAL REPORT],
         align(right)[SPATIAL MASTERPLAN (2026-2031)]
       )
       v(-4pt)
@@ -26,7 +26,7 @@
       set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
       grid(
         columns: (3.2fr, 1fr),
-        align(left)[Decision Support Framework: Operations Research & Spatial Optimization],
+        align(left)[Spatial Optimization & Education Infrastructure Model (2026-2031)],
         align(right)[Page #counter(page).display() of #counter(page).final(loc).at(0)]
       )
     }
@@ -41,9 +41,9 @@
 // ============================================================================
 #v(0.6cm)
 #align(center)[
-  #text(size: 11pt, weight: "bold", fill: rgb("#0284C7"))[GOVERNMENT OF ODISHA] \
+  #text(size: 10.5pt, weight: "bold", fill: rgb("#0284C7"))[COMPUTATIONAL SPATIAL PLANNING & POLICY REPORT] \
   #v(2pt)
-  #text(size: 8.8pt, weight: "bold", fill: rgb("#64748B"))[DEPARTMENT OF SCHOOL & MASS EDUCATION] \
+  #text(size: 8.5pt, weight: "bold", fill: rgb("#64748B"))[STATEWIDE SECONDARY EDUCATION ACCESSIBILITY SUITE] \
   #v(6pt)
   #line(length: 40%, stroke: 1.8pt + rgb("#1E3A8A")) \
   #v(10pt)
@@ -91,9 +91,9 @@
   columns: (1fr, 1fr),
   gutter: 14pt,
   [
-    #text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Executive Mandate & Policy Problem]
+    #text(size: 9.0pt, weight: "bold", fill: rgb("#1E3A8A"))[Spatial Challenge & Problem Statement]
     #v(2pt)
-    This statutory masterplan establishes the operational architecture for achieving universal secondary education access across the State of Odisha by 2031. Under the Right to Education (RTE) Act of 2009, primary schooling saturation reached 69.9% baseline coverage within a 1 km radius. However, secondary education (Grades 9-10, 5 km norm) was not expanded at parity, creating an acute geographic transition barrier.
+    This technical report establishes the spatial allocation architecture for achieving universal secondary education access across the State of Odisha by 2031. Under the Right to Education (RTE) Act of 2009, primary schooling saturation reached 69.9% baseline coverage within a 1 km radius. However, secondary education (Grades 9-10, 5 km norm) was not expanded at parity, creating an acute geographic transition barrier.
     
     Across the Eastern Ghats and forested corridors, adolescent students—predominantly females—are forced to walk over 7 to 10 kilometers across steep, unpaved terrain to access the nearest high school. This logistical friction produces a severe drop in continuation rates between Grade 8 and Grade 9. Traditional demand-based funding favored politically active plain districts while leaving tribal belts unserved. This masterplan replaces subjective approvals with an objective spatial optimization model.
   ],
@@ -570,7 +570,7 @@
 // ============================================================================
 // PAGE 21: ECONOMETRIC RETURNS, CABINET DIRECTIVES & SIGN-OFF
 // ============================================================================
-#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[6. Econometric Returns, Cabinet Directives & Official Governance Sign-Off]
+#text(size: 11pt, weight: "bold", fill: rgb("#1E3A8A"))[6. Econometric Return Modeling & Implementation Framework]
 #v(-3pt)
 #line(length: 100%, stroke: 0.8pt + rgb("#1E3A8A"))
 #v(4pt)
@@ -588,68 +588,60 @@
     - *Net Present Value (NPV):* The cumulative discounted GSDP addition is ₹#{calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 1)} Crores. Against the ₹#{calc.round(sec.total_budget_cr, digits: 1)} Cr capital outlay, this yields a *#{econ.benefit_cost_ratio_roi}x direct wage BCR*, proving economic viability before accounting for inter-generational health and fertility benefits.
   ],
   [
-    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Binding State Cabinet Directives]
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0284C7"))[Strategic Implementation Recommendations]
     #v(2pt)
-    1. *Creation of Specialized Secondary Cadre:* Sanction 10,136 secondary subject teacher posts with 25% remote area allowances, recruited through the Odisha Staff Selection Commission.
-    2. *Inter-Departmental Land Resolution:* Authorize District Collectors to execute zero-cost wasteland transfers with Gram Sabha consultation under PESA 1996 within 60 days of site identification.
-    3. *Transit Service Delivery via Mission Shakti:* Execute a statewide Memorandum of Understanding with Women SHGs for vehicle operations, fuel accounting, and student safety chaperones.
-    4. *GPS-Catchment Verified Fund Disbursals:* Mandate physical coordinate logging and GIS catchment verification on the state SAMS/PM-SHRI portal prior to releasing capital infrastructure tranches.
+    1. *Staffing Provision:* Structure secondary subject teacher recruitment with 25% remote area hardship allowances for high-friction zones (> 1.8x) to resolve specialist deficits.
+    2. *Land Identification:* Prioritize unencumbered government wasteland for greenfield facilities, engaging local village bodies early to prevent construction delays.
+    3. *Transit Operational Model:* Partner with local transport operators and community women's self-help groups (SHGs) for reliable feeder route operations.
+    4. *Geospatial Catchment Auditing:* Verify school catchment coordinates and student transit routes using GIS verification prior to capital infrastructure expenditure.
   ]
 )
 
 #v(8pt)
 
-// Operations Research Verification Box
-#rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 3pt, inset: 6pt)[
+// Economic Sensitivity Matrix
+#rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.4pt + rgb("#CBD5E1"), radius: 3pt, inset: 6pt)[
+  #text(size: 7.5pt, weight: "bold", fill: rgb("#1E3A8A"))[Sensitivity Analysis: Economic Return Robustness Across Parameters]
+  #v(2pt)
+  #table(
+    columns: (1fr, 68pt, 68pt, 68pt, 68pt),
+    stroke: 0.25pt + rgb("#E2E8F0"),
+    fill: (col, row) => if row == 0 { rgb("#F1F5F9") } else { rgb("#FFFFFF") },
+    inset: 2.5pt,
+    table.header(
+      text(size: 5.5pt, weight: "bold")[Labor Absorption Scenario],
+      text(size: 5.5pt, weight: "bold")[4% Discount Rate],
+      text(size: 5.5pt, weight: "bold")[6% Discount (Base)],
+      text(size: 5.5pt, weight: "bold")[8% Discount Rate],
+      text(size: 5.5pt, weight: "bold")[Direct BCR Range]
+    ),
+    [Conservative (50% Absorption)], [₹4,790 Cr (0.69x)], [₹3,802 Cr (0.55x)], [₹3,091 Cr (0.45x)], [0.45x – 0.69x],
+    [Baseline Model (70% Absorption)], [₹6,706 Cr (0.97x)], [₹5,323 Cr (0.77x)], [₹4,328 Cr (0.62x)], [0.62x – 0.97x],
+    [High Absorption (85% Absorption)], [₹8,143 Cr (1.17x)], [₹6,463 Cr (0.93x)], [₹5,255 Cr (0.76x)], [0.76x – 1.17x]
+  )
+]
+
+#v(6pt)
+
+// Methodological Grounding & Data Sources
+#rect(width: 100%, fill: rgb("#FFFFFF"), stroke: 0.35pt + rgb("#CBD5E1"), radius: 2pt, inset: 6pt)[
   #grid(
-    columns: (1.2fr, 0.8fr),
+    columns: (1fr, 1fr),
+    gutter: 12pt,
     [
-      #text(size: 7.2pt, fill: rgb("#1E3A8A"), weight: "bold")[OPERATIONS RESEARCH MATHEMATICAL CERTIFICATE] \
-      #v(1.5pt)
-      #text(size: 6.2pt, fill: rgb("#475569"))[
-        The submodular Pareto MCLP model has been audited against Nemhauser-Wolsey optimality bounds, guaranteeing $(1 - 1/e) approx 63.2%$ of global optimal coverage. All 314 CD block catchment buffers, Tobler slope travel friction curves, and PWD hill cost adjustments have been mathematically verified with zero conservation error across district-to-block aggregations.
+      #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Mathematical Formulation & Optimality] \
+      #text(size: 6.0pt, fill: rgb("#475569"))[
+        The spatial optimization executes a Submodular Maximum Coverage Location Problem (MCLP) with provable $(1 - 1/e) approx 63.2%$ Nemhauser-Wolsey approximation bounds. District statistics represent exact bottom-up summations across 314 CD block catchments with zero mathematical conservation error.
       ]
     ],
     [
-      #align(right)[
-        #text(size: 7.2pt, fill: rgb("#059669"), weight: "bold")[STATUTORY AUDIT STATUS] \
-        #v(1.5pt)
-        #text(size: 6.2pt, fill: rgb("#475569"))[
-          Approved for State Cabinet Consideration \
-          Planning & Convergence Department \
-          File: SAMS-SPATIAL-2026-V6 \
-          Bhubaneswar, Odisha | September 2026
-        ]
+      #text(size: 6.8pt, weight: "bold", fill: rgb("#1E3A8A"))[Data Sources & Technical Assumptions] \
+      #text(size: 6.0pt, fill: rgb("#475569"))[
+        Boundaries sourced from official Survey of India administrative boundary vectors. Walking speeds computed via Waldo Tobler's empirical hiking formula (1993). Civil engineering unit costs calibrated to Public Works Department (PWD) schedule of rates for plain vs. ghat terrain.
       ]
     ]
   )
 ]
-
-#v(0.8cm)
-
-// Formal Sign-Off Blocks
-#grid(
-  columns: (1fr, 1fr, 1fr),
-  gutter: 15pt,
-  [
-    #line(length: 85%, stroke: 0.8pt + rgb("#64748B"))
-    #v(2pt)
-    #text(size: 7.2pt, weight: "bold")[Principal Secretary] \
-    #text(size: 6.0pt, fill: rgb("#64748B"))[Department of School & Mass Education]
-  ],
-  [
-    #line(length: 85%, stroke: 0.8pt + rgb("#64748B"))
-    #v(2pt)
-    #text(size: 7.2pt, weight: "bold")[Engineer-in-Chief] \
-    #text(size: 6.0pt, fill: rgb("#64748B"))[Public Works Department (PWD)]
-  ],
-  [
-    #line(length: 85%, stroke: 0.8pt + rgb("#64748B"))
-    #v(2pt)
-    #text(size: 7.2pt, weight: "bold")[Development Commissioner] \
-    #text(size: 6.0pt, fill: rgb("#64748B"))[Planning & Convergence Department]
-  ]
-)
 
 #pagebreak()
 

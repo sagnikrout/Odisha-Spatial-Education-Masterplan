@@ -10,7 +10,7 @@
     set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
     grid(
       columns: (3.2fr, 1fr),
-      align(left)[GOVERNMENT OF ODISHA | DEPARTMENT OF SCHOOL & MASS EDUCATION],
+      align(left)[ODISHA SPATIAL EDUCATION MASTERPLAN | TECHNICAL POLICY BRIEF],
       align(right)[POLICY BRIEF (2026-2031)]
     )
     v(-4pt)
@@ -202,23 +202,23 @@
 )
 
 #v(6pt)
-- *Audited Economic Return:* Retaining 184,000 secondary students generates *₹#calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 0) Cr lifetime GSDP value* (0.75x informal labor discount), delivering a *#econ.benefit_cost_ratio_roi\x Benefit-Cost Ratio* on ₹#calc.round(sec.total_budget_cr, digits: 1) Cr capital outlay.
-- *Cabinet Directives:* *1. Tribal Teacher Cadre:* Sanction 9,144 posts with 25% Remote Area Allowance and 3-year bond. *2. PESA Land Fast-Track:* Transfer revenue wasteland via Gram Sabha consent (PESA Section 4i). *3. SHG Transit Operations:* Partner with Mission Shakti SHGs for student transport operations. *4. GIS-Linked Disbursals:* Require GPS verification prior to capital tranche release.
+- *Economic Return Analysis:* Retaining 184,000 secondary students generates *₹#calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 0) Cr direct lifetime GSDP addition* (0.70x rural labor absorption discount), delivering a *#econ.benefit_cost_ratio_roi\x Benefit-Cost Ratio* against the ₹#calc.round(sec.total_budget_cr, digits: 1) Cr capital outlay.
+- *Strategic Implementation Guidelines:* *1. Teacher Retention Cadre:* Sanction 10,136 secondary posts with 25% Remote Area Allowances in high-friction corridors. *2. Land Availability:* Prioritize unencumbered government wasteland with early local community engagement. *3. Transit Service Model:* Partner with local women's self-help groups (Mission Shakti) for student feeder operations. *4. Geospatial Verification:* Require GIS coordinate logging prior to capital tranche release.
 
 #v(8pt)
-#rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.5pt + rgb("#CBD5E1"), radius: 2.5pt, inset: (x: 8pt, y: 5pt))[
+#rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.4pt + rgb("#CBD5E1"), radius: 2.5pt, inset: (x: 8pt, y: 5pt))[
   #grid(
     columns: (1fr, 1fr),
     [
       #text(size: 6.4pt, fill: rgb("#64748B"))[
-        *Institutional Authority:* Department of School & Mass Education, Bhubaneswar \
-        *Planning Cycle:* 2026–2031 | Reference: OSM/2026/OR-GIS/01
+        *Spatial Model:* Submodular Pareto MCLP with Tobler Hiking Friction & PWD Hill Calibration \
+        *Analytical Scope:* 314 Community Development Blocks across 30 Districts
       ]
     ],
     align(right)[
       #text(size: 6.4pt, fill: rgb("#64748B"))[
-        *Model Certification:* Nemhauser-Wolsey Submodular Bounds Guaranteed \
-        *Governance Status:* Validated for State Cabinet Consideration
+        *Optimality Bound:* Nemhauser-Wolsey Guarantee $(1 - 1/e) approx 63.2%$ \
+        *Conservation:* Strict Bottom-Up District Summation (Zero Mathematical Discrepancy)
       ]
     ]
   )

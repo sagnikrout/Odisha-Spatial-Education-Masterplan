@@ -25,7 +25,6 @@ JSON_PATH = os.path.join(BASE_DIR, "odisha_statewide_assessment.json")
 GEOJSON_PATH = os.path.join(BASE_DIR, "odisha_districts.geojson")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 MAPS_DIR = os.path.join(ASSETS_DIR, "district_maps")
-MEMOS_DIR = os.path.join(BASE_DIR, "district_action_memos")
 
 from backend.spatial_engine.statewide_analyzer import (
     tobler_hiking_friction,
@@ -147,15 +146,6 @@ class TestDocumentOutputIntegrity(unittest.TestCase):
         self.assertTrue(os.path.exists(pdf_path), "Policy Brief PDF missing")
         count = get_pdf_page_count(pdf_path)
         self.assertEqual(count, 1, f"Policy Brief should be exactly 1 page, found {count}")
-
-    def test_all_30_district_action_memos_exist_and_two_pages(self):
-        self.assertTrue(os.path.exists(MEMOS_DIR))
-        memo_files = [f for f in os.listdir(MEMOS_DIR) if f.endswith(".pdf")]
-        self.assertEqual(len(memo_files), 30, f"Expected 30 district action memos, found {len(memo_files)}")
-        for f in memo_files:
-            m_path = os.path.join(MEMOS_DIR, f)
-            count = get_pdf_page_count(m_path)
-            self.assertEqual(count, 2, f"District memo {f} should be exactly 2 pages, found {count}")
 
     def test_all_30_district_maps_exist(self):
         self.assertTrue(os.path.exists(MAPS_DIR))

@@ -19,8 +19,7 @@ This platform replaces discretionary, demand-driven capital allocations with a m
 | Deliverable | Description | Extent | Path |
 | :--- | :--- | :--- | :--- |
 | Full masterplan publication | Complete institutional masterplan report with statewide analytics, 30 district atlas plates, operational rollout schedule, and 314-block register | 23 pages | [Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf) |
-| Executive policy brief | High-density dashboard for Cabinet Ministers, Development Commissioners, and Department Secretaries | 1 page | [Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf) |
-| District action memos | Localized operational directives for District Collectors and District Education Officers (DEOs) | 2 pages each | [district_action_memos/](district_action_memos/) |
+| Executive policy brief | Standalone executive dashboard of spatial findings, tier allocations, and econometric returns | 1 page | [Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf) |
 | District GIS maps | Cartographic plates showing habitation clusters, buffer zones, and proposed interventions | 30 maps | [assets/district_maps/](assets/district_maps/) |
 
 ## Methodological architecture
@@ -59,12 +58,11 @@ Map2needs/
 │   └── spatial_engine/
 │       └── statewide_analyzer.py        # Submodular Pareto MCLP & demographic engine
 ├── typst/
-│   ├── masterplan.typ                   # 37-page publication masterplan layout
-│   └── policy_brief.typ                 # 1-page cabinet policy brief layout
+│   ├── masterplan.typ                   # 23-page publication masterplan layout
+│   └── policy_brief.typ                 # 1-page policy brief layout
 ├── assets/
 │   ├── district_maps/                   # 30 district GIS maps (dist_*.png)
 │   └── chart_*.png                      # 6 statewide analytical charts
-├── district_action_memos/               # 30 district administrative memos
 ├── tests/
 │   └── test_masterplan_suite.py         # Complete verification test suite
 ├── odisha_districts.geojson             # Survey of India district boundaries
