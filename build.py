@@ -73,7 +73,7 @@ def compile_typst_documents():
     subprocess.run(get_typst_command(BASE_DIR, brief_typ, brief_pdf), cwd=BASE_DIR, check=True)
     print(f"Generated {brief_pdf} ({os.path.getsize(brief_pdf) / 1024:.1f} KB)")
 
-    # 2. Masterplan Report (6 pages)
+    # 2. Comprehensive Masterplan Publication (37 pages)
     master_typ = os.path.join(BASE_DIR, "typst", "masterplan.typ")
     master_pdf = os.path.join(BASE_DIR, "Odisha_Spatial_School_Education_Masterplan.pdf")
     print(f"Compiling {master_pdf}...")

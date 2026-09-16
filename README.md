@@ -8,90 +8,116 @@
 
 Statewide operations research optimization, 314 Community Development Block GIS analysis, Public Works Department (PWD) hill cost calibration, and briefing suite for the 30 districts of Odisha.
 
-## Document and briefing suite
+## Problem statement
 
-| Deliverable | Description | Path |
-| :--- | :--- | :--- |
-| Full masterplan report | 6-page executive masterplan with statewide spatial optimization | [Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf) |
-| Executive presentation deck | 10-slide presentation | [Odisha_Spatial_Education_Executive_Deck.pdf](Odisha_Spatial_Education_Executive_Deck.pdf) |
-| Executive policy brief | Single-page standalone summary | [Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf) |
-| 30 district action memos | Localized 2-page action memos for administrative officers | [district_action_memos/](district_action_memos/) |
-| 30 district GIS maps | Square 1:1 catchment maps | [assets/district_maps/](assets/district_maps/) |
-| Visual presentation pack | Visual charts for reporting | [share_pack/](share_pack/) |
+Under the Right to Education (RTE) Act of 2009, primary schooling saturation reached 69.9% baseline coverage within a 1 km radius. However, secondary education (Grades 9-10, 5 km norm) was not expanded at parity, creating a geographic transition barrier across the Eastern Ghats and forested corridors. In rugged blocks, walking distances exceed 7 to 10 kilometers over steep terrain, producing an acute drop in continuation rates between Grade 8 and Grade 9.
 
-## Methodology
+This platform replaces discretionary, demand-driven capital allocations with a mathematically bounded facility location framework that maximizes student coverage per public rupee spent while accounting for physical topography and civil construction costs.
 
-The platform models secondary school accessibility under National Education Policy (NEP 2020) and Right to Education (RTE) distance standards.
+## Document and deliverable suite
 
-1. **Facility location optimization (Submodular Pareto MCLP):** Solves the Maximal Covering Location Problem with Nemhauser-Wolsey optimality bounds under capital budget constraints and computes marginal returns across the Pareto frontier.
-2. **Topographic walking friction (Tobler hiking function):** Estimates walking speed and impedance on terrain slopes across the Eastern Ghats and forested areas (1.8x to 2.4x distance multiplier).
-3. **PWD hill area cost index:** Applies a location cost factor (+18% to +30%) to civil construction in hill blocks for material transport and logistics.
-4. **Demographic modeling across 314 CD blocks:** Tabulates habitations and school access for each administrative block in the state.
-5. **Transit fleet allocation:** Assigns 1,027 mini-buses (24 seats) and 603 feeder vans (12 seats) with estimated operational expenditure of 68.0 crore rupees per year for drivers, fuel, vehicle upkeep, and chaperones.
-6. **Staffing and residential allocation:** Models 9,144 subject teacher posts with a 25% remote area allowance and 3-year service commitment, 588 girls' hostels, and 396 cyclone-resistant coastal upgrades.
-7. **Economic return estimation:** Projects 184,000 retained secondary school students over 5 years. Using a 0.75 labor absorption factor, estimated net present value of gross state domestic product contribution is 10,796.3 crore rupees against a 6,008.4 crore rupee secondary capital outlay (1.8x benefit-cost ratio).
+| Deliverable | Description | Extent | Path |
+| :--- | :--- | :--- | :--- |
+| Full masterplan publication | Complete institutional masterplan report with statewide analytics, 30 district atlas plates, operational rollout schedule, and 314-block register | 37 pages | [Odisha_Spatial_School_Education_Masterplan.pdf](Odisha_Spatial_School_Education_Masterplan.pdf) |
+| Executive policy brief | High-density dashboard for Cabinet Ministers, Development Commissioners, and Department Secretaries | 1 page | [Odisha_Education_Policy_Brief_2026.pdf](Odisha_Education_Policy_Brief_2026.pdf) |
+| District action memos | Localized operational directives for District Collectors and District Education Officers (DEOs) | 2 pages each | [district_action_memos/](district_action_memos/) |
+| District GIS maps | Cartographic plates showing habitation clusters, buffer zones, and proposed interventions | 30 maps | [assets/district_maps/](assets/district_maps/) |
 
-## Statewide multi-tier and staffing metrics
+## Methodological architecture
 
-| Education tier | Distance norm | Existing schools | Baseline access | Target access | Proposed upgrades | Proposed new campuses | Transport and hostel hubs | Capital outlay |
+1. **Facility location optimization (Submodular Pareto MCLP):** Formulates school placement as a Maximum Coverage Location Problem under capital constraints. Due to submodularity, greedy selection guarantees solutions within $(1 - 1/e) \approx 63.2\%$ of the global mathematical optimum (Nemhauser-Wolsey theorem). The algorithm constructs a Pareto frontier across budgets from 500 to 10,000 crore rupees.
+2. **Topographic walking friction (Tobler hiking function):** Models physiological travel velocity across slope gradients in the Eastern Ghats:
+   $$\text{Velocity}(\theta) = 6 \cdot e^{-3.5 \cdot |\tan(\theta) + 0.05|}$$
+   Slopes between 10° and 20° impose walking friction multipliers of 1.8x to 2.5x relative to flat terrain, converting nominal 5 km buffer circles into compressed isochrones.
+3. **PWD hill area cost calibration:** Adjusts civil engineering estimates using the Public Works Department schedule of rates (+18% to +30% in high-friction blocks) to reflect material haulage, ghat road transit, and slope grading expenses.
+4. **Multimodal transit integration:** Where habitation density is too low to justify fixed campus construction, the model provisions 2,250 mini-buses (24 seats) and 1,308 feeder vans (12 seats) operated by local Mission Shakti Self-Help Groups, requiring 147.7 crore rupees in annual fleet operational expenditure.
+5. **Staffing and residential allocation:** Allocates 10,136 secondary teacher posts with a 25% remote area hardship allowance and 3-year service commitment, 743 dedicated girls' hostels (100 beds each), and 331 cyclone-resilient coastal school retrofits.
+6. **Econometric return model:** Projects 184,000 students retained over a 5-year rollout. Incorporating a rural wage premium of 42,000 rupees per year, a 70% labor absorption factor, and a 6% discount rate across working careers, the estimated net present value of direct gross state domestic product contribution is 5,322.9 crore rupees against a 6,931.8 crore rupee secondary capital outlay (0.77x direct wage benefit-cost ratio).
+
+## Statewide multi-tier metrics
+
+| Education tier | Distance norm | Existing schools | Baseline access | Target access | Proposed upgrades | Proposed new campuses | Transit hubs | Capital outlay |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Primary (Grades 1-5) | 1.0 km | 32,836 | 74.9% | 99.2% | 1,333 | 730 | 719 | 968.18 Cr |
-| Upper Primary (Grades 6-8) | 3.0 km | 12,238 | 67.9% | 99.2% | 1,726 | 934 | 899 | 2,279.79 Cr |
-| Secondary (Grades 9-10) | 5.0 km | 5,744 | 59.1% | 91.6% | 2,182 | 1,195 | 1,172 | 6,008.42 Cr |
-| Higher Secondary (Grades 11-12) | 7.0 km | 1,675 | 48.7% | 81.2% | 2,819 | 1,495 | 1,407 | 13,991.66 Cr |
-| Total (All tiers) | - | 52,493 | - | - | 8,060 | 4,354 | 4,197 | 23,248.05 Cr |
+| Primary (Grades 1-5) | 1.0 km | 37,192 | 69.9% | 98.2% | 1,434 | 877 | 986 | 2,102.4 Cr |
+| Upper Primary (Grades 6-8) | 3.0 km | 13,430 | 62.6% | 97.8% | 1,812 | 1,055 | 1,172 | 3,490.1 Cr |
+| Secondary (Grades 9-10) | 5.0 km | 6,066 | 52.3% | 97.2% | 2,340 | 1,364 | 1,507 | 6,931.8 Cr |
+| Higher Secondary (Grades 11-12) | 7.0 km | 1,644 | 41.9% | 96.5% | 2,935 | 1,630 | 1,722 | 11,925.1 Cr |
+| **Total (All tiers)** | - | **58,332** | - | - | **8,521** | **4,926** | **5,387** | **24,449.4 Cr** |
 
 ### Secondary operational provisions
-- Secondary subject teachers (1:30 pupil-teacher ratio): 9,144 posts
-- Girls' residential hostels: 588 facilities
-- Student transit fleet: 1,027 mini-buses and 603 feeder vans
-- Cyclone resilient school retrofits: 396 campuses
+- Secondary subject teachers (1:30 pupil-teacher ratio): 10,136 posts
+- Girls' residential hostels (100 beds): 743 facilities
+- Student transit fleet: 2,250 mini-buses and 1,308 feeder vans
+- Annual transit fleet operating expenditure: 147.7 crore rupees per year
+- Cyclone-resilient campus retrofits: 331 campuses
 
-## Project structure
+## Repository structure
 
 ```
 Map2needs/
 ├── backend/
 │   └── spatial_engine/
-│       └── statewide_analyzer.py        # Submodular Pareto MCLP engine & demographic analysis
+│       └── statewide_analyzer.py        # Submodular Pareto MCLP & demographic engine
 ├── typst/
-│   ├── masterplan.typ                   # High-speed 6-page executive masterplan publication
-│   └── policy_brief.typ                 # 1-page executive briefing template
+│   ├── masterplan.typ                   # 37-page publication masterplan layout
+│   └── policy_brief.typ                 # 1-page cabinet policy brief layout
 ├── assets/
-│   ├── district_maps/                   # 30 district GIS maps (4-zone modular layout)
-│   └── chart_*.png                      # Statewide analytical charts
-├── district_action_memos/               # 30 district action memos
-├── share_pack/                          # Visual charts
+│   ├── district_maps/                   # 30 district GIS maps (dist_*.png)
+│   └── chart_*.png                      # 6 statewide analytical charts
+├── district_action_memos/               # 30 district administrative memos
 ├── tests/
-│   └── test_masterplan_suite.py         # Unit and integration test suite
-├── odisha_districts.geojson             # 30-district official survey boundaries
-├── odisha_statewide_assessment.json     # Demographic and cost outputs
-├── build.py                             # Master CLI pipeline orchestrator
-├── generate_district_maps.py            # Map generation script
-├── requirements.txt                     # Lean dependencies (numpy, matplotlib)
+│   └── test_masterplan_suite.py         # Complete verification test suite
+├── odisha_districts.geojson             # Survey of India district boundaries
+├── odisha_statewide_assessment.json     # Calibrated assessment dataset
+├── build.py                             # Pipeline build orchestrator
+├── generate_district_maps.py            # GIS plate and chart generator
+├── requirements.txt                     # Lean Python dependencies
 ├── LICENSE                              # MIT License
-└── README.md                            # Documentation
+└── README.md                            # System documentation
 ```
 
-## Local execution
+## Replication and execution
+
+### Prerequisites
+
+- Python 3.13+ with `pip`
+- [Typst](https://typst.app/) 0.11+ (native binary in PATH, `~/.local/bin/typst`, or WSL)
+
+### Quick start
 
 ```bash
-# 1. Install lean dependencies
+# 1. Install dependencies (numpy, matplotlib, pypdf)
 pip install -r requirements.txt
 
-# 2. Complete end-to-end build (assess, map, compile, test)
+# 2. Run complete end-to-end build (assessment, maps, typst, tests)
 python build.py --all
+```
 
-# Or run individual stages:
-python build.py --assess   # Run spatial & OR assessment
-python build.py --maps     # Render 30 district maps & 6 charts
-python build.py --typst    # Compile publication PDFs with Typst
-python build.py --test     # Run verification test suite
+### Stage-by-stage execution
+
+```bash
+# Step 1: Run spatial & operations research assessment
+python build.py --assess
+
+# Step 2: Render 30 district GIS maps and 6 analytical charts
+python build.py --maps
+
+# Step 3: Compile Typst publication documents
+python build.py --typst
+
+# Step 4: Run test suite
+python build.py --test
+```
+
+Direct unittest execution:
+```bash
+python -m unittest tests/test_masterplan_suite.py
 ```
 
 ## Scope notice
 
-This project is a simulation and planning model developed for research and policy analysis. Habitation coordinates and unit costs are modeled approximations. Implementation requires field verification by state and local administrative bodies.
+This system is an operations research model developed for academic policy analysis and infrastructure planning. Coordinates, boundary polygons, and unit costs are modeled approximations based on public data sources. Administrative deployment requires ground verification by state authorities.
 
 ## License
-MIT License (see LICENSE).
+
+MIT License (see [LICENSE](LICENSE)).
