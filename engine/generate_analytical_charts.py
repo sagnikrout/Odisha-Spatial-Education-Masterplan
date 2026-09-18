@@ -34,7 +34,7 @@ PURPLE_TRANSIT = "#7C3AED"
 AMBER_GAP = "#D97706"
 GRAY_EXISTING = "#1D4ED8"
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JSON_PATH = os.path.join(BASE_DIR, "odisha_statewide_assessment.json")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 

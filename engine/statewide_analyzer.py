@@ -3,8 +3,9 @@ import math
 import random
 import os
 
-GEOJSON_PATH = "odisha_districts.geojson"
-OUTPUT_JSON_PATH = "odisha_statewide_assessment.json"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GEOJSON_PATH = os.path.join(BASE_DIR, "odisha_districts.geojson")
+OUTPUT_JSON_PATH = os.path.join(BASE_DIR, "odisha_statewide_assessment.json")
 
 TIER_STANDARDS = {
     "Primary": {"norm_distance_km": 1.0, "base_upgrade_cost_lakhs": 42.0, "base_new_school_cost_lakhs": 115.0, "base_migration_cost_lakhs": 15.0},

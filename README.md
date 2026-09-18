@@ -55,23 +55,24 @@ This platform replaces discretionary, demand-driven capital allocations with a m
 ```
 Map2needs/
 ├── engine/
-│   └── statewide_analyzer.py        # Submodular Pareto MCLP & demographic engine
+│   ├── statewide_analyzer.py        # Submodular Pareto MCLP & demographic engine
+│   ├── generate_district_maps.py    # 30-district cartographic plate generator
+│   └── generate_analytical_charts.py# 6 publication analytical charts generator
 ├── typst/
-│   ├── masterplan.typ                   # 23-page publication masterplan layout
-│   └── policy_brief.typ                 # 1-page policy brief layout
+│   ├── masterplan.typ               # 23-page publication masterplan layout
+│   └── policy_brief.typ             # 1-page policy brief layout
 ├── assets/
-│   ├── district_maps/                   # 30 district GIS maps (dist_*.png)
-│   └── chart_*.png                      # 6 statewide analytical charts
+│   ├── district_maps/               # 30 district GIS maps (dist_*.png)
+│   └── chart_*.png                  # 6 statewide analytical charts
 ├── tests/
-│   └── test_masterplan_suite.py         # Complete verification test suite
-├── odisha_districts.geojson             # Survey of India district boundaries
-├── odisha_statewide_assessment.json     # Calibrated assessment dataset
-├── build.py                             # Pipeline build orchestrator
-├── generate_district_maps.py            # 30-district cartographic plate generator
-├── generate_analytical_charts.py        # 6 publication analytical charts generator
-├── requirements.txt                     # Lean Python dependencies
-├── LICENSE                              # MIT License
-└── README.md                            # System documentation
+│   └── test_masterplan_suite.py     # 19-test verification suite
+├── odisha_districts.geojson         # Survey of India district boundaries
+├── odisha_statewide_assessment.json # Calibrated assessment dataset
+├── build.py                         # Pipeline build orchestrator
+├── requirements.txt                 # Lean Python dependencies (numpy, matplotlib)
+├── AGENTS.md                        # Operational rules and typography standards
+├── LICENSE                          # MIT License
+└── README.md                        # System documentation
 ```
 
 ## Replication and execution
@@ -84,7 +85,7 @@ Map2needs/
 ### Quick start
 
 ```bash
-# 1. Install dependencies (numpy, matplotlib, pypdf)
+# 1. Install dependencies (numpy, matplotlib)
 pip install -r requirements.txt
 
 # 2. Run complete end-to-end build (assessment, charts, maps, typst, tests)

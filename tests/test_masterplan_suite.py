@@ -220,6 +220,24 @@ class TestCrossDocumentConsistency(unittest.TestCase):
         self.assertIn("#sec.girls_hostels_proposed", content)
         self.assertIn("#sec.cyclone_resilient_upgrades", content)
 
+    def test_repository_agents_md_integrity(self):
+        """Repository must have a consolidated AGENTS.md rulebook at root and no redundant .agents directory."""
+        agents_md = os.path.join(BASE_DIR, "AGENTS.md")
+        self.assertTrue(os.path.exists(agents_md), "Root AGENTS.md missing")
+        with open(agents_md, "r", encoding="utf-8") as f:
+            content = f.read()
+        self.assertIn("Professional Document Generation", content)
+        self.assertIn("Tight Loop Performance Exception", content)
+
+        legacy_agents = os.path.join(BASE_DIR, ".agents")
+        self.assertFalse(os.path.exists(legacy_agents), "Legacy .agents directory should be removed")
+
+    def test_engine_scripts_exist(self):
+        """All engine scripts must exist under engine/ directory."""
+        for script_name in ["statewide_analyzer.py", "generate_district_maps.py", "generate_analytical_charts.py"]:
+            script_path = os.path.join(BASE_DIR, "engine", script_name)
+            self.assertTrue(os.path.exists(script_path), f"Engine script {script_name} missing from engine/")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

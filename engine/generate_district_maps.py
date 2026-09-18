@@ -36,7 +36,7 @@ PURPLE_TRANSIT = "#7C3AED"
 AMBER_GAP = "#D97706"
 GRAY_EXISTING = "#1D4ED8"
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GEOJSON_PATH = os.path.join(BASE_DIR, "odisha_districts.geojson")
 JSON_PATH = os.path.join(BASE_DIR, "odisha_statewide_assessment.json")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
@@ -373,11 +373,13 @@ def generate_all_district_maps_parallel(geojson_data, assessment_data):
     print(f"Successfully generated all 30 district maps in parallel in {MAPS_DIR}.")
 
 
-from generate_analytical_charts import generate_global_charts
+try:
+    from engine.generate_analytical_charts import generate_global_charts
+except ImportError:
+    from generate_analytical_charts import generate_global_charts
 
 
 if __name__ == "__main__":
     geo_data, assess_data = load_data()
     generate_all_district_maps_parallel(geo_data, assess_data)
-    generate_global_charts(assess_data)
 

@@ -57,15 +57,15 @@ def run_assessment():
 def generate_charts():
     print("\n[2/5] Rendering 6 Publication Analytical Charts...")
     t0 = time.time()
-    script = os.path.join(BASE_DIR, "generate_analytical_charts.py")
+    script = os.path.join(BASE_DIR, "engine", "generate_analytical_charts.py")
     res = subprocess.run([sys.executable, script], cwd=BASE_DIR, check=True)
     print(f"Chart generation complete in {time.time() - t0:.2f}s.")
 
 
 def generate_maps():
-    print("\n[3/5] Rendering 30 District Cartographic Plates & Analytical Charts...")
+    print("\n[3/5] Rendering 30 District Cartographic Plates...")
     t0 = time.time()
-    script = os.path.join(BASE_DIR, "generate_district_maps.py")
+    script = os.path.join(BASE_DIR, "engine", "generate_district_maps.py")
     res = subprocess.run([sys.executable, script], cwd=BASE_DIR, check=True)
     print(f"Map generation complete in {time.time() - t0:.2f}s.")
 
@@ -134,7 +134,7 @@ def main():
         run_assessment()
     if args.all or args.charts:
         generate_charts()
-    if args.maps:
+    if args.all or args.maps:
         generate_maps()
     if args.all or args.typst:
         compile_typst_documents()
