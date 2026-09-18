@@ -47,23 +47,31 @@ def get_typst_command(root_dir, typ_file, out_pdf):
 
 
 def run_assessment():
-    print("\n[1/4] Running Operations Research Assessment Engine...")
+    print("\n[1/5] Running Operations Research Assessment Engine...")
     t0 = time.time()
-    script = os.path.join(BASE_DIR, "backend", "spatial_engine", "statewide_analyzer.py")
+    script = os.path.join(BASE_DIR, "engine", "statewide_analyzer.py")
     res = subprocess.run([sys.executable, script], cwd=BASE_DIR, check=True)
     print(f"Assessment complete in {time.time() - t0:.2f}s.")
 
 
+def generate_charts():
+    print("\n[2/5] Rendering 6 Publication Analytical Charts...")
+    t0 = time.time()
+    script = os.path.join(BASE_DIR, "generate_analytical_charts.py")
+    res = subprocess.run([sys.executable, script], cwd=BASE_DIR, check=True)
+    print(f"Chart generation complete in {time.time() - t0:.2f}s.")
+
+
 def generate_maps():
-    print("\n[2/4] Rendering 30 District Cartographic Plates & Analytical Charts...")
+    print("\n[3/5] Rendering 30 District Cartographic Plates & Analytical Charts...")
     t0 = time.time()
     script = os.path.join(BASE_DIR, "generate_district_maps.py")
     res = subprocess.run([sys.executable, script], cwd=BASE_DIR, check=True)
-    print(f"Map and chart generation complete in {time.time() - t0:.2f}s.")
+    print(f"Map generation complete in {time.time() - t0:.2f}s.")
 
 
 def compile_typst_documents():
-    print("\n[3/4] Compiling Typst Publication Document Suite...")
+    print("\n[4/5] Compiling Typst Publication Document Suite...")
     t0 = time.time()
 
     def safe_compile(typ_file, out_pdf):
@@ -100,7 +108,7 @@ def compile_typst_documents():
 
 
 def run_tests():
-    print("\n[4/4] Running Masterplan Verification Test Suite...")
+    print("\n[5/5] Running Masterplan Verification Test Suite...")
     t0 = time.time()
     res = subprocess.run([sys.executable, "-m", "unittest", "tests/test_masterplan_suite.py"], cwd=BASE_DIR, check=True)
     print(f"Test suite passed in {time.time() - t0:.2f}s.")
@@ -108,22 +116,25 @@ def run_tests():
 
 def main():
     parser = argparse.ArgumentParser(description="Odisha Spatial Education Masterplan Orchestrator")
-    parser.add_argument("--all", action="store_true", help="Execute complete pipeline (assess, maps, typst, test)")
+    parser.add_argument("--all", action="store_true", help="Execute complete pipeline (assess, charts, maps, typst, test)")
     parser.add_argument("--assess", action="store_true", help="Run spatial and OR assessment")
-    parser.add_argument("--maps", action="store_true", help="Render all district maps and charts")
+    parser.add_argument("--charts", action="store_true", help="Render 6 publication analytical charts (fast)")
+    parser.add_argument("--maps", action="store_true", help="Render all 30 district GIS maps and charts")
     parser.add_argument("--typst", action="store_true", help="Compile Typst PDFs")
     parser.add_argument("--test", action="store_true", help="Run unit test suite")
 
     args = parser.parse_args()
 
-    if not any([args.all, args.assess, args.maps, args.typst, args.test]):
+    if not any([args.all, args.assess, args.charts, args.maps, args.typst, args.test]):
         parser.print_help()
         sys.exit(1)
 
     t_start = time.time()
     if args.all or args.assess:
         run_assessment()
-    if args.all or args.maps:
+    if args.all or args.charts:
+        generate_charts()
+    if args.maps:
         generate_maps()
     if args.all or args.typst:
         compile_typst_documents()

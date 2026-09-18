@@ -26,7 +26,7 @@ GEOJSON_PATH = os.path.join(BASE_DIR, "odisha_districts.geojson")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 MAPS_DIR = os.path.join(ASSETS_DIR, "district_maps")
 
-from backend.spatial_engine.statewide_analyzer import (
+from engine.statewide_analyzer import (
     tobler_hiking_friction,
     DISTRICT_DATABASE,
     TIER_STANDARDS

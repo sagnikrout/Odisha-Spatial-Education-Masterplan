@@ -54,9 +54,8 @@ This platform replaces discretionary, demand-driven capital allocations with a m
 
 ```
 Map2needs/
-├── backend/
-│   └── spatial_engine/
-│       └── statewide_analyzer.py        # Submodular Pareto MCLP & demographic engine
+├── engine/
+│   └── statewide_analyzer.py        # Submodular Pareto MCLP & demographic engine
 ├── typst/
 │   ├── masterplan.typ                   # 23-page publication masterplan layout
 │   └── policy_brief.typ                 # 1-page policy brief layout
@@ -68,7 +67,8 @@ Map2needs/
 ├── odisha_districts.geojson             # Survey of India district boundaries
 ├── odisha_statewide_assessment.json     # Calibrated assessment dataset
 ├── build.py                             # Pipeline build orchestrator
-├── generate_district_maps.py            # GIS plate and chart generator
+├── generate_district_maps.py            # 30-district cartographic plate generator
+├── generate_analytical_charts.py        # 6 publication analytical charts generator
 ├── requirements.txt                     # Lean Python dependencies
 ├── LICENSE                              # MIT License
 └── README.md                            # System documentation
@@ -87,7 +87,7 @@ Map2needs/
 # 1. Install dependencies (numpy, matplotlib, pypdf)
 pip install -r requirements.txt
 
-# 2. Run complete end-to-end build (assessment, maps, typst, tests)
+# 2. Run complete end-to-end build (assessment, charts, maps, typst, tests)
 python build.py --all
 ```
 
@@ -97,13 +97,16 @@ python build.py --all
 # Step 1: Run spatial & operations research assessment
 python build.py --assess
 
-# Step 2: Render 30 district GIS maps and 6 analytical charts
+# Step 2: Render 6 analytical charts (fast: ~3 seconds)
+python build.py --charts
+
+# Step 3: Render all 30 district GIS maps and charts
 python build.py --maps
 
-# Step 3: Compile Typst publication documents
+# Step 4: Compile Typst publication documents
 python build.py --typst
 
-# Step 4: Run test suite
+# Step 5: Run test suite
 python build.py --test
 ```
 
