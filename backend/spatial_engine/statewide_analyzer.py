@@ -335,10 +335,31 @@ def run_statewide_assessment():
     districts_assessment.sort(key=lambda x: x["district_name"])
     sec_budget = statewide_totals["Secondary"]["total_budget_cr"]
     
+    sec_upgrades = statewide_totals["Secondary"]["proposed_upgrades"]
+    sec_new = statewide_totals["Secondary"]["proposed_new_schools"]
+    sec_transit = statewide_totals["Secondary"]["proposed_transport_hubs"]
+    sec_teachers = statewide_totals["Secondary"]["teachers_required"]
+
+    p1_up = int(sec_upgrades * 0.45)
+    p2_up = int(sec_upgrades * 0.35)
+    p3_up = sec_upgrades - p1_up - p2_up
+
+    p1_new = int(sec_new * 0.45)
+    p2_new = int(sec_new * 0.35)
+    p3_new = sec_new - p1_new - p2_new
+
+    p1_tr = int(sec_transit * 0.55)
+    p2_tr = int(sec_transit * 0.30)
+    p3_tr = sec_transit - p1_tr - p2_tr
+
+    p1_teach = int(sec_teachers * 0.45)
+    p2_teach = int(sec_teachers * 0.35)
+    p3_teach = sec_teachers - p1_teach - p2_teach
+
     rollout_phases = {
-        "Phase_1_Years_1_2": {"focus": "High Vulnerability & Remote Tribal Corridors (9 Districts)", "outlay_cr": round(sec_budget * 0.45, 2), "upgrades": int(statewide_totals["Secondary"]["proposed_upgrades"] * 0.45), "new_schools": int(statewide_totals["Secondary"]["proposed_new_schools"] * 0.45), "transit_hubs": int(statewide_totals["Secondary"]["proposed_transport_hubs"] * 0.55), "teachers": int(statewide_totals["Secondary"]["teachers_required"] * 0.45), "coverage_gain_pct": 16.5},
-        "Phase_2_Years_3_4": {"focus": "Mineral Belts, Western Plateaus & Agrarian Plains (11 Districts)", "outlay_cr": round(sec_budget * 0.35, 2), "upgrades": int(statewide_totals["Secondary"]["proposed_upgrades"] * 0.35), "new_schools": int(statewide_totals["Secondary"]["proposed_new_schools"] * 0.35), "transit_hubs": int(statewide_totals["Secondary"]["proposed_transport_hubs"] * 0.30), "teachers": int(statewide_totals["Secondary"]["teachers_required"] * 0.35), "coverage_gain_pct": 11.2},
-        "Phase_3_Year_5": {"focus": "Coastal Deltas, Cyclone Retrofits & Urban Consolidation (10 Districts)", "outlay_cr": round(sec_budget * 0.20, 2), "upgrades": int(statewide_totals["Secondary"]["proposed_upgrades"] * 0.20), "new_schools": int(statewide_totals["Secondary"]["proposed_new_schools"] * 0.20), "transit_hubs": int(statewide_totals["Secondary"]["proposed_transport_hubs"] * 0.15), "teachers": int(statewide_totals["Secondary"]["teachers_required"] * 0.20), "coverage_gain_pct": 4.8}
+        "Phase_1_Years_1_2": {"focus": "High Vulnerability & Remote Tribal Corridors (9 Districts)", "outlay_cr": round(sec_budget * 0.45, 2), "upgrades": p1_up, "new_schools": p1_new, "transit_hubs": p1_tr, "teachers": p1_teach, "coverage_gain_pct": 16.5},
+        "Phase_2_Years_3_4": {"focus": "Mineral Belts, Western Plateaus & Agrarian Plains (11 Districts)", "outlay_cr": round(sec_budget * 0.35, 2), "upgrades": p2_up, "new_schools": p2_new, "transit_hubs": p2_tr, "teachers": p2_teach, "coverage_gain_pct": 11.2},
+        "Phase_3_Year_5": {"focus": "Coastal Deltas, Cyclone Retrofits & Urban Consolidation (10 Districts)", "outlay_cr": round(sec_budget - round(sec_budget * 0.45, 2) - round(sec_budget * 0.35, 2), 2), "upgrades": p3_up, "new_schools": p3_new, "transit_hubs": p3_tr, "teachers": p3_teach, "coverage_gain_pct": 4.8}
     }
 
     # Explicit 5-Cohort Econometric ROI Model without arbitrary fudge factors

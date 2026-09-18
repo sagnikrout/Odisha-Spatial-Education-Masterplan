@@ -1,6 +1,8 @@
 #let data = json("/odisha_statewide_assessment.json")
 #let sec = data.statewide_totals.Secondary
+#let prim = data.statewide_totals.Primary
 #let econ = data.metadata.economic_impact
+#let phases = data.metadata.rollout_phases
 
 #set page(
   paper: "a4",
@@ -76,7 +78,7 @@
   ],
   rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 6.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 9.6pt, fill: rgb("#DC2626"))[9,144 Posts] \
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#DC2626"))[#sec.teachers_required Posts] \
       #v(2pt)
       #text(size: 6.6pt, fill: rgb("#64748B"))[Teachers (25% Hardship)]
     ]
@@ -86,7 +88,7 @@
 #v(8pt)
 #text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[1. Strategic context and operations research methodology]
 #v(4pt)
-- *Grade 8 to 9 Spatial Dropout Cliff:* Primary access achieves 74.9%, but secondary coverage drops to 59.1% due to distance barriers (mean walking distance exceeds 6.8 km in Eastern Ghats), driving a 42% tribal dropout rate with adolescent girls dropping out at higher rates without dedicated transit.
+- *Grade 8 to 9 Spatial Dropout Cliff:* Primary access achieves #prim.initial_coverage_pct%, but secondary coverage drops to #sec.initial_coverage_pct% due to distance barriers (mean walking distance exceeds 6.8 km in Eastern Ghats), driving an acute tribal dropout rate with adolescent girls dropping out at higher rates without dedicated transit.
 - *Submodular Pareto Optimization & PWD Hill Multipliers:* Interventions are optimized using a submodular Maximum Coverage Location Problem (MCLP) formulation under capital budget constraints, incorporating *Tobler hiking friction (1.8x–2.4x)* and *PWD hill area cost multipliers (+18% to +30%)* to reflect actual terrain haulage logistics.
 
 #v(8pt)
@@ -130,9 +132,9 @@
 #v(8pt)
 #text(size: 9.4pt, weight: "bold", fill: rgb("#1E3A8A"))[3. 314 CD blocks regional stratification, transit fleet and teacher cadre]
 #v(4pt)
-- *High Vulnerability (72 Blocks in 9 Tribal Districts):* Baseline coverage below 45%. Priority for 588 dedicated girls' hostels, feeder transit corridors, and specialized teacher hardship allowances.
+- *High Vulnerability (72 Blocks in 9 Tribal Districts):* Baseline coverage below 45%. Priority for #sec.girls_hostels_proposed dedicated girls' hostels, feeder transit corridors, and specialized teacher hardship allowances.
 - *Central & Agrarian (142 Blocks):* Coverage 55% to 70%. Focus on upgrading Upper Primary schools into High Schools.
-- *Coastal & Deltaic (100 Blocks):* Coverage exceeds 75%. Focus on STEM infrastructure and 396 cyclone-resilient structural retrofits.
+- *Coastal & Deltaic (100 Blocks):* Coverage exceeds 75%. Focus on STEM infrastructure and #sec.cyclone_resilient_upgrades cyclone-resilient structural retrofits.
 
 #v(5pt)
 #grid(
@@ -140,9 +142,9 @@
   gutter: 6pt,
   rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 5.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 8.4pt)[588 Girls' Hostels] \
+      #text(weight: "bold", size: 8.4pt)[#sec.girls_hostels_proposed Hostels] \
       #v(2pt)
-      #text(size: 6.0pt, fill: rgb("#64748B"))[Female Retention Mandate]
+      #text(size: 6.0pt, fill: rgb("#64748B"))[Female Boarding]
     ]
   ],
   rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 3pt, inset: 5.5pt)[
@@ -168,7 +170,7 @@
   ],
   rect(width: 100%, fill: rgb("#F1F5F9"), stroke: 0.6pt + rgb("#CBD5E1"), radius: 2.5pt, inset: 5.5pt)[
     #align(center)[
-      #text(weight: "bold", size: 8.4pt)[9,144 Teachers] \
+      #text(weight: "bold", size: 8.4pt)[#sec.teachers_required Teachers] \
       #v(2pt)
       #text(size: 6.0pt, fill: rgb("#64748B"))[25% Hardship Allowance]
     ]
@@ -196,14 +198,14 @@
     [#text(weight: "bold", fill: white, size: 7.2pt)[Access Gain]]
   ),
   
-  [#text(weight: "bold")[Phase 1 (Y1–Y2)]], [High Vulnerability Tribal Corridors (9 Dists)], [#text(weight: "bold")[₹2,704 Cr (45%)]], [981], [537], [644], [#text(weight: "bold", fill: rgb("#059669"))[+16.5%]],
-  [#text(weight: "bold")[Phase 2 (Y3–Y4)]], [Mineral Belts & Western Plateaus (11 Dists)], [#text(weight: "bold")[₹2,103 Cr (35%)]], [763], [418], [351], [#text(weight: "bold", fill: rgb("#059669"))[+11.2%]],
-  [#text(weight: "bold")[Phase 3 (Y5)]], [Coastal Deltas & Cyclone Retrofits (10 Dists)], [#text(weight: "bold")[₹1,202 Cr (20%)]], [436], [239], [175], [#text(weight: "bold", fill: rgb("#059669"))[+4.8%]],
+  [#text(weight: "bold")[Phase 1 (Y1–Y2)]], [High Vulnerability Tribal Corridors (9 Dists)], [#text(weight: "bold")[₹#calc.round(phases.Phase_1_Years_1_2.outlay_cr, digits: 0) Cr (45%)]], [#phases.Phase_1_Years_1_2.upgrades], [#phases.Phase_1_Years_1_2.new_schools], [#phases.Phase_1_Years_1_2.transit_hubs], [#text(weight: "bold", fill: rgb("#059669"))[+#phases.Phase_1_Years_1_2.coverage_gain_pct%]],
+  [#text(weight: "bold")[Phase 2 (Y3–Y4)]], [Mineral Belts & Western Plateaus (11 Dists)], [#text(weight: "bold")[₹#calc.round(phases.Phase_2_Years_3_4.outlay_cr, digits: 0) Cr (35%)]], [#phases.Phase_2_Years_3_4.upgrades], [#phases.Phase_2_Years_3_4.new_schools], [#phases.Phase_2_Years_3_4.transit_hubs], [#text(weight: "bold", fill: rgb("#059669"))[+#phases.Phase_2_Years_3_4.coverage_gain_pct%]],
+  [#text(weight: "bold")[Phase 3 (Y5)]], [Coastal Deltas & Cyclone Retrofits (10 Dists)], [#text(weight: "bold")[₹#calc.round(phases.Phase_3_Year_5.outlay_cr, digits: 0) Cr (20%)]], [#phases.Phase_3_Year_5.upgrades], [#phases.Phase_3_Year_5.new_schools], [#phases.Phase_3_Year_5.transit_hubs], [#text(weight: "bold", fill: rgb("#059669"))[+#phases.Phase_3_Year_5.coverage_gain_pct%]],
 )
 
 #v(6pt)
 - *Economic Return Analysis:* Retaining 184,000 secondary students generates *₹#calc.round(econ.net_present_value_gsdp_contribution_cr, digits: 0) Cr direct lifetime GSDP addition* (0.70x rural labor absorption discount), delivering a *#econ.benefit_cost_ratio_roi\x Benefit-Cost Ratio* against the ₹#calc.round(sec.total_budget_cr, digits: 1) Cr capital outlay.
-- *Strategic Implementation Guidelines:* *1. Teacher Retention Cadre:* Sanction 10,136 secondary posts with 25% Remote Area Allowances in high-friction corridors. *2. Land Availability:* Prioritize unencumbered government wasteland with early local community engagement. *3. Transit Service Model:* Partner with local women's self-help groups (Mission Shakti) for student feeder operations. *4. Geospatial Verification:* Require GIS coordinate logging prior to capital tranche release.
+- *Strategic Implementation Guidelines:* *1. Teacher Retention Cadre:* Sanction #sec.teachers_required secondary posts with 25% Remote Area Allowances in high-friction corridors. *2. Land Availability:* Prioritize unencumbered government wasteland with early local community engagement. *3. Transit Service Model:* Partner with local women's self-help groups (Mission Shakti) for student feeder operations. *4. Geospatial Verification:* Require GIS coordinate logging prior to capital tranche release.
 
 #v(8pt)
 #rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.4pt + rgb("#CBD5E1"), radius: 2.5pt, inset: (x: 8pt, y: 5pt))[

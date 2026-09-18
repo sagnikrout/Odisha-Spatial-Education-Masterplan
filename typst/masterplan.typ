@@ -3,6 +3,8 @@
 #let meta = data.metadata
 #let econ = meta.economic_impact
 #let total_blocks = meta.total_blocks
+#let mean_friction = calc.round(data.districts.map(d => d.terrain_friction_factor).sum() / data.districts.len(), digits: 2)
+#let mean_hill = calc.round(data.districts.map(d => d.pwd_hill_cost_multiplier).sum() / data.districts.len(), digits: 2)
 
 #set page(
   paper: "a4",
@@ -351,8 +353,8 @@
   // Total Row
   [#text(weight: "bold", size: 6.0pt)[STATE TOTAL]],
   [#text(weight: "bold", size: 6.0pt)[30 Districts]],
-  [#text(weight: "bold", size: 6.0pt)[1.24x]],
-  [#text(weight: "bold", size: 6.0pt)[1.04x]],
+  [#text(weight: "bold", size: 6.0pt)[#mean_friction\x]],
+  [#text(weight: "bold", size: 6.0pt)[#mean_hill\x]],
   [#text(weight: "bold", size: 6.0pt)[#total_blocks]],
   [#text(weight: "bold", size: 6.0pt)[#{sec.initial_coverage_pct}%]],
   [#text(weight: "bold", fill: rgb("#0284C7"), size: 6.0pt)[#{sec.final_coverage_pct}%]],
@@ -369,15 +371,15 @@
   gutter: 10pt,
   rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.3pt + rgb("#CBD5E1"), radius: 2pt, inset: 4pt)[
     #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Southern tribal priority corridor] \
-    #text(size: 5.8pt)[Malkangiri, Koraput, Rayagada, Nabarangpur, Gajapati account for ₹2,382.3 Cr (34.4% of secondary outlay), requiring 3,374 teachers.]
+    #text(size: 5.8pt)[Malkangiri, Koraput, Rayagada, Nabarangpur, Gajapati account for ₹2,182.2 Cr (31.5% of secondary outlay), requiring 3,028 teachers.]
   ],
   rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.3pt + rgb("#CBD5E1"), radius: 2pt, inset: 4pt)[
     #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Central and northern tribal belt] \
-    #text(size: 5.8pt)[Kandhamal, Mayurbhanj, Kendujhar, Sundargarh absorb ₹1,950.4 Cr (28.1%), prioritizing residential boarding hostels for remote habitations.]
+    #text(size: 5.8pt)[Kandhamal, Mayurbhanj, Kendujhar, Sundargarh absorb ₹1,949.9 Cr (28.1%), prioritizing residential boarding hostels for remote habitations.]
   ],
   rect(width: 100%, fill: rgb("#F8FAFC"), stroke: 0.3pt + rgb("#CBD5E1"), radius: 2pt, inset: 4pt)[
     #text(size: 6.2pt, weight: "bold", fill: rgb("#1E3A8A"))[Coastal plains and western agrarian] \
-    #text(size: 5.8pt)[Remaining 21 districts absorb ₹2,599.1 Cr (37.5%), emphasizing cyclone-resilient structural upgrades and transit feeder routes.]
+    #text(size: 5.8pt)[Remaining 21 districts absorb ₹2,799.6 Cr (40.4%), emphasizing cyclone-resilient structural upgrades and transit feeder routes.]
   ]
 )
 

@@ -550,9 +550,23 @@ def generate_global_charts(assessment_data):
     fig, ax = plt.subplots(figsize=(8, 4.6), dpi=220, facecolor=BG_COLOR)
     ax.set_facecolor(PANEL_BG)
 
-    cat_names = ['Tribal / Remote', 'Tribal / Hilly', 'Drought / Plateau', 'Central Plain', 'Coastal / Delta']
-    gpi_vals = [0.82, 0.84, 0.88, 0.93, 0.96]
-    hostels_needed = [168, 185, 112, 75, 48]
+    from collections import defaultdict
+    cat_hostels = defaultdict(int)
+    cat_gpi = defaultdict(list)
+    for dist in assessment_data["districts"]:
+        cat = dist["profile"]["category"]
+        hostels = dist["tiers"]["Secondary"]["girls_hostels_proposed"]
+        gpi = dist["profile"]["gpi"]
+        cat_hostels[cat] += hostels
+        cat_gpi[cat].append(gpi)
+
+    top_cats = ["Southern Tribal", "Northern Tribal", "Central Tribal", "Western Tribal"]
+    coastal_gpis = [g for cat in cat_gpi if cat not in top_cats for g in cat_gpi[cat]]
+    coastal_hostels = sum(cat_hostels[cat] for cat in cat_hostels if cat not in top_cats)
+
+    cat_names = top_cats + ["Coastal & Plains"]
+    gpi_vals = [round(sum(cat_gpi[c]) / len(cat_gpi[c]), 2) for c in top_cats] + [round(sum(coastal_gpis) / len(coastal_gpis), 2)]
+    hostels_needed = [cat_hostels[c] for c in top_cats] + [coastal_hostels]
 
     x = np.arange(len(cat_names))
     width = 0.38
@@ -566,7 +580,7 @@ def generate_global_charts(assessment_data):
     ax1.set_ylabel('Gender Parity Index (Female/Male Transition Ratio)', fontsize=8.5, fontweight='bold', color='#1E40AF')
     ax2.set_ylabel('Girls Residential Hostels Allocated', fontsize=8.5, fontweight='bold', color='#BE185D')
     ax1.set_ylim(0.70, 1.05)
-    ax2.set_ylim(0, 220)
+    ax2.set_ylim(0, 310)
     ax1.set_xticks(x)
     ax1.set_xticklabels(cat_names, fontsize=8.0, fontweight='bold')
     ax1.set_title("Gender Parity Index & Girls' Residential Hostel Allocations by Terrain Category", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)

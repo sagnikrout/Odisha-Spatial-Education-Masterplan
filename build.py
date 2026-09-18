@@ -66,18 +66,34 @@ def compile_typst_documents():
     print("\n[3/4] Compiling Typst Publication Document Suite...")
     t0 = time.time()
 
+    def safe_compile(typ_file, out_pdf):
+        print(f"Compiling {out_pdf}...")
+        tmp_pdf = out_pdf + ".tmp.pdf"
+        try:
+            cmd = get_typst_command(BASE_DIR, typ_file, tmp_pdf)
+            subprocess.run(cmd, cwd=BASE_DIR, check=True)
+            if os.path.exists(tmp_pdf):
+                shutil.move(tmp_pdf, out_pdf)
+        except Exception:
+            cmd = get_typst_command(BASE_DIR, typ_file, out_pdf)
+            subprocess.run(cmd, cwd=BASE_DIR, check=True)
+        finally:
+            if os.path.exists(tmp_pdf):
+                try:
+                    os.remove(tmp_pdf)
+                except OSError:
+                    pass
+
     # 1. Executive Policy Brief (1 page)
     brief_typ = os.path.join(BASE_DIR, "typst", "policy_brief.typ")
     brief_pdf = os.path.join(BASE_DIR, "Odisha_Education_Policy_Brief_2026.pdf")
-    print(f"Compiling {brief_pdf}...")
-    subprocess.run(get_typst_command(BASE_DIR, brief_typ, brief_pdf), cwd=BASE_DIR, check=True)
+    safe_compile(brief_typ, brief_pdf)
     print(f"Generated {brief_pdf} ({os.path.getsize(brief_pdf) / 1024:.1f} KB)")
 
     # 2. Comprehensive Masterplan Publication (23 pages)
     master_typ = os.path.join(BASE_DIR, "typst", "masterplan.typ")
     master_pdf = os.path.join(BASE_DIR, "Odisha_Spatial_School_Education_Masterplan.pdf")
-    print(f"Compiling {master_pdf}...")
-    subprocess.run(get_typst_command(BASE_DIR, master_typ, master_pdf), cwd=BASE_DIR, check=True)
+    safe_compile(master_typ, master_pdf)
     print(f"Generated {master_pdf} ({os.path.getsize(master_pdf) / (1024 * 1024):.2f} MB)")
 
     print(f"Typst compilation complete in {time.time() - t0:.2f}s.")

@@ -157,5 +157,69 @@ class TestDocumentOutputIntegrity(unittest.TestCase):
             self.assertTrue(os.path.exists(map_path), f"Missing map for district {d['district_name']} at {map_path}")
 
 
+class TestCrossDocumentConsistency(unittest.TestCase):
+    """Tests ensuring zero numerical drift and complete mathematical conservation across documents."""
+
+    @classmethod
+    def setUpClass(cls):
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            cls.data = json.load(f)
+
+    def test_rollout_phase_strict_conservation(self):
+        """Rollout phases must strictly sum to the secondary education totals."""
+        phases = self.data["metadata"]["rollout_phases"]
+        sec = self.data["statewide_totals"]["Secondary"]
+
+        tot_up = sum(p["upgrades"] for p in phases.values())
+        tot_new = sum(p["new_schools"] for p in phases.values())
+        tot_tr = sum(p["transit_hubs"] for p in phases.values())
+        tot_teach = sum(p["teachers"] for p in phases.values())
+        tot_outlay = sum(p["outlay_cr"] for p in phases.values())
+
+        self.assertEqual(tot_up, sec["proposed_upgrades"], "Phase upgrades do not conserve")
+        self.assertEqual(tot_new, sec["proposed_new_schools"], "Phase new schools do not conserve")
+        self.assertEqual(tot_tr, sec["proposed_transport_hubs"], "Phase transit hubs do not conserve")
+        self.assertEqual(tot_teach, sec["teachers_required"], "Phase teachers do not conserve")
+        self.assertAlmostEqual(tot_outlay, sec["total_budget_cr"], places=2, msg="Phase outlays do not conserve")
+
+    def test_district_to_state_summation_conservation(self):
+        """District secondary allocations must sum exactly to statewide totals."""
+        sec = self.data["statewide_totals"]["Secondary"]
+        dists = self.data["districts"]
+
+        sum_up = sum(d["tiers"]["Secondary"]["proposed_upgrades"] for d in dists)
+        sum_new = sum(d["tiers"]["Secondary"]["proposed_new_schools"] for d in dists)
+        sum_tr = sum(d["tiers"]["Secondary"]["proposed_transport_hubs"] for d in dists)
+        sum_teach = sum(d["tiers"]["Secondary"]["teachers_required"] for d in dists)
+        sum_hostels = sum(d["tiers"]["Secondary"]["girls_hostels_proposed"] for d in dists)
+        sum_cyclone = sum(d["tiers"]["Secondary"]["cyclone_resilient_upgrades"] for d in dists)
+        sum_budget = sum(d["tiers"]["Secondary"]["total_budget_cr"] for d in dists)
+
+        self.assertEqual(sum_up, sec["proposed_upgrades"])
+        self.assertEqual(sum_new, sec["proposed_new_schools"])
+        self.assertEqual(sum_tr, sec["proposed_transport_hubs"])
+        self.assertEqual(sum_teach, sec["teachers_required"])
+        self.assertEqual(sum_hostels, sec["girls_hostels_proposed"])
+        self.assertEqual(sum_cyclone, sec["cyclone_resilient_upgrades"])
+        self.assertAlmostEqual(sum_budget, sec["total_budget_cr"], places=1)
+
+    def test_policy_brief_typst_bindings(self):
+        """Policy brief Typst file must use dynamic bindings for key operational indicators."""
+        brief_typ = os.path.join(BASE_DIR, "typst", "policy_brief.typ")
+        with open(brief_typ, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Must not contain old stale hardcoded values
+        self.assertNotIn("9,144", content, "Stale teacher count found in policy_brief.typ")
+        self.assertNotIn("588 Girls", content, "Stale girls hostel count found in policy_brief.typ")
+        self.assertNotIn("396 cyclone", content, "Stale cyclone retrofit count found in policy_brief.typ")
+        self.assertNotIn("59.1%", content, "Stale secondary baseline coverage found in policy_brief.typ")
+
+        # Must use dynamic references
+        self.assertIn("#sec.teachers_required", content)
+        self.assertIn("#sec.girls_hostels_proposed", content)
+        self.assertIn("#sec.cyclone_resilient_upgrades", content)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
