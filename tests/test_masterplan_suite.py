@@ -5,8 +5,10 @@ Uses standard Python unittest framework for zero-dependency test execution.
 
 import os
 import sys
+import gzip
 import json
 import math
+import struct
 import unittest
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,6 +25,7 @@ def get_pdf_page_count(path):
 
 JSON_PATH = os.path.join(BASE_DIR, "odisha_statewide_assessment.json")
 GEOJSON_PATH = os.path.join(BASE_DIR, "odisha_districts.geojson")
+GEOPACK_PATH = os.path.join(BASE_DIR, "engine", "odisha_geodata.json.gz")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 MAPS_DIR = os.path.join(ASSETS_DIR, "district_maps")
 
@@ -233,10 +236,93 @@ class TestCrossDocumentConsistency(unittest.TestCase):
         self.assertFalse(os.path.exists(legacy_agents), "Legacy .agents directory should be removed")
 
     def test_engine_scripts_exist(self):
-        """All engine scripts must exist under engine/ directory."""
-        for script_name in ["statewide_analyzer.py", "generate_district_maps.py", "generate_analytical_charts.py"]:
+        """All engine scripts and static spatial data packs must exist under engine/ directory."""
+        for script_name in [
+            "statewide_analyzer.py",
+            "generate_district_maps.py",
+            "generate_analytical_charts.py",
+            "odisha_geodata.json.gz",
+        ]:
             script_path = os.path.join(BASE_DIR, "engine", script_name)
-            self.assertTrue(os.path.exists(script_path), f"Engine script {script_name} missing from engine/")
+            self.assertTrue(os.path.exists(script_path), f"Engine file {script_name} missing from engine/")
+
+    def test_geodata_pack_matches_all_314_blocks(self):
+        """Compressed geodata pack must cover all 30 districts and 314 canonical LGD block names 1:1."""
+        with gzip.open(GEOPACK_PATH, "rt", encoding="utf-8") as f:
+            geopack = json.load(f)
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            assess = json.load(f)
+
+        self.assertGreaterEqual(geopack["meta"]["total_habitations"], 59000)
+        self.assertEqual(len(geopack["dist_polys"]), 30)
+        self.assertEqual(len(geopack["blocks_by_district"]), 30)
+
+        for d_assess in assess["districts"]:
+            dn = d_assess["district_name"]
+            geo_names = {b["block_name"] for b in geopack["blocks_by_district"][dn]}
+            assess_names = {b["block_name"] for b in d_assess["blocks"]}
+            self.assertEqual(geo_names, assess_names, f"LGD-to-assessment block mismatch in {dn}")
+            for bn in assess_names:
+                habs = geopack["habitations"].get(f"{dn}|{bn}", [])
+                self.assertGreater(len(habs), 0, f"Zero habitations found for {dn}|{bn}")
+
+    def test_district_map_badge_layout_zero_overlaps(self):
+        """Deterministic block label layout must produce zero badge collisions or clipped bounds across all 30 districts."""
+        from engine.generate_district_maps import (
+            load_data,
+            _prepare_task_payloads,
+            _select_inset_corner,
+            solve_label_layout,
+        )
+
+        geo_bundle, assess_data = load_data()
+        tasks = _prepare_task_payloads(geo_bundle, assess_data)
+        self.assertEqual(len(tasks), 30)
+
+        for t in tasks:
+            d_name = t["d_assess"]["district_name"]
+            xlim, ylim = t["xlim"], t["ylim"]
+            dx, dy = xlim[1] - xlim[0], ylim[1] - ylim[0]
+            _, (ix0, iy0, iw, ih) = _select_inset_corner(t["blocks"], xlim, ylim)
+            inset_rect = (xlim[0] + ix0 * dx, ylim[0] + iy0 * dy, xlim[0] + (ix0 + iw) * dx, ylim[0] + (iy0 + ih) * dy)
+            n_blk = len(t["blocks"])
+            fs = 6.8 if n_blk >= 20 else (7.3 if n_blk >= 11 else 7.9)
+            placed = solve_label_layout(t["blocks"], xlim, ylim, t["true_aspect"], [inset_rect], fs)
+            self.assertEqual(len(placed), n_blk, f"Missing block label in {d_name}")
+
+            for i in range(len(placed)):
+                a = placed[i]
+                self.assertGreaterEqual(a["x"] - 0.45 * a["w"], xlim[0], f"{d_name}:{a['name']} clipped left")
+                self.assertLessEqual(a["x"] + 0.45 * a["w"], xlim[1], f"{d_name}:{a['name']} clipped right")
+                self.assertGreaterEqual(a["y"] - 0.45 * a["h"], ylim[0], f"{d_name}:{a['name']} clipped bottom")
+                self.assertLessEqual(a["y"] + 0.45 * a["h"], ylim[1], f"{d_name}:{a['name']} clipped top")
+                for j in range(i + 1, len(placed)):
+                    b = placed[j]
+                    ox = 0.48 * (a["w"] + b["w"]) - abs(a["x"] - b["x"])
+                    oy = 0.48 * (a["h"] + b["h"]) - abs(a["y"] - b["y"])
+                    self.assertFalse(ox > 0 and oy > 0, f"Badge overlap in {d_name}: {a['name']} vs {b['name']}")
+
+    def test_rendered_png_assets_valid(self):
+        """All 30 district maps and 6 analytical charts must be valid non-empty high-res PNGs."""
+        charts = [
+            "chart_dropout_cliff.png", "chart_mclp_frontier.png", "chart_coverage_by_tier.png",
+            "chart_budget_breakdown.png", "chart_district_priority_ranking.png", "chart_gender_equity.png",
+        ]
+        paths = [os.path.join(ASSETS_DIR, c) for c in charts]
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            assess = json.load(f)
+        for d in assess["districts"]:
+            clean_name = d["district_name"].lower().replace(" ", "_")
+            paths.append(os.path.join(MAPS_DIR, f"dist_{clean_name}.png"))
+
+        for p in paths:
+            self.assertTrue(os.path.exists(p), f"Missing PNG asset: {p}")
+            with open(p, "rb") as f:
+                hdr = f.read(24)
+            self.assertEqual(hdr[:8], b"\x89PNG\r\n\x1a\n", f"Invalid PNG header: {p}")
+            w, h = struct.unpack(">II", hdr[16:24])
+            self.assertGreaterEqual(w, 1200, f"PNG width too low in {p}: {w}")
+            self.assertGreaterEqual(h, 900, f"PNG height too low in {p}: {h}")
 
 
 if __name__ == "__main__":

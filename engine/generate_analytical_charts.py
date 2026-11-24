@@ -62,8 +62,8 @@ def generate_global_charts(assessment_data=None):
 
     ax.axvspan(7.8, 9.2, color='#FEE2E2', alpha=0.6, zorder=1)
     ax.annotate('The Spatial Accessibility Cliff\n(42% Drop at Grade 8 → 9 Transition)',
-                xy=(8.5, 54), xytext=(5.2, 40),
-                arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=-0.2", color='#991B1B', lw=2.0),
+                xy=(8.5, 54), xytext=(2.2, 28),
+                arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=0.18", color='#991B1B', lw=2.0),
                 fontsize=8.5, fontweight='bold', color='#991B1B',
                 bbox=dict(boxstyle="round,pad=0.4", facecolor='#FEF2F2', edgecolor='#EF4444', lw=1.2))
 
@@ -144,9 +144,9 @@ def generate_global_charts(assessment_data=None):
     ax.set_xticks(x)
     ax.set_xticklabels([f"{t}\n({totals[t]['existing_schools']:,} sch)" for t in tiers], fontsize=8.5)
     ax.set_ylabel("Habitations Covered (%)", fontsize=9, fontweight='bold', color=TEXT_DARK)
-    ax.set_ylim(0, 115)
+    ax.set_ylim(0, 122)
     ax.grid(True, linestyle='--', alpha=0.4, axis='y', color='#94A3B8')
-    ax.legend(loc='lower right', fontsize=7.8, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
+    ax.legend(loc='upper center', ncol=2, fontsize=8.0, framealpha=0.95, facecolor='#FFFFFF', edgecolor='#CBD5E1')
     for spine in ax.spines.values():
         spine.set_color(BORDER_COLOR)
 
@@ -252,8 +252,17 @@ def generate_global_charts(assessment_data=None):
 
     ax1.set_ylabel('Gender Parity Index (Female/Male Transition Ratio)', fontsize=8.5, fontweight='bold', color='#1E40AF')
     ax2.set_ylabel('Girls Residential Hostels Allocated', fontsize=8.5, fontweight='bold', color='#BE185D')
-    ax1.set_ylim(0.70, 1.05)
-    ax2.set_ylim(0, 310)
+    ax1.set_ylim(0.70, 1.08)
+    ax2.set_ylim(0, 330)
+
+    for r in rects1:
+        h = r.get_height()
+        ax1.text(r.get_x() + r.get_width() / 2.0, h + 0.004, f"{h:.2f}",
+                 ha="center", va="bottom", fontsize=7.6, fontweight="bold", color="#1E40AF")
+    for r in rects2:
+        h = r.get_height()
+        ax2.text(r.get_x() + r.get_width() / 2.0, h + 4.5, f"{int(round(h))}",
+                 ha="center", va="bottom", fontsize=7.6, fontweight="bold", color="#BE185D")
     ax1.set_xticks(x)
     ax1.set_xticklabels(cat_names, fontsize=8.0, fontweight='bold')
     ax1.set_title("Gender Parity Index & Girls' Residential Hostel Allocations by Terrain Category", fontsize=10.5, fontweight='bold', color=TEXT_DARK, pad=10)

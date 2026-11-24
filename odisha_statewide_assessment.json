@@ -2554,7 +2554,7 @@
           "Kashinagar",
           "Mohana",
           "Nuagada",
-          "Parlakhemundi",
+          "Gosani",
           "R.Udayagiri",
           "Rayagada"
         ]
@@ -2719,7 +2719,7 @@
           "estimated_budget_cr": 46.13
         },
         {
-          "block_name": "Parlakhemundi",
+          "block_name": "Gosani",
           "population": 83763,
           "habitations": 240,
           "vulnerability_score": 91,
@@ -3968,7 +3968,7 @@
         "cyclone_risk": "Low",
         "blocks": [
           "Bhawanipatna",
-          "Bharmagarh",
+          "Dharmagarh",
           "Golamunda",
           "Jaipatna",
           "Junagarh",
@@ -4097,7 +4097,7 @@
           "estimated_budget_cr": 34.76
         },
         {
-          "block_name": "Bharmagarh",
+          "block_name": "Dharmagarh",
           "population": 139209,
           "habitations": 215,
           "vulnerability_score": 84,
@@ -4874,7 +4874,7 @@
           "Patna",
           "Saharpada",
           "Telkoi",
-          "Jhumpi"
+          "Jhumpura"
         ]
       },
       "terrain_friction_factor": 2.47,
@@ -5157,7 +5157,7 @@
           "estimated_budget_cr": 34.76
         },
         {
-          "block_name": "Jhumpi",
+          "block_name": "Jhumpura",
           "population": 135873,
           "habitations": 217,
           "vulnerability_score": 75,
@@ -5464,7 +5464,7 @@
         "gpi": 0.86,
         "cyclone_risk": "Low",
         "blocks": [
-          "B.Singhpur",
+          "Pottangi",
           "Bandhugaon",
           "Boipariguda",
           "Borigumma",
@@ -5475,7 +5475,7 @@
           "Kundra",
           "Lamtaput",
           "Laxmipur",
-          "Machhkund",
+          "Semiliguda",
           "Nandapur",
           "Narayanpatna"
         ]
@@ -5580,7 +5580,7 @@
       },
       "blocks": [
         {
-          "block_name": "B.Singhpur",
+          "block_name": "Pottangi",
           "population": 88360,
           "habitations": 217,
           "vulnerability_score": 93,
@@ -5745,7 +5745,7 @@
           "estimated_budget_cr": 34.76
         },
         {
-          "block_name": "Machhkund",
+          "block_name": "Semiliguda",
           "population": 88823,
           "habitations": 235,
           "vulnerability_score": 92,
@@ -6038,7 +6038,7 @@
           "Bahalda",
           "Bangiriposi",
           "Baripada",
-          "Barsahi",
+          "Kuliana",
           "Betnoti",
           "Bijatala",
           "Bisoi",
@@ -6058,7 +6058,7 @@
           "Suliapada",
           "Thakurmunda",
           "Tiring",
-          "Tirto",
+          "Raruan",
           "Udala"
         ]
       },
@@ -6222,7 +6222,7 @@
           "estimated_budget_cr": 15.84
         },
         {
-          "block_name": "Barsahi",
+          "block_name": "Kuliana",
           "population": 88573,
           "habitations": 107,
           "vulnerability_score": 87,
@@ -6522,7 +6522,7 @@
           "estimated_budget_cr": 15.84
         },
         {
-          "block_name": "Tirto",
+          "block_name": "Raruan",
           "population": 100421,
           "habitations": 119,
           "vulnerability_score": 86,
@@ -6573,7 +6573,7 @@
           "Kosagumuda",
           "Nabarangpur",
           "Nandahandi",
-          "Papuhandi",
+          "Papadahandi",
           "Raighar",
           "Tentulikhunti",
           "Umerkote"
@@ -6769,7 +6769,7 @@
           "estimated_budget_cr": 36.14
         },
         {
-          "block_name": "Papuhandi",
+          "block_name": "Papadahandi",
           "population": 136665,
           "habitations": 259,
           "vulnerability_score": 86,
@@ -7588,7 +7588,7 @@
           "Kolnara",
           "Muniguda",
           "Padmapur",
-          "Putasing",
+          "Ramanaguda",
           "Rayagada"
         ]
       },
@@ -7827,7 +7827,7 @@
           "estimated_budget_cr": 46.13
         },
         {
-          "block_name": "Putasing",
+          "block_name": "Ramanaguda",
           "population": 100376,
           "habitations": 287,
           "vulnerability_score": 85,

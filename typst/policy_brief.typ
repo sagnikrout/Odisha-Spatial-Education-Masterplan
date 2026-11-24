@@ -8,7 +8,7 @@
   paper: "a4",
   flipped: false,
   margin: (x: 1.2cm, top: 1.2cm, bottom: 1.2cm),
-  header: locate(loc => {
+  header: {
     set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
     grid(
       columns: (3.2fr, 1fr),
@@ -17,8 +17,8 @@
     )
     v(-4pt)
     line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
-  }),
-  footer: locate(loc => {
+  },
+  footer: {
     line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
     v(-2pt)
     set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
@@ -27,7 +27,7 @@
       align(left)[Decision support framework: operations research and spatial optimization],
       align(right)[Page 1 of 1]
     )
-  })
+  }
 )
 
 #set text(font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), size: 8.0pt, fill: rgb("#0F172A"))

@@ -9,8 +9,8 @@
 #set page(
   paper: "a4",
   margin: (x: 1.2cm, top: 1.2cm, bottom: 1.2cm),
-  header: locate(loc => {
-    if loc.page() > 1 {
+  header: context {
+    if here().page() > 1 {
       set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"), weight: "bold")
       grid(
         columns: (3.2fr, 1fr),
@@ -20,19 +20,19 @@
       v(-4pt)
       line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
     }
-  }),
-  footer: locate(loc => {
-    if loc.page() > 1 {
+  },
+  footer: context {
+    if here().page() > 1 {
       line(length: 100%, stroke: 0.5pt + rgb("#CBD5E1"))
       v(-2pt)
       set text(size: 6.8pt, font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), fill: rgb("#64748B"))
       grid(
         columns: (3.2fr, 1fr),
         align(left)[Spatial Optimization & Education Infrastructure Model (2026-2031)],
-        align(right)[Page #counter(page).display() of #counter(page).final(loc).at(0)]
+        align(right)[Page #counter(page).display("1 of 1", both: true)]
       )
     }
-  })
+  }
 )
 
 #set text(font: ("Liberation Sans", "Helvetica Neue", "Arial", "Roboto"), size: 7.6pt, fill: rgb("#0F172A"))

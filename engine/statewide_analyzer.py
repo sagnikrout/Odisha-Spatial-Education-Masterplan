@@ -53,7 +53,7 @@ DISTRICT_DATABASE = {
     },
     "Gajapati": {
         "terrain": "Mountainous", "category": "Southern Tribal", "vulnerability": 88, "population": 577817, "area_sqkm": 3850, "tribal_pct": 54.3, "gpi": 0.88, "cyclone_risk": "Medium",
-        "blocks": ["Gumma", "Kashinagar", "Mohana", "Nuagada", "Parlakhemundi", "R.Udayagiri", "Rayagada"]
+        "blocks": ["Gumma", "Kashinagar", "Mohana", "Nuagada", "Gosani", "R.Udayagiri", "Rayagada"]
     },
     "Jagatsinghpur": {
         "terrain": "Coastal Delta", "category": "Central Coastal", "vulnerability": 38, "population": 1136971, "area_sqkm": 1668, "tribal_pct": 0.8, "gpi": 0.98, "cyclone_risk": "Very High",
@@ -69,7 +69,7 @@ DISTRICT_DATABASE = {
     },
     "Kalahandi": {
         "terrain": "Hilly & Plateau", "category": "Western Tribal", "vulnerability": 84, "population": 1576869, "area_sqkm": 7920, "tribal_pct": 28.7, "gpi": 0.90, "cyclone_risk": "Low",
-        "blocks": ["Bhawanipatna", "Bharmagarh", "Golamunda", "Jaipatna", "Junagarh", "Kalampur", "Karlamunda", "Kesinga", "Koksara", "Lanjigarh", "Madanpur Rampur", "Narla", "Th.Rampur"]
+        "blocks": ["Bhawanipatna", "Dharmagarh", "Golamunda", "Jaipatna", "Junagarh", "Kalampur", "Karlamunda", "Kesinga", "Koksara", "Lanjigarh", "Madanpur Rampur", "Narla", "Th.Rampur"]
     },
     "Kandhamal": {
         "terrain": "Mountainous", "category": "Central Tribal", "vulnerability": 92, "population": 733110, "area_sqkm": 8021, "tribal_pct": 53.6, "gpi": 0.87, "cyclone_risk": "Low",
@@ -81,7 +81,7 @@ DISTRICT_DATABASE = {
     },
     "Kendujhar": {
         "terrain": "Hilly & Forest", "category": "Northern Tribal", "vulnerability": 78, "population": 1801733, "area_sqkm": 8303, "tribal_pct": 45.4, "gpi": 0.91, "cyclone_risk": "Low",
-        "blocks": ["Anandapur", "Bansapal", "Champua", "Ghasipura", "Ghatgaon", "Harichandanpur", "Hatadihi", "Joda", "Keonjhar", "Patna", "Saharpada", "Telkoi", "Jhumpi"]
+        "blocks": ["Anandapur", "Bansapal", "Champua", "Ghasipura", "Ghatgaon", "Harichandanpur", "Hatadihi", "Joda", "Keonjhar", "Patna", "Saharpada", "Telkoi", "Jhumpura"]
     },
     "Khordha": {
         "terrain": "Coastal Hinterland", "category": "Central Coastal", "vulnerability": 30, "population": 2251673, "area_sqkm": 2813, "tribal_pct": 5.2, "gpi": 0.98, "cyclone_risk": "Medium",
@@ -89,7 +89,7 @@ DISTRICT_DATABASE = {
     },
     "Koraput": {
         "terrain": "Mountainous", "category": "Southern Tribal", "vulnerability": 91, "population": 1379647, "area_sqkm": 8807, "tribal_pct": 50.6, "gpi": 0.86, "cyclone_risk": "Low",
-        "blocks": ["B.Singhpur", "Bandhugaon", "Boipariguda", "Borigumma", "Dasamantapur", "Jeypore", "Koraput", "Kotpad", "Kundra", "Lamtaput", "Laxmipur", "Machhkund", "Nandapur", "Narayanpatna"]
+        "blocks": ["Pottangi", "Bandhugaon", "Boipariguda", "Borigumma", "Dasamantapur", "Jeypore", "Koraput", "Kotpad", "Kundra", "Lamtaput", "Laxmipur", "Semiliguda", "Nandapur", "Narayanpatna"]
     },
     "Malkangiri": {
         "terrain": "Mountainous & Forest", "category": "Southern Tribal", "vulnerability": 95, "population": 613192, "area_sqkm": 5791, "tribal_pct": 57.8, "gpi": 0.85, "cyclone_risk": "Low",
@@ -97,11 +97,11 @@ DISTRICT_DATABASE = {
     },
     "Mayurbhanj": {
         "terrain": "Hilly & Forest", "category": "Northern Tribal", "vulnerability": 82, "population": 2519738, "area_sqkm": 10418, "tribal_pct": 58.7, "gpi": 0.89, "cyclone_risk": "Low",
-        "blocks": ["Badasahi", "Bahalda", "Bangiriposi", "Baripada", "Barsahi", "Betnoti", "Bijatala", "Bisoi", "Gopabandhunagar", "Jamda", "Jashipur", "Kaptipada", "Karanjia", "Khunta", "Kusumi", "Morada", "Rairangpur", "Rasgovindpur", "Samakhunta", "Saraskana", "Sukruli", "Suliapada", "Thakurmunda", "Tiring", "Tirto", "Udala"]
+        "blocks": ["Badasahi", "Bahalda", "Bangiriposi", "Baripada", "Kuliana", "Betnoti", "Bijatala", "Bisoi", "Gopabandhunagar", "Jamda", "Jashipur", "Kaptipada", "Karanjia", "Khunta", "Kusumi", "Morada", "Rairangpur", "Rasgovindpur", "Samakhunta", "Saraskana", "Sukruli", "Suliapada", "Thakurmunda", "Tiring", "Raruan", "Udala"]
     },
     "Nabarangpur": {
         "terrain": "Plateau & Forest", "category": "Southern Tribal", "vulnerability": 89, "population": 1220946, "area_sqkm": 5291, "tribal_pct": 55.8, "gpi": 0.87, "cyclone_risk": "Low",
-        "blocks": ["Chandahandi", "Dabugam", "Jharigam", "Kosagumuda", "Nabarangpur", "Nandahandi", "Papuhandi", "Raighar", "Tentulikhunti", "Umerkote"]
+        "blocks": ["Chandahandi", "Dabugam", "Jharigam", "Kosagumuda", "Nabarangpur", "Nandahandi", "Papadahandi", "Raighar", "Tentulikhunti", "Umerkote"]
     },
     "Nayagarh": {
         "terrain": "Coastal Hinterland", "category": "Central Coastal", "vulnerability": 48, "population": 962789, "area_sqkm": 3890, "tribal_pct": 6.1, "gpi": 0.94, "cyclone_risk": "Medium",
@@ -117,7 +117,7 @@ DISTRICT_DATABASE = {
     },
     "Rayagada": {
         "terrain": "Mountainous", "category": "Southern Tribal", "vulnerability": 90, "population": 967911, "area_sqkm": 7073, "tribal_pct": 56.0, "gpi": 0.88, "cyclone_risk": "Low",
-        "blocks": ["Bissamacuttack", "Chandrapur", "Gudari", "Gunupur", "Kalyansingpur", "Kashipur", "Kolnara", "Muniguda", "Padmapur", "Putasing", "Rayagada"]
+        "blocks": ["Bissamacuttack", "Chandrapur", "Gudari", "Gunupur", "Kalyansingpur", "Kashipur", "Kolnara", "Muniguda", "Padmapur", "Ramanaguda", "Rayagada"]
     },
     "Sambalpur": {
         "terrain": "Western Plateau", "category": "Western Agrarian", "vulnerability": 62, "population": 1041099, "area_sqkm": 6624, "tribal_pct": 34.5, "gpi": 0.93, "cyclone_risk": "Low",

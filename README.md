@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Optimization: Submodular Pareto MCLP](https://img.shields.io/badge/Optimization-Submodular%20Pareto%20MCLP-purple.svg)](https://en.wikipedia.org/wiki/Maximum_coverage_problem)
 [![Geospatial: Pure Python & Matplotlib](https://img.shields.io/badge/GIS-Pure%20Python%20%7C%20Matplotlib-orange.svg)](https://matplotlib.org/)
-[![Publishing Engine: Typst](https://img.shields.io/badge/Publishing-Typst%200.11-cyan.svg)](https://typst.app/)
+[![Publishing Engine: Typst](https://img.shields.io/badge/Publishing-Typst%200.15.1-cyan.svg)](https://typst.app/)
 
 Statewide operations research optimization, 314 Community Development Block GIS analysis, Public Works Department (PWD) hill cost calibration, and briefing suite for the 30 districts of Odisha.
 
@@ -57,7 +57,8 @@ Map2needs/
 ├── engine/
 │   ├── statewide_analyzer.py        # Submodular Pareto MCLP & demographic engine
 │   ├── generate_district_maps.py    # 30-district cartographic plate generator
-│   └── generate_analytical_charts.py# 6 publication analytical charts generator
+│   ├── generate_analytical_charts.py# 6 publication analytical charts generator
+│   └── odisha_geodata.json.gz       # LGD 2024 (314 blocks), PMGSY (59,540 habs), SOI & HOTOSM pack
 ├── typst/
 │   ├── masterplan.typ               # 23-page publication masterplan layout
 │   └── policy_brief.typ             # 1-page policy brief layout
@@ -65,7 +66,7 @@ Map2needs/
 │   ├── district_maps/               # 30 district GIS maps (dist_*.png)
 │   └── chart_*.png                  # 6 statewide analytical charts
 ├── tests/
-│   └── test_masterplan_suite.py     # 19-test verification suite
+│   └── test_masterplan_suite.py     # Automated spatial & layout verification suite
 ├── odisha_districts.geojson         # Survey of India district boundaries
 ├── odisha_statewide_assessment.json # Calibrated assessment dataset
 ├── build.py                         # Pipeline build orchestrator
